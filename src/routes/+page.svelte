@@ -1,13 +1,19 @@
 <script>
-	import { ProjectCard } from '$lib/components';
+	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
 	export let data;
 
 	let filter;
 </script>
 
+<!-- <Hero title="Projects" description="Browse all projects shared across all users." /> -->
+
 <div class="">
-	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">All Projects</h2>
+	<div class="mt-2 text-center text-6xl font-bold tracking-tight text-base-content">
+		<div>
+			Ne<span class="text-purple-500">x</span>um
+		</div>
+	</div>
 	<p class="text-center mt-1">Projects shared across all users.</p>
 
 	<div class="my-10 flex justify-center px-4">
@@ -27,11 +33,13 @@
 			class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
 		>
 			{#each data.projects as project}
-				{#if !filter || project.name
+				{#if !filter || project.name.toLowerCase().includes(filter.toLowerCase()) || project.tagline
 						.toLowerCase()
-						.includes(filter.toLowerCase()) || project.tagline.includes(filter.toLowerCase()) || project.division
+						.includes(filter.toLowerCase()) || project.division
 						.toLowerCase()
-						.includes(filter.toLowerCase()) || project.description.includes(filter.toLowerCase())}
+						.includes(filter.toLowerCase()) || project.description
+						.toLowerCase()
+						.includes(filter.toLowerCase())}
 					<ProjectCard {project} />
 				{/if}
 			{/each}

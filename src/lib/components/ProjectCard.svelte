@@ -9,7 +9,7 @@
 	<a href="/projects/{project.id}" class="rounded-lg">
 		<figure>
 			<img
-				class="rounded-t-lg h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+				class="rounded-t-lg h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500"
 				src={project?.thumbnail
 					? getImageURL(project.collectionId, project.id, project.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${project.name}`}
@@ -21,10 +21,11 @@
 			<!-- <div class="badge badge-secondary">{project.division}</div> -->
 
 			{#if project.division}
-				<div class="badge badge-info w-1/3 rounded-full py-4 gap-2">
+				<div class="badge badge-info w-1/3 rounded-full py-3 gap-2">
 					{project.division}
 				</div>
 			{/if}
+
 			<p>{project.tagline}</p>
 			<div class="card-actions mt-5">
 				<a href="/projects/{project.id}" class="btn btn-outline w-full">View Project</a>

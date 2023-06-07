@@ -2,6 +2,7 @@
 	import '../app.postcss';
 	import { Toaster } from 'svelte-french-toast';
 	import { getImageURL } from '$lib/utils';
+	import { Icon, Plus } from 'svelte-hero-icons';
 	export let data;
 </script>
 
@@ -9,7 +10,11 @@
 <div class="min-h-full">
 	<nav class="navbar bg-base-100 border-b">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost normal-case text-xl">Home</a>
+			<a href="/" class="btn btn-ghost normal-case text-xl">
+				<div>
+					Ne<span class="text-purple-500">x</span>um
+				</div>
+			</a>
 		</div>
 		<div class="flex-none">
 			{#if !data.user}
@@ -19,7 +24,9 @@
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
-					<a href="/projects/new" class="btn btn-primary btn-outline">Add Project</a>
+					<a href="/projects/new" class="btn btn-primary btn-outline">
+						<Icon src={Plus} class="w-5 h-5" />
+					</a>
 				</div>
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
