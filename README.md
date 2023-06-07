@@ -1,10 +1,19 @@
-# engage-sveltekit-pocketbase
+# Project Nexum
+
+## Technologies
+
+- SvelteKit
+- PocketBase
+- TailwindCSS
+- DaisyUI
+- Svelte French Toast
+- Zod
 
 ## Getting Started
 
 ```bash
 # create a new project in the current directory
-git clone https://github.com/engageintellect/engage-sveltekit-pocketbase.git
+git clone <REPO>
 
 # create a new project in my-app
 pnpm install
@@ -32,7 +41,3 @@ pnpm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-# sveltekit-pocket
-
-# sveltekit-pocketbase
