@@ -18,6 +18,13 @@
 		</figure>
 		<div class="card-body">
 			<h2 class="card-title">{project.name}</h2>
+			<!-- <div class="badge badge-secondary">{project.division}</div> -->
+
+			{#if project.division}
+				<div class="badge badge-info w-1/3 rounded-full py-4 gap-2">
+					{project.division}
+				</div>
+			{/if}
 			<p>{project.tagline}</p>
 			<div class="card-actions mt-5">
 				<a href="/projects/{project.id}" class="btn btn-outline w-full">View Project</a>

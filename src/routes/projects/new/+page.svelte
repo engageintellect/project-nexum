@@ -13,8 +13,8 @@
 			enctype="multipart/form-data"
 			use:enhance
 		>
-			<div class="flex flex-col justify-center">
-				<h3 class="text-3xl font-bold">Tell us more about this project</h3>
+			<div class="flex flex-col justify-center text-center">
+				<h3 class="text-center text-3xl font-bold">Tell us more about this project</h3>
 				<p class="pt-2 text-lg">We'll need the name, tagline, link, and description</p>
 			</div>
 
@@ -26,6 +26,27 @@
 				errors={form?.errors?.tagline}
 			/>
 			<Input id="url" label="Project URL" value={form?.data?.url} errors={form?.errors?.url} />
+
+			<div class="w-full max-w-lg">
+				<label for="division" class="label font-medium pb-1">
+					<span class="label-text">Division</span>
+				</label>
+				<select
+					id="division"
+					name="division"
+					label="Division"
+					class="select select-bordered w-full"
+				>
+					<!-- TODO: Make this dynamic -->
+					<option disabled selected>Select Division</option>
+					<option value="NCS">NCS</option>
+					<option value="BTS">BTS</option>
+					<option value="BTS">CORP</option>
+					<option value="Direct">Direct</option>
+				</select>
+				<!-- <span class="text-sm text-red-600">{form?.errors?.division}</span> -->
+			</div>
+
 			<TextArea
 				id="description"
 				label="Project Description"

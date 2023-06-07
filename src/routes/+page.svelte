@@ -15,7 +15,7 @@
 			<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
 			<input
 				type="text"
-				placeholder="Search Projects"
+				placeholder="Search Projects, Divisions, and Content"
 				class="input input-bordered w-full max-w-md"
 				bind:value={filter}
 			/>
@@ -27,9 +27,11 @@
 			class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
 		>
 			{#each data.projects as project}
-				{#if !filter || project.name.toLowerCase().includes(filter.toLowerCase()) || project.tagline
+				{#if !filter || project.name
 						.toLowerCase()
-						.includes(filter.toLowerCase())}
+						.includes(filter.toLowerCase()) || project.tagline.includes(filter.toLowerCase()) || project.division
+						.toLowerCase()
+						.includes(filter.toLowerCase()) || project.description.includes(filter.toLowerCase())}
 					<ProjectCard {project} />
 				{/if}
 			{/each}

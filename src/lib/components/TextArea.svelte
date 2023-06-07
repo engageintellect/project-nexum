@@ -15,7 +15,7 @@
 		<span class="label-text">{label}</span>
 	</label>
 	<textarea
-		class="textarea textarea-bordered h-24 resize-none"
+		class="textarea textarea-bordered resize-y h-48"
 		{type}
 		{placeholder}
 		{required}

@@ -38,6 +38,7 @@ export const actions = {
 			throw error(err.status, err.message);
 		}
 
+		console.log('FORM DATA: ', formData);
 		throw redirect(303, '/my/projects');
 	}
 };

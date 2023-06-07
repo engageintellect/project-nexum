@@ -67,6 +67,9 @@ export const createProjectSchema = z.object({
 		.max(64, { message: 'Tagline must be 64 characters or less' })
 		.trim(),
 	url: z.string({ required_error: 'URL is required' }).url({ message: 'URL must be a valid URL' }),
+
+	division: z.optional(z.string().min(1).max(64).trim()),
+
 	description: z
 		.string({ required_error: 'Description is required' })
 		.min(1, { message: 'Description is required' })
