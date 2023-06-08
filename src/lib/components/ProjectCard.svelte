@@ -1,6 +1,7 @@
 <script>
 	import { getImageURL } from '$lib/utils';
 	export let project;
+	export let user;
 </script>
 
 <div
@@ -25,6 +26,16 @@
 
 			<h2 class="card-title">{project.name}</h2>
 			<!-- <div class="badge badge-secondary">{project.division}</div> -->
+			<div class="flex gap-2 items-center">
+				<img
+					class="w-7 h-7 rounded-full border border-1 border-primary"
+					src={user?.avatar
+						? getImageURL(user?.collectionId, user?.id, user?.avatar)
+						: `https://ui-avatars.com/api/?name=${user?.name}`}
+					alt="User avatar"
+				/>
+				<p class="text-sm font-thin">{user.name}</p>
+			</div>
 
 			<p>{project.tagline}</p>
 

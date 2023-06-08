@@ -32,16 +32,25 @@
 		<div
 			class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
 		>
+			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
 			{#each data.projects as project}
-				{#if !filter || project.name.toLowerCase().includes(filter.toLowerCase()) || project.tagline
-						.toLowerCase()
-						.includes(filter.toLowerCase()) || project.division
-						.toLowerCase()
-						.includes(filter.toLowerCase()) || project.description
-						.toLowerCase()
-						.includes(filter.toLowerCase())}
-					<ProjectCard {project} />
-				{/if}
+				{#each data.users as user}
+					{#if !filter || project.name
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || project.tagline
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || project.division
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || project.description
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || user.name
+							.toLowerCase()
+							.includes(filter.toLowerCase())}
+						{#if project.user === user.id}
+							<ProjectCard {project} {user} />
+						{/if}
+					{/if}
+				{/each}
 			{/each}
 		</div>
 	</div>
