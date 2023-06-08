@@ -21,7 +21,7 @@
 			<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
 			<input
 				type="text"
-				placeholder="Search Projects, Divisions, and Content"
+				placeholder="Search Projects, People, Divisions, and Content"
 				class="input input-bordered w-full max-w-md"
 				bind:value={filter}
 			/>
