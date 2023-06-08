@@ -12,7 +12,17 @@ export const load = ({ locals, params }) => {
 		}
 	};
 
+	const getUsers = async () => {
+		try {
+			const users = serializeNonPOJOs(await locals.pb.collection('users').getFullList(undefined));
+			return users;
+		} catch (err) {
+			console.log('Error:', err);
+			throw error(err.status, err.message);
+		}
+	};
 	return {
-		project: getProject(params.projectId)
+		project: getProject(params.projectId),
+		users: getUsers()
 	};
 };
