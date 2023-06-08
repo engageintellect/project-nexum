@@ -29,9 +29,7 @@
 	</div>
 
 	<div class="flex justify-center pt-4">
-		<div
-			class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-		>
+		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
 			{#each data.projects as project}
 				{#each data.users as user}
