@@ -23,8 +23,20 @@ export const load = ({ locals }) => {
 			throw error(err.status, err.message);
 		}
 	};
+
+
+		const getTags = async () => {
+		try {
+			const tags = serializeNonPOJOs(await locals.pb.collection('tags').getFullList(undefined));
+			return tags;
+		} catch (err) {
+			console.log('Error:', err);
+			throw error(err.status, err.message);
+		}
+	};
 	return {
 		projects: getProjects(),
-		users: getUsers()
+		users: getUsers(),
+		tags: getTags()
 	};
 };
