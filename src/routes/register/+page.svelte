@@ -14,6 +14,7 @@
 	</p>
 	<form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
 		<Input id="name" label="Name" value={form?.data?.name} errors={form?.errors?.name} />
+		<Input id="title" label="Title" value={form?.data?.title} errors={form?.errors?.title} />
 		<Input
 			type="email"
 			id="email"

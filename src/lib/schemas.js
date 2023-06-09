@@ -15,6 +15,14 @@ export const registerUserSchema = z
 			.min(2, { message: 'Name must be at least 2 characters' })
 			.max(64, { message: 'Name must be less than 64 characters' })
 			.trim(),
+
+		title: z
+			.string({ required_error: 'Title is required' })
+			.regex(/^[a-zA-z\s]*$/, { message: 'Title can only contain letters and spaces.' })
+			.min(2, { message: 'Title must be at least 2 characters' })
+			.max(64, { message: 'Title must be less than 64 characters' })
+			.trim(),
+
 		email: z
 			.string({ required_error: 'Email is required' })
 			.email({ message: 'Email must be a valid email' }),
@@ -151,6 +159,13 @@ export const updateProfileSchema = z.object({
 		.min(1, { message: 'Name is required' })
 		.max(64, { message: 'Name must be 64 characters or less' })
 		.trim(),
+
+	title: z
+		.string({ required_error: 'Title is required' })
+		.min(1, { message: 'Title is required' })
+		.max(64, { message: 'Title must be 64 characters or less' })
+		.trim(),
+
 	avatar: z
 		.instanceof(Blob)
 		.optional()

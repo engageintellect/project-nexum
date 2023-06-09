@@ -94,6 +94,15 @@
 			disabled={loading}
 			errors={form?.errors?.name}
 		/>
+
+		<Input
+			id="title"
+			label="title"
+			value={form?.data?.title ?? data?.user?.title}
+			disabled={loading}
+			errors={form?.errors?.title}
+		/>
+
 		<div class="w-full max-w-lg pt-3">
 			<button class="btn btn-primary w-full max-w-lg" type="submit" disabled={loading}>
 				Update Profile

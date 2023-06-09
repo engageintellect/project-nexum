@@ -10,13 +10,16 @@
 	<a href="/projects/{project.id}" class="rounded">
 		<div class="flex gap-2 items-center p-4">
 			<img
-				class="w-7 h-7 rounded-full border border-primary"
+				class="w-10 h-10 rounded-full border border-primary"
 				src={user?.avatar
 					? getImageURL(user?.collectionId, user?.id, user?.avatar)
 					: `https://ui-avatars.com/api/?name=${user?.name}`}
 				alt="User avatar"
 			/>
-			<p class="text-sm font-thin">{user.name}</p>
+			<div class="flex flex-col">
+				<p class="text-md font-thin">{user.name}</p>
+				<p class="text-sm font-thin text-neutral">{user.title}</p>
+			</div>
 		</div>
 		<div class="relative overflow-hidden">
 			<img
