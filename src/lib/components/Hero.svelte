@@ -17,8 +17,11 @@
 			<p class="mb-5 text-sm md:text-md lg:text-lg">
 				{description}
 			</p>
-			<button class="btn btn-primary bg-purple-500">About</button>
-			<button class="btn btn-primary bg-purple-500">Get Started</button>
+
+			<div class="grid grid-cols-2 gap-2">
+				<button class="btn btn-primary bg-purple-500">About</button>
+				<button class="btn btn-primary bg-purple-500">Get Started</button>
+			</div>
 		</div>
 	</div>
 </div>

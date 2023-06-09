@@ -10,15 +10,15 @@
 	<a href="/projects/{project.id}" class="rounded">
 		<div class="flex gap-2 items-center p-4">
 			<img
-				class="w-10 h-10 rounded-full border border-primary"
+				class="w-8 h-8 rounded-full border border-primary"
 				src={user?.avatar
 					? getImageURL(user?.collectionId, user?.id, user?.avatar)
 					: `https://ui-avatars.com/api/?name=${user?.name}`}
 				alt="User avatar"
 			/>
 			<div class="flex flex-col">
-				<p class="text-md font-thin">{user.name}</p>
-				<p class="text-sm font-thin text-neutral">{user.title}</p>
+				<p class="text-md font-thin primary-content">{user.name}</p>
+				<p class="text-xs font-thin secondary-content">{user.title}</p>
 			</div>
 		</div>
 		<div class="relative overflow-hidden">

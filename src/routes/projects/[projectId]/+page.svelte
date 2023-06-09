@@ -31,7 +31,11 @@
 						: `https://ui-avatars.com/api/?name=${creator?.name}`}
 					alt="User avatar"
 				/>
-				<p class="text-sm font-thin">{creator.name}</p>
+
+				<div class="flex flex-col">
+					<p class="text-md font-thin primary-content">{creator.name}</p>
+					<p class="text-xs font-thin secondary-content">{creator.title}</p>
+				</div>
 			</div>
 		{/if}
 	{/each}
