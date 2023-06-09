@@ -4,6 +4,8 @@
 	export let data;
 
 	let filter;
+	
+
 </script>
 
 <!-- <Hero title="Projects" description="Browse all projects shared across all users." /> -->
@@ -31,6 +33,8 @@
 	<div class="flex justify-center pt-4">
 		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
+
+			
 			{#each data.projects as project}
 				{#each data.users as user}
 					{#if !filter || project.name
@@ -45,11 +49,11 @@
 							.toLowerCase()
 							.includes(filter.toLowerCase())}
 						{#if project.user === user.id}
-							<ProjectCard {project} {user} />
+							<ProjectCard {project} {user} tags={data.tags}/>
 						{/if}
 					{/if}
 				{/each}
-			{/each}
+				{/each}
 		</div>
 	</div>
 </div>
