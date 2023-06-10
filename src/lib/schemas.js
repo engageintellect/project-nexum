@@ -16,11 +16,11 @@ export const registerUserSchema = z
 			.max(64, { message: 'Name must be less than 64 characters' })
 			.trim(),
 
-		title: z
-			.string({ required_error: 'Title is required' })
-			.regex(/^[a-zA-z\s]*$/, { message: 'Title can only contain letters and spaces.' })
-			.min(2, { message: 'Title must be at least 2 characters' })
-			.max(64, { message: 'Title must be less than 64 characters' })
+		job_title: z
+			.string({ required_error: 'Job Title is required' })
+			.regex(/^[a-zA-z\s]*$/, { message: 'Job Title can only contain letters and spaces.' })
+			.min(2, { message: 'Job Title must be at least 2 characters' })
+			.max(64, { message: 'Job Title must be less than 64 characters' })
 			.trim(),
 
 		email: z
@@ -160,10 +160,10 @@ export const updateProfileSchema = z.object({
 		.max(64, { message: 'Name must be 64 characters or less' })
 		.trim(),
 
-	title: z
-		.string({ required_error: 'Title is required' })
-		.min(1, { message: 'Title is required' })
-		.max(64, { message: 'Title must be 64 characters or less' })
+	job_title: z
+		.string({ required_error: 'Job Title is required' })
+		.min(1, { message: 'Job Title is required' })
+		.max(64, { message: 'Job Title must be 64 characters or less' })
 		.trim(),
 
 	avatar: z

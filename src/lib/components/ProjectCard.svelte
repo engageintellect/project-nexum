@@ -17,8 +17,8 @@
 				alt="User avatar"
 			/>
 			<div class="flex flex-col">
-				<p class="text-md font-thin primary-content">{user.name}</p>
-				<p class="text-xs font-thin secondary-content">{user.title}</p>
+				<p class="text-md font-medium primary-content">{user.name}</p>
+				<p class="text-xs font-thin secondary-content">{user.job_title}</p>
 			</div>
 		</div>
 		<div class="relative overflow-hidden">
@@ -37,14 +37,16 @@
 				</div>
 			{/if}
 
-			<h2 class="card-title">{project.name}</h2>
+			<div>
+				<h2 class="card-title">{project.name}</h2>
 
-			<p>{project.tagline}</p>
+				<p>{project.tagline}</p>
+			</div>
 
 			{#if project.expand.tags}
-				<div class="flex flex-wrap gap-2 mt-2">
+				<div class="flex items-end gap-2 mt-2">
 					{#each project.expand.tags as tag}
-						<div class="badge badge-primary rounded py-2 px-3">{tag.name}</div>
+						<div class="badge badge-outline rounded">{tag.name}</div>
 					{/each}
 				</div>
 			{/if}

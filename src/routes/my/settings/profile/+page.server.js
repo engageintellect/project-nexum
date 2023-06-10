@@ -30,11 +30,11 @@ export const actions = {
 		}
 
 		try {
-			const { name, title, avatar } = await locals.pb
+			const { name, job_title, avatar } = await locals.pb
 				.collection('users')
 				.update(locals?.user?.id, serialize(formData));
 			locals.user.name = name;
-			locals.user.title = title;
+			locals.user.job_title = job_title;
 			locals.user.avatar = avatar;
 		} catch (err) {
 			console.log('Error: ', err);

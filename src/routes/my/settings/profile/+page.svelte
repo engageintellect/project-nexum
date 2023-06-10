@@ -96,11 +96,11 @@
 		/>
 
 		<Input
-			id="title"
-			label="title"
-			value={form?.data?.title ?? data?.user?.title}
+			id="job_title"
+			label="Job Title"
+			value={form?.data?.job_title ?? data?.user?.job_title}
 			disabled={loading}
-			errors={form?.errors?.title}
+			errors={form?.errors?.job_title}
 		/>
 
 		<div class="w-full max-w-lg pt-3">
