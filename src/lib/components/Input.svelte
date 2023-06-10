@@ -10,14 +10,14 @@
 	export let errors;
 </script>
 
-<div class="form-control w-full max-w-lg mb-2">
+<div class="form-control w-full mb-2">
 	<label for={id} class="label font-medium pb-1">
 		<span class="label-text">{label}</span>
 	</label>
 	<input
 		class={type === 'file'
-			? 'file-input file-input-bordered w-full max-w-lg'
-			: 'input input-bordered w-full max-w-lg'}
+			? 'file-input file-input-bordered w-full'
+			: 'input input-bordered w-full'}
 		{type}
 		{placeholder}
 		{required}

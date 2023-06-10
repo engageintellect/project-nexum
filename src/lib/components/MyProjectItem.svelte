@@ -5,6 +5,7 @@
 	import toast from 'svelte-french-toast';
 
 	import { Icon, PencilSquare, Trash } from 'svelte-hero-icons';
+
 	export let project;
 
 	let modalOpen;
@@ -29,6 +30,23 @@
 	};
 
 	$: modalOpen = false;
+
+	const dateTimeString = project.updated;
+	const dateTime = new Date(dateTimeString);
+
+	const options = {
+		timeZone: 'America/Los_Angeles', // Specify the desired time zone
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric'
+	};
+
+	const formattedDateTime = dateTime.toLocaleString('en-US', options);
+
+	console.log(formattedDateTime);
 </script>
 
 <div class="w-full flex items-center justify-between">
@@ -47,6 +65,11 @@
 	<div class="flex flex-col w-full ml-4 h-full justify-center">
 		<a href="/projects/{project.id}" class="font-semibold text-lg">{project.name}</a>
 		<p>{project.tagline}</p>
+		<div class="mt-2">
+			<div class="font-bold text-xs">
+				Last Update: <span class="font-medium">{formattedDateTime}</span>
+			</div>
+		</div>
 	</div>
 
 	<div class="flex items-center justify-end w-full">

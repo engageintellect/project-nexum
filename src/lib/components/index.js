@@ -4,4 +4,5 @@ import MyProjectItem from './MyProjectItem.svelte';
 import TextArea from './TextArea.svelte';
 import ProjectCard from './ProjectCard.svelte';
 import Hero from './Hero.svelte';
-export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero };
+import WYSIWYG from './WYSIWYG.svelte';
+export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero, WYSIWYG };
