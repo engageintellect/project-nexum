@@ -4,6 +4,7 @@ specifiers:
   '@playwright/test': ^1.28.1
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
+  '@tinymce/tinymce-svelte': ^1.0.1
   autoprefixer: ^10.4.14
   daisyui: ^3.0.3
   eslint: ^8.28.0
@@ -24,6 +25,7 @@ specifiers:
   zod: ^3.19.1
 
 dependencies:
+  '@tinymce/tinymce-svelte': 1.0.1
   pocketbase: 0.15.0-rc
 
 devDependencies:
@@ -456,6 +458,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@tinymce/tinymce-svelte/1.0.1:
+    resolution: {integrity: sha512-mjso1Mx9FOPxwou528UmINIcE2hBbUpnC9AEInlvIXutydklfSGSGEeYJ57CBTxzgsMEJGw2LYHGC8R7KoEAeA==}
+    dependencies:
+      rollup-plugin-execute: 1.1.1
+    dev: false
 
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
@@ -1573,6 +1581,10 @@ packages:
     dependencies:
       glob: 7.2.3
     dev: true
+
+  /rollup-plugin-execute/1.1.1:
+    resolution: {integrity: sha512-isCNR/VrwlEfWJMwsnmt5TBRod8dW1IjVRxcXCBrxDmVTeA1IXjzeLSS3inFBmRD7KDPlo38KSb2mh5v5BoWgA==}
+    dev: false
 
   /rollup/3.23.1:
     resolution: {integrity: sha512-ybRdFVHOoljGEFILHLd2g/qateqUdjE6YS41WXq4p3C/WwD3xtWxV4FYWETA1u9TeXQc5K8L8zHE5d/scOvrOQ==}

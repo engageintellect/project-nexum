@@ -1,22 +1,24 @@
 <script>
+	import Editor from '@tinymce/tinymce-svelte';
 	export let value = '';
 	export let placeholder = '';
 	export let id;
 	export let label;
-	export let type = '';
+	export let type = 'hidden';
 	export let disabled = false;
 	export let required = false;
 
 	export let errors;
 </script>
 
-<div class="form-control w-full max-w-lg">
+<div class="form-control w-full">
 	<label for={id} class="label font-medium pb-1">
 		<span class="label-text">{label}</span>
 	</label>
+	<Editor class="textarea textarea-bordered resize-y h-full" bind:value />
 
-	<textarea
-		class="textarea textarea-bordered resize-y h-48"
+	<input
+		class="textarea textarea-bordered resize-y h-full"
 		{type}
 		{placeholder}
 		{required}

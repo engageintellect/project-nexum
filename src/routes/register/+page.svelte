@@ -3,7 +3,7 @@
 	export let form;
 </script>
 
-<div class="flex flex-col items-center h-full w-full px-4">
+<div class="flex flex-col items-center h-full w-full max-w-lg mx-auto px-4">
 	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
 		Register for an account
 	</h2>

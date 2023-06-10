@@ -66,14 +66,16 @@ const imageTypes = [
 export const createProjectSchema = z.object({
 	name: z
 		.string({ required_error: 'Name is required' })
-		.min(1, { message: 'Name is required' })
+		.min(2, { message: 'Name must be longer than 2 characters' })
 		.max(64, { message: 'Name must be 64 characters or less' })
 		.trim(),
+
 	tagline: z
 		.string({ required_error: 'Tagline is required' })
-		.min(1, { message: 'Tagline is required' })
+		.min(2, { message: 'Tagline must be longer than 2 characters' })
 		.max(64, { message: 'Tagline must be 64 characters or less' })
 		.trim(),
+
 	url: z.string({ required_error: 'URL is required' }).url({ message: 'URL must be a valid URL' }),
 
 	division: z.optional(z.string().min(1).max(64).trim()),

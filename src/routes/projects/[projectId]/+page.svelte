@@ -53,5 +53,8 @@
 			>{data.project.url}</a
 		>
 	</p>
-	<p class="mt-5">{data.project.description}</p>
+
+	<div class="mt-10">
+		{@html data.project.description}
+	</div>
 </div>
