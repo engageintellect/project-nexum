@@ -21,6 +21,14 @@
 
 	<p class="text-2xl font-light mt-2">{data.project.tagline}</p>
 
+	{#if data.project.expand.tags}
+		<div class="flex gap-2 my-5">
+			{#each data.project.expand.tags as tag}
+				<div class="badge badge-outline badge-primary">{tag.name}</div>
+			{/each}
+		</div>
+	{/if}
+
 	{#each data.users as creator}
 		{#if creator.id === data.project.user}
 			<div class="flex gap-2 items-center mt-2">
@@ -33,7 +41,7 @@
 				/>
 
 				<div class="flex flex-col">
-					<p class="text-md font-thin primary-content">{creator.name}</p>
+					<p class="text-md font-medium primary-content">{creator.name}</p>
 					<p class="text-xs font-thin secondary-content">{creator.job_title}</p>
 				</div>
 			</div>

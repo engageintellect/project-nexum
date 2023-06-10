@@ -4,7 +4,9 @@ import { error } from '@sveltejs/kit';
 export const load = ({ locals, params }) => {
 	const getProject = async (projectId) => {
 		try {
-			const project = serializeNonPOJOs(await locals.pb.collection('projects').getOne(projectId));
+			const project = serializeNonPOJOs(
+				await locals.pb.collection('projects').getOne(projectId, { expand: 'tags' })
+			);
 			return project;
 		} catch (err) {
 			console.log('Error: ', err);

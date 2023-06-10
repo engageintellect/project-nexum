@@ -6,7 +6,7 @@ export const load = ({ locals }) => {
 		try {
 			const projects = serializeNonPOJOs(
 				await locals.pb.collection('projects').getFullList({
-					sorted: 'updated',
+					sort: '-updated',
 					expand: 'tags'
 				})
 			);
