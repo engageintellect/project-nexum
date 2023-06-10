@@ -5,7 +5,10 @@ export const load = ({ locals }) => {
 	const getProjects = async () => {
 		try {
 			const projects = serializeNonPOJOs(
-				await locals.pb.collection('projects').getFullList(undefined)
+				await locals.pb.collection('projects').getFullList({
+					sorted: 'updated',
+					expand: 'tags'
+				})
 			);
 			return projects;
 		} catch (err) {
@@ -24,19 +27,8 @@ export const load = ({ locals }) => {
 		}
 	};
 
-
-		const getTags = async () => {
-		try {
-			const tags = serializeNonPOJOs(await locals.pb.collection('tags').getFullList(undefined));
-			return tags;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
 	return {
 		projects: getProjects(),
-		users: getUsers(),
-		tags: getTags()
+		users: getUsers()
 	};
 };

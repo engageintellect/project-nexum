@@ -2,17 +2,6 @@
 	import { getImageURL } from '$lib/utils';
 	export let project;
 	export let user;
-	export let tags;
-
-	const getAllTagsForProject = (project_id) => {
-		const listOfTags = []
-		for (let i = 0; i < tags.length; i++) {
-			if (tags[i].relation.includes(project_id)) {
-				listOfTags.push(tags[i].name);
-			}
-		}
-		return listOfTags;
-	}
 </script>
 
 <div
@@ -52,16 +41,13 @@
 
 			<p>{project.tagline}</p>
 
-			<div class="flex gap-2">
-				{#each getAllTagsForProject(project.id) as tag}
-					<div class="badge badge-xs badge-outline rounded py-3 gap-2">
-						#{tag}
-					</div>
-				{/each}
-			</div>
-
-
-
+			{#if project.expand.tags}
+				<div class="flex flex-wrap gap-2 mt-2">
+					{#each project.expand.tags as tag}
+						<div class="badge badge-primary rounded py-2 px-3">{tag.name}</div>
+					{/each}
+				</div>
+			{/if}
 		</div>
 	</a>
 </div>
