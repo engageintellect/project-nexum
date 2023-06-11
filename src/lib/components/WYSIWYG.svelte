@@ -9,13 +9,50 @@
 	export let required = false;
 
 	export let errors;
+
+	let conf = {
+		skin: 'borderless',
+		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+		height: 640,
+		selector: 'textarea',
+		placeholder: `Add your page's content here. Click save when finished.`,
+		toolbar_mode: 'sliding',
+		menubar: 'file edit view insert format tools table tc help',
+		toolbar:
+			'undo redo | bold italic underline strikethrough | table | fontfamily fontsize blocks |' +
+			'alignleft aligncenter alignright alignjustify | numlist bullist checklist |' +
+			'forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak |' +
+			'charmap emoticons | fullscreen preview save print |' +
+			'insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl |' +
+			'showcomments addcomment',
+
+		plugins: [
+			'advlist',
+			'autolink',
+			'lists',
+			'link',
+			'image',
+			'charmap',
+			'preview',
+			'anchor',
+			'searchreplace',
+			'visualblocks',
+			'code',
+			'fullscreen',
+			'insertdatetime',
+			'media',
+			'table',
+			'help',
+			'wordcount'
+		]
+	};
 </script>
 
 <div class="form-control w-full">
 	<label for={id} class="label font-medium pb-1">
 		<span class="label-text">{label}</span>
 	</label>
-	<Editor class="textarea textarea-bordered resize-y h-full" bind:value />
+	<Editor {conf} class="textarea textarea-bordered resize-y h-full" bind:value />
 
 	<input
 		class="textarea textarea-bordered resize-y h-full"

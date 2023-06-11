@@ -1,8 +1,8 @@
 <script>
 	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
-	export let data;
 
+	export let data;
 	let filter;
 </script>
 
