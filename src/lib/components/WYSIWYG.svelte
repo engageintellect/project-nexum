@@ -19,11 +19,11 @@
 		toolbar_mode: 'sliding',
 		menubar: 'file edit view insert format tools table tc help',
 		toolbar:
-			'undo redo | bold italic underline strikethrough | table | fontfamily fontsize blocks |' +
-			'alignleft aligncenter alignright alignjustify | numlist bullist checklist |' +
+			'undo redo | bold italic underline strikethrough | blocks | numlist bullist checklist | link insertfile image media table |' +
+			'alignleft aligncenter alignright alignjustify |' +
 			'forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak |' +
-			'charmap emoticons | fullscreen preview save print |' +
-			'insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl |' +
+			'charmap emoticons | preview save print fullscreen |' +
+			' pageembed template anchor codesample | a11ycheck ltr rtl |' +
 			'showcomments addcomment',
 
 		plugins: [

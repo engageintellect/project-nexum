@@ -1,0 +1,58 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-content p {
+	padding: 0 0 1.5rem 0;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.page-content a:link {
+	color: blue;
+}
+
+.page-content a:link:hover {
+	text-decoration: underline;
+}
+
+.page-content h1 {
+	font-size: 2rem !important;
+	text-decoration: underline;
+	font-weight: 600;
+	/* Additional styles for h1 */
+}
+.page-content h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	/* Additional styles for h2 */
+}
+
+/* Specific styles for h3 */
+.page-content h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	/* Additional styles for h3 */
+}
+
+/* Specific styles for h4 */
+.page-content h4 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	/* Additional styles for h4 */
+}
+
+/* Specific styles for h5 */
+.page-content h5 {
+	font-size: 1rem;
+	font-weight: 600;
+	/* Additional styles for h5 */
+}
+
+/* Specific styles for h6 */
+.page-content h6 {
+	font-size: 0.75rem;
+	font-weight: 600;
+	/* Additional styles for h6 */
+}

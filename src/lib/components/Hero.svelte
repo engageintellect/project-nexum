@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="hero h-[432px]"
+	class="hero h-screen"
 	style="background-image: url('https://cdn.discordapp.com/attachments/1008571063732539392/1115921630120656957/engage_intellect_cyberpunk_graph_network_on_a_white_background_5b873da3-eb66-4c8a-b8dd-6dad314f3238.png');"
 >
 	<div class="hero-overlay bg-opacity-80 h-72 w-72 lg:h-96 lg:w-96 rounded-full" />
@@ -19,8 +19,8 @@
 			</p>
 
 			<div class="grid grid-cols-2 gap-2">
-				<button class="btn btn-primary bg-purple-500">About</button>
-				<button class="btn btn-primary bg-purple-500">Get Started</button>
+				<a href="/about" class="btn btn-primary bg-purple-500">About</a>
+				<a href="/register" class="btn btn-primary bg-purple-500">Get Started</a>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 <script>
-	import '../app.postcss';
+	import '../app.css';
 	import { Toaster } from 'svelte-french-toast';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Plus } from 'svelte-hero-icons';
@@ -19,8 +19,8 @@
 		<div class="flex-none">
 			{#if !data.user}
 				<div class="dropdown dropdown-end">
-					<a href="/login" class="btn btn-primary">Login</a>
-					<a href="/register" class="btn btn-secondary">Register</a>
+					<a href="/login" class="btn btn-outline">Login</a>
+					<a href="/register" class="btn btn-outline">Register</a>
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
