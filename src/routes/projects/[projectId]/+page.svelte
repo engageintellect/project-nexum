@@ -1,15 +1,17 @@
 <script>
+	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
+	import { Icon, Heart, HandThumbUp, Share } from 'svelte-hero-icons';
 	import readtime from 'read-time';
 	export let data;
 
 	const readTime = readtime(data.project.description);
 </script>
 
-<div class="flex flex-col w-full mt-4 max-w-3xl mx-auto px-4">
+<div class="flex flex-col w-full mt-10 max-w-3xl mx-auto px-4">
 	<!-- TITLE -->
 	<div>
-		<h1 class="text-6xl font-bold mt-4">
+		<h1 class="text-6xl font-bold">
 			{data.project.name}
 		</h1>
 		<p class="text-2xl font-light mt-2">{data.project.tagline}</p>
@@ -55,9 +57,52 @@
 		</div>
 	{/if}
 
+	<div class="flex gap-5 justify-end p-2">
+		<!-- LIKE -->
+
+		<!-- FAVORITE -->
+		<form action="?/favoritePage" method="POST" use:enhance>
+			<button type="submit" class="">
+				<input type="hidden" name="id" value={data.project.id} />
+				<div>
+					{#if data.user.favorites.includes(data.project.id)}
+						<input type="hidden" name="favorite" value="true" />
+						<Icon src={Heart} class="text-error w-7 h-7" solid />
+					{:else}
+						<input type="hidden" name="favorite" value="false" />
+						<Icon src={Heart} class="text-primary w-7 h-7" />
+					{/if}
+				</div>
+			</button>
+		</form>
+
+		<!-- LIKES -->
+		<form action="?/likePage" method="POST" use:enhance>
+			<button type="submit" class="">
+				<input type="hidden" name="id" value={data.project.id} />
+				<div>
+					{#if data.user.likes.includes(data.project.id)}
+						<input type="hidden" name="like" value="true" />
+						<Icon src={HandThumbUp} class="text-info w-7 h-7" solid />
+					{:else}
+						<input type="hidden" name="like" value="false" />
+						<Icon src={HandThumbUp} class="text-primary w-7 h-7" />
+					{/if}
+				</div>
+			</button>
+		</form>
+
+		<!-- SHARE -->
+		<div>
+			<a href="mailto:">
+				<Icon src={Share} class="text-primary w-7 h-7" />
+			</a>
+		</div>
+	</div>
+
 	<!-- IMAGE -->
 	<div class="avatar">
-		<div class="w-full h-64 rounded shadow-md">
+		<div class="w-full h-96 rounded shadow-lg">
 			<img
 				src={data.project?.thumbnail
 					? getImageURL(data.project.collectionId, data.project.id, data.project.thumbnail, '0x0')

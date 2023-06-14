@@ -6,13 +6,14 @@
 	let filter;
 </script>
 
-<!-- <Hero title="Projects" description="Browse all projects shared across all users." /> -->
-
+<!-- IF NOT LOGGED IN, SHOW HERO SECTION -->
 {#if !data.user}
 	<Hero title="Projects" description="Browse all projects shared across all users." />
+
+	<!-- IF LOGGED IN, SHOW CONTENT -->
 {:else}
 	<div class="">
-		<div class="mt-2 text-center text-6xl font-bold tracking-tight text-base-content">
+		<div class="mt-10 text-center text-6xl font-bold tracking-tight text-base-content">
 			<div>
 				Ne<span class="text-purple-500">x</span>um
 			</div>

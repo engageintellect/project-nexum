@@ -3,8 +3,8 @@
 	export let data;
 </script>
 
-<div class="px-4">
-	<h2 class="text-3xl font-bold">My Projects</h2>
+<div class="px-4 mt-10">
+	<h2 class="text-6xl font-bold">My Projects</h2>
 	<p class="mt-2">Projects that you've created.</p>
 	<div class="w-full mt-4 flex flex-col items-center">
 		{#if data.projects.length === 0}

@@ -16,8 +16,8 @@
 	];
 </script>
 
-<div class="w-full h-full px-2">
-	<h2 class="text-3xl font-bold">Settings</h2>
+<div class="w-full h-full px-2 mt-10">
+	<h2 class="text-6xl font-bold">Settings</h2>
 	<div class="divider" />
 </div>
 <div class="flex w-full h-full space-x-4">
