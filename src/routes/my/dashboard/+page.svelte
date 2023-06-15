@@ -42,7 +42,7 @@
 							class="p-5 border border-primary hover:shadow-lg rounded my-2 transition-all duration-200"
 							href={`/projects/${project.id}`}
 						>
-							<div class="flex justify-between">
+							<div class="flex justify-between gap-2">
 								<div>
 									{project.name}
 								</div>
