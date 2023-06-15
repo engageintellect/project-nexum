@@ -44,9 +44,9 @@
 			</div>
 
 			{#if project.expand.tags}
-				<div class="flex items-end gap-2 mt-2">
+				<div class="flex flex-wrap items-end gap-2 mt-2">
 					{#each project.expand.tags as tag}
-						<div class="badge badge-outline rounded">{tag.name}</div>
+						<div class="badge badge-sm badge-outline rounded">{tag.name}</div>
 					{/each}
 				</div>
 			{/if}
