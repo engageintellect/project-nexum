@@ -26,23 +26,10 @@ export const load = ({ locals, params }) => {
 		}
 	};
 
-	const getLikes = async () => {
-		try {
-			const likes = serializeNonPOJOs(await locals.pb.collection('likes').getFullList(undefined), {
-				expand: ['user', 'likes']
-			});
-			return likes;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
 
 	return {
 		project: getProject(params.projectId),
 		users: getUsers(),
-		likes: getLikes(),
-
 	};
 };
 

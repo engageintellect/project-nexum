@@ -3,9 +3,32 @@
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Heart, HandThumbUp, Share } from 'svelte-hero-icons';
 	import readtime from 'read-time';
+	import ToolTipButton from '../../../lib/components/ToolTipButton.svelte';
 	export let data;
 
 	const readTime = readtime(data.project.description);
+
+	const getTotalLikes = (users, pages) => {
+		const total = users.reduce((count, user) => {
+			if (user.likes.includes(pages.id)) {
+				return count + 1;
+			}
+			return count;
+		}, 0);
+
+		return total;
+	};
+
+	const getTotalFavorites = (users, pages) => {
+		const total = users.reduce((count, user) => {
+			if (user.favorites.includes(pages.id)) {
+				return count + 1;
+			}
+			return count;
+		}, 0);
+
+		return total;
+	};
 </script>
 
 <div class="flex flex-col w-full mt-10 max-w-3xl mx-auto px-4">
@@ -49,52 +72,57 @@
 	{/each}
 
 	<!-- TAGS -->
-	{#if data.project.expand.tags}
-		<div class="flex gap-2 my-5">
-			{#each data.project.expand.tags as tag}
-				<div class="badge badge-outline badge-primary">{tag.name}</div>
-			{/each}
+
+	<div class="flex flex-col gap-5 md:flex-row justify-between">
+		<div class="flex flex-wrap gap-2">
+			{#if data.project.expand.tags}
+				{#each data.project.expand.tags as tag}
+					<div class="badge badge-outline badge-primary">{tag.name}</div>
+				{/each}
+			{/if}
 		</div>
-	{/if}
 
-	<div class="flex gap-5 justify-end p-2">
-		<!-- LIKE -->
-		<form action="?/likePage" method="POST" use:enhance>
-			<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
-				<input type="hidden" name="id" value={data.project.id} />
-				<div>
-					{#if data.user.likes.includes(data.project.id)}
-						<input type="hidden" name="like" value="true" />
-						<Icon src={HandThumbUp} class="text-info w-7 h-7" solid />
-					{:else}
-						<input type="hidden" name="like" value="false" />
-						<Icon src={HandThumbUp} class="text-primary w-7 h-7" />
-					{/if}
-				</div>
-			</button>
-		</form>
+		<div class="flex gap-5">
+			<!-- LIKE -->
+			<form action="?/likePage" method="POST" use:enhance>
+				<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
+					<input type="hidden" name="id" value={data.project.id} />
+					<div>
+						{#if data.user.likes.includes(data.project.id)}
+							<input type="hidden" name="like" value="true" />
+							<Icon src={HandThumbUp} class="text-info w-7 h-7" solid />
+						{:else}
+							<input type="hidden" name="like" value="false" />
+							<Icon src={HandThumbUp} class="text-primary w-7 h-7" />
+						{/if}
+					</div>
+				</button>
+			</form>
+			{getTotalLikes(data.users, data.project)}
 
-		<!-- FAVORITE -->
-		<form action="?/favoritePage" method="POST" use:enhance>
-			<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
-				<input type="hidden" name="id" value={data.project.id} />
-				<div>
-					{#if data.user.favorites.includes(data.project.id)}
-						<input type="hidden" name="favorite" value="true" />
-						<Icon src={Heart} class="text-error w-7 h-7" solid />
-					{:else}
-						<input type="hidden" name="favorite" value="false" />
-						<Icon src={Heart} class="text-primary w-7 h-7" />
-					{/if}
-				</div>
-			</button>
-		</form>
+			<!-- FAVORITE -->
+			<form action="?/favoritePage" method="POST" use:enhance>
+				<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
+					<input type="hidden" name="id" value={data.project.id} />
+					<div>
+						{#if data.user.favorites.includes(data.project.id)}
+							<input type="hidden" name="favorite" value="true" />
+							<Icon src={Heart} class="text-error w-7 h-7" solid />
+						{:else}
+							<input type="hidden" name="favorite" value="false" />
+							<Icon src={Heart} class="text-primary w-7 h-7" />
+						{/if}
+					</div>
+				</button>
+			</form>
+			{getTotalFavorites(data.users, data.project)}
 
-		<!-- SHARE -->
-		<div>
-			<a href="mailto:">
-				<Icon src={Share} class="text-primary w-7 h-7" />
-			</a>
+			<!-- SHARE -->
+			<div>
+				<a href="mailto:">
+					<Icon src={Share} class="text-primary w-7 h-7" />
+				</a>
+			</div>
 		</div>
 	</div>
 

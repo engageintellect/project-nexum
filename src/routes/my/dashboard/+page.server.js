@@ -9,10 +9,11 @@ export const load = ({ locals }) => {
 	const getProjects = async () => {
 		try {
 			const projects = serializeNonPOJOs(
-				await locals.pb.collection('projects').getFullList(
-					// sort: '-updated',
+				await locals.pb.collection('projects').getFullList({
+					sort: '-updated',
 					// expand: 'tags',
 					// filter: `user = "${locals.user.id}"`
+				}
 				)
 			);
 			return projects;
@@ -22,27 +23,7 @@ export const load = ({ locals }) => {
 		}
 	}
 
-	
-
-	const getUserFavorites = async () => {
-		try {
-			const favorites = serializeNonPOJOs(
-				await locals.pb.collection('users').getFullList(
-					// sort: '-updated',
-					// expand: 'favorites',
-					// filter: `user = "${userId}"`
-
-				)
-			);
-			return favorites;
-		} catch (err) {
-			console.log('Error: ', err);
-			throw error(err.status, err.message);
-		}
-	};
-
-	return {
-		favorites: getUserFavorites(locals.user.id),
+		return {
 		projects: getProjects(),
 	};
 };
