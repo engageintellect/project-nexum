@@ -5,4 +5,5 @@ import TextArea from './TextArea.svelte';
 import ProjectCard from './ProjectCard.svelte';
 import Hero from './Hero.svelte';
 import WYSIWYG from './WYSIWYG.svelte';
-export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero, WYSIWYG };
+import Stats from './Stats.svelte';
+export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero, WYSIWYG, Stats };

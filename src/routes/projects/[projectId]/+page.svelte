@@ -59,26 +59,8 @@
 
 	<div class="flex gap-5 justify-end p-2">
 		<!-- LIKE -->
-
-		<!-- FAVORITE -->
-		<form action="?/favoritePage" method="POST" use:enhance>
-			<button type="submit" class="">
-				<input type="hidden" name="id" value={data.project.id} />
-				<div>
-					{#if data.user.favorites.includes(data.project.id)}
-						<input type="hidden" name="favorite" value="true" />
-						<Icon src={Heart} class="text-error w-7 h-7" solid />
-					{:else}
-						<input type="hidden" name="favorite" value="false" />
-						<Icon src={Heart} class="text-primary w-7 h-7" />
-					{/if}
-				</div>
-			</button>
-		</form>
-
-		<!-- LIKES -->
 		<form action="?/likePage" method="POST" use:enhance>
-			<button type="submit" class="">
+			<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
 				<input type="hidden" name="id" value={data.project.id} />
 				<div>
 					{#if data.user.likes.includes(data.project.id)}
@@ -87,6 +69,22 @@
 					{:else}
 						<input type="hidden" name="like" value="false" />
 						<Icon src={HandThumbUp} class="text-primary w-7 h-7" />
+					{/if}
+				</div>
+			</button>
+		</form>
+
+		<!-- FAVORITE -->
+		<form action="?/favoritePage" method="POST" use:enhance>
+			<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
+				<input type="hidden" name="id" value={data.project.id} />
+				<div>
+					{#if data.user.favorites.includes(data.project.id)}
+						<input type="hidden" name="favorite" value="true" />
+						<Icon src={Heart} class="text-error w-7 h-7" solid />
+					{:else}
+						<input type="hidden" name="favorite" value="false" />
+						<Icon src={Heart} class="text-primary w-7 h-7" />
 					{/if}
 				</div>
 			</button>
