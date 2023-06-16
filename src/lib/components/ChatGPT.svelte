@@ -10,11 +10,10 @@
 			<h1 class="text-5xl font-bold">GPT 3.5-turbo</h1>
 			<p class="py-6">
 				Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-				quasi. In deleniti eaque aut repudiandae et a id nisi.
 			</p>
 
 			<div class="my-10">
-				<div class="max-h-screen">
+				<div class="max-h-[40rem] overflow-scroll my-5">
 					<ul class="text-left">
 						{#each $messages as message}
 							<li class="my-2">
