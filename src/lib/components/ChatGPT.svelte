@@ -65,7 +65,7 @@
 		<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
 			<div class="max-w-md">
 				<div class="overflow-hidden p-2">
-					<ul class="text-left">
+					<ul class="">
 						{#each $messages as message}
 							<li class="my-2">
 								{#if message.role === 'user'}
