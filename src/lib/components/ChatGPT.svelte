@@ -63,7 +63,6 @@
 		</div>
 		{JSON.stringify($messages)}
 
-		{#if $messages.length > 0}
 			<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
 				<div class="max-w-full">
 					<div class="overflow-hidden p-2">
