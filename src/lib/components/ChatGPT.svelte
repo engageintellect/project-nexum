@@ -68,7 +68,11 @@
 					<ul class="text-left">
 						{#each $messages as message}
 							<li class="my-2">
-								<span class="font-bold">{message.role}</span>: {@html message.content}
+								{#if message.role === 'Bot'}
+									<span class="font-bold text-right bg-red-500">{message.role}</span>: {@html message.content}
+								{:else}
+									<span class="font-bold">{message.role}</span>: {@html message.content}
+								{/if}
 							</li>
 						{/each}
 					</ul>
