@@ -55,7 +55,7 @@
 						</li>
 
 						<li>
-							<a href="/my/dashboard" class="justify-between">My Favorites</a>
+							<a href="/ai" class="justify-between">AI</a>
 						</li>
 						<li><a href="/my/settings">Settings</a></li>
 						<li>
