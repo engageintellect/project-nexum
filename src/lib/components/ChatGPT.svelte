@@ -13,7 +13,7 @@
 			</p>
 
 			<div class="my-10">
-				<div class="max-h-[40rem] overflow-scroll my-5">
+				<div class="max-h-[40rem] overflow-auto my-5">
 					<ul class="text-left">
 						{#each $messages as message}
 							<li class="my-2">
