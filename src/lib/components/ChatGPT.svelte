@@ -70,17 +70,12 @@
 							<li class="my-2">
 								{#if message.role === 'user'}
 									<div class="chat chat-end">
-										<div class="chat-header">
-											{message.role}
-										</div>
+										<div class="chat-header">User</div>
 										<div class="chat-bubble chat-bubble-info">{@html message.content}</div>
 									</div>
 								{:else}
 									<div class="chat chat-start">
-										<div class="chat-header">
-											<!-- {message.role} -->
-											Robot
-										</div>
+										<div class="chat-header">Robot</div>
 										<div class="chat-bubble">{@html message.content}</div>
 									</div>
 								{/if}
