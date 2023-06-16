@@ -69,7 +69,7 @@
 						{#each $messages as message}
 							<li class="my-2">
 								{#if message.role === 'user'}
-									<span class="font-bold text-right bg-red-500">{message.role}</span>: {@html message.content}
+									<span class="font-bold text-right bg-base-200">{message.role}</span>: {@html message.content}
 								{:else}
 									<span class="font-bold">{message.role}</span>: {@html message.content}
 								{/if}
