@@ -63,30 +63,29 @@
 		</div>
 		{JSON.stringify($messages)}
 
-			<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
-				<div class="max-w-full">
-					<div class="overflow-hidden p-2">
-						<ul class="">
-							{#each $messages as message}
-								<li class="my-2">
-									{#if message.role === 'user'}
-										<div class="chat chat-end">
-											<div class="chat-header">User</div>
-											<div class="chat-bubble chat-bubble-info">{@html message.content}</div>
-										</div>
-									{:else}
-										<div class="chat chat-start">
-											<div class="chat-header">Robot</div>
-											<div class="chat-bubble">{@html message.content}</div>
-										</div>
-									{/if}
-								</li>
-							{/each}
-						</ul>
-					</div>
+		<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
+			<div class="max-w-full">
+				<div class="overflow-hidden p-2">
+					<ul class="">
+						{#each $messages as message}
+							<li class="my-2">
+								{#if message.role === 'user'}
+									<div class="chat chat-end">
+										<div class="chat-header">User</div>
+										<div class="chat-bubble chat-bubble-info">{@html message.content}</div>
+									</div>
+								{:else}
+									<div class="chat chat-start">
+										<div class="chat-header">Robot</div>
+										<div class="chat-bubble">{@html message.content}</div>
+									</div>
+								{/if}
+							</li>
+						{/each}
+					</ul>
 				</div>
 			</div>
-		{/if}
+		</div>
 		<div class="mt-5">
 			<form class="flex gap-4" on:submit={handleSubmit}>
 				<input
