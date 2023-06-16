@@ -73,12 +73,13 @@
 										<div class="chat-header">
 											{message.role}
 										</div>
-										<div class="chat-bubble">{@html message.content}</div>
+										<div class="chat-bubble chat-bubble-info">{@html message.content}</div>
 									</div>
 								{:else}
 									<div class="chat chat-start">
 										<div class="chat-header">
-											{message.role}
+											<!-- {message.role} -->
+											Robot
 										</div>
 										<div class="chat-bubble">{@html message.content}</div>
 									</div>
