@@ -14,9 +14,11 @@
 			</p>
 
 			<div class="my-10">
-				<ul>
+				<ul class="text-left">
 					{#each $messages as message}
-						<li>{message.role}: {message.content}</li>
+						<li class="my-2">
+							<span class="font-bold">{message.role}</span>: {message.content}
+						</li>
 					{/each}
 				</ul>
 
