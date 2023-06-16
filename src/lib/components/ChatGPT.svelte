@@ -13,7 +13,7 @@
 				quasi. In deleniti eaque aut repudiandae et a id nisi.
 			</p>
 
-			<div class="my-10">
+			<div class="my-10 max-h-screen">
 				<ul class="text-left">
 					{#each $messages as message}
 						<li class="my-2">
