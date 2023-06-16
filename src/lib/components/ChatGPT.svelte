@@ -62,7 +62,7 @@
 			<div class="divider" />
 		</div>
 
-		{#if $messages.length > 0}
+		{#if $messages}
 			<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
 				<div class="max-w-full">
 					<div class="overflow-hidden p-2">
