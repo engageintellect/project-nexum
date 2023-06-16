@@ -28,6 +28,7 @@
 		"svelte-french-toast": "^1.0.3",
 		"svelte-hero-icons": "^5.0.0",
 		"svelte-preprocess": "^5.0.3",
+		"svelte-toc": "^0.5.5",
 		"tailwindcss": "^3.3.1",
 		"vite": "^4.3.0",
 		"zod": "^3.19.1"
@@ -35,9 +36,9 @@
 	"type": "module",
 	"dependencies": {
 		"@tinymce/tinymce-svelte": "^1.0.1",
-		"pocketbase": "0.15.0-rc",
-		"read-time": "^1.0.0",
 		"ai": "2.0.1",
-    "openai-edge": "^0.5.1"
+		"openai-edge": "^0.5.1",
+		"pocketbase": "0.15.0-rc",
+		"read-time": "^1.0.0"
 	}
 }

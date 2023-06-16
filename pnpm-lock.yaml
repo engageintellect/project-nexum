@@ -23,6 +23,7 @@ specifiers:
   svelte-french-toast: ^1.0.3
   svelte-hero-icons: ^5.0.0
   svelte-preprocess: ^5.0.3
+  svelte-toc: ^0.5.5
   tailwindcss: ^3.3.1
   vite: ^4.3.0
   zod: ^3.19.1
@@ -52,6 +53,7 @@ devDependencies:
   svelte-french-toast: 1.0.3_svelte@3.59.1
   svelte-hero-icons: 5.0.0
   svelte-preprocess: 5.0.4_sxhny56dlbcmwov4vk7qwrzshi
+  svelte-toc: 0.5.5
   tailwindcss: 3.3.2
   vite: 4.3.9
   zod: 3.21.4
@@ -1838,6 +1840,12 @@ packages:
       postcss-load-config: 4.0.1_postcss@8.4.24
       sorcery: 0.11.0
       strip-indent: 3.0.0
+      svelte: 3.59.1
+    dev: true
+
+  /svelte-toc/0.5.5:
+    resolution: {integrity: sha512-cqnkJ7MRuJecSwvhIy2J9/HnYeu25yvHJFAuzgcMyYIoHZoMzRIVEhj2WdXz3dZyte6LBThDTHzcE+5JAPs2SQ==}
+    dependencies:
       svelte: 3.59.1
     dev: true
 
