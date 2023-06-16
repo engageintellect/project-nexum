@@ -17,7 +17,7 @@
 				<ul class="text-left">
 					{#each $messages as message}
 						<li class="my-2">
-							<span class="font-bold">{message.role}</span>: {message.content}
+							<span class="font-bold">{message.role}</span>: {@html message.content}
 						</li>
 					{/each}
 				</ul>
