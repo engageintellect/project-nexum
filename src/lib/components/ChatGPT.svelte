@@ -63,7 +63,7 @@
 		</div>
 
 		<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
-			<div class="max-w-md">
+			<div class="max-w-full">
 				<div class="overflow-hidden p-2">
 					<ul class="">
 						{#each $messages as message}
