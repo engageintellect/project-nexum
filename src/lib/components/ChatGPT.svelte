@@ -13,14 +13,16 @@
 				quasi. In deleniti eaque aut repudiandae et a id nisi.
 			</p>
 
-			<div class="my-10 max-h-screen">
-				<ul class="text-left">
-					{#each $messages as message}
-						<li class="my-2">
-							<span class="font-bold">{message.role}</span>: {@html message.content}
-						</li>
-					{/each}
-				</ul>
+			<div class="my-10">
+				<div class="max-h-screen">
+					<ul class="text-left">
+						{#each $messages as message}
+							<li class="my-2">
+								<span class="font-bold">{message.role}</span>: {@html message.content}
+							</li>
+						{/each}
+					</ul>
+				</div>
 
 				<form class="flex" on:submit={handleSubmit}>
 					<input class="w-full input input-bordered" bind:value={$input} />
