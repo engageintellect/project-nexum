@@ -1,10 +1,25 @@
 <script>
 	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
+	import { useChat } from 'ai/svelte';
+	const { input, handleSubmit, messages } = useChat();
 
 	export let data;
 	let filter;
 </script>
+
+<div>
+	<h1>useChat</h1>
+	<ul>
+		{#each $messages as message}
+			<li>{message.role}: {message.content}</li>
+		{/each}
+	</ul>
+	<form on:submit={handleSubmit}>
+		<input bind:value={$input} />
+		<button type="submit">Send</button>
+	</form>
+</div>
 
 <!-- IF NOT LOGGED IN, SHOW HERO SECTION -->
 {#if !data.user}

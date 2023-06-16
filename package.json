@@ -36,6 +36,8 @@
 	"dependencies": {
 		"@tinymce/tinymce-svelte": "^1.0.1",
 		"pocketbase": "0.15.0-rc",
-		"read-time": "^1.0.0"
+		"read-time": "^1.0.0",
+		"ai": "2.0.1",
+    "openai-edge": "^0.5.1"
 	}
 }
