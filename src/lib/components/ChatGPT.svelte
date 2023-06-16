@@ -69,9 +69,13 @@
 						{#each $messages as message}
 							<li class="my-2">
 								{#if message.role === 'user'}
-									<span class="font-bold text-right bg-base-200">{message.role}</span>: {@html message.content}
+									<div class="text-right">
+										<span class="font-bold">{message.role}</span>: {@html message.content}
+									</div>
 								{:else}
-									<span class="font-bold">{message.role}</span>: {@html message.content}
+									<div>
+										<span class="font-bold">{message.role}</span>: {@html message.content}
+									</div>
 								{/if}
 							</li>
 						{/each}
