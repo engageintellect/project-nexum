@@ -24,13 +24,11 @@
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
-					<div class="tooltip tooltip-open tooltip-bottom" data-tip="hello world">
-						<button classs="btn">
-							<a href="/projects/new" class="btn btn-primary btn-outline">
-								<Icon src={Plus} class="w-5 h-5" />
-							</a>
-						</button>
-					</div>
+					<button classs="btn">
+						<a href="/projects/new" class="btn btn-primary btn-outline">
+							<Icon src={Plus} class="w-5 h-5" />
+						</a>
+					</button>
 				</div>
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->

@@ -1,6 +1,13 @@
 <script>
 	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
+	import { onMount } from 'svelte';
+
+	let inputRef;
+
+	onMount(() => {
+		inputRef.focus();
+	});
 
 	export let data;
 	let filter;
@@ -28,6 +35,7 @@
 					placeholder="Search Projects, People, Divisions, and Content"
 					class="input input-bordered w-full max-w-md"
 					bind:value={filter}
+					bind:this={inputRef}
 				/>
 			</div>
 		</div>

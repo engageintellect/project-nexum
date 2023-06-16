@@ -142,12 +142,12 @@
 
 		<!-- CONTENT -->
 
-		<div class="mt-10 page-content">
+		<div class="mt-10 page-content overflow-x-hidden">
 			{@html data.project.description}
 		</div>
 	</div>
 
-	<div class="mt-10">
-		<Toc />
+	<div class="mt-10 hidden xl:flex">
+		<Toc title={'Page Contents'} />
 	</div>
 </div>

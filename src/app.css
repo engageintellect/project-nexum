@@ -4,6 +4,32 @@
 @tailwind utilities;
 
 
+
+
+/* PAGE TABLE OF CONTENS */
+aside > nav > ol > li.active {
+	@apply bg-neutral
+}
+
+aside > nav > ol > li.active:hover {
+	@apply text-white
+}
+
+aside > nav > ol > li:hover {
+	@apply text-primary
+}
+
+aside > nav::-webkit-scrollbar{
+    display: none;
+}
+
+aside > nav > h2 {
+	@apply hidden
+
+}
+
+
+/* PAGE CONTENT */
 .page-content p {
 	padding: 0 0 1.5rem 0;
 	font-size: 1rem;
