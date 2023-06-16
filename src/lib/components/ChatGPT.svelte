@@ -62,7 +62,10 @@
 			<div class="divider" />
 		</div>
 
-		<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
+		<div
+			class="overflow-scroll border border-primary h-32 max-h-[50vh] shadow-lg rounded"
+			id="chat-container"
+		>
 			<div class="max-w-full">
 				<div class="overflow-hidden p-2">
 					<ul>
@@ -88,7 +91,7 @@
 		<div class="mt-5">
 			<form class="flex gap-4" on:submit={handleSubmit}>
 				<input
-					class="w-full input input-bordered"
+					class="w-full input input-bordered border border-primary"
 					bind:value={$input}
 					placeholder={'search for anything'}
 				/>
