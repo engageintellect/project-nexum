@@ -148,6 +148,6 @@
 	</div>
 
 	<div class="mt-10 hidden xl:flex">
-		<Toc title={'Page Contents'} />
+		<Toc title={'Page Contents'} autoHide={false} />
 	</div>
 </div>

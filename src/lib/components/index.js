@@ -7,4 +7,6 @@ import Hero from './Hero.svelte';
 import WYSIWYG from './WYSIWYG.svelte';
 import Stats from './Stats.svelte';
 import ChatGPT from './ChatGPT.svelte';
-export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero, WYSIWYG, Stats, ChatGPT };
+import Footer from './Footer.svelte';
+import Badge from './Badge.svelte';
+export { Input, Modal, MyProjectItem, ProjectCard, TextArea, Hero, WYSIWYG, Stats, ChatGPT, Footer, Badge };

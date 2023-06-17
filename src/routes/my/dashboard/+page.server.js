@@ -23,6 +23,8 @@ export const load = ({ locals }) => {
 		}
 	}
 
+
+
 		return {
 		projects: getProjects(),
 	};

@@ -2,6 +2,7 @@
 	import { Stats } from '$lib/components';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, PencilSquare } from 'svelte-hero-icons';
+	import { MyProjectItem } from '$lib/components';
 	export let data;
 
 	let count = {
@@ -19,7 +20,7 @@
 
 <div class="mt-10 px-4">
 	<div class="text-6xl font-bold">
-		{data.user.username}'s Dashboard.'
+		{data.user.username}'s Dashboard.
 	</div>
 	<div class="divider" />
 

@@ -1,12 +1,23 @@
 <script>
 	import { getImageURL } from '$lib/utils';
+	import Badge from './Badge.svelte';
 	export let project;
 	export let user;
+	export let isNew = false;
+	export let isOld = false;
 </script>
 
 <div
 	class="card border bg-base-100 rounded group hover:saturate-150 shadow-md hover:shadow-lg transition-all duration-300"
 >
+	{#if isNew}
+		<Badge msg={'NEW!'} {isNew} />
+	{/if}
+
+	{#if isOld}
+		<Badge msg={'OLD'} {isOld} />
+	{/if}
+
 	<a href="/projects/{project.id}" class="rounded">
 		<div class="flex gap-2 items-center p-4">
 			<img
@@ -23,7 +34,7 @@
 		</div>
 		<div class="relative overflow-hidden">
 			<img
-				class="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+				class="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500 border"
 				src={project?.thumbnail
 					? getImageURL(project.collectionId, project.id, project.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${project.name}`}

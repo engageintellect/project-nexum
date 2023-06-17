@@ -42,6 +42,13 @@
 	import { Icon, MagnifyingGlass, PaperAirplane } from 'svelte-hero-icons';
 	import { useChat } from 'ai/svelte';
 	import { afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
+
+	let inputRef;
+
+	onMount(() => {
+		inputRef.focus();
+	});
 
 	const { input, handleSubmit, messages } = useChat();
 
@@ -62,7 +69,7 @@
 			<div class="divider" />
 		</div>
 
-		<div class="overflow-scroll max-h-[50vh] shadow-lg rounded" id="chat-container">
+		<div class="overflow-scroll max-h-[50vh] rounded" id="chat-container">
 			<div class="max-w-full">
 				<div class="overflow-hidden p-2">
 					<ul>
@@ -90,6 +97,7 @@
 				<input
 					class="w-full input input-bordered"
 					bind:value={$input}
+					bind:this={inputRef}
 					placeholder={'search for anything'}
 				/>
 				<button type="submit" class="btn btn-primary">
