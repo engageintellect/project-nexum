@@ -18,11 +18,12 @@
 		placeholder: `Add your page's content here. Click save when finished.`,
 		toolbar_mode: 'sliding',
 		menubar: 'file edit view insert format tools table tc help',
+		// menubar: false,
 		toolbar:
 			'undo redo | bold italic underline strikethrough | blocks | numlist bullist checklist | link insertfile image media table |' +
 			'alignleft aligncenter alignright alignjustify |' +
 			'forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak |' +
-			'charmap emoticons | preview save print fullscreen |' +
+			'charmap emoticons | preview save print code fullscreen |' +
 			' pageembed template anchor codesample | a11ycheck ltr rtl |' +
 			'showcomments addcomment',
 

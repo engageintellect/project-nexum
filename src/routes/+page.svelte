@@ -8,7 +8,7 @@
 		const updatedDate = new Date(date); // Replace with project.updated value
 		const differenceInMilliseconds = currentDate - updatedDate;
 		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 1) {
+		if (daysDifference > 2) {
 			return true;
 		}
 	};

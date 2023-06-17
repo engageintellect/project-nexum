@@ -57,7 +57,9 @@
 						</li>
 
 						<li>
-							<a href="/ai" class="justify-between">AI</a>
+							<a href="/ai" class="justify-between"
+								>AI<span class="badge badge-error uppercase">Experimental</span></a
+							>
 						</li>
 						<li><a href="/my/settings">Settings</a></li>
 						<li>

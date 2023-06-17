@@ -1,13 +1,34 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, Heart, HandThumbUp, Share, PencilSquare } from 'svelte-hero-icons';
+	import {
+		Icon,
+		Heart,
+		HandThumbUp,
+		Share,
+		PencilSquare,
+		ArrowPathRoundedSquare
+	} from 'svelte-hero-icons';
 	import readtime from 'read-time';
-	import ToolTipButton from '../../../lib/components/ToolTipButton.svelte';
 	export let data;
 	import Toc from 'svelte-toc';
 
 	const readTime = readtime(data.project.description);
+
+	const dateTimeString = data.project.updated;
+	const dateTime = new Date(dateTimeString);
+
+	const options = {
+		timeZone: 'America/Los_Angeles', // Specify the desired time zone
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric'
+	};
+
+	const formattedDateTime = dateTime.toLocaleString('en-US', options);
 
 	const getTotalLikes = (users, pages) => {
 		const total = users.reduce((count, user) => {
@@ -67,6 +88,13 @@
 							<p class="text-lg font-semibold primary-content">{creator.name}</p>
 							<p class="text-sm font-medium secondary-content">{creator.job_title}</p>
 							<p class="text-md font-bold primary-content">{readTime.text} read.</p>
+							<p class="text-md font-thin primary-content" />
+							<div class="font-medium flex items-center gap-2">
+								<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
+								<div>
+									{formattedDateTime}.
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
