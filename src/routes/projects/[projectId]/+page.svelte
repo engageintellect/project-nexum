@@ -1,7 +1,7 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, Heart, HandThumbUp, Share } from 'svelte-hero-icons';
+	import { Icon, Heart, HandThumbUp, Share, PencilSquare } from 'svelte-hero-icons';
 	import readtime from 'read-time';
 	import ToolTipButton from '../../../lib/components/ToolTipButton.svelte';
 	export let data;
@@ -85,9 +85,19 @@
 			</div>
 
 			<div class="flex gap-5">
+				<!-- EDIT -->
+				{#if data.project.user === data.user.id}
+					<a href="/projects/{data.project.id}/edit">
+						<Icon
+							src={PencilSquare}
+							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+						/>
+					</a>
+				{/if}
+
 				<!-- LIKE -->
 				<form action="?/likePage" method="POST" use:enhance>
-					<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
+					<button type="submit" class="hover:scale-105 active:scale-95 transition-all duration-200">
 						<input type="hidden" name="id" value={data.project.id} />
 						<div>
 							{#if data.user.likes.includes(data.project.id)}
@@ -104,7 +114,7 @@
 
 				<!-- FAVORITE -->
 				<form action="?/favoritePage" method="POST" use:enhance>
-					<button type="submit" class="hover:scale-110 active:scale-95 transition-all duration-200">
+					<button type="submit" class="hover:scale-105 active:scale-95 transition-all duration-200">
 						<input type="hidden" name="id" value={data.project.id} />
 						<div>
 							{#if data.user.favorites.includes(data.project.id)}
@@ -122,7 +132,10 @@
 				<!-- SHARE -->
 				<div>
 					<a href="mailto:">
-						<Icon src={Share} class="text-primary w-7 h-7" />
+						<Icon
+							src={Share}
+							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+						/>
 					</a>
 				</div>
 			</div>
