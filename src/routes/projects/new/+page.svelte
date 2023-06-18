@@ -1,10 +1,11 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { Input, TextArea, WYSIWYG } from '$lib/components';
+	import { fade } from 'svelte/transition';
 	export let form;
 </script>
 
-<div class="flex flex-col w-full h-full px-4">
+<div class="flex flex-col w-full h-full px-4" in:fade>
 	<div class="w-full mt-2">
 		<form
 			action="?/create"
@@ -14,11 +15,11 @@
 			use:enhance
 		>
 			<div class="flex flex-col justify-center text-center mt-10">
-				<h3 class="text-center text-6xl font-bold">Tell us more about this project</h3>
-				<p class="pt-2">We'll need the name, tagline, link, and description</p>
+				<h3 class="text-center text-3xl font-bold">Tell us more about this project</h3>
+				<p class="pt-2 text-lg">We'll need the name, tagline, link, and description</p>
 			</div>
 
-			<div class="w-full grid grid-cols-1 gap-5 md:grid-cols-2">
+			<div class="w-full grid grid-cols-1 gap-x-5 md:grid-cols-2">
 				<div>
 					<Input
 						id="name"
@@ -63,6 +64,10 @@
 			</div>
 
 			<div class="w-full">
+				<Input id="thumbnail" label="Thumbnail" type="file" errors={form?.errors?.thumbnail} />
+			</div>
+
+			<div class="w-full">
 				<WYSIWYG
 					type="hidden"
 					id="description"
@@ -71,7 +76,6 @@
 					errors={form?.errors?.description}
 				/>
 			</div>
-			<Input id="thumbnail" label="Thumbnail" type="file" errors={form?.errors?.thumbnail} />
 			<div class="w-full max-w-lg pt-3">
 				<button type="submit" class="btn btn-primary w-full max-w-lg">Create Project</button>
 			</div>

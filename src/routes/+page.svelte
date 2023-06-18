@@ -2,6 +2,7 @@
 	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	const isOld = (date) => {
 		const currentDate = new Date(); // Current date
@@ -15,8 +16,8 @@
 
 	const isNew = (date) => {
 		const currentDate = new Date(); // Current date
-		const updatedDate = new Date(date); // Replace with project.updated value
-		const differenceInMilliseconds = currentDate - updatedDate;
+		const createDate = new Date(date); // Replace with project.updated value
+		const differenceInMilliseconds = currentDate - createDate;
 		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
 		if (daysDifference < 1) {
 			return true;
@@ -39,7 +40,7 @@
 
 	<!-- IF LOGGED IN, SHOW CONTENT -->
 {:else}
-	<div class="">
+	<div class="" in:fade>
 		<div class="mt-10 text-center text-6xl font-bold tracking-tight text-base-content">
 			<div>
 				Ne<span class="text-purple-500">x</span>um
@@ -84,7 +85,7 @@
 									{project}
 									{user}
 									tags={data.tags}
-									isNew={isNew(project.updated)}
+									isNew={isNew(project.created)}
 									isOld={isOld(project.updated)}
 								/>
 							{/if}

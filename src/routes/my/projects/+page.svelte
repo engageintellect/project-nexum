@@ -14,7 +14,6 @@
 		{:else}
 			{#each data.projects as project}
 				<MyProjectItem {project} />
-				<div class="divider mt-0 mb-2" />
 			{/each}
 		{/if}
 	</div>

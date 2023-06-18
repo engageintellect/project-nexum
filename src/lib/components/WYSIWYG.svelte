@@ -17,8 +17,8 @@
 		selector: 'textarea',
 		placeholder: `Add your page's content here. Click save when finished.`,
 		toolbar_mode: 'sliding',
-		menubar: 'file edit view insert format tools table tc help',
-		// menubar: false,
+		// menubar: 'file edit view insert format tools table tc help',
+		menubar: false,
 		toolbar:
 			'undo redo | bold italic underline strikethrough | blocks | numlist bullist checklist | link insertfile image media table |' +
 			'alignleft aligncenter alignright alignjustify |' +

@@ -4,6 +4,9 @@
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Plus } from 'svelte-hero-icons';
 	export let data;
+	import { Footer } from '$lib/components';
+
+	import { fade } from 'svelte/transition';
 </script>
 
 <Toaster />
@@ -58,7 +61,7 @@
 
 						<li>
 							<a href="/ai" class="justify-between"
-								>AI<span class="badge badge-error uppercase">Experimental</span></a
+								>AI<span class="badge badge-error badge-sm uppercase">Experimental</span></a
 							>
 						</li>
 						<li><a href="/my/settings">Settings</a></li>
@@ -77,4 +80,5 @@
 			<slot />
 		</div>
 	</div>
+	<Footer />
 </div>
