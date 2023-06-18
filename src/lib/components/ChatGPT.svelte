@@ -42,13 +42,6 @@
 	import { Icon, MagnifyingGlass, PaperAirplane } from 'svelte-hero-icons';
 	import { useChat } from 'ai/svelte';
 	import { afterUpdate } from 'svelte';
-	import { onMount } from 'svelte';
-
-	let inputRef;
-
-	onMount(() => {
-		inputRef.focus();
-	});
 
 	const { input, handleSubmit, messages } = useChat();
 
@@ -94,11 +87,12 @@
 		</div>
 		<div class="mt-5">
 			<form class="flex gap-4" on:submit={handleSubmit}>
+				<!-- svelte-ignore a11y-autofocus -->
 				<input
 					class="w-full input input-bordered"
 					bind:value={$input}
-					bind:this={inputRef}
 					placeholder={'search for anything'}
+					autofocus
 				/>
 				<button type="submit" class="btn btn-primary">
 					<Icon src={PaperAirplane} class="text-white w-10 h-10" />

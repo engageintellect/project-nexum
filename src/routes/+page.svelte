@@ -1,8 +1,7 @@
 <script>
 	import { ProjectCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
-	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 
 	const isOld = (date) => {
 		const currentDate = new Date(); // Current date
@@ -24,23 +23,19 @@
 		}
 	};
 
-	let inputRef;
-
-	onMount(() => {
-		inputRef.focus();
-	});
-
 	export let data;
 	let filter;
 </script>
 
 <!-- IF NOT LOGGED IN, SHOW HERO SECTION -->
 {#if !data.user}
-	<Hero title="Projects" description="Browse all projects shared across all users." />
+	<div in:blur>
+		<Hero title="Projects" description="Browse all projects shared across all users." />
+	</div>
 
 	<!-- IF LOGGED IN, SHOW CONTENT -->
 {:else}
-	<div class="" in:fade>
+	<div>
 		<div class="mt-10 text-center text-6xl font-bold tracking-tight text-base-content">
 			<div>
 				Ne<span class="text-purple-500">x</span>um
@@ -51,12 +46,13 @@
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
 				<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
+				<!-- svelte-ignore a11y-autofocus -->
 				<input
 					type="text"
 					placeholder="Search Projects, People, Divisions, and Content"
 					class="input input-bordered w-full max-w-md"
 					bind:value={filter}
-					bind:this={inputRef}
+					autofocus
 				/>
 			</div>
 		</div>

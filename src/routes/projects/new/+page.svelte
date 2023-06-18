@@ -1,11 +1,10 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { Input, TextArea, WYSIWYG } from '$lib/components';
-	import { fade } from 'svelte/transition';
 	export let form;
 </script>
 
-<div class="flex flex-col w-full h-full px-4" in:fade>
+<div class="flex flex-col w-full h-full px-4">
 	<div class="w-full mt-2">
 		<form
 			action="?/create"
@@ -23,7 +22,7 @@
 				<div>
 					<Input
 						id="name"
-						label="Project Name"
+						label="Project Name*"
 						value={form?.data?.name}
 						errors={form?.errors?.name}
 					/>
@@ -32,14 +31,14 @@
 				<div>
 					<Input
 						id="tagline"
-						label="Project Tagline"
+						label="Project Tagline*"
 						value={form?.data?.tagline}
 						errors={form?.errors?.tagline}
 					/>
 				</div>
 
 				<div>
-					<Input id="url" label="Project URL" value={form?.data?.url} errors={form?.errors?.url} />
+					<Input id="url" label="Project URL*" value={form?.data?.url} errors={form?.errors?.url} />
 				</div>
 
 				<div class="w-full">

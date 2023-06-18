@@ -4,7 +4,6 @@
 	import { Icon, PencilSquare } from 'svelte-hero-icons';
 	import { MyProjectItem } from '$lib/components';
 	export let data;
-	import { fade } from 'svelte/transition';
 
 	let count = {
 		likes: data.user.likes.length,
@@ -19,7 +18,7 @@
 	}, 0);
 </script>
 
-<div class="mt-10 px-4" in:fade>
+<div class="mt-10 px-4">
 	<div class="text-6xl font-bold">
 		{data.user.username}'s Dashboard.
 	</div>
