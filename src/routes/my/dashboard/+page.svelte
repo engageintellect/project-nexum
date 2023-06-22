@@ -111,18 +111,12 @@
 			<div class="collapse-content">
 				<div class="px-4 mt-5">
 					<div class="w-full mt-4 flex flex-col items-center">
-						{#if data.projects.length === 0}
-							<p class="text-center text-3xl">☹️</p>
-							<p class="text-center text-3xl">Looks like you don't have any projects.</p>
-							<a href="/projects/new" class="btn btn-primary max-w-md mt-4">Add One</a>
-						{:else}
-							{#each data.projects as project}
-								{#if project.user === data.user.id}
-									<MyProjectItem {project} />
-									<!-- <div class="divider mt-0 mb-2" /> -->
-								{/if}
-							{/each}
-						{/if}
+						{#each data.projects as project}
+							{#if project.user === data.user.id}
+								<MyProjectItem {project} />
+								<!-- <div class="divider mt-0 mb-2" /> -->
+							{/if}
+						{/each}
 					</div>
 				</div>
 			</div>
