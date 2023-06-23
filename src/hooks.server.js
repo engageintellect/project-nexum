@@ -18,7 +18,13 @@ export const handle = async ({ event, resolve }) => {
 
 	const response = await resolve(event);
 
-	response.headers.set('set-cookie', event.locals.pb.authStore.exportToCookie({ secure: true }));
+	response.headers.set(
+		'set-cookie',
+		event.locals.pb.authStore.exportToCookie({
+			secure: true,
+			domain: 'project-nexum-b72cbx527-engageintellect.vercel.app'
+		})
+	);
 
 	return response;
 };
