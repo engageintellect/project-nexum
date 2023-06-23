@@ -18,6 +18,7 @@ export const handle = async ({ event, resolve }) => {
 
 	const response = await resolve(event);
 
+	// DYNAMICALLY SET COOKIE TO BASE URL
 	const requestUrl = new URL(event.request.url);
 	const domain = requestUrl.hostname;
 
