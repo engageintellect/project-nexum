@@ -2,7 +2,7 @@
 	export let avatar;
 	export let likes;
 	export let favorites;
-	export let projects;
+	export let pages;
 
 	import { Icon, Heart, HandThumbUp, Share } from 'svelte-hero-icons';
 </script>
@@ -17,8 +17,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="stat-title">Projects</div>
-			<div class="stat-value">{projects}</div>
+			<div class="stat-title">Pages</div>
+			<div class="stat-value">{pages}</div>
 			<div class="stat-desc text-secondary">Your contributions</div>
 		</div>
 

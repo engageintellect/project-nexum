@@ -5,8 +5,6 @@
 	import { Icon, Plus } from 'svelte-hero-icons';
 	export let data;
 	import { Footer } from '$lib/components';
-
-	import { fade } from 'svelte/transition';
 </script>
 
 <Toaster />
@@ -28,7 +26,7 @@
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
 					<button classs="btn">
-						<a href="/projects/new" class="btn btn-primary btn-outline">
+						<a href="/pages/new" class="btn btn-primary btn-outline">
 							<Icon src={Plus} class="w-5 h-5" />
 						</a>
 					</button>
@@ -52,7 +50,7 @@
 						class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
 						<li>
-							<a href="/my/projects" class="justify-between">My Projects</a>
+							<a href="/my/pages" class="justify-between">My Pages</a>
 						</li>
 
 						<li>

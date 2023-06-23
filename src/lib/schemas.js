@@ -63,7 +63,7 @@ const imageTypes = [
 	'image/gif'
 ];
 
-export const createProjectSchema = z.object({
+export const createPageSchema = z.object({
 	name: z
 		.string({ required_error: 'Name is required' })
 		.min(2, { message: 'Name must be longer than 2 characters' })
@@ -80,10 +80,10 @@ export const createProjectSchema = z.object({
 
 	division: z.optional(z.string().min(1).max(64).trim()),
 
-	description: z
-		.string({ required_error: 'Description is required' })
-		.min(1, { message: 'Description is required' })
-		// .max(262, 144, { message: 'Description must be less than 262,144 characters' })
+	content: z
+		.string({ required_error: 'Content is required' })
+		.min(1, { message: 'Content is required' })
+		// .max(262, 144, { message: 'Content must be less than 262,144 characters' })
 		.trim(),
 	thumbnail: z
 		.instanceof(Blob)
@@ -108,7 +108,7 @@ export const createProjectSchema = z.object({
 	user: z.string({ required_error: 'User is required.' })
 });
 
-export const updateProjectSchema = createProjectSchema.omit({ user: true });
+export const updatePageSchema = createPageSchema.omit({ user: true });
 
 export const updateEmailSchema = z.object({
 	email: z

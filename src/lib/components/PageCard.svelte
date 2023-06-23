@@ -1,7 +1,7 @@
 <script>
 	import { getImageURL } from '$lib/utils';
 	import Badge from './Badge.svelte';
-	export let project;
+	export let page;
 	export let user;
 	export let isNew = false;
 	export let isOld = false;
@@ -18,7 +18,7 @@
 		<Badge msg={'OLD'} {isOld} />
 	{/if}
 
-	<a href="/projects/{project.id}" class="rounded">
+	<a href="/pages/{page.id}" class="rounded">
 		<div class="flex gap-2 items-center p-4">
 			<img
 				class="w-8 h-8 rounded-full border border-primary"
@@ -35,28 +35,28 @@
 		<div class="relative overflow-hidden">
 			<img
 				class="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500 border"
-				src={project?.thumbnail
-					? getImageURL(project.collectionId, project.id, project.thumbnail)
-					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${project.name}`}
-				alt="project thumbnail"
+				src={page?.thumbnail
+					? getImageURL(page.collectionId, page.id, page.thumbnail)
+					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
+				alt="page thumbnail"
 			/>
 		</div>
 		<div class="card-body p-4">
-			{#if project.division}
+			{#if page.division}
 				<div class="badge badge-primary rounded py-3 gap-2">
-					{project.division}
+					{page.division}
 				</div>
 			{/if}
 
 			<div>
-				<h2 class="card-title">{project.name}</h2>
+				<h2 class="card-title">{page.name}</h2>
 
-				<p>{project.tagline}</p>
+				<p>{page.tagline}</p>
 			</div>
 
-			{#if project.expand.tags}
+			{#if page.expand.tags}
 				<div class="flex flex-wrap items-end gap-2 mt-2">
-					{#each project.expand.tags as tag}
+					{#each page.expand.tags as tag}
 						<div class="badge badge-sm badge-outline rounded">{tag.name}</div>
 					{/each}
 				</div>

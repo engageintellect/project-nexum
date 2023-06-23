@@ -14,15 +14,15 @@
 			use:enhance
 		>
 			<div class="flex flex-col justify-center text-center mt-10">
-				<h3 class="text-center text-3xl font-bold">Tell us more about this project</h3>
-				<p class="pt-2 text-lg">We'll need the name, tagline, link, and description</p>
+				<h3 class="text-center text-3xl font-bold">Tell us more about this topic</h3>
+				<p class="pt-2 text-lg">We'll need the name, tagline, link, and content</p>
 			</div>
 
 			<div class="w-full grid grid-cols-1 gap-x-5 md:grid-cols-2">
 				<div>
 					<Input
 						id="name"
-						label="Project Name*"
+						label="Page Name*"
 						value={form?.data?.name}
 						errors={form?.errors?.name}
 					/>
@@ -31,14 +31,14 @@
 				<div>
 					<Input
 						id="tagline"
-						label="Project Tagline*"
+						label="Page Tagline*"
 						value={form?.data?.tagline}
 						errors={form?.errors?.tagline}
 					/>
 				</div>
 
 				<div>
-					<Input id="url" label="Project URL*" value={form?.data?.url} errors={form?.errors?.url} />
+					<Input id="url" label="Page URL*" value={form?.data?.url} errors={form?.errors?.url} />
 				</div>
 
 				<div class="w-full">
@@ -69,14 +69,14 @@
 			<div class="w-full">
 				<WYSIWYG
 					type="hidden"
-					id="description"
-					label="Project Description"
-					value={form?.data?.description}
-					errors={form?.errors?.description}
+					id="content"
+					label="Page Content"
+					value={form?.data?.content}
+					errors={form?.errors?.content}
 				/>
 			</div>
 			<div class="w-full max-w-lg pt-3">
-				<button type="submit" class="btn btn-primary w-full max-w-lg">Create Project</button>
+				<button type="submit" class="btn btn-primary w-full max-w-lg">Create Page</button>
 			</div>
 		</form>
 	</div>

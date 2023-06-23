@@ -7,7 +7,7 @@
 	export let data;
 	import Toc from 'svelte-toc';
 
-	// const readTime = readtime(data.project.description);
+	// const readTime = readtime(data.page.content);
 
 	// const getTotalLikes = (users, pages) => {
 	// 	const total = users.reduce((count, user) => {
