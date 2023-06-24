@@ -26,7 +26,8 @@ export const handle = async ({ event, resolve }) => {
 		'set-cookie',
 		event.locals.pb.authStore.exportToCookie({
 			secure: true,
-			domain: domain
+			domain: domain,
+			sameSite: 'none'
 		})
 	);
 
