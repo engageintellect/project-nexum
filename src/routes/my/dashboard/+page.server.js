@@ -6,34 +6,33 @@ export const load = ({ locals }) => {
 		throw redirect(303, '/login');
 	}
 
-	const getProjects = async () => {
+	const getPages = async () => {
 		try {
-			const projects = serializeNonPOJOs(
-				await locals.pb.collection('projects').getFullList({
-					sort: '-updated',
+			const pages = serializeNonPOJOs(
+				await locals.pb.collection('pages').getFullList({
+					sort: '-updated'
 					// expand: 'tags',
 					// filter: `user = "${locals.user.id}"`
-				}
-				)
+				})
 			);
-			return projects;
+			return pages;
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
 		}
-	}
+	};
 
-		return {
-		projects: getProjects(),
+	return {
+		pages: getPages()
 	};
 };
 
 export const actions = {
-	deleteProject: async ({ request, locals }) => {
+	deletePage: async ({ request, locals }) => {
 		const { id } = Object.fromEntries(await request.formData());
 
 		try {
-			await locals.pb.collection('projects').delete(id);
+			await locals.pb.collection('pages').delete(id);
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
@@ -43,4 +42,3 @@ export const actions = {
 		};
 	}
 };
-

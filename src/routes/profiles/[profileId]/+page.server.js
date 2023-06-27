@@ -2,12 +2,12 @@ import { serializeNonPOJOs } from '$lib/utils';
 import { error } from '@sveltejs/kit';
 
 export const load = ({ locals, params }) => {
-	const getProject = async (projectId) => {
+	const getUser = async (profileId) => {
 		try {
-			const project = serializeNonPOJOs(
-				await locals.pb.collection('projects').getOne(projectId, { expand: 'tags' })
+			const user = serializeNonPOJOs(
+				await locals.pb.collection('users').getOne(profileId, {})
 			);
-			return project;
+			return user;
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
@@ -28,7 +28,7 @@ export const load = ({ locals, params }) => {
 
 
 	return {
-		project: getProject(params.projectId),
+		user: getUser(params.profileId),
 		users: getUsers(),
 	};
 };
@@ -74,8 +74,6 @@ export const actions = {
   },
 
 };
-
-
 
 
 

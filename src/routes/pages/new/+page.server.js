@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { error, fail, redirect } from '@sveltejs/kit';
 import { serialize } from 'object-to-formdata';
-import { createProjectSchema } from '$lib/schemas';
+import { createPageSchema } from '$lib/schemas';
 import { validateData } from '$lib/utils';
 
 export const load = ({ locals }) => {
@@ -21,7 +21,7 @@ export const actions = {
 		}
 		body.append('user', locals.user.id);
 
-		const { formData, errors } = await validateData(body, createProjectSchema);
+		const { formData, errors } = await validateData(body, createPageSchema);
 		const { thumbnail, ...rest } = formData;
 
 		if (errors) {
@@ -32,13 +32,13 @@ export const actions = {
 		}
 
 		try {
-			await locals.pb.collection('projects').create(serialize(formData));
+			await locals.pb.collection('pages').create(serialize(formData));
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
 		}
 
 		console.log('FORM DATA: ', formData);
-		throw redirect(303, '/my/projects');
+		throw redirect(303, '/my/pages');
 	}
 };

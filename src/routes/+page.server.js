@@ -2,15 +2,15 @@ import { error } from '@sveltejs/kit';
 import { serializeNonPOJOs } from '$lib/utils';
 
 export const load = ({ locals }) => {
-	const getProjects = async () => {
+	const getPages = async () => {
 		try {
-			const projects = serializeNonPOJOs(
-				await locals.pb.collection('projects').getFullList({
+			const pages = serializeNonPOJOs(
+				await locals.pb.collection('pages').getFullList({
 					sort: '-updated',
 					expand: 'tags'
 				})
 			);
-			return projects;
+			return pages;
 		} catch (err) {
 			console.log('Error:', err);
 			throw error(err.status, err.message);
@@ -28,7 +28,7 @@ export const load = ({ locals }) => {
 	};
 
 	return {
-		projects: getProjects(),
+		pages: getPages(),
 		users: getUsers()
 	};
 };

@@ -18,7 +18,18 @@ export const handle = async ({ event, resolve }) => {
 
 	const response = await resolve(event);
 
-	response.headers.set('set-cookie', event.locals.pb.authStore.exportToCookie({ secure: false }));
+	// DYNAMICALLY SET COOKIE TO BASE URL
+	const requestUrl = new URL(event.request.url);
+	const domain = requestUrl.hostname;
+
+	response.headers.set(
+		'set-cookie',
+		event.locals.pb.authStore.exportToCookie({
+			secure: true,
+			domain: domain,
+			sameSite: 'none'
+		})
+	);
 
 	return response;
 };

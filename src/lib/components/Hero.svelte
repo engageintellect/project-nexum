@@ -1,5 +1,5 @@
 <script>
-	export let description;
+	export let content;
 </script>
 
 <div
@@ -15,7 +15,7 @@
 				</div>
 			</h1>
 			<p class="mb-5 text-sm md:text-md lg:text-lg">
-				{description}
+				{content}
 			</p>
 
 			<div class="grid grid-cols-2 gap-2">

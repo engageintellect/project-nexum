@@ -4,6 +4,7 @@
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Plus } from 'svelte-hero-icons';
 	export let data;
+	import { Footer } from '$lib/components';
 </script>
 
 <Toaster />
@@ -24,9 +25,11 @@
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
-					<a href="/projects/new" class="btn btn-primary btn-outline">
-						<Icon src={Plus} class="w-5 h-5" />
-					</a>
+					<button classs="btn">
+						<a href="/pages/new" class="btn btn-primary btn-outline">
+							<Icon src={Plus} class="w-5 h-5" />
+						</a>
+					</button>
 				</div>
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -47,7 +50,7 @@
 						class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
 						<li>
-							<a href="/my/projects" class="justify-between">My Projects</a>
+							<a href="/my/pages" class="justify-between">My Pages</a>
 						</li>
 
 						<li>
@@ -55,7 +58,9 @@
 						</li>
 
 						<li>
-							<a href="/my/dashboard" class="justify-between">My Favorites</a>
+							<a href="/ai" class="justify-between"
+								>AI<span class="badge badge-error badge-sm uppercase">Experimental</span></a
+							>
 						</li>
 						<li><a href="/my/settings">Settings</a></li>
 						<li>
@@ -73,4 +78,5 @@
 			<slot />
 		</div>
 	</div>
+	<Footer />
 </div>
