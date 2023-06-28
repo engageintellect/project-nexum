@@ -26,7 +26,10 @@
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
 					<button classs="btn">
-						<a href="/pages/new" class="btn btn-primary btn-outline">
+						<a
+							href="/pages/new"
+							class="btn btn-primary btn-outline hover:scale-[105%] active:scale-[98%] transition-transform duration-50"
+						>
 							<Icon src={Plus} class="w-5 h-5" />
 						</a>
 					</button>

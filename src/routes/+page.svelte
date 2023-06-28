@@ -1,14 +1,17 @@
 <script>
 	import { PageCard, Hero } from '$lib/components';
-	import { Icon, MagnifyingGlass } from 'svelte-hero-icons';
+	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
 	import { blur } from 'svelte/transition';
+
+	export let data;
+	let filter;
 
 	const isOld = (date) => {
 		const currentDate = new Date(); // Current date
 		const updatedDate = new Date(date); // Replace with page.updated value
 		const differenceInMilliseconds = currentDate - updatedDate;
 		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 2) {
+		if (daysDifference > 10) {
 			return true;
 		}
 	};
@@ -23,8 +26,9 @@
 		}
 	};
 
-	export let data;
-	let filter;
+	const handleFilter = (value) => {
+		filter = value;
+	};
 </script>
 
 <!-- IF NOT LOGGED IN, SHOW HERO SECTION -->
@@ -45,7 +49,7 @@
 
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
-				<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
+				<Icon src={MagnifyingGlass} class="text-primary w-7 h-7" />
 				<!-- svelte-ignore a11y-autofocus -->
 				<input
 					type="text"
@@ -54,8 +58,22 @@
 					bind:value={filter}
 					autofocus
 				/>
+
+				{#if filter}
+					<button class="btn btn-outline" on:click={() => (filter = '')}>
+						<Icon src={XMark} class="w-5 h-5" />
+					</button>
+				{/if}
 			</div>
 		</div>
+
+		{#if data.tags}
+			<div class="flex justify-center items-center gap-2 my-5">
+				{#each data.tags as tag}
+					<button class="btn btn-sm" on:click={() => handleFilter(tag.name)}>{tag.name}</button>
+				{/each}
+			</div>
+		{/if}
 
 		<div class="flex justify-center pt-4">
 			<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
