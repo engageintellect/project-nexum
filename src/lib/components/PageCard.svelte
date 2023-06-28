@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="card border bg-base-100 rounded group hover:saturate-150 shadow-md hover:shadow-lg transition-all duration-300"
+	class="card border border-neutral bg-base-100 rounded group active:scale-[98%] shadow-md hover:shadow-lg transition-all duration-50"
 >
 	{#if isNew}
 		<Badge msg={'NEW!'} {isNew} />
@@ -21,7 +21,7 @@
 	<a href="/pages/{page.id}" class="rounded">
 		<div class="flex gap-2 items-center p-4">
 			<img
-				class="w-8 h-8 rounded-full border border-primary"
+				class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
 				src={user?.avatar
 					? getImageURL(user?.collectionId, user?.id, user?.avatar)
 					: `https://ui-avatars.com/api/?name=${user?.name}`}
@@ -34,7 +34,7 @@
 		</div>
 		<div class="relative overflow-hidden">
 			<img
-				class="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500 border"
+				class="h-52 w-full object-cover group-hover:scale-105 group-hover:saturate-150 transition-all duration-500 border"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
@@ -57,7 +57,7 @@
 			{#if page.expand.tags}
 				<div class="flex flex-wrap items-end gap-2 mt-2">
 					{#each page.expand.tags as tag}
-						<div class="badge badge-sm badge-outline rounded">{tag.name}</div>
+						<div class="badge badge-outline">{tag.name}</div>
 					{/each}
 				</div>
 			{/if}
