@@ -76,7 +76,7 @@
 					<div class="flex gap-5 items-center">
 						<div>
 							<img
-								class="w-16 h-16 rounded-full border border-primary"
+								class="w-16 h-16 rounded-full border border-primary shadow-lg"
 								src={creator?.avatar
 									? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
 									: `https://ui-avatars.com/api/?name=${creator?.name}`}
@@ -87,11 +87,11 @@
 						<div class="flex flex-col justify-center">
 							<p class="text-lg font-semibold primary-content">{creator.name}</p>
 							<p class="text-sm font-medium secondary-content">{creator.job_title}</p>
-							<p class="text-md font-bold primary-content">{readTime.text} read.</p>
+							<p class="text-md font-bold primary-content">Read Time: {readTime.text}.</p>
 							<p class="text-md font-thin primary-content" />
 							<div class="font-medium flex items-center gap-2">
 								<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-								<div>
+								<div class="font-thin text-md">
 									{formattedDateTime}.
 								</div>
 							</div>
