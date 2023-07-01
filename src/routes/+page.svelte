@@ -68,7 +68,7 @@
 		</div>
 
 		{#if data.tags}
-			<div class="flex justify-center items-center gap-2 my-5">
+			<div class="flex flex-wrap justify-center items-center gap-2 my-5">
 				{#each data.tags as tag}
 					<button class="btn btn-sm" on:click={() => handleFilter(tag.name)}>{tag.name}</button>
 				{/each}
@@ -83,9 +83,9 @@
 					{#each data.users as user}
 						{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
 								.toLowerCase()
-								.includes(filter.toLowerCase()) || page.division
-								.toLowerCase()
-								.includes(filter.toLowerCase()) || page.content
+								.includes(filter.toLowerCase()) || (typeof page.division === 'string' && page.division
+									.toLowerCase()
+									.includes(filter.toLowerCase())) || page.content
 								.toLowerCase()
 								.includes(filter.toLowerCase()) || user.name
 								.toLowerCase()
@@ -93,13 +93,7 @@
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}
-								<PageCard
-									{page}
-									{user}
-									tags={data.tags}
-									isNew={isNew(page.created)}
-									isOld={isOld(page.updated)}
-								/>
+								<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
 							{/if}
 						{/if}
 					{/each}
