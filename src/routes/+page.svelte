@@ -68,7 +68,7 @@
 		</div>
 
 		{#if data.tags}
-			<div class="flex overflow-x-auto no-scrollbar md:justify-center items-center gap-2 my-5">
+			<div class="flex overflow-x-auto no-scrollbar md:justify-center items-center gap-2 my-5 px-4">
 				{#each data.tags as tag}
 					<button class="btn" on:click={() => handleFilter(tag.name)}>{tag.name}</button>
 				{/each}
