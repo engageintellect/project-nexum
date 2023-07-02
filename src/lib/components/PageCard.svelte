@@ -42,7 +42,7 @@
 			/>
 		</div>
 		<div class="card-body p-4">
-			{#if page.division}
+			{#if page.division != ''}
 				<div class="badge badge-primary rounded py-3 gap-2">
 					{page.division}
 				</div>
