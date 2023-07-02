@@ -3,31 +3,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	@variants responsive {
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		.no-scrollbar::-webkit-scrollbar {
+			display: none;
+		}
 
-
+		/* Hide scrollbar for IE, Edge and Firefox */
+		.no-scrollbar {
+			-ms-overflow-style: none; /* IE and Edge */
+			scrollbar-width: none; /* Firefox */
+		}
+	}
+}
 
 /* PAGE TABLE OF CONTENS */
 aside > nav > ol > li.active {
-	@apply bg-neutral
+	@apply bg-neutral;
 }
 
 aside > nav > ol > li.active:hover {
-	@apply text-white
+	@apply text-white;
 }
 
 aside > nav > ol > li:hover {
-	@apply text-primary
+	@apply text-primary;
 }
 
-aside > nav::-webkit-scrollbar{
-    display: none;
+aside > nav::-webkit-scrollbar {
+	display: none;
 }
 
 aside > nav > h2 {
-	@apply hidden
-
+	@apply hidden;
 }
-
 
 /* PAGE CONTENT */
 .page-content p {
