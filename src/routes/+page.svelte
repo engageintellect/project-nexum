@@ -11,7 +11,7 @@
 		const updatedDate = new Date(date); // Replace with page.updated value
 		const differenceInMilliseconds = currentDate - updatedDate;
 		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 10) {
+		if (daysDifference > 15) {
 			return true;
 		}
 	};
@@ -49,7 +49,7 @@
 
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
-				<Icon src={MagnifyingGlass} class="text-primary w-7 h-7" />
+				<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
 				<!-- svelte-ignore a11y-autofocus -->
 				<input
 					type="text"

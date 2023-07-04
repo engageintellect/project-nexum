@@ -52,25 +52,31 @@
 						tabindex="0"
 						class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
-						<li>
-							<a href="/my/pages" class="justify-between">My Pages</a>
-						</li>
+						<div class="mb-5">
+							<li>
+								<a href="/my/pages" class="justify-between">My Pages</a>
+							</li>
 
-						<li>
-							<a href="/my/dashboard" class="justify-between">My Dashboard</a>
-						</li>
+							<li>
+								<a href="/my/dashboard" class="justify-between">My Dashboard</a>
+							</li>
 
-						<li>
-							<a href="/ai" class="justify-between"
-								>AI<span class="badge badge-error badge-sm uppercase">Experimental</span></a
-							>
-						</li>
-						<li><a href="/my/settings">Settings</a></li>
-						<li>
-							<form action="/logout" method="POST">
-								<button type="submit" class="w-full text-start">Logout</button>
-							</form>
-						</li>
+							<li>
+								<a href="/ai" class="justify-between"
+									>AI<span class="badge badge-error badge-sm uppercase">Experimental</span></a
+								>
+							</li>
+						</div>
+
+						<div>
+							<hr />
+							<li><a href="/my/settings">Settings</a></li>
+							<li>
+								<form action="/logout" method="POST">
+									<button type="submit" class="w-full text-start">Logout</button>
+								</form>
+							</li>
+						</div>
 					</ul>
 				</div>
 			{/if}

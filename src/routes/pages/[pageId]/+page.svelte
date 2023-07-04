@@ -7,7 +7,8 @@
 		HandThumbUp,
 		Share,
 		PencilSquare,
-		ArrowPathRoundedSquare
+		ArrowPathRoundedSquare,
+		CheckCircle
 	} from 'svelte-hero-icons';
 	import readtime from 'read-time';
 	export let data;
@@ -55,11 +56,23 @@
 
 <div class="flex">
 	<div class="flex flex-col w-full mt-10 max-w-4xl mx-auto px-4">
+		{#if data.page.verified === true}
+			<div class="badge badge-sm badge-success rounded-full p-4">
+				<div class="flex gap-1 items-center justify-center">
+					<div>
+						<Icon src={CheckCircle} class=" w-5 h-5" />
+					</div>
+					<div class="uppercase font-semibold">verified</div>
+				</div>
+			</div>
+		{/if}
+
 		<!-- TITLE -->
 		<div>
 			<h1 class="text-6xl font-bold">
-				{data.page.name}
+				{data.page.name}<span />
 			</h1>
+
 			<p class="text-2xl font-light mt-2">{data.page.tagline}</p>
 		</div>
 		<div>
@@ -69,6 +82,7 @@
 				>
 			</p>
 		</div>
+
 		<!-- CREATOR -->
 		{#each data.users as creator}
 			{#if creator.id === data.page.user}
