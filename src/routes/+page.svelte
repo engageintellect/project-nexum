@@ -49,7 +49,7 @@
 
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
-				<Icon src={MagnifyingGlass} class="text-primary w-10 h-10" />
+				<Icon src={MagnifyingGlass} class="hidden text-primary w-10 h-10" />
 				<!-- svelte-ignore a11y-autofocus -->
 				<input
 					type="text"

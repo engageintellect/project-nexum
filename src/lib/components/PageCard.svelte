@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="card border border-neutral bg-base-100 rounded group active:scale-[98%] shadow-md hover:shadow-lg transition-all duration-50"
+	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] shadow-md hover:shadow-lg transition-all duration-50"
 >
 	{#if isNew}
 		<Badge msg={'NEW!'} {isNew} />
@@ -19,7 +19,7 @@
 	{/if}
 
 	<a href="/pages/{page.id}" class="rounded">
-		<div class="flex gap-2 items-center p-4">
+		<div class="flex gap-2 items-center p-2 md:p-4">
 			<img
 				class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
 				src={user?.avatar
@@ -34,16 +34,16 @@
 		</div>
 		<div class="relative overflow-hidden">
 			<img
-				class="h-52 w-full object-cover group-hover:scale-105 group-hover:saturate-150 transition-all duration-500 border"
+				class="h-40 md:h-52 w-full object-cover group-hover:scale-105 group-hover:saturate-150 transition-all duration-500 border"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
 				alt="page thumbnail"
 			/>
 		</div>
-		<div class="card-body p-4">
+		<div class="card-body p-2 md:p-4">
 			{#if page.division != ''}
-				<div class="badge badge-primary rounded py-3 gap-2">
+				<div class=" badge badge-primary text-xs md:text-sm rounded py-3 gap-2">
 					{page.division}
 				</div>
 			{/if}
@@ -51,7 +51,7 @@
 			<div>
 				<h2 class="card-title">{page.name}</h2>
 
-				<p>{page.tagline}</p>
+				<p class="">{page.tagline}</p>
 			</div>
 
 			{#if page.expand.tags}
