@@ -3,8 +3,9 @@
 	import { Toaster } from 'svelte-french-toast';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Plus } from 'svelte-hero-icons';
-	export let data;
 	import { Footer } from '$lib/components';
+
+	export let data;
 </script>
 
 <Toaster />
