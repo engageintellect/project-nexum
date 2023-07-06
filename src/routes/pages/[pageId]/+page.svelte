@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_HOME_URL } from '$env/static/public';
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
 	import {
@@ -172,8 +173,11 @@
 				{getTotalFavorites(data.users, data.page)}
 
 				<!-- SHARE -->
+				<!-- TODO: CHANEGE TO SOMETHING LIKE SENDGRID TO MAKE LINK CLICKABLE IN EMAIL CLIENT -->
 				<div>
-					<a href="mailto:">
+					<a
+						href={`mailto:?subject=Nexum: ${data.page.name}&body=${PUBLIC_HOME_URL}/pages/${data.page.id}`}
+					>
 						<Icon
 							src={Share}
 							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
