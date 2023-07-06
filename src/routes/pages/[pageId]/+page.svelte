@@ -70,7 +70,7 @@
 
 		<!-- TITLE -->
 		<div>
-			<h1 class="text-6xl font-bold">
+			<h1 class="text-5xl font-bold">
 				{data.page.name}<span />
 			</h1>
 
@@ -102,11 +102,13 @@
 						<div class="flex flex-col justify-center">
 							<p class="text-lg font-semibold primary-content">{creator.name}</p>
 							<p class="text-sm font-medium secondary-content">{creator.job_title}</p>
-							<p class="text-md font-bold primary-content">Read Time: {readTime.text}.</p>
+							<p class="text-sm md:text-md font-bold primary-content">
+								Read Time: {readTime.text}.
+							</p>
 							<p class="text-md font-thin primary-content" />
 							<div class="font-medium flex items-center gap-2">
 								<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-								<div class="font-thin text-md">
+								<div class="font-thin text-sm md:text-md">
 									{formattedDateTime}.
 								</div>
 							</div>
