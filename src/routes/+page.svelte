@@ -49,21 +49,25 @@
 
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
-				<Icon src={MagnifyingGlass} class="hidden text-primary w-10 h-10" />
-				<!-- svelte-ignore a11y-autofocus -->
-				<input
-					type="text"
-					placeholder="Search Pages, People, Divisions, and Content"
-					class="input input-bordered w-full max-w-md"
-					bind:value={filter}
-					autofocus
-				/>
+				<div class=" flex w-full max-w-md border border-primary rounded p-2">
+					<div class="flex items-center gap-2 w-full">
+						<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
+						<!-- svelte-ignore a11y-autofocus -->
+						<input
+							type="text"
+							placeholder="Search Pages, People, Divisions, and Content"
+							class="w-full focus:outline-none"
+							bind:value={filter}
+							autofocus
+						/>
+					</div>
 
-				{#if filter}
-					<button class="btn btn-outline" on:click={() => (filter = '')}>
-						<Icon src={XMark} class="w-5 h-5" />
-					</button>
-				{/if}
+					{#if filter}
+						<button class="" on:click={() => (filter = '')}>
+							<Icon src={XMark} class="w-5 h-5" />
+						</button>
+					{/if}
+				</div>
 			</div>
 		</div>
 
