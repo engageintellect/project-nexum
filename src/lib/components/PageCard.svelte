@@ -44,17 +44,17 @@
 			/>
 		</div>
 		<div class="card-body p-2 md:p-4">
+			<div>
+				<div class="text-lg md:text-xl font-semibold">{page.name}</div>
+
+				<div class="font-thin">{page.tagline}</div>
+			</div>
+
 			{#if page.division != ''}
-				<div class=" badge badge-primary text-xs md:text-sm rounded py-3 gap-2">
+				<div class="badge badge-primary text-xs md:text-sm rounded py-3 mt-2">
 					{page.division}
 				</div>
 			{/if}
-
-			<div>
-				<h2 class="card-title">{page.name}</h2>
-
-				<p class="">{page.tagline}</p>
-			</div>
 
 			{#if page.expand.tags}
 				<div class="flex flex-wrap items-end gap-2 mt-2">

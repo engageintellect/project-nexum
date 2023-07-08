@@ -37,31 +37,26 @@
 
 <div class="my-10">
 	<!-- USER DATA -->
-	<div
-		class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 justify-center my-10 md:my-20 px-4 max-w-3xl mx-auto"
-	>
-		<!-- TODO: CLEAN THIS SHIT UP -->
-		<div class="">
-			<img
-				class="w-20 md:w-32 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
-				src={data.user?.avatar
-					? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
-					: `https://ui-avatars.com/api/?name=${data.user?.name}`}
-				alt="User avatar"
-			/>
-		</div>
-
-		<div class="flex flex-col">
-			<div class="text-3xl font-semibold">
-				{data.user.name}
+	<div class="max-w-3xl mx-auto px-4 my-10 md:my-20">
+		<div class="flex flex-col md:flex-row gap-4 md:items-center justify-center">
+			<div>
+				<img
+					class="w-24 md:w-32 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+					src={data.user?.avatar
+						? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
+						: `https://ui-avatars.com/api/?name=${data.user?.name}`}
+					alt="User avatar"
+				/>
 			</div>
-			<div class="text-2xl font-thin">{data.user.job_title}</div>
-
-			{#if data.user.division}
+			<div>
+				<div class="text-2xl md:text-3xl font-semibold">
+					{data.user.name}
+				</div>
+				<div class="text-lg md:text-xl font-thin">{data.user.job_title}</div>
 				<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase">
 					{data.user.division}
 				</div>
-			{/if}
+			</div>
 		</div>
 	</div>
 
