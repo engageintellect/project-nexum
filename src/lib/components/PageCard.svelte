@@ -36,7 +36,7 @@
 		{/if}
 		<div class="relative overflow-hidden border-t border-b">
 			<img
-				class="h-40 md:h-52 w-full object-cover scale-[102%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
+				class="h-52 w-full object-cover scale-[102%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
