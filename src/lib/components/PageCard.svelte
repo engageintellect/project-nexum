@@ -19,19 +19,21 @@
 	{/if}
 
 	<a href="/pages/{page.id}" class="rounded">
-		<div class="flex gap-2 items-center p-2 md:p-4">
-			<img
-				class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
-				src={user?.avatar
-					? getImageURL(user?.collectionId, user?.id, user?.avatar)
-					: `https://ui-avatars.com/api/?name=${user?.name}`}
-				alt="User avatar"
-			/>
-			<div class="flex flex-col">
-				<p class="text-md font-medium primary-content">{user.name}</p>
-				<p class="text-xs font-thin secondary-content">{user.job_title}</p>
+		{#if user}
+			<div class="flex gap-2 items-center p-2 md:p-4">
+				<img
+					class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+					src={user?.avatar
+						? getImageURL(user?.collectionId, user?.id, user?.avatar)
+						: `https://ui-avatars.com/api/?name=${user?.name}`}
+					alt="User avatar"
+				/>
+				<div class="flex flex-col">
+					<p class="text-md font-medium primary-content">{user.name}</p>
+					<p class="text-xs font-thin secondary-content">{user.job_title}</p>
+				</div>
 			</div>
-		</div>
+		{/if}
 		<div class="relative overflow-hidden">
 			<img
 				class="h-40 md:h-52 w-full object-cover group-hover:scale-105 group-hover:saturate-150 transition-all duration-500 border"

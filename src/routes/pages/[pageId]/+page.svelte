@@ -70,9 +70,9 @@
 
 		<!-- TITLE -->
 		<div>
-			<h1 class="text-5xl font-bold">
+			<div class="text-5xl font-bold">
 				{data.page.name}<span />
-			</h1>
+			</div>
 
 			<p class="text-2xl font-light mt-2">{data.page.tagline}</p>
 		</div>
@@ -88,19 +88,23 @@
 		{#each data.users as creator}
 			{#if creator.id === data.page.user}
 				<div class="flex gap-2 my-10">
-					<div class="flex gap-5 items-center">
+					<div class="flex items-center gap-4">
 						<div>
-							<img
-								class="w-16 h-16 rounded-full border border-primary shadow-lg"
-								src={creator?.avatar
-									? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
-									: `https://ui-avatars.com/api/?name=${creator?.name}`}
-								alt="User avatar"
-							/>
+							<a href={`/profiles/${creator.id}`}>
+								<img
+									class="w-16 md:w-20 rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-200 active:scale-100"
+									src={creator?.avatar
+										? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
+										: `https://ui-avatars.com/api/?name=${creator?.name}`}
+									alt="User avatar"
+								/>
+							</a>
 						</div>
 
 						<div class="flex flex-col justify-center">
-							<p class="text-lg font-semibold primary-content">{creator.name}</p>
+							<p class="text-lg font-semibold primary-content">
+								{creator.name}
+							</p>
 							<p class="text-sm font-medium secondary-content">{creator.job_title}</p>
 							<p class="text-sm md:text-md font-bold primary-content">
 								Read Time: {readTime.text}.
@@ -118,9 +122,8 @@
 			{/if}
 		{/each}
 
-		<!-- TAGS -->
-
 		<div class="flex flex-col gap-5 md:flex-row justify-between">
+			<!-- TAGS -->
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}
 					{#each data.page.expand.tags as tag}
@@ -129,6 +132,7 @@
 				{/if}
 			</div>
 
+			<!-- ACTION BUTTONS -->
 			<div class="flex gap-5">
 				<!-- EDIT -->
 				{#if data.page.user === data.user.id}
@@ -191,7 +195,7 @@
 
 		<!-- IMAGE -->
 		<div class="avatar">
-			<div class="w-full h-96 rounded shadow-lg">
+			<div class="w-full h-64 md:h-96 rounded shadow-lg">
 				<img
 					src={data.page?.thumbnail
 						? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')

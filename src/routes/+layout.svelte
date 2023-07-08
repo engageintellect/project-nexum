@@ -35,7 +35,7 @@
 						</a>
 					</button>
 				</div>
-				<div class="dropdown dropdown-end">
+				<div class="dropdown md:dropdown-hover dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<!-- svelte-ignore a11y-label-has-associated-control -->
 					<label tabindex="0" class="btn btn-ghost btn-circle avatar">
@@ -51,9 +51,13 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<ul
 						tabindex="0"
-						class="menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
+						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
 						<div class="mb-5">
+							<li>
+								<a href={`/profiles/${data.user.id}`} class="justify-between">Profile</a>
+							</li>
+
 							<li>
 								<a href="/my/pages" class="justify-between">My Pages</a>
 							</li>

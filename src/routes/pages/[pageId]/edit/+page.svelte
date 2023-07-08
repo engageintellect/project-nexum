@@ -84,7 +84,7 @@
 						<option value="NCS">NCS</option>
 						<option value="BTS">BTS</option>
 						<option value="CORP">CORP</option>
-						<option value="Direct">Direct</option>
+						<option value="Direct">DIRECT</option>
 					</select>
 					<!-- <span class="text-sm text-red-600">{form?.errors?.division}</span> -->
 				</div>
