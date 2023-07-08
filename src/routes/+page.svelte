@@ -87,9 +87,9 @@
 					{#each data.users as user}
 						{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
 								.toLowerCase()
-								.includes(filter.toLowerCase()) || (typeof page.division === 'string' && page.division
-									.toLowerCase()
-									.includes(filter.toLowerCase())) || page.content
+								.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
+											.toLowerCase()
+											.includes(filter.toLowerCase()) )) || page.content
 								.toLowerCase()
 								.includes(filter.toLowerCase()) || user.name
 								.toLowerCase()

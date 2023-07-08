@@ -38,12 +38,12 @@
 <div class="my-10">
 	<!-- USER DATA -->
 	<div
-		class="flex flex-col md:flex-row items-start md:items-center gap-4 justify-center my-10 md:my-20 px-4 max-w-3xl mx-auto"
+		class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 justify-center my-10 md:my-20 px-4 max-w-3xl mx-auto"
 	>
 		<!-- TODO: CLEAN THIS SHIT UP -->
 		<div class="">
 			<img
-				class="w-24 md:w-32 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+				class="w-20 md:w-32 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
 				src={data.user?.avatar
 					? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
 					: `https://ui-avatars.com/api/?name=${data.user?.name}`}

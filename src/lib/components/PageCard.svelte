@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] shadow-md hover:shadow-lg transition-all duration-50"
+	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] hover:shadow-lg transition-all duration-50"
 >
 	{#if isNew}
 		<Badge msg={'NEW!'} {isNew} />
@@ -34,9 +34,9 @@
 				</div>
 			</div>
 		{/if}
-		<div class="relative overflow-hidden">
+		<div class="relative overflow-hidden border-t border-b">
 			<img
-				class="h-40 md:h-52 w-full object-cover group-hover:scale-105 group-hover:saturate-150 transition-all duration-500 border"
+				class="h-40 md:h-52 w-full object-cover scale-[102%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
