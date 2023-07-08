@@ -92,7 +92,7 @@
 						<div>
 							<a href={`/profiles/${creator.id}`}>
 								<img
-									class="w-16 md:w-20 rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-200 active:scale-100"
+									class="w-16 md:w-20 rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
 									src={creator?.avatar
 										? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
 										: `https://ui-avatars.com/api/?name=${creator?.name}`}

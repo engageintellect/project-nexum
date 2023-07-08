@@ -53,7 +53,7 @@
 					{data.user.name}
 				</div>
 				<div class="text-lg md:text-xl font-thin">{data.user.job_title}</div>
-				<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase">
+				<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase py-3">
 					{data.user.division}
 				</div>
 			</div>
