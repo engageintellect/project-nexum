@@ -92,7 +92,11 @@
 
 			<div class="form-control w-full">
 				<label for="thumbnail" class="label font-medium -mb-3 -mt-0">
-					<span class="label-text">Thumbnail</span>
+					{#if data.page.thumbnail}
+						<span class="label-text pb-2">Thumbnail</span>
+					{:else}
+						<span class="label-text">Thumbnail</span>
+					{/if}
 				</label>
 				{#if data.page.thumbnail}
 					<label for="thumbnail" class="avatar w-20 hover:cursor-pointer">
