@@ -57,7 +57,7 @@
 
 <div class="flex">
 	<div class="flex flex-col w-full mt-10 max-w-4xl mx-auto px-4">
-		{#if data.page.verified === true}
+		{#if data.page.verified}
 			<div class="badge badge-sm badge-success rounded-full p-4">
 				<div class="flex gap-1 items-center justify-center">
 					<div>

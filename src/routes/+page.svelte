@@ -63,10 +63,7 @@
 					</div>
 
 					{#if filter}
-						<button
-							class="focus:outline outline-1 outline-primary rounded"
-							on:click={() => (filter = '')}
-						>
+						<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
 							<Icon src={XMark} class="w-5 h-5" />
 						</button>
 					{/if}
@@ -77,7 +74,8 @@
 		{#if data.tags}
 			<div class="flex overflow-x-auto no-scrollbar md:justify-center items-center gap-2 my-5 px-4">
 				{#each data.tags as tag}
-					<button class="btn" on:click={() => handleFilter(tag.name)}>{tag.name}</button>
+					<button class="btn btn-outline" on:click={() => handleFilter(tag.name)}>{tag.name}</button
+					>
 				{/each}
 			</div>
 		{/if}

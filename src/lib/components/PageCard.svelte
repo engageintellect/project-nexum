@@ -1,4 +1,5 @@
 <script>
+	import { Icon, CheckCircle } from 'svelte-hero-icons';
 	import { getImageURL } from '$lib/utils';
 	import Badge from './Badge.svelte';
 	export let page;
@@ -45,6 +46,15 @@
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
 				alt="page thumbnail"
 			/>
+
+			{#if page.verified}
+				<div class="absolute left-2 bottom-2 flex items-center">
+					<div class="flex gap-1 badge badge-small badge-success rounded-full py-3 shadow-lg">
+						<Icon src={CheckCircle} class=" w-5 h-5" />
+						<div class="uppercase text-xs font-semibold">verified</div>
+					</div>
+				</div>
+			{/if}
 		</div>
 		<div class="card-body p-2 md:p-4">
 			<div>
