@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] hover:shadow-lg transition-all duration-50"
+	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] hover:shadow-lg transition-all duration-50 h-full"
 >
 	{#if isNew}
 		<Badge msg={'NEW!'} {isNew} />
@@ -18,7 +18,10 @@
 		<Badge msg={'OLD'} {isOld} />
 	{/if}
 
-	<a href="/pages/{page.id}" class="rounded">
+	<a
+		href="/pages/{page.id}"
+		class="rounded focus:shadow-lg transition-all duration-200 h-full outline-none"
+	>
 		{#if user}
 			<div class="flex gap-2 items-center p-2 md:p-4">
 				<img

@@ -22,10 +22,8 @@
 		toolbar:
 			'undo redo | bold italic underline strikethrough | blocks | numlist bullist checklist | link insertfile image media table |' +
 			'alignleft aligncenter alignright alignjustify |' +
-			'forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak |' +
-			'charmap emoticons | preview save print code fullscreen |' +
-			' pageembed template anchor codesample | a11ycheck ltr rtl |' +
-			'showcomments addcomment',
+			'forecolor backcolor casechange permanentpen formatpainter |' +
+			'code fullscreen',
 
 		plugins: [
 			'advlist',

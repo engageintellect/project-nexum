@@ -63,7 +63,10 @@
 					</div>
 
 					{#if filter}
-						<button class="" on:click={() => (filter = '')}>
+						<button
+							class="focus:outline outline-1 outline-primary rounded"
+							on:click={() => (filter = '')}
+						>
 							<Icon src={XMark} class="w-5 h-5" />
 						</button>
 					{/if}
@@ -97,7 +100,9 @@
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}
-								<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
+								<div class="focus:outline outline-red-500">
+									<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
+								</div>
 							{/if}
 						{/if}
 					{/each}

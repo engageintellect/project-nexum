@@ -14,7 +14,6 @@
 		{:else}
 			{#each data.pages as page}
 				<MyPageItem {page} />
-				<div class="divider mt-0 mb-2" />
 			{/each}
 		{/if}
 	</div>

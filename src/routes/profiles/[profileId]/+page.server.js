@@ -15,7 +15,7 @@ export const load = ({ locals, params }) => {
 	const getUsers = async () => {
 		try {
 			const users = serializeNonPOJOs(await locals.pb.collection('users').getFullList(undefined), {
-				expand: ['favorites', 'likes']
+				expand: ['favorites', 'likes', 'tags']
 			});
 			return users;
 		} catch (err) {
@@ -27,9 +27,21 @@ export const load = ({ locals, params }) => {
 	const getPages = async () => {
 		try {
 			const pages = serializeNonPOJOs(await locals.pb.collection('pages').getFullList(undefined), {
-				expand: ['favorites', 'likes']
+				expand: ['favorites', 'likes', 'tags']
 			});
 			return pages;
+		} catch (err) {
+			console.log('Error:', err);
+			throw error(err.status, err.message);
+		}
+	};
+
+	const getTags = async () => {
+		try {
+			const tags = serializeNonPOJOs(await locals.pb.collection('tags').getFullList(undefined), {
+				expand: ['favorites', 'likes']
+			});
+			return tags;
 		} catch (err) {
 			console.log('Error:', err);
 			throw error(err.status, err.message);
@@ -39,7 +51,8 @@ export const load = ({ locals, params }) => {
 	return {
 		user: getUser(params.profileId),
 		users: getUsers(),
-		pages: getPages()
+		pages: getPages(),
+		tags: getTags()
 	};
 };
 
