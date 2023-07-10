@@ -28,21 +28,6 @@
 		}
 	};
 
-	const handleFilter = (value) => {
-		filter = value;
-	};
-
-	// const getTotalFavorites = (users, pages) => {
-	// 	const total = users.reduce((count, user) => {
-	// 		if (user.favorites.includes(pages.id)) {
-	// 			return count + 1;
-	// 		}
-	// 		return count;
-	// 	}, 0);
-
-	// 	return total;
-	// };
-
 	const getPageLength = (pages) => {
 		const total = pages.reduce((count, page) => {
 			if (page.user === user.id) {
@@ -58,7 +43,7 @@
 <div class="my-10">
 	<!-- USER DATA -->
 	<div class="max-w-3xl mx-auto px-4 my-10 md:my-20">
-		<div class="flex flex-col md:flex-row gap-4 md:items-center justify-center">
+		<div class="flex flex-col sm:flex-row gap-4 md:items-center justify-center">
 			<div>
 				<img
 					class="w-24 md:w-32 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
@@ -85,7 +70,7 @@
 	{#if getPageLength(data.pages) > 3}
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
-				<div class=" flex w-full max-w-md border border-primary rounded p-3">
+				<div class=" flex w-full max-w-lg border border-primary rounded p-3">
 					<div class="flex items-center gap-2 w-full">
 						<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 						<!-- svelte-ignore a11y-autofocus -->
