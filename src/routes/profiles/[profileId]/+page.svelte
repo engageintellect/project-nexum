@@ -84,10 +84,7 @@
 					</div>
 
 					{#if filter}
-						<button
-							class="focus:outline outline-1 outline-primary rounded"
-							on:click={() => (filter = '')}
-						>
+						<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
 							<Icon src={XMark} class="w-5 h-5" />
 						</button>
 					{/if}
