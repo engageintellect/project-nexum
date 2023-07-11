@@ -4,6 +4,7 @@
 	import { getImageURL } from '$lib/utils';
 	import { Icon, Plus } from 'svelte-hero-icons';
 	import { Footer } from '$lib/components';
+	import { PUBLIC_SEARCH_URL } from '$env/static/public';
 
 	export let data;
 </script>
@@ -68,7 +69,17 @@
 
 							<li>
 								<a href="/ai" class="justify-between"
-									>AI<span class="badge badge-error badge-sm uppercase">Experimental</span></a
+									>ET-GPT<span class="badge badge-error badge-sm uppercase py-3 rounded"
+										>Experimental</span
+									></a
+								>
+							</li>
+
+							<li>
+								<a href={PUBLIC_SEARCH_URL} target="_blank" class="justify-between"
+									>AI Search<span class="badge badge-error badge-sm uppercase py-3 rounded"
+										>Experimental</span
+									></a
 								>
 							</li>
 						</div>
