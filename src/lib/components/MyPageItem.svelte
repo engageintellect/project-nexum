@@ -64,7 +64,7 @@
 	</div>
 	<div class="flex flex-col w-full ml-4 h-full justify-center">
 		<a href="/pages/{page.id}" class="font-semibold text-lg">{page.name}</a>
-		<p>{page.tagline}</p>
+		<div>{page.tagline}</div>
 		<div class="mt-2">
 			<div class="font-bold text-xs">
 				Last Update: <span class="font-medium">{formattedDateTime}</span>
@@ -81,10 +81,10 @@
 				<Icon src={Trash} class="w-4 h-4" />
 			</span>
 			<div slot="heading">
-				<h3 class="text-2xl">Delete {page.name}</h3>
-				<p class="text-base font-normal mt-2">
+				<div class="text-2xl">Delete {page.name}</div>
+				<div class="text-base font-normal mt-2">
 					Are you sure you want to delete this page? Once deleted, the page cannot be restored.
-				</p>
+				</div>
 			</div>
 			<div slot="actions" class="flex w-full items-center justify-center space-x-2">
 				<label for={page.id} class="btn btn-outline">Cancel</label>

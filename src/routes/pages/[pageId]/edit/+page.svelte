@@ -37,8 +37,8 @@
 			use:enhance={submitUpdatePage}
 		>
 			<div class="flex flex-col justify-center text-center mt-10">
-				<h3 class="text-3xl font-bold">Edit "{data.page.name}"</h3>
-				<p class="pt-2 text-lg">Update whatever you like, then click "save changes"</p>
+				<div class="text-3xl font-bold">Edit "{data.page.name}"</div>
+				<div class="pt-2 text-lg">Update whatever you like, then click "save changes"</div>
 			</div>
 
 			<div class="w-full grid grid-cols-1 gap-x-5 md:grid-cols-2">

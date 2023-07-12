@@ -55,10 +55,10 @@
 <div class="max-h-screen px-4">
 	<div class="flex flex-col mt-10">
 		<div class="flex-1">
-			<h1 class="text-6xl font-bold">ET-GPT</h1>
-			<p class="">
+			<div class="text-6xl font-bold">ET-GPT</div>
+			<div class="">
 				ET-GPT is a GPT-3 powered chatbot that can answer questions about just about anything.
-			</p>
+			</div>
 			<div class="divider" />
 		</div>
 

@@ -3,10 +3,10 @@
 </script>
 
 <div class="flex flex-col items-center h-full w-full px-4">
-	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
+	<div class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
 		Reset Your Password
-	</h2>
-	<p class="text-center mt-1">We'll send you an email with a link to reset your password.</p>
+	</div>
+	<div class="text-center mt-1">We'll send you an email with a link to reset your password.</div>
 	<form
 		action="?/resetPassword"
 		method="POST"

@@ -6,7 +6,7 @@
 <div class="flex flex-col w-full h-full">
 	<div class="w-full">
 		<form action="?/updatePassword" method="POST" class="flex flex-col space-y-2 w-full">
-			<h3 class="text-2xl font-medium">Change Password</h3>
+			<div class="text-2xl font-medium">Change Password</div>
 			<div class="divider" />
 			<Input
 				id="oldPassword"

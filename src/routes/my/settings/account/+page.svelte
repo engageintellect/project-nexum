@@ -52,11 +52,11 @@
 
 <div class="flex flex-col w-full h-full space-y-12">
 	<div class="w-full">
-		<h3 class="text-2xl font-medium">Change Email</h3>
+		<div class="text-2xl font-medium">Change Email</div>
 		<div class="divider" />
 		<Modal label="change-email" checked={emailModalOpen}>
 			<span slot="trigger" class="btn btn-primary">Change Email</span>
-			<h3 slot="heading">Change Your Email</h3>
+			<div slot="heading">Change Your Email</div>
 			<form action="?/updateEmail" method="POST" class="space-y-2" use:enhance={submitUpdateEmail}>
 				<Input
 					id="email"
@@ -74,12 +74,12 @@
 		</Modal>
 	</div>
 	<div class="w-full">
-		<h3 class="text-2xl font-medium">Change Username</h3>
+		<div class="text-2xl font-medium">Change Username</div>
 		<div class="divider mb-0.5" />
 		<Input id="username" label="Username" value={data?.user?.username} disabled />
 		<Modal label="change-username" checked={usernameModalOpen}>
 			<span slot="trigger" class="btn btn-primary">Change Username</span>
-			<h3 slot="heading">Change Your Username</h3>
+			<div slot="heading">Change Your Username</div>
 			<form
 				action="?/updateUsername"
 				method="POST"

@@ -28,14 +28,14 @@
 </script>
 
 <div class="flex flex-col items-center h-full w-full max-w-lg mx-auto px-4">
-	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
+	<div class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
 		Login to your account
-	</h2>
-	<p class="text-center mt-1">
+	</div>
+	<div class="text-center mt-1">
 		Or <a href="/register" class="text-primary font-medium hover:cursor-pointer hover:underline"
 			>register</a
 		> if you don't already have an account.
-	</p>
+	</div>
 	<form
 		action="?/login"
 		method="POST"

@@ -33,8 +33,8 @@
 					alt="User avatar"
 				/>
 				<div class="flex flex-col">
-					<p class="text-md font-medium primary-content">{user.name}</p>
-					<p class="text-xs font-thin secondary-content">{user.job_title}</p>
+					<div class="text-md font-medium primary-content">{user.name}</div>
+					<div class="text-xs font-thin secondary-content">{user.job_title}</div>
 				</div>
 			</div>
 		{/if}

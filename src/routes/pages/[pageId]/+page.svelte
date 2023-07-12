@@ -74,14 +74,14 @@
 				{data.page.name}<span />
 			</div>
 
-			<p class="text-2xl font-light mt-2">{data.page.tagline}</p>
+			<div class="text-2xl font-light mt-2">{data.page.tagline}</div>
 		</div>
 		<div>
-			<p class="mt-1">
+			<div class="mt-1">
 				<a class="text-primary hover:underline" target="_blank" href={data.page.url}
 					>{data.page.url}</a
 				>
-			</p>
+			</div>
 		</div>
 
 		<!-- CREATOR -->
@@ -102,14 +102,13 @@
 						</div>
 
 						<div class="flex flex-col justify-center">
-							<p class="text-lg font-semibold primary-content">
+							<div class="text-lg font-semibold primary-content">
 								{creator.name}
-							</p>
-							<p class="text-sm font-medium secondary-content">{creator.job_title}</p>
-							<p class="text-sm md:text-md font-bold primary-content">
+							</div>
+							<div class="text-sm font-medium secondary-content">{creator.job_title}</div>
+							<div class="text-sm md:text-md font-bold primary-content">
 								Read Time: {readTime.text}.
-							</p>
-							<p class="text-md font-thin primary-content" />
+							</div>
 							<div class="font-medium flex items-center gap-2">
 								<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
 								<div class="font-thin text-sm md:text-md">
@@ -194,16 +193,18 @@
 		</div>
 
 		<!-- IMAGE -->
-		<div class="avatar">
-			<div class="w-full h-64 md:h-96 rounded shadow-lg">
-				<img
-					src={data.page?.thumbnail
-						? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')
-						: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${data.page.name}`}
-					alt="page thumbnail"
-				/>
+		{#if data.page.thumbnail}
+			<div class="avatar">
+				<div class="w-full h-64 md:h-96 rounded shadow-lg">
+					<img
+						src={data.page?.thumbnail
+							? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')
+							: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${data.page.name}`}
+						alt="page thumbnail"
+					/>
+				</div>
 			</div>
-		</div>
+		{/if}
 
 		<!-- CONTENT -->
 
