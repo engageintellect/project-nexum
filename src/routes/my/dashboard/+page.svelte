@@ -53,7 +53,7 @@
 											</div>
 
 											<div
-												class="hover:scale-105 active:scale-95 transition-transform duration-200"
+												class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200"
 											>
 												<a href={`/pages/${page.id}/edit`}>
 													<Icon src={PencilSquare} class="w-5 h-5 text-primary" solid />

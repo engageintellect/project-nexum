@@ -45,7 +45,7 @@
 				Ne<span class="text-purple-500">x</span>um
 			</div>
 		</div>
-		<p class="text-center mt-1">Pages shared across all users.</p>
+		<div class="text-center mt-1">Pages shared across all users.</div>
 
 		<div class="my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
@@ -56,7 +56,7 @@
 						<input
 							type="text"
 							placeholder="Search Pages, People, Divisions, and Content"
-							class="w-full focus:outline-none"
+							class="w-full focus:outline-none bg-base-100"
 							bind:value={filter}
 							autofocus
 						/>

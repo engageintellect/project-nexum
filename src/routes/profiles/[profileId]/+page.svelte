@@ -77,7 +77,7 @@
 						<input
 							type="text"
 							placeholder="Search Pages, People, Divisions, and Content"
-							class="w-full focus:outline-none"
+							class="w-full focus:outline-none bg-base-100"
 							bind:value={filter}
 							autofocus
 						/>

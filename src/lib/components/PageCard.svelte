@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="card border border-neutral border-opacity-25 bg-base-100 rounded group active:scale-[98%] hover:shadow-lg transition-all duration-50 h-full"
+	class="card border border-neutral/25 bg-base-100 rounded group active:scale-[98%] hover:shadow-md transition-all duration-50 h-full"
 >
 	{#if isNew}
 		<Badge msg={'NEW!'} {isNew} />
