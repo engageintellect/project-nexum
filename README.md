@@ -4,10 +4,13 @@
 
 - SvelteKit
 - PocketBase
+- OpenAI
+- Zod
 - TailwindCSS
 - DaisyUI
+- TinyMCE
+- Read Time
 - Svelte French Toast
-- Zod
 
 ## Getting Started
 
@@ -28,6 +31,10 @@ pnpm run dev
 
 # or start the server and open the app in a new browser tab
 pnpm run dev -- --open
+
+# you can also host your dev session on your local network, allowing you to test on other devices. Use --host to specify the host you want to use:
+
+pnpm run dev --host
 ```
 
 ## Building
