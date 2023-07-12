@@ -55,6 +55,7 @@
 						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
 						<div class="my-2">
+							<div class="font-bold uppercase">User</div>
 							<li>
 								<a href={`/profiles/${data.user.id}`} class="justify-between">My Profile</a>
 							</li>
@@ -70,6 +71,7 @@
 						<hr />
 
 						<div class="my-2">
+							<div class="font-bold uppercase">App</div>
 							<li>
 								<a href="/profiles" class="justify-between"> Profiles </a>
 							</li>
@@ -90,7 +92,8 @@
 								>
 							</li>
 						</div>
-						<div>
+						<div class="my-2">
+							<div class="font-bold uppercase">Settings</div>
 							<hr />
 							<li><a href="/my/settings">Settings</a></li>
 							<li>
