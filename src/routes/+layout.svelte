@@ -54,9 +54,9 @@
 						tabindex="0"
 						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
-						<div class="mb-5">
+						<div class="my-2">
 							<li>
-								<a href={`/profiles/${data.user.id}`} class="justify-between">Profile</a>
+								<a href={`/profiles/${data.user.id}`} class="justify-between">My Profile</a>
 							</li>
 
 							<li>
@@ -65,6 +65,13 @@
 
 							<li>
 								<a href="/my/dashboard" class="justify-between">My Dashboard</a>
+							</li>
+						</div>
+						<hr />
+
+						<div class="my-2">
+							<li>
+								<a href="/profiles" class="justify-between"> Profiles </a>
 							</li>
 
 							<li>
@@ -83,7 +90,6 @@
 								>
 							</li>
 						</div>
-
 						<div>
 							<hr />
 							<li><a href="/my/settings">Settings</a></li>
