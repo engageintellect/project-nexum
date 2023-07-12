@@ -58,7 +58,7 @@
 						<Icon src={Pencil} class="w-4 h-4" />
 					</span>
 				</label>
-				<div class="w-32 rounded-full">
+				<div class="w-32 rounded-full border border-primary">
 					<img
 						src={data.user?.avatar
 							? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
