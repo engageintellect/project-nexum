@@ -90,9 +90,9 @@
 				<div class="flex gap-2 my-10">
 					<div class="flex items-center gap-4">
 						<div>
-							<a href={`/profiles/${creator.id}`}>
+							<a href={`/people/${creator.id}`}>
 								<img
-									class="w-16 md:w-20 rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
+									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
 									src={creator?.avatar
 										? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
 										: `https://ui-avatars.com/api/?name=${creator?.name}`}

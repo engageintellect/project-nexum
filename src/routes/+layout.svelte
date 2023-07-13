@@ -2,7 +2,19 @@
 	import '../app.css';
 	import { Toaster } from 'svelte-french-toast';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, Plus } from 'svelte-hero-icons';
+	import {
+		Icon,
+		Plus,
+		Cog6Tooth,
+		Power,
+		Users,
+		ChatBubbleLeftRight,
+		MagnifyingGlassCircle,
+		RectangleGroup,
+		RectangleStack,
+		UserCircle,
+		Home
+	} from 'svelte-hero-icons';
 	import { Footer } from '$lib/components';
 	import { PUBLIC_SEARCH_URL } from '$env/static/public';
 
@@ -40,7 +52,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<!-- svelte-ignore a11y-label-has-associated-control -->
 					<label tabindex="0" class="btn btn-ghost btn-circle avatar">
-						<div class="w-10 rounded-full">
+						<div class="w-10 rounded-full border border-primary">
 							<img
 								src={data.user?.avatar
 									? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
@@ -55,50 +67,110 @@
 						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
 					>
 						<div class="my-2">
-							<div class="font-bold uppercase">User</div>
 							<li>
-								<a href={`/profiles/${data.user.id}`} class="justify-between">My Profile</a>
+								<a href={`/`} class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={Home} class="w-5 h-5" />
+										</div>
+										<div>Home</div>
+									</div>
+								</a>
 							</li>
 
 							<li>
-								<a href="/my/pages" class="justify-between">My Pages</a>
+								<a href="/people" class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={Users} class="w-5 h-5" />
+										</div>
+										<div>People</div>
+									</div>
+								</a>
 							</li>
 
 							<li>
-								<a href="/my/dashboard" class="justify-between">My Dashboard</a>
+								<a href="/ai" class="flex justify-between w-full">
+									<div class="flex gap-2">
+										<div>
+											<Icon src={ChatBubbleLeftRight} class="w-5 h-5" />
+										</div>
+										<div>ET-GPT</div>
+									</div>
+									<div class="badge badge-error uppercase badge-sm ml-5">beta</div>
+								</a>
+							</li>
+
+							<li>
+								<a href={PUBLIC_SEARCH_URL} target="_blank" class="flex w-full justify-between">
+									<div class="flex gap-2">
+										<div>
+											<Icon src={MagnifyingGlassCircle} class="w-5 h-5" />
+										</div>
+										<div>AI Search</div>
+									</div>
+									<div class="badge badge-error uppercase badge-sm">beta</div>
+								</a>
 							</li>
 						</div>
-						<hr />
+						<hr class="border border-primary/25" />
 
 						<div class="my-2">
-							<div class="font-bold uppercase">App</div>
 							<li>
-								<a href="/profiles" class="justify-between"> Profiles </a>
+								<a href={`/people/${data.user.id}`} class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={UserCircle} class="w-5 h-5" />
+										</div>
+										<div>My Profile</div>
+									</div>
+								</a>
 							</li>
 
 							<li>
-								<a href="/ai" class="justify-between"
-									>ET-GPT<span class="badge badge-error badge-sm uppercase py-3 rounded"
-										>Experimental</span
-									></a
-								>
+								<a href="/my/pages" class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={RectangleStack} class="w-5 h-5" />
+										</div>
+										<div>My Pages</div>
+									</div>
+								</a>
 							</li>
 
 							<li>
-								<a href={PUBLIC_SEARCH_URL} target="_blank" class="justify-between"
-									>AI Search<span class="badge badge-error badge-sm uppercase py-3 rounded"
-										>Experimental</span
-									></a
-								>
+								<a href="/my/dashboard" class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={RectangleGroup} class="w-5 h-5" />
+										</div>
+										<div>My Dashboard</div>
+									</div>
+								</a>
 							</li>
 						</div>
 						<div class="my-2">
-							<div class="font-bold uppercase">Settings</div>
-							<hr />
-							<li><a href="/my/settings">Settings</a></li>
+							<hr class="border border-primary/25" />
+							<li>
+								<a href="/my/settings">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={Cog6Tooth} class="w-5 h-5" />
+										</div>
+										<div>Settings</div>
+									</div>
+								</a>
+							</li>
 							<li>
 								<form action="/logout" method="POST">
-									<button type="submit" class="w-full text-start">Logout</button>
+									<button type="submit" class="w-full text-start">
+										<div class="flex gap-2 items-center">
+											<div>
+												<Icon src={Power} class="w-5 h-5" />
+											</div>
+											<div>Logout</div>
+										</div>
+									</button>
 								</form>
 							</li>
 						</div>

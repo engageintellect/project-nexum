@@ -98,7 +98,7 @@
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}
-								<div class="focus:outline outline-red-500">
+								<div class="">
 									<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
 								</div>
 							{/if}

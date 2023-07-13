@@ -4,9 +4,9 @@
 	export let user;
 </script>
 
-<a class="group" href={`${PUBLIC_HOME_URL}/profiles/${user.id}`}>
+<a class="group" href={`/people/${user.id}`}>
 	<div
-		class="border border-neutral/25 rounded group-hover:shadow-md transition-all duration-50 group-active:scale-[98%] p-2 md:p-4 h-full"
+		class="border border-neutral/25 rounded group-hover:shadow-md transition-all duration-50 group-active:scale-[99%] p-2 md:p-4 h-full"
 	>
 		<div class="flex items-center gap-2">
 			<div class="avatar">

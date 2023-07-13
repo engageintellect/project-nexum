@@ -38,7 +38,7 @@
 				</div>
 
 				<div>
-					<Input id="url" label="Page URL*" value={form?.data?.url} errors={form?.errors?.url} />
+					<Input id="url" label="Homepage URL" value={form?.data?.url} errors={form?.errors?.url} />
 				</div>
 
 				<div class="w-full">

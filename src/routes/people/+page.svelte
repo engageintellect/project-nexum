@@ -1,13 +1,13 @@
 <script>
 	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
-	import ProfileCard from '$lib/components/ProfileCard.svelte';
+	import PersonCard from '$lib/components/PersonCard.svelte';
 	export let data;
 	let filter;
 </script>
 
 <div class="my-10 px-4">
 	<div class="text-center text-6xl font-bold tracking-tight text-base-content">
-		<div>Profiles</div>
+		<div>People</div>
 	</div>
 	<div class="text-center mt-1">Find content by person, division, or job title.</div>
 
@@ -40,7 +40,7 @@
 					.includes(filter.toLowerCase()) || user.division
 					.toLowerCase()
 					.includes(filter.toLowerCase())}
-				<ProfileCard {user} />
+				<PersonCard {user} />
 			{/if}
 		{/each}
 	</div>

@@ -10,7 +10,7 @@ import ChatGPT from './ChatGPT.svelte';
 import Footer from './Footer.svelte';
 import Badge from './Badge.svelte';
 import Shortcuts from './Shortcuts.svelte';
-import ProfileCard from './ProfileCard.svelte';
+import PersonCard from './PersonCard.svelte';
 export {
 	Input,
 	Modal,
@@ -24,5 +24,5 @@ export {
 	Footer,
 	Badge,
 	Shortcuts,
-	ProfileCard
+	PersonCard
 };

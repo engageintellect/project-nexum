@@ -63,7 +63,7 @@
 				<div>
 					<Input
 						id="url"
-						label="Page URL"
+						label="Homepage URL"
 						value={form?.data?.url ?? data.page.url}
 						errors={form?.errors?.url}
 					/>
