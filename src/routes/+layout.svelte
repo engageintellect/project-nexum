@@ -13,6 +13,7 @@
 		RectangleGroup,
 		RectangleStack,
 		UserCircle,
+		InformationCircle,
 		Home
 	} from 'svelte-hero-icons';
 	import { Footer } from '$lib/components';
@@ -89,6 +90,20 @@
 								</a>
 							</li>
 
+							<li>
+								<a href={`/about`} class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={InformationCircle} class="w-5 h-5" />
+										</div>
+										<div>About</div>
+									</div>
+								</a>
+							</li>
+						</div>
+
+						<hr class="border border-primary/25" />
+						<div class="my-2">
 							<li>
 								<a href="/ai" class="flex justify-between w-full">
 									<div class="flex gap-2">

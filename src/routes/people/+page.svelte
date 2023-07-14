@@ -6,7 +6,7 @@
 </script>
 
 <div class="my-10 px-4">
-	<div class="text-center text-6xl font-bold tracking-tight text-base-content">
+	<div class="text-center text-7xl font-bold tracking-tight text-base-content">
 		<div>People</div>
 	</div>
 	<div class="text-center mt-1">Find content by person, division, or job title.</div>

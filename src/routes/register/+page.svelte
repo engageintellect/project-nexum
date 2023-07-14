@@ -13,25 +13,28 @@
 		> if you already have an account.
 	</div>
 	<form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
-		<Input id="name" label="Name" value={form?.data?.name} errors={form?.errors?.name} />
-		<Input
-			id="job_title"
-			label="Job Title"
-			value={form?.data?.job_title}
-			errors={form?.errors?.job_title}
-		/>
+		<Input id="name" label="Name*" value={form?.data?.name} errors={form?.errors?.name} />
+
 		<Input
 			type="email"
 			id="email"
-			label="Email"
+			label="Email*"
 			value={form?.data?.email}
 			errors={form?.errors?.email}
 		/>
-		<Input type="password" id="password" label="Password" errors={form?.errors?.password} />
+
+		<Input
+			id="job_title"
+			label="Job Title*"
+			value={form?.data?.job_title}
+			errors={form?.errors?.job_title}
+		/>
+
+		<Input type="password" id="password" label="Password*" errors={form?.errors?.password} />
 		<Input
 			type="password"
 			id="passwordConfirm"
-			label="Confirm Password"
+			label="Confirm Password*"
 			errors={form?.errors?.passwordConfirm}
 		/>
 		<div class="w-full max-w-lg pt-2">

@@ -52,10 +52,10 @@
 	});
 </script>
 
-<div class="max-h-screen px-4">
+<div class="min-h-screen max-h-screen px-4">
 	<div class="flex flex-col mt-10">
 		<div class="flex-1">
-			<div class="text-center text-6xl font-bold tracking-tight text-base-content">
+			<div class="text-center text-7xl font-bold tracking-tight text-base-content">
 				<div>ET-GPT</div>
 			</div>
 			<div class="text-center mt-1">

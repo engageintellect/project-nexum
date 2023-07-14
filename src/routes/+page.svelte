@@ -40,7 +40,7 @@
 	<!-- IF LOGGED IN, SHOW CONTENT -->
 {:else}
 	<div>
-		<div class="mt-10 text-center text-6xl font-bold tracking-tight text-base-content">
+		<div class="mt-10 text-center text-7xl font-bold tracking-tight text-base-content">
 			<div>
 				Ne<span class="text-purple-500">x</span>um
 			</div>

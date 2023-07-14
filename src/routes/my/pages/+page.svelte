@@ -4,7 +4,7 @@
 </script>
 
 <div class="px-4 mt-10">
-	<div class="text-6xl font-bold">My Pages</div>
+	<div class="text-7xl font-bold">My Pages</div>
 	<div class="mt-2">Pages that you've created.</div>
 	<div class="w-full mt-4 flex flex-col items-center">
 		{#if data.pages.length === 0}
