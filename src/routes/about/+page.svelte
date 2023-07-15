@@ -8,8 +8,8 @@
 			<div>
 				<div class="text-6xl lg:text-7xl font-bold">Connect People and Content</div>
 				<div class="py-6">
-					Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-					exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+					A people-driven knowledge base that connects people and content to improve cross-team
+					connections, foster collaborations, and improve modeling.
 				</div>
 				<a href="/" class="btn btn-primary">Get Started</a>
 				<a href="/" class="btn btn-outline">Contribute</a>
@@ -21,11 +21,9 @@
 		<div class="text-4xl font-bold flex justify-center">Connect People and Content</div>
 
 		<div class="my-5 text-xl">
-			Esse proident irure occaecat reprehenderit sunt ipsum fugiat laborum ullamco pariatur. Enim
-			ullamco nulla consequat quis excepteur aliquip ea anim amet. Est commodo tempor quis ex nisi
-			qui aliqua fugiat. Aliqua do est eiusmod adipisicing tempor in culpa. Consectetur commodo qui
-			laboris sunt commodo sint laborum pariatur do duis. Duis dolore minim labore exercitation
-			aliqua enim sint exercitation occaecat sint sit ut excepteur ullamco.
+			Unlike traditional knowledge bases, we focus on connecting people and content. We believe that
+			the best way to learn is through people. Most knowledge bases are static and don't allow for a
+			way to connect with the people behind the content. We want to change that.
 		</div>
 	</div>
 
@@ -92,7 +90,7 @@
 					class="h-80 w-full object-cover rounded shadow-lg"
 				/>
 				<div class="text-center max-w-lg">
-					<div class="text-3xl font-bold">Improved Modeling</div>
+					<div class="text-3xl font-bold">Improved Data Modeling</div>
 					<div class="py-5">
 						Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
 						exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
