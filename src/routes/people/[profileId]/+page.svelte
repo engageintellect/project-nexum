@@ -54,10 +54,10 @@
 				/>
 			</div>
 			<div>
-				<div class="text-2xl md:text-3xl font-semibold">
+				<div class="text-2xl md:text-3xl font-semibold capitalize">
 					{data.user.name}
 				</div>
-				<div class="text-lg md:text-xl font-thin">{data.user.job_title}</div>
+				<div class="text-lg md:text-xl font-thin capitalize">{data.user.job_title}</div>
 				{#if data.user.division}
 					<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase py-3">
 						{data.user.division}
