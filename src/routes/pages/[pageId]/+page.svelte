@@ -234,13 +234,16 @@
 					/>
 				</div>
 			</div>
+
+			<!-- CONTENT -->
+			<div class="mt-10 page-content overflow-x-hidden">
+				{@html data.page.content}
+			</div>
+		{:else}
+			<div class="page-content overflow-x-hidden">
+				{@html data.page.content}
+			</div>
 		{/if}
-
-		<!-- CONTENT -->
-
-		<div class="mt-10 page-content overflow-x-hidden">
-			{@html data.page.content}
-		</div>
 	</div>
 
 	<div class="mt-10 hidden xl:flex">
