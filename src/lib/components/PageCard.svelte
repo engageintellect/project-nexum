@@ -6,6 +6,7 @@
 	export let user;
 	export let isNew = false;
 	export let isOld = false;
+	export let showUser = true;
 </script>
 
 <div
@@ -23,7 +24,7 @@
 		href="/pages/{page.id}"
 		class="rounded focus:shadow-lg transition-all duration-200 h-full outline-none"
 	>
-		{#if user}
+		{#if user && showUser}
 			<div class="flex gap-2 items-center p-2 md:p-4">
 				<img
 					class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
@@ -38,9 +39,9 @@
 				</div>
 			</div>
 		{/if}
-		<div class="relative overflow-hidden border-t border-b">
+		<div class="relative overflow-hidden border-neutral/25 border-t border-b">
 			<img
-				class="h-52 w-full object-cover scale-[102%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
+				class="h-52 w-full object-cover scale-[100%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
 					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}

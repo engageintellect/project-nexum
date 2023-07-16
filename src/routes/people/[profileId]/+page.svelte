@@ -40,9 +40,9 @@
 	};
 </script>
 
-<div class="my-10">
+<div class="my-5 sm:my-10">
 	<!-- USER DATA -->
-	<div class="max-w-3xl mx-auto px-4 my-10">
+	<div class="max-w-3xl mx-auto px-4">
 		<div class="flex flex-col sm:flex-row gap-4 md:items-center justify-center">
 			<div>
 				<img
@@ -65,21 +65,24 @@
 				{/if}
 
 				{#if data.user.id != data.pageUser.id}
-					<div class="mt-2">
+					<div class="mt-5 sm:mt-2">
 						<form action="?/followUser" method="POST" use:enhance>
-							<button type="submit" class="active:scale-[98%] transition-all duration-200">
+							<button
+								type="submit"
+								class="w-full sm:w-auto active:scale-[98%] transition-all duration-200"
+							>
 								<input type="hidden" name="id" value={data.pageUser.id} />
 								<div>
 									{#if data.user.following.includes(data.pageUser.id)}
 										<input type="hidden" name="follow" value="true" />
-										<button class="flex btn btn-sm btn-success rounded capitalize">
+										<button class="flex w-full btn sm:btn-sm btn-success rounded capitalize">
 											<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
 											<div>Following</div>
 										</button>
 									{:else}
 										<input type="hidden" name="follow" value="false" />
 
-										<button class="flex btn btn-sm rounded capitalize">
+										<button class="flex w-full btn sm:btn-sm rounded capitalize">
 											<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
 											<div>Follow</div>
 										</button>
@@ -94,7 +97,7 @@
 	</div>
 
 	{#if getPageLength(data.pages) > 3}
-		<div class="my-10 flex justify-center px-4">
+		<div class="mt-5 sm:my-10 flex justify-center px-4">
 			<div class="flex items-center justify-center w-full gap-2">
 				<div class=" flex w-full max-w-lg border border-primary rounded p-3">
 					<div class="flex items-center gap-2 w-full">
@@ -119,7 +122,7 @@
 		</div>
 	{/if}
 
-	<div class="flex justify-center pt-4">
+	<div class="flex justify-center sm:my-10 pt-4">
 		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
 
@@ -138,6 +141,7 @@
 					{#if page.user === pageUser.id}
 						<PageCard
 							{page}
+							showUser={false}
 							user={pageUser}
 							isNew={isNew(page.created)}
 							isOld={isOld(page.updated)}

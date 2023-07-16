@@ -133,24 +133,24 @@
 									</form>
 								</div>
 							{/if}
-							<!-- PAGE METAGS -->
-							<div>
-								<div class="text-sm md:text-md font-bold primary-content">
-									Read Time: {readTime.text}.
-								</div>
-								<div class="font-medium flex items-center gap-2">
-									<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-									<div class="font-thin text-sm md:text-md">
-										{formattedDateTime}.
-									</div>
-								</div>
-							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mb-5">
+					<div class="text-sm md:text-md font-bold primary-content">
+						Read Time: {readTime.text}.
+					</div>
+					<div class="font-medium flex items-center gap-2">
+						<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
+						<div class="font-thin text-sm md:text-md">
+							{formattedDateTime}.
 						</div>
 					</div>
 				</div>
 			{/if}
 		{/each}
 
+		<!-- PAGE METAGS -->
 		<div class="flex md:items-center flex-col gap-2 md:flex-row justify-between">
 			<!-- TAGS -->
 			<div class="flex flex-wrap gap-2">
