@@ -17,7 +17,7 @@
 		</div>
 	</div>
 
-	<div class="px-4 my-20">
+	<div class="px-4 my-20 max-w-3xl text-center mx-auto">
 		<div class="text-4xl font-bold flex justify-center">Connect People and Content</div>
 
 		<div class="my-5 text-xl">

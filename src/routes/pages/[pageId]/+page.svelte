@@ -13,6 +13,7 @@
 	} from 'svelte-hero-icons';
 	import readtime from 'read-time';
 	export let data;
+
 	import Toc from 'svelte-toc';
 
 	const readTime = readtime(data.page.content);
@@ -106,22 +107,52 @@
 								{creator.name}
 							</div>
 							<div class="text-sm font-medium secondary-content">{creator.job_title}</div>
-							<div class="text-sm md:text-md font-bold primary-content">
-								Read Time: {readTime.text}.
-							</div>
-							<div class="font-medium flex items-center gap-2">
-								<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-								<div class="font-thin text-sm md:text-md">
-									{formattedDateTime}.
+
+							{#if creator.id != data.user.id}
+								<div class="my-2">
+									<form action="?/followUser" method="POST" use:enhance>
+										<button type="submit" class="active:scale-[98%] transition-all duration-200">
+											<input type="hidden" name="id" value={creator.id} />
+											<div>
+												{#if data.user.following.includes(creator.id)}
+													<input type="hidden" name="follow" value="true" />
+													<button class="flex btn btn-sm btn-success rounded capitalize">
+														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
+														<div>Following</div>
+													</button>
+												{:else}
+													<input type="hidden" name="follow" value="false" />
+
+													<button class="flex btn btn-sm rounded capitalize">
+														<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
+														<div>Follow</div>
+													</button>
+												{/if}
+											</div>
+										</button>
+									</form>
 								</div>
-							</div>
+							{/if}
 						</div>
 					</div>
 				</div>
 			{/if}
 		{/each}
 
-		<div class="flex flex-col gap-5 md:flex-row justify-between">
+		<!-- PAGE METAGS -->
+		<div class="flex flex-col gap-2 md:flex-row justify-between">
+			<div>
+				<div class="text-sm md:text-md font-bold primary-content">
+					Read Time: {readTime.text}.
+				</div>
+				<div class="font-medium flex items-center gap-2">
+					<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
+					<div class="font-thin text-sm md:text-md">
+						{formattedDateTime}.
+					</div>
+				</div>
+			</div>
+
 			<!-- TAGS -->
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}

@@ -2,11 +2,11 @@
 	import { enhance } from '$app/forms';
 	import PageCard from '$lib/components/PageCard.svelte';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
+	import { Icon, MagnifyingGlass, XMark, PlusCircle, CheckCircle } from 'svelte-hero-icons';
 
 	export let data;
 	let filter;
-	let user = data.user;
+	let pageUser = data.pageUser;
 
 	const isOld = (date) => {
 		const currentDate = new Date(); // Current date
@@ -30,7 +30,7 @@
 
 	const getPageLength = (pages) => {
 		const total = pages.reduce((count, page) => {
-			if (page.user === user.id) {
+			if (page.user === pageUser.id) {
 				return count + 1;
 			}
 			return count;
@@ -47,20 +47,46 @@
 			<div>
 				<img
 					class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
-					src={data.user?.avatar
-						? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
-						: `https://ui-avatars.com/api/?name=${data.user?.name}`}
+					src={data.pageUser?.avatar
+						? getImageURL(data.pageUser?.collectionId, data.pageUser?.id, data.pageUser?.avatar)
+						: `https://ui-avatars.com/api/?name=${data.pageUser?.name}`}
 					alt="User avatar"
 				/>
 			</div>
 			<div>
 				<div class="text-2xl md:text-3xl font-semibold capitalize">
-					{data.user.name}
+					{data.pageUser.name}
 				</div>
-				<div class="text-lg md:text-xl font-thin capitalize">{data.user.job_title}</div>
-				{#if data.user.division}
+				<div class="text-lg md:text-xl font-thin capitalize">{data.pageUser.job_title}</div>
+				{#if data.pageUser.division}
 					<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase py-3">
-						{data.user.division}
+						{data.pageUser.division}
+					</div>
+				{/if}
+
+				{#if data.user.id != data.pageUser.id}
+					<div class="mt-2">
+						<form action="?/followUser" method="POST" use:enhance>
+							<button type="submit" class="active:scale-[98%] transition-all duration-200">
+								<input type="hidden" name="id" value={data.pageUser.id} />
+								<div>
+									{#if data.user.following.includes(data.pageUser.id)}
+										<input type="hidden" name="follow" value="true" />
+										<button class="flex btn btn-sm btn-success rounded capitalize">
+											<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
+											<div>Following</div>
+										</button>
+									{:else}
+										<input type="hidden" name="follow" value="false" />
+
+										<button class="flex btn btn-sm rounded capitalize">
+											<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
+											<div>Follow</div>
+										</button>
+									{/if}
+								</div>
+							</button>
+						</form>
 					</div>
 				{/if}
 			</div>
@@ -104,13 +130,18 @@
 									.toLowerCase()
 									.includes(filter.toLowerCase()) )) || page.content
 						.toLowerCase()
-						.includes(filter.toLowerCase()) || user.name
+						.includes(filter.toLowerCase()) || pageUser.name
 						.toLowerCase()
 						.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
 									.toLowerCase()
 									.includes(filter.toLowerCase()) ))}
-					{#if page.user === user.id}
-						<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
+					{#if page.user === pageUser.id}
+						<PageCard
+							{page}
+							user={pageUser}
+							isNew={isNew(page.created)}
+							isOld={isOld(page.updated)}
+						/>
 					{/if}
 				{/if}
 			{/each}

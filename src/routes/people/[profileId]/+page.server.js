@@ -2,10 +2,10 @@ import { serializeNonPOJOs } from '$lib/utils';
 import { error } from '@sveltejs/kit';
 
 export const load = ({ locals, params }) => {
-	const getUser = async (profileId) => {
+	const getPageUser = async (profileId) => {
 		try {
-			const user = serializeNonPOJOs(await locals.pb.collection('users').getOne(profileId, {}));
-			return user;
+			const pageUser = serializeNonPOJOs(await locals.pb.collection('users').getOne(profileId, {}));
+			return pageUser;
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
@@ -15,7 +15,7 @@ export const load = ({ locals, params }) => {
 	const getUsers = async () => {
 		try {
 			const users = serializeNonPOJOs(await locals.pb.collection('users').getFullList(undefined), {
-				expand: ['favorites', 'likes', 'tags']
+				expand: ['favorites', 'likes', 'tags', 'following']
 			});
 			return users;
 		} catch (err) {
@@ -52,7 +52,7 @@ export const load = ({ locals, params }) => {
 	};
 
 	return {
-		user: getUser(params.profileId),
+		pageUser: getPageUser(params.profileId),
 		users: getUsers(),
 		pages: getPages(),
 		tags: getTags()
@@ -91,6 +91,23 @@ export const actions = {
 
 		await locals.pb.collection('users').update(locals.user.id, {
 			favorites: favoritePages
+		});
+	},
+
+	followUser: async ({ request, locals }) => {
+		const form = await request.formData();
+		const { id, follow } = Object.fromEntries(form.entries());
+		const following = locals.user.following;
+
+		if (follow === 'true') {
+			const index = following.indexOf(id);
+			following.splice(index, 1);
+		} else {
+			following.push(id);
+		}
+
+		await locals.pb.collection('users').update(locals.user.id, {
+			following: following
 		});
 	}
 };

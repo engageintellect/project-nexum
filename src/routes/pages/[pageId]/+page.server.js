@@ -65,5 +65,22 @@ export const actions = {
 		await locals.pb.collection('users').update(locals.user.id, {
 			favorites: favoritePages
 		});
+	},
+
+	followUser: async ({ request, locals }) => {
+		const form = await request.formData();
+		const { id, follow } = Object.fromEntries(form.entries());
+		const following = locals.user.following;
+
+		if (follow === 'true') {
+			const index = following.indexOf(id);
+			following.splice(index, 1);
+		} else {
+			following.push(id);
+		}
+
+		await locals.pb.collection('users').update(locals.user.id, {
+			following: following
+		});
 	}
 };
