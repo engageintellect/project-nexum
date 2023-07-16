@@ -116,14 +116,14 @@
 											<div>
 												{#if data.user.following.includes(creator.id)}
 													<input type="hidden" name="follow" value="true" />
-													<button class="flex btn btn-sm btn-success rounded capitalize">
+													<button class="flex btn btn-sm btn-success capitalize">
 														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
 														<div>Following</div>
 													</button>
 												{:else}
 													<input type="hidden" name="follow" value="false" />
 
-													<button class="flex btn btn-sm rounded capitalize">
+													<button class="flex btn btn-sm capitalize">
 														<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
 														<div>Follow</div>
 													</button>
@@ -133,26 +133,25 @@
 									</form>
 								</div>
 							{/if}
+							<!-- PAGE METAGS -->
+							<div>
+								<div class="text-sm md:text-md font-bold primary-content">
+									Read Time: {readTime.text}.
+								</div>
+								<div class="font-medium flex items-center gap-2">
+									<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
+									<div class="font-thin text-sm md:text-md">
+										{formattedDateTime}.
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			{/if}
 		{/each}
 
-		<!-- PAGE METAGS -->
-		<div class="flex flex-col gap-2 md:flex-row justify-between">
-			<div>
-				<div class="text-sm md:text-md font-bold primary-content">
-					Read Time: {readTime.text}.
-				</div>
-				<div class="font-medium flex items-center gap-2">
-					<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-					<div class="font-thin text-sm md:text-md">
-						{formattedDateTime}.
-					</div>
-				</div>
-			</div>
-
+		<div class="flex md:items-center flex-col gap-2 md:flex-row justify-between">
 			<!-- TAGS -->
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}
