@@ -89,7 +89,7 @@
 		{#each data.users as creator}
 			{#if creator.id === data.page.user}
 				<div class="flex gap-2 my-10">
-					<div class="flex items-center gap-4">
+					<div class="flex items-start gap-4">
 						<div>
 							<a href={`/people/${creator.id}`}>
 								<img
