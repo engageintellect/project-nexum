@@ -5,6 +5,11 @@
 
 	export let data;
 	let filter;
+	let following = false;
+
+	const handleFollow = () => {
+		following = !following;
+	};
 
 	const isOld = (date) => {
 		const currentDate = new Date(); // Current date
@@ -73,6 +78,19 @@
 
 		{#if data.tags}
 			<div class="flex overflow-x-auto no-scrollbar md:justify-center items-center gap-2 my-5 px-4">
+				<!-- <label class="swap">
+					<input on:click={handleFollow} type="checkbox" />
+					<div class="swap-on btn btn-success rounded w-full">All Pages</div>
+					<div class="swap-off btn btn-info rounded w-full">Following</div>
+				</label> -->
+
+				<div class="btn">
+					<label class="label flex gap-2 cursor-pointer">
+						<div class="">My Feed</div>
+						<input type="checkbox" class="checkbox" on:click={handleFollow} />
+					</label>
+				</div>
+
 				{#each data.tags as tag}
 					<button class="btn btn-outline" on:click={() => handleFilter(tag.name)}>{tag.name}</button
 					>
@@ -80,32 +98,74 @@
 			</div>
 		{/if}
 
-		<div class="flex justify-center pt-4">
-			<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-				<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
+		{#if following}
+			<!-- <div class="text-5xl font-bold px-4">My Feed:</div> -->
 
-				{#each data.pages as page}
-					{#each data.users as user}
-						{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
-								.toLowerCase()
-								.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
-											.toLowerCase()
-											.includes(filter.toLowerCase()) )) || page.content
-								.toLowerCase()
-								.includes(filter.toLowerCase()) || user.name
-								.toLowerCase()
-								.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
-											.toLowerCase()
-											.includes(filter.toLowerCase()) ))}
-							{#if page.user === user.id}
-								<div class="">
-									<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
-								</div>
+			<div class="flex justify-center pt-4">
+				<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{#each data.pages as page}
+						{#each data.users as user}
+							{#if data.user.following.includes(page.user)}
+								{#if !filter || page.name
+										.toLowerCase()
+										.includes(filter.toLowerCase()) || page.tagline
+										.toLowerCase()
+										.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
+													.toLowerCase()
+													.includes(filter.toLowerCase()) )) || page.content
+										.toLowerCase()
+										.includes(filter.toLowerCase()) || user.name
+										.toLowerCase()
+										.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
+													.toLowerCase()
+													.includes(filter.toLowerCase()) ))}
+									{#if page.user === user.id}
+										<PageCard
+											{page}
+											{user}
+											isNew={isNew(page.created)}
+											isOld={isOld(page.updated)}
+										/>
+									{/if}
+								{/if}
 							{/if}
-						{/if}
+						{/each}
 					{/each}
-				{/each}
+				</div>
 			</div>
-		</div>
+		{:else}
+			<div class="flex justify-center pt-4">
+				<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
+
+					{#each data.pages as page}
+						{#each data.users as user}
+							{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
+									.toLowerCase()
+									.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
+												.toLowerCase()
+												.includes(filter.toLowerCase()) )) || page.content
+									.toLowerCase()
+									.includes(filter.toLowerCase()) || user.name
+									.toLowerCase()
+									.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
+												.toLowerCase()
+												.includes(filter.toLowerCase()) ))}
+								{#if page.user === user.id}
+									<div class="">
+										<PageCard
+											{page}
+											{user}
+											isNew={isNew(page.created)}
+											isOld={isOld(page.updated)}
+										/>
+									</div>
+								{/if}
+							{/if}
+						{/each}
+					{/each}
+				</div>
+			</div>
+		{/if}
 	</div>
 {/if}

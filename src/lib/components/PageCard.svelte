@@ -25,16 +25,16 @@
 		class="rounded focus:shadow-lg transition-all duration-200 h-full outline-none"
 	>
 		{#if user && showUser}
-			<div class="flex gap-2 items-center p-2 md:p-4">
+			<div class="flex gap-2 items-center p-2">
 				<img
-					class="w-8 h-8 rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+					class="w-8 h-8 object-cover rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
 					src={user?.avatar
 						? getImageURL(user?.collectionId, user?.id, user?.avatar)
 						: `https://ui-avatars.com/api/?name=${user?.name}`}
 					alt="User avatar"
 				/>
 				<div class="flex flex-col">
-					<div class="text-md font-medium primary-content">{user.name}</div>
+					<div class="text-sm font-medium primary-content">{user.name}</div>
 					<div class="text-xs font-thin secondary-content">{user.job_title}</div>
 				</div>
 			</div>
