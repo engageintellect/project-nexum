@@ -57,7 +57,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="card-body p-2 md:p-4">
+		<div class="card-body p-2">
 			<div>
 				<div class="text-lg md:text-xl font-semibold">{page.name}</div>
 

@@ -77,7 +77,9 @@
 		</div>
 
 		{#if data.tags}
-			<div class="flex overflow-x-auto no-scrollbar md:justify-center items-center gap-2 my-5 px-4">
+			<div
+				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 my-5 px-4"
+			>
 				<!-- <label class="swap">
 					<input on:click={handleFollow} type="checkbox" />
 					<div class="swap-on btn btn-success rounded w-full">All Pages</div>
@@ -92,7 +94,8 @@
 				</div>
 
 				{#each data.tags as tag}
-					<button class="btn btn-outline" on:click={() => handleFilter(tag.name)}>{tag.name}</button
+					<button class="btn btn-sm btn-outline rounded" on:click={() => handleFilter(tag.name)}
+						>{tag.name}</button
 					>
 				{/each}
 			</div>

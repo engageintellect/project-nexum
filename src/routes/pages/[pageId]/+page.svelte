@@ -227,6 +227,7 @@
 			<div class="avatar">
 				<div class="w-full h-64 md:h-96 rounded shadow-lg">
 					<img
+						class=""
 						src={data.page?.thumbnail
 							? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')
 							: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${data.page.name}`}
