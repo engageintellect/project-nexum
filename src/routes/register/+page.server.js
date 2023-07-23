@@ -17,7 +17,7 @@ export const actions = {
 
 		try {
 			await locals.pb.collection('users').create({ username, ...formData });
-			// await locals.pb.collection('users').requestVerification(formData.email);
+			await locals.pb.collection('users').requestVerification(formData.email);
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(500, 'Something went wrong');
