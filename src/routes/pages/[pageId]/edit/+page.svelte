@@ -145,8 +145,9 @@
 					errors={form?.errors?.content}
 				/>
 			</div>
-			<div class="w-full max-w-lg pt-3">
-				<button type="submit" class="btn btn-primary w-full max-w-lg">Save Changes</button>
+			<div class="flex justify-center gap-2 py-5">
+				<a class="btn btn-outline w-full max-w-sm" href={`/pages/${data.page.id}`}> Cancel </a>
+				<button type="submit" class="btn btn-success w-full">Save Changes</button>
 			</div>
 		</form>
 	</div>

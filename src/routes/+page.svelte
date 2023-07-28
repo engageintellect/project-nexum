@@ -16,7 +16,7 @@
 		const updatedDate = new Date(date); // Replace with page.updated value
 		const differenceInMilliseconds = currentDate - updatedDate;
 		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 15) {
+		if (daysDifference > 30) {
 			return true;
 		}
 	};
