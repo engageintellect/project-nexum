@@ -77,27 +77,40 @@
 		</div>
 
 		{#if data.tags}
-			<div
-				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 my-5 px-4"
-			>
-				<!-- <label class="swap">
+			<div class="flex items-center mx-4">
+				<div class="">
+					<label class="group cursor-pointer">
+						<div
+							class=" flex items-center gap-3 border border-primary/50 group-hover:border-primary py-2.5 px-4 rounded group-hover:shadow-lg transition-all duration-200"
+						>
+							<div class="flex gap-1 items-center uppercase">
+								<div class="">My</div>
+								<div class="">Feed</div>
+							</div>
+							<input
+								type="checkbox"
+								class="checkbox border group-hover:border-primary transition-all duration-500"
+								on:click={handleFollow}
+							/>
+						</div>
+					</label>
+				</div>
+
+				<div
+					class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4"
+				>
+					<!-- <label class="swap">
 					<input on:click={handleFollow} type="checkbox" />
 					<div class="swap-on btn btn-success rounded w-full">All Pages</div>
 					<div class="swap-off btn btn-info rounded w-full">Following</div>
 				</label> -->
 
-				<div class="btn">
-					<label class="label flex gap-2 cursor-pointer">
-						<div class="">My Feed</div>
-						<input type="checkbox" class="checkbox" on:click={handleFollow} />
-					</label>
+					{#each data.tags as tag}
+						<button class="btn btn-sm btn-outline rounded" on:click={() => handleFilter(tag.name)}
+							>{tag.name}</button
+						>
+					{/each}
 				</div>
-
-				{#each data.tags as tag}
-					<button class="btn btn-sm btn-outline rounded" on:click={() => handleFilter(tag.name)}
-						>{tag.name}</button
-					>
-				{/each}
 			</div>
 		{/if}
 
