@@ -51,7 +51,7 @@
 
 <div class="w-full flex items-center justify-between my-2 border boder-primary shadow-md">
 	<div class="avatar">
-		<div class="w-24 rounded">
+		<div class="w-24 lg:w-40 rounded">
 			<a href="/pages/{page.id}">
 				<img
 					src={page?.thumbnail

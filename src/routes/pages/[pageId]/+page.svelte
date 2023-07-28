@@ -201,44 +201,6 @@
 
 			<!-- ACTION BUTTONS -->
 			<div class="flex gap-5">
-				<!-- EDIT -->
-				{#if data.page.user === data.user.id}
-					<a href="/pages/{data.page.id}/edit">
-						<Icon
-							src={PencilSquare}
-							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
-						/>
-					</a>
-				{/if}
-
-				<!-- DELETE -->
-				{#if data.page.user === data.user.id}
-					<div class="">
-						<Modal label={data.page.id} checked={modalOpen}>
-							<span slot="trigger" class="">
-								<Icon
-									src={Trash}
-									class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
-								/>
-							</span>
-							<div slot="heading">
-								<div class="text-2xl">Delete {data.page.name}</div>
-								<div class="text-base font-normal mt-2">
-									Are you sure you want to delete this page? Once deleted, the page cannot be
-									restored.
-								</div>
-							</div>
-							<div slot="actions" class="flex w-full items-center justify-center space-x-2">
-								<label for={data.page.id} class="btn btn-outline">Cancel</label>
-								<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
-									<input type="hidden" name="id" value={data.page.id} />
-									<button type="submit" class="btn btn-error" disabled={loading}>Delete</button>
-								</form>
-							</div>
-						</Modal>
-					</div>
-				{/if}
-
 				<!-- LIKE -->
 				<form action="?/likePage" method="POST" use:enhance>
 					<button type="submit" class="hover:scale-105 active:scale-95 transition-all duration-200">
@@ -285,6 +247,44 @@
 						/>
 					</a>
 				</div>
+
+				<!-- EDIT -->
+				{#if data.page.user === data.user.id}
+					<a href="/pages/{data.page.id}/edit">
+						<Icon
+							src={PencilSquare}
+							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+						/>
+					</a>
+				{/if}
+
+				<!-- DELETE -->
+				{#if data.page.user === data.user.id}
+					<div class="">
+						<Modal label={data.page.id} checked={modalOpen}>
+							<span slot="trigger" class="">
+								<Icon
+									src={Trash}
+									class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+								/>
+							</span>
+							<div slot="heading">
+								<div class="text-2xl">Delete {data.page.name}</div>
+								<div class="text-base font-normal mt-2">
+									Are you sure you want to delete this page? Once deleted, the page cannot be
+									restored.
+								</div>
+							</div>
+							<div slot="actions" class="flex w-full items-center justify-center space-x-2">
+								<label for={data.page.id} class="btn btn-outline">Cancel</label>
+								<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+									<input type="hidden" name="id" value={data.page.id} />
+									<button type="submit" class="btn btn-error" disabled={loading}>Delete</button>
+								</form>
+							</div>
+						</Modal>
+					</div>
+				{/if}
 			</div>
 		</div>
 
