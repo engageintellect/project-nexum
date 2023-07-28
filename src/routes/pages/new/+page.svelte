@@ -15,7 +15,7 @@
 		>
 			<div class="flex flex-col justify-center text-center mt-10">
 				<div class="text-center text-3xl font-bold">Tell us more about this topic</div>
-				<div class="pt-2 text-lg">We'll need the name, tagline, link, and content</div>
+				<div class="pt-2 text-lg">We'll need a name, tagline, link, and content</div>
 			</div>
 
 			<div class="w-full grid grid-cols-1 gap-x-5 md:grid-cols-2">

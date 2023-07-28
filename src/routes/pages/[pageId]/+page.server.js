@@ -1,5 +1,5 @@
 import { serializeNonPOJOs } from '$lib/utils';
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 
 export const load = ({ locals, params }) => {
 	const getPage = async (pageId) => {
@@ -82,5 +82,18 @@ export const actions = {
 		await locals.pb.collection('users').update(locals.user.id, {
 			following: following
 		});
+	},
+
+	deletePage: async ({ request, locals }) => {
+		const { id } = Object.fromEntries(await request.formData());
+
+		try {
+			await locals.pb.collection('pages').delete(id);
+		} catch (err) {
+			console.log('Error: ', err);
+			throw error(err.status, err.message);
+		}
+
+		throw redirect(303, '/');
 	}
 };

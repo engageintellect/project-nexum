@@ -17,7 +17,7 @@
 	{/if}
 
 	{#if isOld}
-		<Badge msg={'OLD'} {isOld} />
+		<Badge msg={'STALE'} {isOld} />
 	{/if}
 
 	<a

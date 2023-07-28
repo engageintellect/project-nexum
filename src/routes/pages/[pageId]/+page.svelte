@@ -2,6 +2,8 @@
 	import { PUBLIC_HOME_URL } from '$env/static/public';
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
+	import { Modal } from '$lib/components';
+
 	import {
 		Icon,
 		Heart,
@@ -9,12 +11,37 @@
 		Share,
 		PencilSquare,
 		ArrowPathRoundedSquare,
-		CheckCircle
+		CheckCircle,
+		Trash
 	} from 'svelte-hero-icons';
 	import readtime from 'read-time';
 	export let data;
 
 	import Toc from 'svelte-toc';
+
+	import toast from 'svelte-french-toast';
+	let modalOpen;
+	let loading = false;
+
+	const submitDeletePage = () => {
+		loading = true;
+		return async ({ result, update }) => {
+			switch (result.type) {
+				case 'success':
+					toast.success('Page deleted successfully!');
+					await update();
+					break;
+				case 'error':
+					toast.error('Could not delete page. Try again later.');
+					break;
+				default:
+					await update();
+			}
+			loading = false;
+		};
+	};
+
+	$: modalOpen = false;
 
 	const readTime = readtime(data.page.content);
 
@@ -60,7 +87,7 @@
 	<div class="flex flex-col w-full mt-10 max-w-4xl mx-auto px-4">
 		<div class="flex gap-2 items-center mb-2">
 			{#if data.page.verified}
-				<div class="badge badge-sm badge-success rounded-full p-4">
+				<div class="badge badge-sm badge-success rounded-full py-3">
 					<div class="flex gap-1 items-center justify-center">
 						<div>
 							<Icon src={CheckCircle} class=" w-5 h-5" />
@@ -182,6 +209,34 @@
 							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
 						/>
 					</a>
+				{/if}
+
+				<!-- DELETE -->
+				{#if data.page.user === data.user.id}
+					<div class="">
+						<Modal label={data.page.id} checked={modalOpen}>
+							<span slot="trigger" class="">
+								<Icon
+									src={Trash}
+									class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+								/>
+							</span>
+							<div slot="heading">
+								<div class="text-2xl">Delete {data.page.name}</div>
+								<div class="text-base font-normal mt-2">
+									Are you sure you want to delete this page? Once deleted, the page cannot be
+									restored.
+								</div>
+							</div>
+							<div slot="actions" class="flex w-full items-center justify-center space-x-2">
+								<label for={data.page.id} class="btn btn-outline">Cancel</label>
+								<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+									<input type="hidden" name="id" value={data.page.id} />
+									<button type="submit" class="btn btn-error" disabled={loading}>Delete</button>
+								</form>
+							</div>
+						</Modal>
+					</div>
 				{/if}
 
 				<!-- LIKE -->
