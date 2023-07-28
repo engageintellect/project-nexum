@@ -93,3 +93,11 @@ aside > nav > h2 {
 	font-weight: 600;
 	/* Additional styles for h6 */
 }
+
+code {
+	background-color: black;
+	color: white;
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+}

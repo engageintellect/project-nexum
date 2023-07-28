@@ -73,7 +73,7 @@
 			{#if page.expand.tags}
 				<div class="flex flex-wrap items-end gap-2">
 					{#each page.expand.tags as tag}
-						<div class="badge badge-outline">{tag.name}</div>
+						<div class="badge badge-xs badge-outline py-3">{tag.name}</div>
 					{/each}
 				</div>
 			{/if}

@@ -58,16 +58,22 @@
 
 <div class="flex">
 	<div class="flex flex-col w-full mt-10 max-w-4xl mx-auto px-4">
-		{#if data.page.verified}
-			<div class="badge badge-sm badge-success rounded-full p-4">
-				<div class="flex gap-1 items-center justify-center">
-					<div>
-						<Icon src={CheckCircle} class=" w-5 h-5" />
+		<div class="flex gap-2 items-center mb-2">
+			{#if data.page.verified}
+				<div class="badge badge-sm badge-success rounded-full p-4">
+					<div class="flex gap-1 items-center justify-center">
+						<div>
+							<Icon src={CheckCircle} class=" w-5 h-5" />
+						</div>
+						<div class="uppercase font-semibold">verified</div>
 					</div>
-					<div class="uppercase font-semibold">verified</div>
 				</div>
-			</div>
-		{/if}
+			{/if}
+
+			{#if data.page.division != ''}
+				<div class="badge border-primary rounded py-3 uppercase">{data.page.division}</div>
+			{/if}
+		</div>
 
 		<!-- TITLE -->
 		<div>
@@ -90,7 +96,7 @@
 			{#if creator.id === data.page.user}
 				<div class="flex gap-2 my-10">
 					<div class="flex items-start gap-4">
-						<div>
+						<div class="relative">
 							<a href={`/people/${creator.id}`}>
 								<img
 									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
@@ -107,6 +113,11 @@
 								{creator.name}
 							</div>
 							<div class="text-sm font-medium secondary-content">{creator.job_title}</div>
+							{#if creator.division}
+								<div class="badge badge-sm badge-primary uppercase rounded py-3 mt-2">
+									{creator.division}
+								</div>
+							{/if}
 
 							{#if creator.id != data.user.id}
 								<div class="my-2">
@@ -116,14 +127,14 @@
 											<div>
 												{#if data.user.following.includes(creator.id)}
 													<input type="hidden" name="follow" value="true" />
-													<button class="flex btn btn-sm btn-success capitalize">
+													<button class="flex btn btn-xs btn-success capitalize rounded">
 														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
 														<div>Following</div>
 													</button>
 												{:else}
 													<input type="hidden" name="follow" value="false" />
 
-													<button class="flex btn btn-sm capitalize">
+													<button class="flex btn btn-xs capitalize rounded">
 														<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
 														<div>Follow</div>
 													</button>
@@ -156,7 +167,7 @@
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}
 					{#each data.page.expand.tags as tag}
-						<div class="badge badge-outline badge-primary">{tag.name}</div>
+						<div class="badge badge-outline badge-primary py-3">{tag.name}</div>
 					{/each}
 				{/if}
 			</div>
