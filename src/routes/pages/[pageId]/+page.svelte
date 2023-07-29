@@ -12,6 +12,7 @@
 		PencilSquare,
 		ArrowPathRoundedSquare,
 		CheckCircle,
+		Clock,
 		Trash
 	} from 'svelte-hero-icons';
 	import readtime from 'read-time';
@@ -154,14 +155,14 @@
 											<div>
 												{#if data.user.following.includes(creator.id)}
 													<input type="hidden" name="follow" value="true" />
-													<button class="flex btn btn-xs btn-success capitalize rounded">
+													<button class="flex btn btn-sm btn-success capitalize rounded">
 														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
 														<div>Following</div>
 													</button>
 												{:else}
 													<input type="hidden" name="follow" value="false" />
 
-													<button class="flex btn btn-xs capitalize rounded">
+													<button class="flex btn btn-sm capitalize rounded">
 														<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
 														<div>Follow</div>
 													</button>
@@ -174,14 +175,23 @@
 						</div>
 					</div>
 				</div>
-				<div class="mb-5">
-					<div class="text-sm md:text-md font-bold primary-content">
-						Read Time: {readTime.text}.
-					</div>
+				<div class="mb-5 flex flex-col md:flex-row md:gap-5">
 					<div class="font-medium flex items-center gap-2">
 						<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
 						<div class="font-thin text-sm md:text-md">
 							{formattedDateTime}.
+						</div>
+					</div>
+
+					<div class="text-sm md:text-md font-bold primary-content">
+						<div class="flex gap-2">
+							<div>
+								<Icon src={Clock} class=" w-5 h-5" />
+							</div>
+
+							<div>
+								{readTime.text}.
+							</div>
 						</div>
 					</div>
 				</div>
@@ -313,6 +323,7 @@
 		{/if}
 	</div>
 
+	<!-- TOC -->
 	<div class="mt-10 hidden xl:flex">
 		<Toc title={'Page Contents'} autoHide={false} />
 	</div>

@@ -7,6 +7,20 @@
 	export let data;
 	let filter;
 
+	const getDivisions = () => {
+		const divisions = new Set();
+
+		for (let i = 0; i < data.pages.length; i++) {
+			const pageDivisions = data.pages[i].division;
+
+			for (let j = 0; j < pageDivisions.length; j++) {
+				divisions.add(pageDivisions[j]);
+			}
+		}
+
+		return Array.from(divisions);
+	};
+
 	const handleFeedSelect = () => {
 		$feedSelect = !$feedSelect;
 	};
@@ -75,6 +89,15 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- <div class="uppercase flex gap-2 justify-center">
+			{#each getDivisions() as division}
+				<button
+					class="border border-primary/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
+					on:click={() => handleFilter(division)}>{division}</button
+				>
+			{/each}
+		</div> -->
 
 		{#if data.tags}
 			<div class="flex items-center mx-4">

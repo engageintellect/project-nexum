@@ -145,9 +145,14 @@
 					errors={form?.errors?.content}
 				/>
 			</div>
-			<div class="flex justify-center gap-2 py-5">
-				<a class="btn btn-outline w-full max-w-sm" href={`/pages/${data.page.id}`}> Cancel </a>
-				<button type="submit" class="btn btn-success w-full">Save Changes</button>
+
+			<div class="flex gap-2 w-full max-w-md my-5">
+				<div class="w-full">
+					<a href={`/pages/${data.page.id}`} class="btn btn-outline w-full">Cancel</a>
+				</div>
+				<div class="w-full">
+					<button type="submit" class="btn btn-success w-full">Save Changes</button>
+				</div>
 			</div>
 		</form>
 	</div>
