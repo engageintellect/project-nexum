@@ -1,7 +1,11 @@
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import { serializeNonPOJOs } from '$lib/utils';
 
 export const load = ({ locals }) => {
+	if (!locals.pb.authStore.isValid) {
+		throw redirect(303, '/about');
+	}
+
 	const getPages = async () => {
 		try {
 			const pages = serializeNonPOJOs(

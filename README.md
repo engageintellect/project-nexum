@@ -1,7 +1,6 @@
 # Project Nexum
 
 ## Technologies
-
 - SvelteKit
 - PocketBase
 - OpenAI

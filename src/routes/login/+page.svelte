@@ -32,8 +32,9 @@
 		Login to your account
 	</div>
 	<div class="text-center mt-1">
-		Or <a href="/register" class="text-primary font-medium hover:cursor-pointer hover:underline"
-			>register</a
+		Or <a
+			href="/register"
+			class="underline text-primary font-medium hover:cursor-pointer hover:underline">register</a
 		> if you don't already have an account.
 	</div>
 	<form

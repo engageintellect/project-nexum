@@ -35,8 +35,8 @@
 		<div class="flex-none">
 			{#if !data.user}
 				<div class="dropdown dropdown-end">
-					<a href="/login" class="btn btn-outline">Login</a>
-					<a href="/register" class="btn btn-outline">Register</a>
+					<a href="/login" class="btn btn-outline rounded">Login</a>
+					<a href="/register" class="btn btn-outline rounded">Register</a>
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">

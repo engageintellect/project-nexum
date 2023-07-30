@@ -1,30 +1,61 @@
+<script>
+	import { githubURL } from '../../lib/store';
+
+	import Icon from 'svelte-icons-pack/Icon.svelte';
+	import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
+	import homepage from '$lib/assets/homepage.png';
+</script>
+
 <div>
 	<div class="hero mb-20">
-		<div class="hero-content flex-col items-center justify-center lg:flex-row-reverse">
+		<div class="hero-content flex w-full flex-col items-center justify-between lg:flex-row-reverse">
 			<img
 				src="https://cdn.discordapp.com/attachments/1008571063732539392/1115921630120656957/engage_intellect_cyberpunk_graph_network_on_a_white_background_5b873da3-eb66-4c8a-b8dd-6dad314f3238.png"
-				class="object-cover max-w-0 lg:max-w-lg"
+				class="object-cover max-w-0 lg:max-w-lg animate-pulse"
 			/>
-			<div>
+			<div class="max-w-lg">
 				<div class="text-6xl lg:text-7xl font-bold">Connect People and Content</div>
-				<div class="py-6">
+				<div class="text-2xl py-6">
 					A people-driven knowledge base that connects people and content to improve cross-team
 					connections, foster collaborations, and improve modeling.
 				</div>
-				<a href="/" class="btn btn-primary">Get Started</a>
-				<a href="/" class="btn btn-outline">Contribute</a>
+
+				<div class="flex items-center gap-2">
+					<a
+						href="/register"
+						class="btn btn-primary bg-purple-500 border-purple-500 hover:bg-purple-700 rounded"
+						>Get Started</a
+					>
+					<a href={$githubURL} class="btn btn-outline group rounded">
+						<div class="flex gap-1 items-center">
+							<div class="group-hover:fill-base-100 transition-color duration-200">
+								<Icon src={AiOutlineGithub} size="20" />
+							</div>
+							<div class="">GitHub</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="px-4 my-20 max-w-3xl text-center mx-auto">
-		<div class="text-4xl font-bold flex justify-center">Connect People and Content</div>
+	<div class="divider" />
 
-		<div class="my-5 text-xl">
-			Unlike traditional knowledge bases, we focus on connecting people and content. We believe that
-			the best way to learn is through people. Most knowledge bases are static and don't allow for a
-			way to connect with the people behind the content. We want to change that.
+	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
+		<div>
+			<div class="text-4xl font-bold flex justify-center">Everything in one place.</div>
+
+			<div class="my-5 text-lg">
+				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
+				that the best way to learn is through people. Most knowledge bases are static and don't
+				allow for a way to connect with the people behind the content. We want to change that.
+			</div>
 		</div>
+		<img
+			src={homepage}
+			alt="hello"
+			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+		/>
 	</div>
 
 	<div class="my-10 bg-base-200 py-10 rounded">

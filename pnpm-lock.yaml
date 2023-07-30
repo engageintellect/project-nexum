@@ -22,6 +22,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-french-toast: ^1.0.3
   svelte-hero-icons: ^5.0.0
+  svelte-icons-pack: ^2.1.0
   svelte-preprocess: ^5.0.3
   svelte-toc: ^0.5.5
   tailwindcss: ^3.3.1
@@ -34,6 +35,7 @@ dependencies:
   openai-edge: 0.5.1
   pocketbase: 0.15.0-rc
   read-time: 1.0.0
+  svelte-icons-pack: 2.1.0
 
 devDependencies:
   '@playwright/test': 1.34.3
@@ -1794,6 +1796,10 @@ packages:
     dependencies:
       svelte: 3.59.1
     dev: true
+
+  /svelte-icons-pack/2.1.0:
+    resolution: {integrity: sha512-6Il0vWi/6MW3wXSorZhCqhkJGH4Pcg1WTcdlfFMPXfJqafZVQgmKdhVFS1c2hXGvs4byttpLC9XmI3okV1uMWA==}
+    dev: false
 
   /svelte-preprocess/5.0.4_sxhny56dlbcmwov4vk7qwrzshi:
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}

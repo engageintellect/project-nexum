@@ -8,8 +8,9 @@
 		Register for an account
 	</div>
 	<div class="text-center mt-1">
-		Or <a href="/login" class="text-primary font-medium hover:cursor-pointer hover:underline"
-			>sign in</a
+		Or <a
+			href="/login"
+			class="underline text-primary font-medium hover:cursor-pointer hover:underline">sign in</a
 		> if you already have an account.
 	</div>
 	<form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
