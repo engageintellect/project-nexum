@@ -5,13 +5,19 @@
 	// export let image;
 </script>
 
-<div class="card w-full bg-primary text-neutral-content shadow-xl min-h-72 h-full">
+<div class="card rounded-xl w-full bg-primary text-neutral-content shadow-xl">
 	<!-- <figure> -->
 	<!-- <img src={image} alt="Shoes" /> -->
 	<!-- </figure> -->
 	<div class="card-body">
-		<h2 class="card-title">{title}</h2>
-		<p>{description}</p>
+		<div class="flex gap-2 items-center">
+			<div class="">
+				<slot />
+			</div>
+			<div class="card-title text-xl">{title}</div>
+		</div>
+		<div class="font-thin">{description}</div>
+
 		<!-- <div class="card-actions justify-center">
 			<button class="btn btn-primary">{button}</button>
 		</div> -->

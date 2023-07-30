@@ -7,6 +7,16 @@
 
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
+	import FaRobot from 'svelte-icons-pack/fa/FaSolidRobot';
+	import BsCardList from 'svelte-icons-pack/bs/BsCardList';
+	import AiOutlineSearch from 'svelte-icons-pack/ai/AiOutlineSearch';
+	import AiOutlineApi from 'svelte-icons-pack/ai/AiOutlineApi';
+	import AiFillDatabase from 'svelte-icons-pack/ai/AiFillDatabase';
+	import SiSvelte from 'svelte-icons-pack/si/SiSvelte';
+	import SiOpenai from 'svelte-icons-pack/si/SiOpenai';
+	import SiTailwindcss from 'svelte-icons-pack/si/SiTailwindcss';
+	import SiJavascript from 'svelte-icons-pack/si/SiJavascript';
+
 	import homepage from '$lib/assets/homepage.png';
 	import quantumComputing from '$lib/assets/quantum-computing.png';
 </script>
@@ -17,10 +27,11 @@
 			<img
 				src="https://cdn.discordapp.com/attachments/1008571063732539392/1115921630120656957/engage_intellect_cyberpunk_graph_network_on_a_white_background_5b873da3-eb66-4c8a-b8dd-6dad314f3238.png"
 				class="object-cover max-w-0 lg:max-w-lg animate-pulse"
+				alt="hero"
 			/>
 			<div class="max-w-lg">
-				<div class="text-6xl lg:text-7xl font-bold">Connect People and Content</div>
-				<div class="text-2xl py-6">
+				<div class="text-5xl md:text-6xl lg:text-7xl font-bold">Connect People and Content</div>
+				<div class="text-xl lg:text-2xl py-6">
 					A people-driven knowledge base that connects people and content to improve cross-team
 					connections, foster collaborations, and improve modeling.
 				</div>
@@ -73,7 +84,7 @@
 
 	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
 		<div>
-			<div class="text-4xl font-bold flex justify-center">Dynamic UI</div>
+			<div class="text-4xl font-bold flex justify-center">Dynamic UI.</div>
 
 			<div class="my-5 text-lg">
 				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
@@ -181,10 +192,10 @@
 		</div>
 	</div>
 
-	<div class="my-20">
-		<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
+	<div class="my-40">
+		<div class="px-4 my-10 max-w-5xl text-center mx-auto flex flex-col items-center">
 			<div>
-				<div class="text-4xl font-bold flex justify-center">Features</div>
+				<div class="text-4xl font-bold flex justify-center">Optimized for Mobile.</div>
 
 				<div class="my-5 text-lg">
 					Unlike traditional knowledge bases, we focus on connecting people and content. We believe
@@ -194,80 +205,8 @@
 			</div>
 		</div>
 
-		<div
-			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 w-full gap-2 md:gap-5 px-4 md:px-0"
-		>
-			<FeatureCard title="Modern UX" description="some description about shoes" button="click me" />
-
-			<FeatureCard
-				title="Built for AI"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Search-centric"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Filter by anything"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Easy to user interface"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Integrated CMS"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Built-in Analytics"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Modern Tech Stack"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Easy to user interface"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Integrated CMS"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Built-in Analytics"
-				description="some description about shoes"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Modern Tech Stack"
-				description="some description about shoes"
-				button="click me"
-			/>
-		</div>
-
-		<div class="flex justify-center my-20">
-			<div class="mockup-phone border-primary shadow-xl shadow-purple-500">
+		<div class="flex justify-center">
+			<a href="/about" class="mockup-phone border-primary shadow-xl shadow-purple-500">
 				<div class="camera" />
 				<div class="display">
 					<div class="artboard artboard-demo phone-1">
@@ -276,6 +215,160 @@
 						</div>
 						<div>Optimized for mobile.</div>
 					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="my-40">
+			<div class="px-4 my-10 max-w-5xl text-center mx-auto flex flex-col items-center">
+				<div>
+					<div class="text-4xl font-bold flex justify-center">Features</div>
+
+					<div class="my-5 text-lg">The features that matter most to you.</div>
+				</div>
+			</div>
+
+			<div
+				class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 w-full gap-2 md:gap-5 px-4 md:px-0"
+			>
+				<FeatureCard
+					title="Open Source"
+					description="Built using open-sourced technologies."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiOutlineGithub} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Built for AI"
+					description="Designed with AI Embeddings in mind."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={FaRobot} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Flat Page Structure"
+					description="Don't worry about nested pages, or where to put your content."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={BsCardList} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Designed for Search"
+					description="Search-centric user experience, with a focus on speed."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiOutlineSearch} size="24" />
+					</div></FeatureCard
+				>
+				<FeatureCard
+					title="Sane APIs"
+					description="Self-documented APIs for easy and seamless integrations with your app or service."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiOutlineApi} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Integrated CMS"
+					description="Fully integrated backend CMS for easy content management."
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiFillDatabase} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Built for AI"
+					description="some description about shoes"
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiOutlineGithub} size="24" />
+					</div></FeatureCard
+				>
+
+				<FeatureCard
+					title="Built for AI"
+					description="some description about shoes"
+					button="click me"
+					><div class="fill-teal-500 text-teal-500">
+						<Icon src={AiOutlineGithub} size="24" />
+					</div></FeatureCard
+				>
+			</div>
+		</div>
+
+		<div class="my-40">
+			<div class="px-4 my-10 max-w-5xl text-center mx-auto flex flex-col items-center">
+				<div>
+					<div class="text-4xl font-bold flex justify-center">Technology Stack</div>
+
+					<div class="my-5 text-lg">The features that matter most to you.</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row gap-5 w-full items-center">
+					<a
+						href="https://kit.svelte.dev/"
+						target="_blank"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-primary/50 rounded flex items-center
+						justify-center hover:fill-orange-500"
+					>
+						<Icon src={SiSvelte} size="72" />
+						<div>Sveltekit</div>
+					</a>
+
+					<a
+						href="https://javascript.com"
+						target="_blank"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-yellow-500"
+					>
+						<Icon src={SiJavascript} size="72" />
+						<div>JavaScript</div>
+					</a>
+
+					<a
+						href="https://openai.com/"
+						target="_blank"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-teal-500"
+					>
+						<Icon src={SiOpenai} size="72" />
+						<div>OpenAI</div>
+					</a>
+
+					<a
+						href="https://tailwindcss.com/"
+						target="_blank"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-sky-600"
+					>
+						<Icon src={SiTailwindcss} size="72" />
+						<div>Tailwind CSS</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="my-20">
+		<div class="flex items-center justify-center">
+			<div
+				class="flex flex-col justify-center gap-2 max-w-3xl border border-primary/50 p-10 rounded shadow-lg w-full items-center"
+			>
+				<div class="max-w-lg">
+					<div class="text-5xl flex justify-center font-bold my-5">Contact</div>
+					<div class="text-xl">
+						Have a question? Want to learn more? We'd love to hear from you. Send us a message and
+						we'll get back to you as soon as possible.
+					</div>
+					<a
+						href="mailto:jc9361@gmail.com"
+						target="_blank"
+						class="btn btn-primary rounded w-full my-5">Let's Chat</a
+					>
 				</div>
 			</div>
 		</div>
