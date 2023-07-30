@@ -15,9 +15,10 @@
 	import SiSvelte from 'svelte-icons-pack/si/SiSvelte';
 	import SiOpenai from 'svelte-icons-pack/si/SiOpenai';
 	import SiTailwindcss from 'svelte-icons-pack/si/SiTailwindcss';
-	import SiJavascript from 'svelte-icons-pack/si/SiJavascript';
+	// import SiJavascript from 'svelte-icons-pack/si/SiJavascript';
 	import BiNetworkChart from 'svelte-icons-pack/bi/BiNetworkChart';
 	import BiUserCircle from 'svelte-icons-pack/bi/BiUserCircle';
+	import SiVercel from 'svelte-icons-pack/si/SiVercel';
 
 	import homepage from '$lib/assets/homepage.png';
 	import quantumComputing from '$lib/assets/quantum-computing.png';
@@ -311,7 +312,9 @@
 				<div>
 					<div class="text-4xl font-bold flex justify-center">Technology Stack</div>
 
-					<div class="my-5 text-lg">The features that matter most to you.</div>
+					<div class="my-5 text-lg">
+						Built using state-of-the-art technologies that you will love.
+					</div>
 				</div>
 
 				<div class="flex flex-col md:flex-row gap-5 w-full items-center">
@@ -326,12 +329,12 @@
 					</a>
 
 					<a
-						href="https://javascript.com"
+						href="https://vercel.com"
 						target="_blank"
-						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-yellow-500"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-primary/50"
 					>
-						<Icon src={SiJavascript} size="72" />
-						<div>JavaScript</div>
+						<Icon src={SiVercel} size="72" />
+						<div>Vercel</div>
 					</a>
 
 					<a
