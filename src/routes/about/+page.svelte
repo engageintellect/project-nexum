@@ -16,6 +16,8 @@
 	import SiOpenai from 'svelte-icons-pack/si/SiOpenai';
 	import SiTailwindcss from 'svelte-icons-pack/si/SiTailwindcss';
 	import SiJavascript from 'svelte-icons-pack/si/SiJavascript';
+	import BiNetworkChart from 'svelte-icons-pack/bi/BiNetworkChart';
+	import BiUserCircle from 'svelte-icons-pack/bi/BiUserCircle';
 
 	import homepage from '$lib/assets/homepage.png';
 	import quantumComputing from '$lib/assets/quantum-computing.png';
@@ -285,20 +287,20 @@
 				>
 
 				<FeatureCard
-					title="Built for AI"
-					description="some description about shoes"
+					title="Connect People and Content"
+					description="People are the best way to learn. Connect with the people behind the content.	"
 					button="click me"
 					><div class="fill-teal-500 text-teal-500">
-						<Icon src={AiOutlineGithub} size="24" />
+						<Icon src={BiNetworkChart} size="24" />
 					</div></FeatureCard
 				>
 
 				<FeatureCard
-					title="Built for AI"
-					description="some description about shoes"
+					title="User-first design"
+					description="Minimalist design with a focus on the user experience."
 					button="click me"
 					><div class="fill-teal-500 text-teal-500">
-						<Icon src={AiOutlineGithub} size="24" />
+						<Icon src={BiUserCircle} size="24" />
 					</div></FeatureCard
 				>
 			</div>
@@ -359,7 +361,7 @@
 				class="flex flex-col justify-center gap-2 max-w-3xl border border-primary/50 p-10 rounded shadow-lg w-full items-center"
 			>
 				<div class="max-w-lg">
-					<div class="text-5xl flex justify-center font-bold my-5">Contact</div>
+					<div class="text-4xl flex justify-center font-bold my-5">Contact</div>
 					<div class="text-xl">
 						Have a question? Want to learn more? We'd love to hear from you. Send us a message and
 						we'll get back to you as soon as possible.
