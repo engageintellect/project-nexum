@@ -4,7 +4,7 @@
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
 	import homepage from '$lib/assets/homepage.png';
-	import palantirImg from '$lib/assets/palantir-page.png';
+	import quantumComputing from '$lib/assets/quantum-computing.png';
 </script>
 
 <div>
@@ -42,7 +42,7 @@
 
 	<div class="divider" />
 
-	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
+	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center group">
 		<div>
 			<div class="text-4xl font-bold flex justify-center">Everything in one place.</div>
 
@@ -52,11 +52,19 @@
 				allow for a way to connect with the people behind the content. We want to change that.
 			</div>
 		</div>
-		<img
-			src={homepage}
-			alt="hello"
-			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
-		/>
+		<div class="relative">
+			<img
+				src={homepage}
+				alt="hello"
+				class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+			/>
+
+			<div
+				class="group-hover:opacity-100 opacity-0 transition-all duration-500 absolute -bottom-5 -right-5 shadow-lg h-64 w-full max-w-lg bg-base-100 border border-primary/50 rounded"
+			>
+				<div class="text-2xl font-semibold">Built on search.</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
@@ -70,7 +78,7 @@
 			</div>
 		</div>
 		<img
-			src={palantirImg}
+			src={quantumComputing}
 			alt="hello"
 			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
 		/>
@@ -166,6 +174,42 @@
 					<!-- <button class="btn btn-primary w-full">Get Started</button> -->
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="my-20">
+		<div class="px-4 my-5 max-w-5xl text-center mx-auto flex flex-col items-center">
+			<div>
+				<div class="text-4xl font-bold flex justify-center">Features</div>
+
+				<div class="my-5 text-lg">
+					Unlike traditional knowledge bases, we focus on connecting people and content. We believe
+					that the best way to learn is through people. Most knowledge bases are static and don't
+					allow for a way to connect with the people behind the content. We want to change that.
+				</div>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5">
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
+			<div class="w-full bg-red-300 h-32">hey</div>
 		</div>
 	</div>
 </div>
