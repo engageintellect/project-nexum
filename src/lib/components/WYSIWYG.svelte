@@ -13,20 +13,21 @@
 	let conf = {
 		skin: 'borderless',
 		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-		height: 640,
+		min_height: 720,
 		selector: 'textarea',
 		placeholder: `Add your page's content here. Click save when finished.`,
 		toolbar_mode: 'sliding',
 		// menubar: 'file edit view insert format tools table tc help',
 		menubar: false,
 		toolbar:
-			'undo redo | bold italic underline strikethrough | blocks | numlist bullist checklist | link insertfile image media table |' +
+			'undo redo | blocks | bold italic underline strikethrough codesample | numlist bullist checklist | link insertfile image media table |' +
 			'alignleft aligncenter alignright alignjustify |' +
 			'forecolor backcolor casechange permanentpen formatpainter |' +
 			'code fullscreen',
 
 		plugins: [
 			'advlist',
+			'codesample',
 			'autolink',
 			'lists',
 			'link',

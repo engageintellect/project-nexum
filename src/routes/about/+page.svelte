@@ -4,6 +4,7 @@
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
 	import homepage from '$lib/assets/homepage.png';
+	import palantirImg from '$lib/assets/palantir-page.png';
 </script>
 
 <div>
@@ -44,6 +45,42 @@
 	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
 		<div>
 			<div class="text-4xl font-bold flex justify-center">Everything in one place.</div>
+
+			<div class="my-5 text-lg">
+				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
+				that the best way to learn is through people. Most knowledge bases are static and don't
+				allow for a way to connect with the people behind the content. We want to change that.
+			</div>
+		</div>
+		<img
+			src={homepage}
+			alt="hello"
+			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+		/>
+	</div>
+
+	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
+		<div>
+			<div class="text-4xl font-bold flex justify-center">Dynamic UI</div>
+
+			<div class="my-5 text-lg">
+				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
+				that the best way to learn is through people. Most knowledge bases are static and don't
+				allow for a way to connect with the people behind the content. We want to change that.
+			</div>
+		</div>
+		<img
+			src={palantirImg}
+			alt="hello"
+			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+		/>
+	</div>
+
+	<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
+		<div>
+			<div class="text-4xl font-bold flex justify-center">
+				Quick access to the things that matter most.
+			</div>
 
 			<div class="my-5 text-lg">
 				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
