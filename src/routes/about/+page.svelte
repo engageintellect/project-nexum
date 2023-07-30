@@ -1,6 +1,8 @@
 <script>
 	import { githubURL } from '../../lib/store';
 
+	import FeatureCard from '$lib/components/FeatureCard.svelte';
+
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
 	import homepage from '$lib/assets/homepage.png';
@@ -191,25 +193,89 @@
 		</div>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5">
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
-			<div class="w-full bg-red-300 h-32">hey</div>
+			<FeatureCard
+				title="Modern UX"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Built for AI"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Search-centric"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Filter by person, tags, page content, etc."
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Easy to user interface"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Integrated CMS"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Built-in Analytics"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Modern Tech Stack"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Self-documenting APIs"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Easy integration with existing tools"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Mobile-first development."
+				description="some descripdksjdklsj dlksj dkljs dlkjs dlkj skldj slkdj slkdj lksjd lksjd lksjd lksjd lksjd lksjdlskdj dtion about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
+
+			<FeatureCard
+				title="Flat Page Structure"
+				description="some description about shoes"
+				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+				button="click me"
+			/>
 		</div>
 	</div>
 </div>
