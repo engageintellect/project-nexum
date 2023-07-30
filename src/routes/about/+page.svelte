@@ -35,8 +35,8 @@
 			<div class="max-w-lg">
 				<div class="text-5xl md:text-6xl lg:text-7xl font-bold">Connect People and Content</div>
 				<div class="text-xl lg:text-2xl py-6">
-					A people-driven knowledge base that connects people and content to improve cross-team
-					connections, foster collaborations, and improve modeling.
+					A people-driven knowledge base that connects content and people to improve cross-team
+					connections, foster collaborations, improve data modeling, and increase productivity.
 				</div>
 
 				<div class="flex items-center gap-2">
@@ -67,7 +67,9 @@
 			<div class="my-5 text-lg">
 				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
 				that the best way to learn is through people. Most knowledge bases are static and don't
-				allow for a way to connect with the people behind the content. We want to change that.
+				allow for a way to connect with the people behind the content. <span class="font-bold"
+					>We're here to change all of that.</span
+				>
 			</div>
 		</div>
 		<div class="relative">
@@ -90,9 +92,10 @@
 			<div class="text-4xl font-bold flex justify-center">Dynamic UI.</div>
 
 			<div class="my-5 text-lg">
-				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
-				that the best way to learn is through people. Most knowledge bases are static and don't
-				allow for a way to connect with the people behind the content. We want to change that.
+				<strong>A UI that adapts</strong> to your content to show you only the most relevant information
+				at all times. Your page has tags and headings? Great! We'll show you a table of contents and
+				all of your tags. No Headings? No problem. We'll automatically hide any elements that aren't
+				being used, so your content shines.
 			</div>
 		</div>
 		<img
@@ -109,9 +112,9 @@
 			</div>
 
 			<div class="my-5 text-lg">
-				Unlike traditional knowledge bases, we focus on connecting people and content. We believe
-				that the best way to learn is through people. Most knowledge bases are static and don't
-				allow for a way to connect with the people behind the content. We want to change that.
+				Personalized user dashboards that give you <strong
+					>quick access to the things that matter most</strong
+				> to you.
 			</div>
 		</div>
 		<img
