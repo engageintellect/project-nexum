@@ -1,5 +1,7 @@
 <script>
 	import { githubURL } from '../../lib/store';
+	import aiFace from '$lib/assets/ai-face.webp';
+	import palantirPage from '$lib/assets/palantir-page.png';
 
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 
@@ -31,7 +33,7 @@
 					>
 					<a href={$githubURL} class="btn btn-outline group rounded">
 						<div class="flex gap-1 items-center">
-							<div class="group-hover:fill-base-100 transition-color duration-200">
+							<div class="group-hover:fill-base-100 fill-purple-500 transition-color duration-200">
 								<Icon src={AiOutlineGithub} size="20" />
 							</div>
 							<div class="">GitHub</div>
@@ -105,7 +107,7 @@
 		/>
 	</div>
 
-	<div class="my-10 bg-base-200 py-10 rounded">
+	<div class="my-10 bg-base-200 py-10 rounded shadow-lg">
 		<div class="hero min-h-full rounded">
 			<div class="hero-content flex-col lg:flex-row xl:gap-32">
 				<img
@@ -180,7 +182,7 @@
 	</div>
 
 	<div class="my-20">
-		<div class="px-4 my-5 max-w-5xl text-center mx-auto flex flex-col items-center">
+		<div class="px-4 my-20 max-w-5xl text-center mx-auto flex flex-col items-center">
 			<div>
 				<div class="text-4xl font-bold flex justify-center">Features</div>
 
@@ -192,90 +194,90 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5">
-			<FeatureCard
-				title="Modern UX"
-				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-				button="click me"
-			/>
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 w-full gap-2 md:gap-5 px-4 md:px-0"
+		>
+			<FeatureCard title="Modern UX" description="some description about shoes" button="click me" />
 
 			<FeatureCard
 				title="Built for AI"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
 				title="Search-centric"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
-				title="Filter by person, tags, page content, etc."
+				title="Filter by anything"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
 				title="Easy to user interface"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
 				title="Integrated CMS"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
 				title="Built-in Analytics"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
 				title="Modern Tech Stack"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
-				title="Self-documenting APIs"
+				title="Easy to user interface"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
-				title="Easy integration with existing tools"
+				title="Integrated CMS"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
 
 			<FeatureCard
-				title="Mobile-first development."
-				description="some descripdksjdklsj dlksj dkljs dlkjs dlkj skldj slkdj slkdj lksjd lksjd lksjd lksjd lksjd lksjdlskdj dtion about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-				button="click me"
-			/>
-
-			<FeatureCard
-				title="Flat Page Structure"
+				title="Built-in Analytics"
 				description="some description about shoes"
-				image="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
 				button="click me"
 			/>
+
+			<FeatureCard
+				title="Modern Tech Stack"
+				description="some description about shoes"
+				button="click me"
+			/>
+		</div>
+
+		<div class="flex justify-center my-20">
+			<div class="mockup-phone border-primary shadow-xl shadow-purple-500">
+				<div class="camera" />
+				<div class="display">
+					<div class="artboard artboard-demo phone-1">
+						<div class="text-5xl font-bold animate-pulse">
+							Ne<span class="text-purple-500">x</span>um
+						</div>
+						<div>Optimized for mobile.</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
