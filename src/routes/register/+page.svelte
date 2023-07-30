@@ -39,7 +39,7 @@
 			errors={form?.errors?.passwordConfirm}
 		/>
 		<div class="w-full max-w-lg pt-2">
-			<button type="submit" class="btn btn-primary w-full">Register</button>
+			<button type="submit" class="btn btn-primary rounded w-full">Register</button>
 		</div>
 	</form>
 </div>

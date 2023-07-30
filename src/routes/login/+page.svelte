@@ -68,7 +68,7 @@
 		</div>
 
 		<div class="w-full max-w-lg pt-2">
-			<button type="submit" class="btn btn-primary w-full" disabled={loading}>Login</button>
+			<button type="submit" class="btn btn-primary rounded w-full" disabled={loading}>Login</button>
 		</div>
 		<!-- {#if form?.notVerified}
 			<div class="alert alert-error shadow-lg w-full max-w-lg">

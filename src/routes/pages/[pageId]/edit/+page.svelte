@@ -148,10 +148,10 @@
 
 			<div class="flex gap-2 w-full max-w-md my-5">
 				<div class="w-full">
-					<a href={`/pages/${data.page.id}`} class="btn btn-outline w-full">Cancel</a>
+					<a href={`/pages/${data.page.id}`} class="btn btn-outline rounded w-full">Cancel</a>
 				</div>
 				<div class="w-full">
-					<button type="submit" class="btn btn-success w-full">Save Changes</button>
+					<button type="submit" class="btn btn-success rounded w-full">Save Changes</button>
 				</div>
 			</div>
 		</form>

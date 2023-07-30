@@ -76,7 +76,7 @@
 				/>
 			</div>
 			<div class="w-full max-w-lg pt-3">
-				<button type="submit" class="btn btn-primary w-full max-w-lg">Create Page</button>
+				<button type="submit" class="btn btn-success rounded w-full max-w-lg">Create Page</button>
 			</div>
 		</form>
 	</div>
