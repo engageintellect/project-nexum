@@ -1,8 +1,5 @@
 <script>
 	import { githubURL } from '../../lib/store';
-	import aiFace from '$lib/assets/ai-face.webp';
-	import palantirPage from '$lib/assets/palantir-page.png';
-
 	import FeatureCard from '$lib/components/FeatureCard.svelte';
 
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -15,7 +12,6 @@
 	import SiSvelte from 'svelte-icons-pack/si/SiSvelte';
 	import SiOpenai from 'svelte-icons-pack/si/SiOpenai';
 	import SiTailwindcss from 'svelte-icons-pack/si/SiTailwindcss';
-	// import SiJavascript from 'svelte-icons-pack/si/SiJavascript';
 	import BiNetworkChart from 'svelte-icons-pack/bi/BiNetworkChart';
 	import BiUserCircle from 'svelte-icons-pack/bi/BiUserCircle';
 	import SiVercel from 'svelte-icons-pack/si/SiVercel';
@@ -35,7 +31,7 @@
 			<div class="max-w-lg">
 				<div class="text-5xl md:text-6xl lg:text-7xl font-bold">Connect People and Content</div>
 				<div class="text-xl lg:text-2xl py-6">
-					A people-driven knowledge base that connects content and people to improve cross-team
+					A user-driven knowledge base that connects content and people to improve cross-team
 					connections, foster collaborations, improve data modeling, and increase productivity.
 				</div>
 

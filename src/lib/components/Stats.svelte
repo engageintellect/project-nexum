@@ -24,7 +24,7 @@
 
 		<div class="stat">
 			<div class="stat-figure text-secondary">
-				<Icon src={Heart} class="w-8 h-8 text-error drop-shadow-md" solid />
+				<Icon src={Heart} class="w-12 h-12 text-error drop-shadow-md" solid />
 			</div>
 			<div class="stat-title">Favorites</div>
 			<div class="stat-value text-secondary">{favorites}</div>
@@ -33,7 +33,7 @@
 
 		<div class="stat">
 			<div class="stat-figure text-primary">
-				<Icon src={HandThumbUp} class="w-8 h-8 text-info drop-shadow-md" solid />
+				<Icon src={HandThumbUp} class="w-12 h-12 text-info drop-shadow-md" solid />
 			</div>
 			<div class="stat-title">Likes</div>
 			<div class="stat-value text-primary">{likes}</div>

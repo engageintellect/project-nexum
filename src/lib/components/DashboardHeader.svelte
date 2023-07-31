@@ -32,14 +32,17 @@
 		</div>
 
 		<div class="w-full flex flex-col gap-2">
-			<div class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center">
+			<a
+				href="#mypages"
+				class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center"
+			>
 				<div class="flex flex-col">
 					<div class="capitalize text-sm font-thin">Pages</div>
 					<div class="text-2xl md:text-3xl font-extrabold">{pageCount || '0'}</div>
 					<div class="text-xs">Total pages created.</div>
 				</div>
 				<Icon src={PencilSquare} class="w-12 h-12 text-primary" solid />
-			</div>
+			</a>
 
 			<div class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center">
 				<div class="flex flex-col">
