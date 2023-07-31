@@ -2,8 +2,32 @@
 	import { Stats } from '$lib/components';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, PencilSquare } from 'svelte-hero-icons';
-	import { MyPageItem } from '$lib/components';
+	import { MyPageItem, DashboardHeader } from '$lib/components';
 	export let data;
+
+	const countMyFollowers = (users, currentUser) => {
+		if (!currentUser || !currentUser.id) {
+			return 0;
+		}
+		const count = users.reduce((acc, user) => {
+			return acc + (user.following.includes(currentUser.id) ? 1 : 0);
+		}, 0);
+
+		return count;
+	};
+
+	const countUsersFollowing = (following, users) => {
+		const followingSet = new Set(following);
+		let count = 0;
+
+		for (let i = 0; i < users.length; i++) {
+			if (followingSet.has(users[i].id)) {
+				count++;
+			}
+		}
+
+		return count;
+	};
 
 	let count = {
 		likes: data.user.likes.length,
@@ -18,10 +42,23 @@
 	}, 0);
 </script>
 
-<div class="mt-10 px-4">
-	<div class="text-6xl font-bold">
-		{data.user.username}'s Dashboard.
-	</div>
+<div>
+	<DashboardHeader
+		name={data.user.name}
+		title={data.user.job_title}
+		division={data.user.division}
+		avatar={data.user?.avatar
+			? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
+			: `https://ui-avatars.com/api/?name=${data.user?.name}`}
+		{pageCount}
+		pageLikes={count.likes}
+		pageFavorites={count.favorites}
+		followers={countMyFollowers(data.users, data.user)}
+		following={countUsersFollowing(data.user.following, data.users)}
+	/>
+</div>
+
+<div class="px-4">
 	<div class="divider" />
 	<Stats
 		pages={pageCount}
@@ -105,7 +142,7 @@
 			</div>
 		</div>
 
-		<div class="collapse collapse-open bg-base-100 collapse-arrow border shadow-md">
+		<div class="collapse collapse-arrow bg-base-100 border shadow-md">
 			<input type="checkbox" />
 			<div class="collapse-title text-3xl font-bold">My Pages</div>
 			<div class="collapse-content">

@@ -320,7 +320,7 @@
 					</div>
 				</div>
 
-				<div class="flex flex-col md:flex-row gap-5 w-full items-center">
+				<div class="my-10 flex flex-col md:flex-row gap-5 w-full items-center">
 					<a
 						href="https://kit.svelte.dev/"
 						target="_blank"
@@ -362,7 +362,7 @@
 		</div>
 	</div>
 	<div class="my-20">
-		<div class="flex items-center justify-center">
+		<div class="flex items-center justify-center px-4">
 			<div
 				class="flex flex-col justify-center gap-2 max-w-3xl border border-primary/50 p-10 rounded shadow-lg w-full items-center"
 			>

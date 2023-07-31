@@ -6,6 +6,22 @@ export const load = ({ locals }) => {
 		throw redirect(303, '/login');
 	}
 
+	const getUsers = async () => {
+		try {
+			const users = serializeNonPOJOs(
+				await locals.pb.collection('users').getFullList({
+					sort: '-updated',
+					expand: 'following'
+					// filter: `user = "${locals.user.id}"`
+				})
+			);
+			return users;
+		} catch (err) {
+			console.log('Error: ', err);
+			throw error(err.status, err.message);
+		}
+	};
+
 	const getPages = async () => {
 		try {
 			const pages = serializeNonPOJOs(
@@ -23,7 +39,8 @@ export const load = ({ locals }) => {
 	};
 
 	return {
-		pages: getPages()
+		pages: getPages(),
+		users: getUsers()
 	};
 };
 
