@@ -86,24 +86,6 @@
 	/>
 </div>
 
-<!-- <div class="flex flex-col gap-5 mt-5">
-	<div class="collapse collapse-arrow bg-base-100 shadow">
-		<input type="checkbox" checked="checked" />
-		<div class="collapse-title text-xl font-bold">Page Stats</div>
-		<div class="collapse-content">
-			<Stats
-				verifiedPages={verifiedCount}
-				stalePages={staleCount}
-				likes={count.likes}
-				favorites={count.favorites}
-				avatar={data.user?.avatar
-					? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
-					: `https://ui-avatars.com/api/?name=${data.user?.name}`}
-			/>
-		</div>
-	</div>
-</div> -->
-
 <div class="flex flex-col">
 	<div class="collapse collapse-arrow bg-base-100 shadow">
 		<input type="checkbox" checked="checked" />
@@ -134,19 +116,35 @@
 									</div>
 
 									<a
-										class="p-5 border bg-success/10 hover:shadow rounded transition-all duration-200"
+										class=" border bg-success/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
-										<div class="flex justify-between gap-2">
-											<div>
-												{page.name}
-											</div>
+										<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
+											<!-- IMAGE -->
+											{#if page.thumbnail}
+												<div class="">
+													<div class="h-16 w-12">
+														<img
+															class="h-full object-cover rounded rounded-r-3xl shadow"
+															src={page?.thumbnail
+																? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
+																: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
+															alt="page thumbnail"
+														/>
+													</div>
+												</div>
+											{/if}
 
+											<div class="flex justify-between gap-2 w-full items-start p-2 h-full">
+												<div class="text-sm font-semibold">
+													{page.name}
+												</div>
+											</div>
 											<div
-												class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200"
+												class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
 											>
 												<a href={`/pages/${page.id}/edit`}>
-													<Icon src={PencilSquare} class="w-5 h-5" solid />
+													<Icon src={PencilSquare} class="w-7 h-7 pr-2" solid />
 												</a>
 											</div>
 										</div>
@@ -168,19 +166,35 @@
 									</div>
 
 									<a
-										class="p-5 border bg-warning/10 hover:shadow rounded transition-all duration-200"
+										class=" border bg-warning/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
-										<div class="flex justify-between gap-2">
-											<div>
-												{page.name}
-											</div>
+										<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
+											<!-- IMAGE -->
+											{#if page.thumbnail}
+												<div class="">
+													<div class="h-16 w-12">
+														<img
+															class="h-full object-cover rounded rounded-r-3xl shadow"
+															src={page?.thumbnail
+																? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
+																: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
+															alt="page thumbnail"
+														/>
+													</div>
+												</div>
+											{/if}
 
+											<div class="flex justify-between gap-2 w-full items-start p-2 h-full">
+												<div class="text-sm font-semibold">
+													{page.name}
+												</div>
+											</div>
 											<div
-												class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200"
+												class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
 											>
 												<a href={`/pages/${page.id}/edit`}>
-													<Icon src={PencilSquare} class="w-5 h-5" solid />
+													<Icon src={PencilSquare} class="w-7 h-7 pr-2" solid />
 												</a>
 											</div>
 										</div>
@@ -198,10 +212,31 @@
 							{#each data.pages as page}
 								{#if page.id === favorite}
 									<a
-										class="p-5 border bg-error/10 hover:shadow rounded transition-all duration-200"
+										class=" border bg-error/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
-										{page.name}
+										<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
+											<!-- IMAGE -->
+											{#if page.thumbnail}
+												<div class="">
+													<div class="h-16 w-12">
+														<img
+															class="h-full object-cover rounded rounded-r-3xl shadow"
+															src={page?.thumbnail
+																? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
+																: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
+															alt="page thumbnail"
+														/>
+													</div>
+												</div>
+											{/if}
+
+											<div class="flex justify-between gap-2 w-full items-start p-2 h-full">
+												<div class="text-sm font-semibold">
+													{page.name}
+												</div>
+											</div>
+										</div>
 									</a>
 								{/if}
 							{/each}
@@ -216,10 +251,31 @@
 							{#each data.pages as page}
 								{#if page.id === like}
 									<a
-										class="p-5 border bg-info/10 hover:shadow rounded transition-all duration-200 hover:scale-[102%]"
+										class=" border bg-info/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
-										{page.name}
+										<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
+											<!-- IMAGE -->
+											{#if page.thumbnail}
+												<div class="">
+													<div class="h-16 w-12">
+														<img
+															class="h-full object-cover rounded rounded-r-3xl shadow"
+															src={page?.thumbnail
+																? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
+																: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
+															alt="page thumbnail"
+														/>
+													</div>
+												</div>
+											{/if}
+
+											<div class="flex justify-between gap-2 w-full items-start p-2 h-full">
+												<div class="text-sm font-semibold">
+													{page.name}
+												</div>
+											</div>
+										</div>
 									</a>
 								{/if}
 							{/each}
