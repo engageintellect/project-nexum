@@ -8,7 +8,7 @@
 </script>
 
 <div class="">
-	<div class="grid gap-5 grid-cols-1 md:grid-cols-4">
+	<div class="grid gap-2 grid-cols-1 md:grid-cols-4">
 		<div class="stat shadow rounded">
 			<div class="stat-figure text-secondary">
 				<Icon src={CheckCircle} class="w-7 h-7 md:w-12 md:h-12 text-success drop-shadow" solid />

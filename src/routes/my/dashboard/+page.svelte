@@ -104,13 +104,13 @@
 	</div>
 </div> -->
 
-<div class="flex flex-col gap-5">
+<div class="flex flex-col">
 	<div class="collapse collapse-arrow bg-base-100 shadow">
 		<input type="checkbox" checked="checked" />
 		<div class="collapse-title text-xl font-bold">Page Data</div>
 
 		<div class="collapse-content">
-			<div class="flex flex-col gap-5">
+			<div class="flex flex-col gap-2">
 				<Stats
 					verifiedPages={verifiedCount}
 					stalePages={staleCount}
@@ -122,10 +122,10 @@
 				/>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-2">
 				<div class="">
 					<div class="text-lg md:hidden mt-5">Verified Pages: {verifiedCount}</div>
-					<div class=" flex flex-col">
+					<div class=" flex flex-col gap-2 my-2">
 						{#each data.pages as page}
 							{#if page.user === data.user.id}
 								{#if page.verified}
@@ -134,7 +134,7 @@
 									</div>
 
 									<a
-										class="p-5 border bg-success/25 hover:shadow rounded my-2 transition-all duration-200"
+										class="p-5 border bg-success/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
 										<div class="flex justify-between gap-2">
@@ -159,7 +159,7 @@
 
 				<div class="">
 					<div class="text-lg md:hidden mt-5">Stale Pages: {staleCount}</div>
-					<div class=" flex flex-col">
+					<div class=" flex flex-col gap-2 my-2">
 						{#each data.pages as page}
 							{#if page.user === data.user.id}
 								{#if isOld(page.updated)}
@@ -168,7 +168,7 @@
 									</div>
 
 									<a
-										class="p-5 border bg-warning/25 hover:shadow rounded my-2 transition-all duration-200"
+										class="p-5 border bg-warning/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
 										<div class="flex justify-between gap-2">
@@ -193,12 +193,12 @@
 
 				<div class="">
 					<div class="text-lg md:hidden mt-5">Favorites</div>
-					<div class=" flex flex-col">
+					<div class=" flex flex-col gap-2 my-2">
 						{#each data.user.favorites as favorite}
 							{#each data.pages as page}
 								{#if page.id === favorite}
 									<a
-										class="p-5 border bg-error/25 hover:shadow rounded my-2 transition-all duration-200"
+										class="p-5 border bg-error/10 hover:shadow rounded transition-all duration-200"
 										href={`/pages/${page.id}`}
 									>
 										{page.name}
@@ -211,12 +211,12 @@
 
 				<div class="">
 					<div class="text-lg md:hidden mt-5">Likes</div>
-					<div class=" flex flex-col">
+					<div class=" flex flex-col gap-2 my-2">
 						{#each data.user.likes as like}
 							{#each data.pages as page}
 								{#if page.id === like}
 									<a
-										class="p-5 border bg-info/25 hover:shadow rounded my-2 transition-all duration-200 hover:scale-[102%]"
+										class="p-5 border bg-info/10 hover:shadow rounded transition-all duration-200 hover:scale-[102%]"
 										href={`/pages/${page.id}`}
 									>
 										{page.name}
