@@ -23,13 +23,6 @@
 			alt="pic"
 			class="object-cover h-24 w-24 sm:h-32 sm:w-32 md:h-52 md:w-52 rounded-full border border-primary/50 shadow"
 		/>
-		<!-- <div class="w-full flex-col">
-			<div class="font-bold text-lg">{name || 'stranger'}</div>
-			<div class="font-thin">{title || 'title'}</div>
-			<div class="badge badge-primary uppercase py-3 rounded">
-				{division || 'division'}
-			</div>
-		</div> -->
 
 		<div class="w-full flex-col">
 			<div class="text-2xl font-semibold capitalize">

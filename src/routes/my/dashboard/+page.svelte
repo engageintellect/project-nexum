@@ -107,7 +107,7 @@
 <div class="flex flex-col gap-5">
 	<div class="collapse collapse-arrow bg-base-100 shadow">
 		<input type="checkbox" checked="checked" />
-		<div class="collapse-title text-xl font-bold">Likes & Favorites</div>
+		<div class="collapse-title text-xl font-bold">Page Data</div>
 
 		<div class="collapse-content">
 			<div class="flex flex-col gap-5">
