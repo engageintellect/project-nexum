@@ -5,6 +5,19 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3H59R0Y3D"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-R3H59R0Y3D');
+		</script>
+
 		<script
 			src="https://cdn.tiny.cloud/1/8gun0j9nau8n45n8z0rxd9qj89zsgcv72gf1mhasjmuuz90x/tinymce/6/tinymce.min.js"
 			referrerpolicy="origin"
@@ -12,6 +25,7 @@
 	</head>
 	<body>
 		<div>%sveltekit.body%</div>
+
 		<!-- <script>
 			tinymce.init({
 				skin: 'CUSTOM',
