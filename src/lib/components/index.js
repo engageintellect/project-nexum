@@ -8,7 +8,7 @@ import WYSIWYG from './WYSIWYG.svelte';
 import Stats from './Stats.svelte';
 import ChatGPT from './ChatGPT.svelte';
 import Footer from './Footer.svelte';
-import Badge from './Badge.svelte';
+import PageCardBadge from './PageCardBadge.svelte';
 import Shortcuts from './Shortcuts.svelte';
 import PersonCard from './PersonCard.svelte';
 import DashboardHeader from './DashboardHeader.svelte';
@@ -23,7 +23,7 @@ export {
 	Stats,
 	ChatGPT,
 	Footer,
-	Badge,
+	PageCardBadge,
 	Shortcuts,
 	PersonCard,
 	DashboardHeader

@@ -79,6 +79,8 @@
 			? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
 			: `https://ui-avatars.com/api/?name=${data.user?.name}`}
 		{pageCount}
+		userBadges={data.user.badges}
+		badges={data.badges}
 		pageLikes={count.likes}
 		pageFavorites={count.favorites}
 		followers={countMyFollowers(data.users, data.user)}
@@ -89,7 +91,7 @@
 <div class="flex flex-col">
 	<div class="collapse collapse-arrow bg-base-100 shadow">
 		<input type="checkbox" checked="checked" />
-		<div class="collapse-title text-xl font-bold">Page Data</div>
+		<div class="collapse-title text-lg md:text-xl font-bold">Page Data</div>
 
 		<div class="collapse-content">
 			<div class="flex flex-col gap-2">

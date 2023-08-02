@@ -43,9 +43,18 @@
 					<button classs="btn">
 						<a
 							href="/pages/new"
-							class="btn btn-primary btn-outline hover:scale-[105%] active:scale-[98%] transition-transform duration-50"
+							class="btn btn-ghost hover:scale-[105%] active:scale-[98%] transition-transform duration-50"
 						>
 							<Icon src={Plus} class="w-5 h-5" />
+						</a>
+					</button>
+
+					<button classs="btn">
+						<a
+							href="/my/dashboard"
+							class="btn btn-ghost hover:scale-[105%] active:scale-[98%] transition-transform duration-50"
+						>
+							<Icon src={RectangleGroup} class="w-5 h-5" />
 						</a>
 					</button>
 				</div>

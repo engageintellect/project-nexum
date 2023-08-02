@@ -1,7 +1,7 @@
 <script>
 	import { Icon, CheckCircle } from 'svelte-hero-icons';
 	import { getImageURL } from '$lib/utils';
-	import Badge from './Badge.svelte';
+	import PageCardBadge from '$lib/components/PageCardBadge.svelte';
 	export let page;
 	export let user;
 	export let isNew = false;
@@ -13,11 +13,11 @@
 	class="card border border-neutral/25 bg-base-100 rounded group active:scale-[99%] hover:shadow-md transition-all duration-50 h-full"
 >
 	{#if isNew}
-		<Badge msg={'NEW!'} {isNew} />
+		<PageCardBadge msg={'NEW!'} {isNew} />
 	{/if}
 
 	{#if isOld}
-		<Badge msg={'STALE'} {isOld} />
+		<PageCardBadge msg={'STALE'} {isOld} />
 	{/if}
 
 	<a
