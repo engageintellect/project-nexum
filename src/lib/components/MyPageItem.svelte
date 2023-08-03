@@ -18,6 +18,11 @@
 	let modalOpen;
 	let loading = false;
 
+	const openModal = (event) => {
+		event.stopPropagation();
+		modalOpen = true;
+	};
+
 	const submitDeletePage = () => {
 		loading = true;
 		return async ({ result, update }) => {
@@ -55,18 +60,10 @@
 
 <div class="flex w-full rounded border border-primary/50 shadow hover:shadow-lg group">
 	<div class="w-full flex items-center rounded">
-		<!-- {#if isNew}
-			<PageCardBadge msg={'NEW!'} {isNew} />
-		{/if}
-
-		{#if isOld}
-			<PageCardBadge msg={'STALE'} {isOld} />
-		{/if} -->
-
 		<div class="w-full h-full avatar rounded">
 			<div class="object-cover rounded-l w-full">
-				<a href="/pages/{page.id}">
-					<div class="relative flex h-full border-r border-primary/50 w-full bg-black">
+				<div class="relative flex h-full border-r border-primary/50 w-full bg-black">
+					<a href={`/pages/${page.id}`}>
 						<img
 							class="group-hover:opacity-50 group-hover:scale-105 transition-all duration-200 group-hover:saturate-150"
 							src={page?.thumbnail
@@ -74,58 +71,61 @@
 								: `https://via.placeholder.com/500/6d28d9/FFFFFF/?text=${page.name}`}
 							alt="page thumbnail"
 						/>
-
-						<div
-							class="absolute right-0 h-full md:opacity-0 md:group-hover:opacity-100 transition-all duration-500"
-						>
-							{#if page.user === localUser.id}
-								<div class="h-full">
-									<div
-										class="w-full bg-primary gap-2 flex flex-col justify-between md:justify-start items-end p-1 h-full"
-									>
-										<a href="/pages/{page.id}/edit" class="">
-											<Icon
-												src={PencilSquare}
-												class="w-7 h-7 text-base-100 hover:text-warning shadow"
-												solid
-											/>
-										</a>
-										<Modal label={page.id} checked={modalOpen}>
-											<div slot="trigger" class="">
-												<Icon
-													src={Trash}
-													class="w-7 h-7 hover:cursor-pointer text-base-100 hover:text-error shadow"
-													solid
-												/>
+					</a>
+					<div
+						class="absolute right-0 h-full md:opacity-0 md:group-hover:opacity-100 transition-all duration-500"
+					>
+						{#if page.user === localUser.id}
+							<div class="h-full">
+								<div
+									class="w-full bg-primary gap-2 flex flex-col justify-between md:justify-start items-end p-1 h-full"
+								>
+									<a href="/pages/{page.id}/edit" class="">
+										<Icon
+											src={PencilSquare}
+											class="w-7 h-7 text-base-100 hover:text-warning shadow"
+											solid
+										/>
+									</a>
+									<Modal label={page.id} checked={modalOpen}>
+										<div slot="trigger" class="">
+											<button
+												class="w-7 h-7 hover:cursor-pointer text-base-100 hover:text-error shadow"
+												on:click|stopPropagation={openModal}
+											>
+												<Icon src={Trash} solid />
+											</button>
+										</div>
+										<div slot="heading">
+											<div class="text-2xl">Delete {page.name}</div>
+											<div class="text-base font-normal mt-2">
+												Are you sure you want to delete this page? Once deleted, the page cannot be
+												restored.
 											</div>
-											<div slot="heading">
-												<div class="text-2xl">Delete {page.name}</div>
-												<div class="text-base font-normal mt-2">
-													Are you sure you want to delete this page? Once deleted, the page cannot
-													be restored.
-												</div>
-											</div>
-											<div slot="actions" class="flex w-full items-center justify-center space-x-2">
-												<label for={page.id} class="btn btn-outline">Cancel</label>
-												<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
-													<input type="hidden" name="id" value={page.id} />
-													<button type="submit" class="btn btn-error z-40" disabled={loading}
-														>Delete</button
-													>
-												</form>
-											</div>
-										</Modal>
-									</div>
+										</div>
+										<div slot="actions" class="flex w-full items-center justify-center space-x-2">
+											<button
+												class="btn btn-outline"
+												on:click|stopPropagation={() => (modalOpen = false)}>Cancel</button
+											>
+											<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+												<input type="hidden" name="id" value={page.id} />
+												<button type="submit" class="btn btn-error z-40" disabled={loading}
+													>Delete</button
+												>
+											</form>
+										</div>
+									</Modal>
 								</div>
-							{/if}
-						</div>
+							</div>
+						{/if}
 					</div>
-					{#if page.verified}
-						<div class="">
-							<Icon src={Check} class="absolute bottom-2 left-2 w-6 h-6 bg-success rounded-full" />
-						</div>
-					{/if}
-				</a>
+				</div>
+				{#if page.verified}
+					<div class="">
+						<Icon src={Check} class="absolute bottom-2 left-2 w-6 h-6 bg-success rounded-full" />
+					</div>
+				{/if}
 			</div>
 		</div>
 		<div class="w-full h-full p-2">
@@ -133,9 +133,7 @@
 				<div class="flex flex-col justify-between h-full">
 					<div>
 						<div class=" font-bold">{page.name}</div>
-						<div class=" text-sm text-primary/75">
-							{page.tagline}
-						</div>
+						<div class=" text-sm text-primary/75">{page.tagline}</div>
 						{#if page.division != ''}
 							<div class="badge badge-sm badge-primary rounded py-3 mt-2">{page.division}</div>
 						{/if}
@@ -152,9 +150,7 @@
 									alt="User avatar"
 								/>
 
-								<div class="text-sm text-primary/75">
-									{user.name}
-								</div>
+								<div class="text-sm text-primary/75">{user.name}</div>
 							</div>
 						{/if}
 
