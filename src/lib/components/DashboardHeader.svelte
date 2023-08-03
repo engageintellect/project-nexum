@@ -33,7 +33,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div in:fade class=" mx-4 my-10">
+<div in:fade class=" mx-4 my-5 md:my-10">
 	<div class="flex flex-col md:items-center md:flex-row gap-5">
 		<img
 			src={avatar}
@@ -53,48 +53,64 @@
 			{/if}
 		</div>
 
-		<div class="w-full flex flex-col gap-2 mt-10 md:mt-0">
+		<div class="w-full flex justify-center flex-col gap-2 my-5 md:my-10">
 			<div class="text-lg md:text-xl font-bold">User Stats</div>
 
-			<div class="flex flex-col">
+			<div class="flex flex-row sm:flex-col">
 				<a
 					href="#mypages"
-					class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center"
+					class=" w-full justify-between shadow rounded p-2 px-4 flex gap-5 items-center"
 				>
-					<div class="flex flex-col">
+					<div class="flex flex-col w-full">
 						<div class="capitalize text-sm font-thin">Pages</div>
-						<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{pageCount || '0'}</div>
+						<div class="flex justify-between items-center">
+							<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{pageCount || '0'}</div>
+
+							<Icon
+								src={PencilSquare}
+								class="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 text-primary"
+								solid
+							/>
+						</div>
 						<div class="hidden sm:flex text-xs">Total pages created.</div>
 					</div>
-					<Icon
-						src={PencilSquare}
-						class="w-5 h-5 sm:w-7 sm:h-7 md:w-12 md:h-12 text-primary"
-						solid
-					/>
 				</a>
 
-				<div class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center">
-					<div class="flex flex-col">
+				<div class="w-full justify-between shadow rounded p-2 px-4 flex gap-5 items-center">
+					<div class="flex flex-col w-full">
 						<div class="capitalize text-sm font-thin">Followers</div>
-						<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{followers || '0'}</div>
+						<div class="flex justify-between items-center">
+							<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{followers || '0'}</div>
+							<Icon
+								src={UserGroup}
+								class="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 text-primary"
+								solid
+							/>
+						</div>
 						<div class="hidden sm:flex text-xs">Total users.</div>
 					</div>
-					<Icon src={UserGroup} class="w-5 h-5 sm:w-7 sm:h-7 md:w-12 md:h-12 text-primary" solid />
 				</div>
 
-				<div class="w-full justify-between shadow rounded p-2 px-5 flex gap-5 items-center">
-					<div class="flex flex-col">
+				<div class="w-full justify-between shadow rounded p-2 px-4 flex gap-5 items-center">
+					<div class="flex flex-col w-full">
 						<div class="capitalize text-sm font-thin">Following</div>
-						<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{following || '0'}</div>
+						<div class="flex justify-between items-center">
+							<div class="text-xl sm:text-2xl md:text-3xl font-extrabold">{following || '0'}</div>
+							<Icon
+								src={UserPlus}
+								class="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 text-primary"
+								solid
+							/>
+						</div>
 						<div class="hidden sm:flex text-xs">Total users.</div>
 					</div>
-					<Icon src={UserPlus} class="w-5 h-5 sm:w-7 sm:h-7 md:w-12 md:h-12 text-primary" solid />
 				</div>
 			</div>
 		</div>
 	</div>
+
 	{#if badges}
-		<div class="my-20 md:my-10">
+		<div class="mb-5 md:mb-10">
 			<div class="w-full font-bold text-lg md:text-xl">Badges</div>
 			<div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
 				<!-- Step 1: Add overflow-x-auto class -->
@@ -122,7 +138,7 @@
 										<div class="">
 											<div class="w-full bg-purple-100 flex justify-center">
 												<img
-													class="w-32 h-32 lg:w-40 lg:h-40 p-2"
+													class="w-40 h-40"
 													src={badge?.thumbnail
 														? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
 														: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}

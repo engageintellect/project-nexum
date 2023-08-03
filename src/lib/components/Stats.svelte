@@ -11,7 +11,7 @@
 	<div class="grid gap-2 grid-cols-1 md:grid-cols-4">
 		<div class="stat shadow rounded">
 			<div class="stat-figure text-secondary">
-				<Icon src={CheckCircle} class="w-7 h-7 md:w-12 md:h-12 text-success drop-shadow" solid />
+				<Icon src={CheckCircle} class="w-7 h-7 md:w-10 md:h-10 text-success drop-shadow" solid />
 			</div>
 			<div class="text-sm font-thin">Verified Pages</div>
 			<div class="text-2xl md:text-3xl font-extrabold">{verifiedPages}</div>
@@ -22,7 +22,7 @@
 			<div class="stat-figure text-secondary">
 				<Icon
 					src={ExclamationTriangle}
-					class="w-7 h-7 md:w-12 md:h-12 text-warning drop-shadow"
+					class="w-7 h-7 md:w-10 md:h-10 text-warning drop-shadow"
 					solid
 				/>
 			</div>
@@ -33,7 +33,7 @@
 
 		<div class="stat shadow rounded">
 			<div class="stat-figure text-secondary">
-				<Icon src={Heart} class="w-7 h-7 md:w-12 md:h-12 text-error drop-shadow-md" solid />
+				<Icon src={Heart} class="w-7 h-7 md:w-10 md:h-10 text-error drop-shadow-md" solid />
 			</div>
 			<div class="text-sm font-thin">Favorites</div>
 			<div class="text-2xl md:text-3xl font-extrabold">{favorites}</div>
@@ -42,7 +42,7 @@
 
 		<div class="stat shadow rounded">
 			<div class="stat-figure text-primary">
-				<Icon src={HandThumbUp} class="w-7 h-7 md:w-12 md:h-12 text-info drop-shadow" solid />
+				<Icon src={HandThumbUp} class="w-7 h-7 md:w-10 md:h-10 text-info drop-shadow" solid />
 			</div>
 			<div class="text-sm font-thin">Likes</div>
 			<div class="text-2xl md:text-3xl font-extrabold">{likes}</div>
