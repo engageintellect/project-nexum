@@ -9,9 +9,9 @@
 	<div class="text-center text-7xl font-bold tracking-tight text-base-content">
 		<div>People</div>
 	</div>
-	<div class="text-center mt-1">Find content by person, division, or job title.</div>
+	<div class="text-center my-5">Find content by person, division, or job title.</div>
 
-	<div class="my-10">
+	<div class="my-5">
 		<div class="flex justify-center w-full max-w-lg mx-auto border border-primary rounded p-3">
 			<div class="flex items-center gap-2 w-full">
 				<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />

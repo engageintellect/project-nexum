@@ -56,9 +56,9 @@
 			Ne<span class="text-purple-500">x</span>um
 		</div>
 	</div>
-	<div class="text-center mt-1">Pages shared across all users.</div>
+	<div class="text-center my-5">Pages shared across all users.</div>
 
-	<div class="my-10 flex justify-center px-4">
+	<div class="my-5 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
 			<div class=" flex w-full max-w-lg border border-primary rounded p-3">
 				<div class="flex items-center gap-2 w-full">
