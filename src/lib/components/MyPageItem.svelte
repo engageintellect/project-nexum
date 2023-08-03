@@ -1,12 +1,19 @@
 <script>
+	import PageCardBadge from '$lib/components/PageCardBadge.svelte';
 	import { enhance } from '$app/forms';
 	import { Modal } from '$lib/components';
 	import { getImageURL } from '$lib/utils';
 	import toast from 'svelte-french-toast';
+	import MyPageItem from '$lib/components/MyPageItem.svelte';
 
-	import { Icon, PencilSquare, Trash } from 'svelte-hero-icons';
+	import { Icon, PencilSquare, Trash, Check, ArrowPathRoundedSquare } from 'svelte-hero-icons';
 
 	export let page;
+	export let user;
+	export let localUser;
+
+	export let isNew = false;
+	export let isOld = false;
 
 	let modalOpen;
 	let loading = false;
@@ -37,11 +44,8 @@
 	const options = {
 		timeZone: 'America/Los_Angeles', // Specify the desired time zone
 		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-		hour: 'numeric',
-		minute: 'numeric',
-		second: 'numeric'
+		month: 'short',
+		day: 'numeric'
 	};
 
 	const formattedDateTime = dateTime.toLocaleString('en-US', options);
@@ -49,50 +53,105 @@
 	console.log(formattedDateTime);
 </script>
 
-<div class="w-full flex items-center justify-between my-2 border boder-primary shadow-md">
-	<div class="avatar">
-		<div class="w-24 lg:w-40 rounded">
-			<a href="/pages/{page.id}">
-				<img
-					src={page?.thumbnail
-						? getImageURL(page.collectionId, page.id, page.thumbnail, '80x80')
-						: `https://via.placeholder.com/80/4506CB/FFFFFF/?text=${page.name}`}
-					alt="page thumbnail"
-				/>
+<div class="flex w-full rounded border border-primary/50 shadow hover:shadow-lg group">
+	<div class="w-full flex items-center rounded">
+		<!-- {#if isNew}
+			<PageCardBadge msg={'NEW!'} {isNew} />
+		{/if}
+
+		{#if isOld}
+			<PageCardBadge msg={'STALE'} {isOld} />
+		{/if} -->
+
+		<div class="w-full h-full avatar rounded">
+			<div class="object-cover rounded-l w-full">
+				<a href="/pages/{page.id}">
+					<div class="relative flex h-full w-full bg-black">
+						<img
+							class="group-hover:opacity-75 group-hover:scale-105 transition-all duration-200 group-hover:saturate-150"
+							src={page?.thumbnail
+								? getImageURL(page.collectionId, page.id, page.thumbnail, '80x80')
+								: `https://via.placeholder.com/500/6d28d9/FFFFFF/?text=${page.name}`}
+							alt="page thumbnail"
+						/>
+					</div>
+
+					{#if page.verified}
+						<div class="">
+							<Icon src={Check} class="absolute bottom-2 left-2 w-6 h-6 bg-success rounded-full" />
+						</div>
+					{/if}
+				</a>
+			</div>
+		</div>
+		<div class="w-full h-full p-2">
+			<a href="/pages/{page.id}" class="">
+				<div class="flex flex-col justify-between h-full">
+					<div>
+						<div class=" font-bold">{page.name}</div>
+						<div class=" text-sm text-primary/75">
+							{page.tagline}
+						</div>
+						{#if page.division}
+							<div class="badge badge-sm badge-primary rounded py-3 mt-2">{page.division}</div>
+						{/if}
+					</div>
+
+					<div class="flex flex-col gap-2 mt-5">
+						{#if user}
+							<div class="flex gap-1">
+								<img
+									class="w-5 h-5 object-cover rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+									src={user?.avatar
+										? getImageURL(user?.collectionId, user?.id, user?.avatar)
+										: `https://ui-avatars.com/api/?name=${user?.name}`}
+									alt="User avatar"
+								/>
+
+								<div class="text-sm text-primary/75">
+									{user.name}
+								</div>
+							</div>
+						{/if}
+
+						<div class="font-bold text-xs">
+							<div class="flex gap-1">
+								<Icon src={ArrowPathRoundedSquare} class="w-4 h-4" />
+								<div class="font-medium text-primary/75">{formattedDateTime}</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</a>
 		</div>
-	</div>
-	<div class="flex flex-col w-full ml-4 h-full justify-center">
-		<a href="/pages/{page.id}" class="font-semibold text-lg">{page.name}</a>
-		<div>{page.tagline}</div>
-		<div class="mt-2">
-			<div class="font-bold text-xs">
-				Last Update: <span class="font-medium">{formattedDateTime}</span>
-			</div>
-		</div>
-	</div>
 
-	<div class="flex flex-col items-end md:flex-row md:items-center justify-end w-full gap-2 p-4">
-		<a href="/pages/{page.id}/edit" class="btn btn-outline">
-			<Icon src={PencilSquare} class="w-4 h-4" />
-		</a>
-		<Modal label={page.id} checked={modalOpen}>
-			<span slot="trigger" class="btn btn-error ml-2">
-				<Icon src={Trash} class="w-4 h-4" />
-			</span>
-			<div slot="heading">
-				<div class="text-2xl">Delete {page.name}</div>
-				<div class="text-base font-normal mt-2">
-					Are you sure you want to delete this page? Once deleted, the page cannot be restored.
+		{#if page.user === localUser.id}
+			<div class="h-full">
+				<div class=" flex flex-col justify-between h-full p-2">
+					<a href="/pages/{page.id}/edit" class="">
+						<Icon src={PencilSquare} class="w-5 h-5 hover:text-info" />
+					</a>
+					<Modal label={page.id} checked={modalOpen}>
+						<span slot="trigger" class="">
+							<Icon src={Trash} class="w-5 h-5 hover:cursor-pointer hover:text-error" />
+						</span>
+						<div slot="heading">
+							<div class="text-2xl">Delete {page.name}</div>
+							<div class="text-base font-normal mt-2">
+								Are you sure you want to delete this page? Once deleted, the page cannot be
+								restored.
+							</div>
+						</div>
+						<div slot="actions" class="flex w-full items-center justify-center space-x-2">
+							<label for={page.id} class="btn btn-outline">Cancel</label>
+							<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+								<input type="hidden" name="id" value={page.id} />
+								<button type="submit" class="btn btn-error z-40" disabled={loading}>Delete</button>
+							</form>
+						</div>
+					</Modal>
 				</div>
 			</div>
-			<div slot="actions" class="flex w-full items-center justify-center space-x-2">
-				<label for={page.id} class="btn btn-outline">Cancel</label>
-				<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
-					<input type="hidden" name="id" value={page.id} />
-					<button type="submit" class="btn btn-error" disabled={loading}>Delete</button>
-				</form>
-			</div>
-		</Modal>
+		{/if}
 	</div>
 </div>

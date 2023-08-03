@@ -3,6 +3,7 @@
 	import { PageCard, Hero } from '$lib/components';
 	import { Icon, MagnifyingGlass, XMark, Rss } from 'svelte-hero-icons';
 	import { blur } from 'svelte/transition';
+	import MyPageItem from '../lib/components/MyPageItem.svelte';
 
 	export let data;
 	let filter;
@@ -155,7 +156,14 @@
 												.toLowerCase()
 												.includes(filter.toLowerCase()) ))}
 								{#if page.user === user.id}
-									<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
+									<!-- <PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} /> -->
+									<MyPageItem
+										{page}
+										{user}
+										localUser={data.user}
+										isNew={isNew(page.created)}
+										isOld={isOld(page.updated)}
+									/>
 								{/if}
 							{/if}
 						{/if}
@@ -182,7 +190,14 @@
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}
-								<PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} />
+								<!-- <PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} /> -->
+								<MyPageItem
+									{page}
+									{user}
+									localUser={data.user}
+									isNew={isNew(page.created)}
+									isOld={isOld(page.updated)}
+								/>
 							{/if}
 						{/if}
 					{/each}

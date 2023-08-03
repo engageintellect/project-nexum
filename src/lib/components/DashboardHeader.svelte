@@ -58,7 +58,7 @@
 
 			<div class="flex flex-row sm:flex-col">
 				<a
-					href="#mypages"
+					href="/my/pages"
 					class=" w-full justify-between shadow rounded p-2 px-4 flex gap-5 items-center"
 				>
 					<div class="flex flex-col w-full">

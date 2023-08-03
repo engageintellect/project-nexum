@@ -1,7 +1,7 @@
 <script>
 	import { Stats } from '$lib/components';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, PencilSquare, UserPlus, UserGroup } from 'svelte-hero-icons';
+	import { Icon, PencilSquare, UserPlus, UserGroup, Check, Trash } from 'svelte-hero-icons';
 	import { Modal, MyPageItem, DashboardHeader } from '$lib/components';
 	import { fade } from 'svelte/transition';
 	export let data;
@@ -361,7 +361,7 @@
 	<div id="mypages" class=" text-xl font-bold">My Pages</div>
 	<div class="">
 		<div class="">
-			<div class="w-full flex flex-col items-center">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				{#each data.pages as page}
 					{#if page.user === data.user.id}
 						<MyPageItem {page} />

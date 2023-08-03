@@ -1,20 +1,62 @@
 <script>
 	import { MyPageItem } from '$lib/components';
 	export let data;
+	let filter = ''; // Initialize filter as an empty string
+	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
+
+	// Create a computed variable for filtered pages
+	$: filteredPages = data.pages.filter(
+		(page) =>
+			!filter ||
+			page.name.toLowerCase().includes(filter.toLowerCase()) ||
+			page.tagline.toLowerCase().includes(filter.toLowerCase()) ||
+			(Array.isArray(page.division) &&
+				page.division.some((division) => division.toLowerCase().includes(filter.toLowerCase()))) ||
+			page.content.toLowerCase().includes(filter.toLowerCase())
+	);
 </script>
 
-<div class="px-4 mt-10">
-	<div class="text-7xl font-bold">My Pages</div>
-	<div class="mt-2">Pages that you've created.</div>
-	<div class="w-full mt-4 flex flex-col items-center">
-		{#if data.pages.length === 0}
+<div class="my-10 px-4">
+	<div class="text-center text-7xl font-bold tracking-tight text-base-content">
+		<div>My Pages</div>
+	</div>
+	<div class="text-center my-5">Find content by person, division, or job title.</div>
+
+	<div class="my-5">
+		<div class="flex justify-center w-full max-w-lg mx-auto border border-primary rounded p-3">
+			<div class="flex items-center gap-2 w-full">
+				<Icon src={MagnifyingGlass} class="text-primary w-5 h-5" />
+				<!-- svelte-ignore a11y-autofocus -->
+				<input
+					type="text"
+					placeholder="Search Pages, People, Divisions, and Content"
+					class="w-full focus:outline-none bg-base-100"
+					bind:value={filter}
+					autofocus
+				/>
+			</div>
+
+			{#if filter}
+				<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
+					<Icon src={XMark} class="w-5 h-5" />
+				</button>
+			{/if}
+		</div>
+	</div>
+
+	<div class="w-full mt-10 flex flex-col items-center">
+		{#if filteredPages.length === 0 && filter.length == ''}
 			<div class="text-center text-3xl">☹️</div>
 			<div class="text-center text-3xl">Looks like you don't have any pages.</div>
 			<a href="/pages/new" class="btn btn-primary max-w-md mt-4">Add One</a>
 		{:else}
-			{#each data.pages as page}
-				<MyPageItem {page} />
-			{/each}
+			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+				{#each filteredPages as page}
+					<div class="flex w-full">
+						<MyPageItem {page} user={data.user} />
+					</div>
+				{/each}
+			</div>
 		{/if}
 	</div>
 </div>

@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class="card border border-neutral/25 bg-base-100 rounded group active:scale-[99%] hover:shadow-md transition-all duration-50 h-full"
+	class="card border border-neutral/25 bg-base-100 rounded group active:scale-[99%] hover:shadow-md transition-all h-full"
 >
 	{#if isNew}
 		<PageCardBadge msg={'NEW!'} {isNew} />
@@ -44,7 +44,7 @@
 				class="h-52 w-full object-cover scale-[100%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
 				src={page?.thumbnail
 					? getImageURL(page.collectionId, page.id, page.thumbnail)
-					: `https://via.placeholder.com/500/4506CB/FFFFFF/?text=${page.name}`}
+					: `https://via.placeholder.com/500/6d28d9/FFFFFF/?text=${page.name}`}
 				alt="page thumbnail"
 			/>
 
@@ -59,7 +59,7 @@
 		</div>
 		<div class="card-body p-2">
 			<div>
-				<div class="text-lg md:text-xl font-semibold">{page.name}</div>
+				<div class="text-lg font-bold">{page.name}</div>
 
 				<div class="font-thin">{page.tagline}</div>
 			</div>
