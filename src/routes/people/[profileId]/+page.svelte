@@ -3,6 +3,7 @@
 	import PageCard from '$lib/components/PageCard.svelte';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, MagnifyingGlass, XMark, PlusCircle, CheckCircle } from 'svelte-hero-icons';
+	import MyPageItem from '$lib/components/MyPageItem.svelte';
 
 	export let data;
 	let filter;
@@ -122,7 +123,7 @@
 		</div>
 	{/if}
 
-	<div class="flex justify-center sm:my-10 pt-4">
+	<div class="flex justify-center pt-4">
 		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
 
@@ -139,13 +140,21 @@
 									.toLowerCase()
 									.includes(filter.toLowerCase()) ))}
 					{#if page.user === pageUser.id}
-						<PageCard
+						<MyPageItem
+							{page}
+							user={pageUser}
+							localUser={data.user}
+							isNew={isNew(page.created)}
+							isOld={isOld(page.updated)}
+						/>
+
+						<!-- <PageCard
 							{page}
 							showUser={false}
 							user={pageUser}
 							isNew={isNew(page.created)}
 							isOld={isOld(page.updated)}
-						/>
+						/> -->
 					{/if}
 				{/if}
 			{/each}

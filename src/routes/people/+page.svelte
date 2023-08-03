@@ -33,7 +33,7 @@
 		</div>
 	</div>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
 		{#each data.users as user}
 			{#if !filter || user.name.toLowerCase().includes(filter.toLowerCase()) || user.job_title
 					.toLowerCase()

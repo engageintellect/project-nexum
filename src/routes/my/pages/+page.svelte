@@ -50,7 +50,7 @@
 			<div class="text-center text-3xl">Looks like you don't have any pages.</div>
 			<a href="/pages/new" class="btn btn-primary max-w-md mt-4">Add One</a>
 		{:else}
-			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				{#each filteredPages as page}
 					<div class="flex w-full">
 						<MyPageItem {page} user={data.user} localUser={data.user} />
