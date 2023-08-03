@@ -125,33 +125,30 @@
 			</a>
 		</div>
 
-		{#if page.user === localUser.id}
-			<div class="h-full">
-				<div class=" flex flex-col justify-between h-full p-2">
-					<a href="/pages/{page.id}/edit" class="">
-						<Icon src={PencilSquare} class="w-5 h-5 hover:text-info" />
-					</a>
-					<Modal label={page.id} checked={modalOpen}>
-						<span slot="trigger" class="">
-							<Icon src={Trash} class="w-5 h-5 hover:cursor-pointer hover:text-error" />
-						</span>
-						<div slot="heading">
-							<div class="text-2xl">Delete {page.name}</div>
-							<div class="text-base font-normal mt-2">
-								Are you sure you want to delete this page? Once deleted, the page cannot be
-								restored.
-							</div>
+		<div class="h-full invisible group-hover:visible">
+			<div class=" flex flex-col justify-between h-full p-2">
+				<a href="/pages/{page.id}/edit" class="">
+					<Icon src={PencilSquare} class="w-5 h-5 hover:text-info" solid />
+				</a>
+				<Modal label={page.id} checked={modalOpen}>
+					<span slot="trigger" class="">
+						<Icon src={Trash} class="w-5 h-5 hover:cursor-pointer hover:text-error" solid />
+					</span>
+					<div slot="heading">
+						<div class="text-2xl">Delete {page.name}</div>
+						<div class="text-base font-normal mt-2">
+							Are you sure you want to delete this page? Once deleted, the page cannot be restored.
 						</div>
-						<div slot="actions" class="flex w-full items-center justify-center space-x-2">
-							<label for={page.id} class="btn btn-outline">Cancel</label>
-							<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
-								<input type="hidden" name="id" value={page.id} />
-								<button type="submit" class="btn btn-error z-40" disabled={loading}>Delete</button>
-							</form>
-						</div>
-					</Modal>
-				</div>
+					</div>
+					<div slot="actions" class="flex w-full items-center justify-center space-x-2">
+						<label for={page.id} class="btn btn-outline">Cancel</label>
+						<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+							<input type="hidden" name="id" value={page.id} />
+							<button type="submit" class="btn btn-error z-40" disabled={loading}>Delete</button>
+						</form>
+					</div>
+				</Modal>
 			</div>
-		{/if}
+		</div>
 	</div>
 </div>

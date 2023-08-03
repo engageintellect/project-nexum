@@ -53,7 +53,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 				{#each filteredPages as page}
 					<div class="flex w-full">
-						<MyPageItem {page} user={data.user} />
+						<MyPageItem {page} user={data.user} localUser={data.user} />
 					</div>
 				{/each}
 			</div>

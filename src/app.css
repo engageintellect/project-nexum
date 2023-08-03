@@ -15,18 +15,14 @@
 			-ms-overflow-style: none; /* IE and Edge */
 			scrollbar-width: none; /* Firefox */
 		}
-	}
 
-	/* Add the CSS for hide-scrollbar */
-	.hide-scrollbar {
-		/* For WebKit-based browsers (Chrome, Safari) */
-		scrollbar-width: none; /* Hide the scrollbar */
-		-ms-overflow-style: none; /* Hide scrollbar on Internet Explorer */
+		/* Add the CSS for hide-scrollbar */
+		.hide-scrollbar {
+			/* For WebKit-based browsers (Chrome, Safari) */
+			scrollbar-width: none; /* Hide the scrollbar */
+			-ms-overflow-style: none; /* Hide scrollbar on Internet Explorer */
 
-		/* For Firefox */
-		&::-webkit-scrollbar {
-			width: 0; /* Hide scrollbar */
-			background-color: transparent; /* Optional: Set scrollbar background color to match the container */
+			/* For Firefox */
 		}
 	}
 }

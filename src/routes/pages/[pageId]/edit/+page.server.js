@@ -17,7 +17,7 @@ export const load = async ({ locals, params }) => {
 				page
 			};
 		} else {
-			throw error(403, 'Forbidden');
+			throw error(403, 'FORBID');
 		}
 	} catch (err) {
 		console.log('Error: ', err);

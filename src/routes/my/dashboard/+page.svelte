@@ -364,7 +364,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				{#each data.pages as page}
 					{#if page.user === data.user.id}
-						<MyPageItem {page} />
+						<MyPageItem {page} user={data.user} localUser={data.user} />
 					{/if}
 				{/each}
 			</div>
