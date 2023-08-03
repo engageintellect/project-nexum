@@ -66,7 +66,7 @@
 		<div class="w-full h-full avatar rounded">
 			<div class="object-cover rounded-l w-full">
 				<a href="/pages/{page.id}">
-					<div class="relative flex h-full w-full bg-black">
+					<div class="relative flex h-full border-r border-primary/50 w-full bg-black">
 						<img
 							class="group-hover:opacity-50 group-hover:scale-105 transition-all duration-200 group-hover:saturate-150"
 							src={page?.thumbnail
