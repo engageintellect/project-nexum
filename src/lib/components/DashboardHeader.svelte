@@ -42,12 +42,12 @@
 		/>
 
 		<div class="w-full flex-col">
-			<div class="text-2xl font-semibold capitalize">
-				{name || 'stranger'}
+			<div class="text-2xl md:text-3xl font-semibold capitalize">
+				{name}
 			</div>
-			<div class="text-lg font-thin capitalize">{title || 'title'}</div>
+			<div class="text-lg md:text-xl font-thin capitalize">{title}</div>
 			{#if division}
-				<div class="badge badge-primary rounded mt-2 uppercase py-3">
+				<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase py-3">
 					{division}
 				</div>
 			{/if}
