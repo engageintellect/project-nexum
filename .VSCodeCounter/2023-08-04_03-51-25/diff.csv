@@ -1,0 +1,8 @@
+"filename", "language", "Svelte", "comment", "blank", "total"
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/DashboardHeader.svelte", "Svelte", 14, 0, 2, 16
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/MyPageItem.svelte", "Svelte", 56, 0, 3, 59
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/+page.svelte", "Svelte", 15, 0, 0, 15
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/dashboard/+page.svelte", "Svelte", 60, 0, 7, 67
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/pages/+page.svelte", "Svelte", 38, 0, 4, 42
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/people/[profileId]/+page.svelte", "Svelte", 8, 0, 1, 9
+"Total", "-", 191, 0, 17, 208

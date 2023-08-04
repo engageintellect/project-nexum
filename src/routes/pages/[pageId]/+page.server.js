@@ -14,21 +14,8 @@ export const load = ({ locals, params }) => {
 		}
 	};
 
-	const getUsers = async () => {
-		try {
-			const users = serializeNonPOJOs(await locals.pb.collection('users').getFullList(undefined), {
-				expand: ['favorites', 'likes']
-			});
-			return users;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
-
 	return {
-		page: getPage(params.pageId),
-		users: getUsers()
+		page: getPage(params.pageId)
 	};
 };
 

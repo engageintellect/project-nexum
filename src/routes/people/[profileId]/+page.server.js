@@ -12,50 +12,8 @@ export const load = ({ locals, params }) => {
 		}
 	};
 
-	const getUsers = async () => {
-		try {
-			const users = serializeNonPOJOs(await locals.pb.collection('users').getFullList(undefined), {
-				expand: ['favorites', 'likes', 'tags', 'following']
-			});
-			return users;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
-
-	const getPages = async () => {
-		try {
-			const pages = serializeNonPOJOs(
-				await locals.pb.collection('pages').getFullList({
-					sort: '-updated',
-					expand: ['tags', 'favorites', 'likes']
-				})
-			);
-			return pages;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
-
-	const getTags = async () => {
-		try {
-			const tags = serializeNonPOJOs(await locals.pb.collection('tags').getFullList(undefined), {
-				expand: ['favorites', 'likes']
-			});
-			return tags;
-		} catch (err) {
-			console.log('Error:', err);
-			throw error(err.status, err.message);
-		}
-	};
-
 	return {
-		pageUser: getPageUser(params.profileId),
-		users: getUsers(),
-		pages: getPages(),
-		tags: getTags()
+		pageUser: getPageUser(params.profileId)
 	};
 };
 

@@ -8,13 +8,13 @@ export const load = ({ locals }) => {
 
 	const getUsersPages = async (userId) => {
 		try {
-			const pages = serializeNonPOJOs(
+			const userPages = serializeNonPOJOs(
 				await locals.pb.collection('pages').getFullList(undefined, {
 					sort: '-updated',
 					filter: `user = "${userId}"`
 				})
 			);
-			return pages;
+			return userPages;
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
@@ -22,7 +22,7 @@ export const load = ({ locals }) => {
 	};
 
 	return {
-		pages: getUsersPages(locals.user.id)
+		userPages: getUsersPages(locals.user.id)
 	};
 };
 

@@ -1,11 +1,10 @@
 <script>
 	import { MyPageItem } from '$lib/components';
 	export let data;
-	let filter = ''; // Initialize filter as an empty string
+	let filter = '';
 	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
 
-	// Create a computed variable for filtered pages
-	$: filteredPages = data.pages.filter(
+	$: filteredPages = data.userPages.filter(
 		(page) =>
 			!filter ||
 			page.name.toLowerCase().includes(filter.toLowerCase()) ||
