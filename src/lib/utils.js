@@ -32,3 +32,16 @@ export const validateData = async (formData, schema) => {
 		};
 	}
 };
+
+export function getFormattedDateTime(dateTimeString) {
+	const dateTime = new Date(dateTimeString);
+
+	const options = {
+		timeZone: 'America/Los_Angeles', // Specify the desired time zone
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric'
+	};
+
+	return dateTime.toLocaleString('en-US', options);
+}
