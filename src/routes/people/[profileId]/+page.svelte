@@ -1,44 +1,36 @@
 <script>
+	import { writable } from 'svelte/store';
 	import { enhance } from '$app/forms';
 	import PageCard from '$lib/components/PageCard.svelte';
 	import { getImageURL } from '$lib/utils';
 	import { Icon, MagnifyingGlass, XMark, PlusCircle, CheckCircle } from 'svelte-hero-icons';
 	import MyPageItem from '$lib/components/MyPageItem.svelte';
+	import Badges from '$lib/components/Badges.svelte';
 
 	export let data;
-	let filter;
-	let pageUser = data.pageUser;
+	let filter = '';
 
-	const isOld = (date) => {
-		const currentDate = new Date(); // Current date
-		const updatedDate = new Date(date); // Replace with page.updated value
-		const differenceInMilliseconds = currentDate - updatedDate;
-		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 15) {
-			return true;
-		}
-	};
+	// Create the writable store for userPageCount
+	export const userPageCount = writable(0);
 
-	const isNew = (date) => {
-		const currentDate = new Date(); // Current date
-		const createDate = new Date(date); // Replace with page.updated value
-		const differenceInMilliseconds = currentDate - createDate;
-		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference < 1) {
-			return true;
-		}
-	};
+	const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-	const getPageLength = (pages) => {
-		const total = pages.reduce((count, page) => {
-			if (page.user === pageUser.id) {
-				return count + 1;
-			}
-			return count;
-		}, 0);
+	const dateDiffInDays = (date1, date2) => Math.floor((date1 - date2) / MS_PER_DAY);
 
-		return total;
-	};
+	const isOld = (date) => dateDiffInDays(new Date(), new Date(date)) > 15;
+
+	const isNew = (date) => dateDiffInDays(new Date(), new Date(date)) < 1;
+
+	const pageBelongsToUser = (page) => page.user === data.pageUser.id;
+
+	// Set the value of userPageCount in your component
+	userPageCount.set(data.pages.filter(pageBelongsToUser).length);
+
+	$: filteredPages = filter
+		? data.pages.filter((page) => {
+				// filtering code
+		  })
+		: data.pages;
 </script>
 
 <div class="my-5 sm:my-10">
@@ -97,31 +89,29 @@
 		</div>
 	</div>
 
-	{#if getPageLength(data.pages) > 3}
-		<div class="mt-5 sm:my-10 flex justify-center px-4">
-			<div class="flex items-center justify-center w-full gap-2">
-				<div class=" flex w-full max-w-lg border border-primary rounded p-3">
-					<div class="flex items-center gap-2 w-full">
-						<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
-						<!-- svelte-ignore a11y-autofocus -->
-						<input
-							type="text"
-							placeholder="Search Pages, People, Divisions, and Content"
-							class="w-full focus:outline-none bg-base-100"
-							bind:value={filter}
-							autofocus
-						/>
-					</div>
-
-					{#if filter}
-						<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
-							<Icon src={XMark} class="w-5 h-5" />
-						</button>
-					{/if}
+	<div class="mt-5 sm:my-10 flex justify-center px-4">
+		<div class="flex items-center justify-center w-full gap-2">
+			<div class=" flex w-full max-w-lg border border-primary rounded p-3">
+				<div class="flex items-center gap-2 w-full">
+					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
+					<!-- svelte-ignore a11y-autofocus -->
+					<input
+						type="text"
+						placeholder="Search Pages, People, Divisions, and Content"
+						class="w-full focus:outline-none bg-base-100"
+						bind:value={filter}
+						autofocus
+					/>
 				</div>
+
+				{#if filter}
+					<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
+						<Icon src={XMark} class="w-5 h-5" />
+					</button>
+				{/if}
 			</div>
 		</div>
-	{/if}
+	</div>
 
 	<div class="flex justify-center pt-4">
 		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -134,15 +124,13 @@
 									.toLowerCase()
 									.includes(filter.toLowerCase()) )) || page.content
 						.toLowerCase()
-						.includes(filter.toLowerCase()) || pageUser.name
-						.toLowerCase()
 						.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
 									.toLowerCase()
 									.includes(filter.toLowerCase()) ))}
-					{#if page.user === pageUser.id}
+					{#if page.user === data.pageUser.id}
 						<MyPageItem
 							{page}
-							user={pageUser}
+							user={data.pageUser}
 							localUser={data.user}
 							isNew={isNew(page.created)}
 							isOld={isOld(page.updated)}

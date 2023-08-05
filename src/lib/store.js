@@ -4,3 +4,5 @@ export const githubURL = writable('https://github.com/engageintellect/project-ne
 
 export const msgStore = writable('hello world');
 export const feedSelect = writable(false);
+
+export const userPageCount = writable(0);
