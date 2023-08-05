@@ -1,7 +1,7 @@
 <script>
 	import { msgStore, feedSelect } from './../lib/store.js';
 	import { PageCard, Hero } from '$lib/components';
-	import { Icon, MagnifyingGlass, XMark, Rss } from 'svelte-hero-icons';
+	import { Icon, MagnifyingGlass, XMark, Rss, GlobeAmericas, UserGroup } from 'svelte-hero-icons';
 	import { blur } from 'svelte/transition';
 	import MyPageItem from '../lib/components/MyPageItem.svelte';
 
@@ -57,7 +57,19 @@
 			Ne<span class="text-purple-500">x</span>um
 		</div>
 	</div>
-	<div class="text-center my-5">Pages shared across all users.</div>
+	<div class="text-center my-5">
+		{#if $feedSelect}
+			<div class="flex justify-center items-center gap-2">
+				<div class="">My Feed based on users I'm following</div>
+				<div><Icon src={UserGroup} class="w-7 h-7" solid /></div>
+			</div>
+		{:else}
+			<div class="flex justify-center items-center gap-2">
+				<div class="">All content across wiki</div>
+				<div><Icon src={GlobeAmericas} class="w-7 h-7" solid /></div>
+			</div>
+		{/if}
+	</div>
 
 	<div class="my-5 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
@@ -152,7 +164,7 @@
 									.toLowerCase()
 									.includes(filter.toLowerCase()) || user.name
 									.toLowerCase()
-									.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
+									.includes(filter.toLowerCase()) || (page.expand && page.expand.tags && page.expand.tags.some( (tag) => tag.name
 												.toLowerCase()
 												.includes(filter.toLowerCase()) ))}
 								{#if page.user === user.id}
@@ -186,7 +198,7 @@
 								.toLowerCase()
 								.includes(filter.toLowerCase()) || user.name
 								.toLowerCase()
-								.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
+								.includes(filter.toLowerCase()) || (page.expand && page.expand.tags && page.expand.tags.some( (tag) => tag.name
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}

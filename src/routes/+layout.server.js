@@ -24,7 +24,7 @@ export const load = ({ locals }) => {
 				const pages = serializeNonPOJOs(
 					await locals.pb.collection('pages').getFullList({
 						sort: '-updated',
-						expand: ['favorites', 'likes', 'following', 'badges', 'tags']
+						expand: ['tags, likes']
 					})
 				);
 				return pages;
