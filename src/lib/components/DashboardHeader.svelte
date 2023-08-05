@@ -153,7 +153,7 @@
 										</div>
 
 										<div class="flex gap-2 justify-center mt-10 my-5">
-											<div class="btn btn-info">About Badges</div>
+											<a href="/about/badges" class="btn btn-info">About Badges</a>
 
 											<div class="btn btn-success">Claim Prize!</div>
 										</div>

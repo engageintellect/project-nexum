@@ -52,7 +52,7 @@ export const actions = {
 			throw error(err.status, err.message);
 		}
 
-		throw redirect(303, `/my/pages`);
+		throw redirect(303, `/pages/${params.pageId}`);
 	},
 	deleteThumbnail: async ({ locals, params }) => {
 		try {

@@ -89,6 +89,17 @@
 							</li>
 
 							<li>
+								<a href={`/about`} class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={InformationCircle} class="w-5 h-5" />
+										</div>
+										<div>About</div>
+									</div>
+								</a>
+							</li>
+
+							<li>
 								<a href="/people" class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
@@ -98,14 +109,40 @@
 									</div>
 								</a>
 							</li>
+						</div>
 
+						<hr class="border border-primary/25" />
+
+						<div class="my-2">
 							<li>
-								<a href={`/about`} class="justify-between">
+								<a href={`/people/${data.user.id}`} class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={InformationCircle} class="w-5 h-5" />
+											<Icon src={UserCircle} class="w-5 h-5" />
 										</div>
-										<div>About</div>
+										<div>My Profile</div>
+									</div>
+								</a>
+							</li>
+
+							<!-- <li>
+								<a href="/my/pages" class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={RectangleStack} class="w-5 h-5" />
+										</div>
+										<div>My Pages</div>
+									</div>
+								</a>
+							</li> -->
+
+							<li>
+								<a href="/my/dashboard" class="justify-between">
+									<div class="flex gap-2 items-center">
+										<div>
+											<Icon src={RectangleGroup} class="w-5 h-5" />
+										</div>
+										<div>My Dashboard</div>
 									</div>
 								</a>
 							</li>
@@ -137,42 +174,7 @@
 								</a>
 							</li>
 						</div>
-						<hr class="border border-primary/25" />
 
-						<div class="my-2">
-							<li>
-								<a href={`/people/${data.user.id}`} class="justify-between">
-									<div class="flex gap-2 items-center">
-										<div>
-											<Icon src={UserCircle} class="w-5 h-5" />
-										</div>
-										<div>My Profile</div>
-									</div>
-								</a>
-							</li>
-
-							<li>
-								<a href="/my/pages" class="justify-between">
-									<div class="flex gap-2 items-center">
-										<div>
-											<Icon src={RectangleStack} class="w-5 h-5" />
-										</div>
-										<div>My Pages</div>
-									</div>
-								</a>
-							</li>
-
-							<li>
-								<a href="/my/dashboard" class="justify-between">
-									<div class="flex gap-2 items-center">
-										<div>
-											<Icon src={RectangleGroup} class="w-5 h-5" />
-										</div>
-										<div>My Dashboard</div>
-									</div>
-								</a>
-							</li>
-						</div>
 						<div class="my-2">
 							<hr class="border border-primary/25" />
 							<li>

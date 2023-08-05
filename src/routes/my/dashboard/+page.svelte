@@ -196,7 +196,7 @@
 										<div class="">
 											<div class="h-16 w-12">
 												<img
-													class="h-full object-cover rounded rounded-r-3xl shadow"
+													class="h-full object-cover rounded rounded-r shadow"
 													src={page?.thumbnail
 														? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
 														: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
@@ -246,7 +246,7 @@
 										<div class="">
 											<div class="h-16 w-12">
 												<img
-													class="h-full object-cover rounded rounded-r-3xl shadow"
+													class="h-full object-cover rounded rounded-r shadow"
 													src={page?.thumbnail
 														? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
 														: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
@@ -292,7 +292,7 @@
 										<div class="">
 											<div class="h-16 w-12">
 												<img
-													class="h-full object-cover rounded rounded-r-3xl shadow"
+													class="h-full object-cover rounded rounded-r shadow"
 													src={page?.thumbnail
 														? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
 														: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
@@ -331,7 +331,7 @@
 										<div class="">
 											<div class="h-16 w-12">
 												<img
-													class="h-full object-cover rounded rounded-r-3xl shadow"
+													class="h-full object-cover rounded rounded-r shadow"
 													src={page?.thumbnail
 														? getImageURL(page.collectionId, page.id, page.thumbnail, '0x0')
 														: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}

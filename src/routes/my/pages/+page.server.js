@@ -25,19 +25,3 @@ export const load = ({ locals }) => {
 		userPages: getUsersPages(locals.user.id)
 	};
 };
-
-export const actions = {
-	deletePage: async ({ request, locals }) => {
-		const { id } = Object.fromEntries(await request.formData());
-
-		try {
-			await locals.pb.collection('pages').delete(id);
-		} catch (err) {
-			console.log('Error: ', err);
-			throw error(err.status, err.message);
-		}
-		return {
-			success: true
-		};
-	}
-};

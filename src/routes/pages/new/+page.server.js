@@ -39,6 +39,6 @@ export const actions = {
 		}
 
 		console.log('FORM DATA: ', formData);
-		throw redirect(303, '/my/pages');
+		throw redirect(303, '/');
 	}
 };

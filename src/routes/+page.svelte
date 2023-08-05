@@ -60,13 +60,16 @@
 	<div class="text-center my-5">
 		{#if $feedSelect}
 			<div class="flex justify-center items-center gap-2">
-				<div class="">My Feed based on users I'm following</div>
-				<div><Icon src={UserGroup} class="w-7 h-7" solid /></div>
+				<div class="">
+					<strong>Displaying: </strong>Users you are
+					<span class="text-purple-500 font-bold">following</span>
+				</div>
+				<div><Icon src={UserGroup} class="w-7 h-7 text-purple-500" solid /></div>
 			</div>
 		{:else}
 			<div class="flex justify-center items-center gap-2">
-				<div class="">All content across wiki</div>
-				<div><Icon src={GlobeAmericas} class="w-7 h-7" solid /></div>
+				<div class=""><strong>Displaying: </strong>all content across wiki</div>
+				<div><Icon src={GlobeAmericas} class="w-7 h-7 text-purple-500" solid /></div>
 			</div>
 		{/if}
 	</div>

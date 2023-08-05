@@ -31,6 +31,8 @@
 				case 'success':
 					toast.success('Page deleted successfully!');
 					await update();
+					toast('Returning Home...');
+					window.location.href = '/'; // this redirects to the root route
 					break;
 				case 'error':
 					toast.error('Could not delete page. Try again later.');
@@ -98,7 +100,7 @@
 				</div>
 			{/if}
 
-			{#if data.page.division != ''}
+			{#if !data.page.division}
 				<div class="badge border-primary rounded py-3 uppercase">{data.page.division}</div>
 			{/if}
 		</div>
@@ -287,7 +289,7 @@
 							</div>
 							<div slot="actions" class="flex w-full items-center justify-center space-x-2">
 								<label for={data.page.id} class="btn btn-outline">Cancel</label>
-								<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+								<form action="/?/deletePage" method="POST" use:enhance={submitDeletePage}>
 									<input type="hidden" name="id" value={data.page.id} />
 									<button type="submit" class="btn btn-error" disabled={loading}>Delete</button>
 								</form>

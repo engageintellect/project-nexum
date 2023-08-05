@@ -53,7 +53,7 @@
 						<PageCardBadge msg={'STALE'} {isOld} />
 					{/if}
 
-					<a href={`/pages/${page.id}`}>
+					<a href={`/pages/${page.id}`} class="">
 						<img
 							class="group-hover:opacity-50 group-hover:scale-105 transition-all duration-500 group-hover:saturate-150"
 							src={page?.thumbnail
@@ -97,9 +97,9 @@
 											<button class="btn btn-outline" on:click={() => (modalOpen = false)}
 												>Cancel</button
 											>
-											<form action="?/deletePage" method="POST" use:enhance={submitDeletePage}>
+											<form action="/?/deletePage" method="POST" use:enhance={submitDeletePage}>
 												<input type="hidden" name="id" value={page.id} />
-												<button type="submit" class="btn btn-error z-40" disabled={loading}
+												<button type="submit" class="btn btn-error" disabled={loading}
 													>Delete</button
 												>
 											</form>
