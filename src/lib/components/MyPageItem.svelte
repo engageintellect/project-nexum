@@ -40,11 +40,13 @@
 	$: modalOpen = false;
 </script>
 
-<div class="flex w-full rounded border border-neutral/25 hover:shadow-lg group">
-	<div class="w-full flex items-center rounded">
+<div
+	class="flex w-full rounded border border-neutral/25 hover:border-neutral/50 transition-all duration-100 hover:shadow-lg group"
+>
+	<div class="w-full flex gap-0 items-center rounded">
 		<div class="w-full h-full avatar rounded">
-			<div class="object-cover rounded-l w-full">
-				<div class="relative flex h-full border-r border-neutral/50 w-full bg-black">
+			<div class="relative object-cover rounded-l w-full">
+				<div class=" flex h-full border-r w-full bg-black">
 					{#if isNew}
 						<PageCardBadge msg={'NEW!'} {isNew} />
 					{/if}
@@ -63,12 +65,12 @@
 						/>
 					</a>
 					<div
-						class="absolute right-0 h-full md:opacity-0 md:group-hover:opacity-100 transition-all duration-700"
+						class="absolute right-0 h-full shadow md:opacity-0 md:group-hover:opacity-100 transition-all duration-700"
 					>
 						{#if page.user === localUser.id}
 							<div class="h-full">
 								<div
-									class="w-full bg-neutral gap-2 flex flex-col justify-between md:justify-start items-end p-1 h-full"
+									class="w-full bg-neutral gap-2 flex flex-col justify-between md:justify-start items-end p-2 h-full"
 								>
 									<a href="/pages/{page.id}/edit" class="">
 										<Icon
@@ -77,6 +79,7 @@
 											solid
 										/>
 									</a>
+
 									<Modal label={page.id} checked={modalOpen}>
 										<div slot="trigger" class="">
 											<button

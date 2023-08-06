@@ -76,7 +76,7 @@
 
 	<div class="my-5 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-neutral rounded p-3">
+			<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
 				<div class="flex items-center gap-2 w-full">
 					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->
@@ -112,7 +112,7 @@
 			<div class="">
 				<label class="group cursor-pointer">
 					<div
-						class=" flex items-center gap-2 border border-neutral/50 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
+						class=" flex items-center gap-2 border border-neutral/25 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
 					>
 						<label class="swap swap-rotate">
 							<input

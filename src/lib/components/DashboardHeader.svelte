@@ -60,7 +60,7 @@
 
 		<div class="w-full flex justify-center flex-col gap-2">
 			<div
-				class="text-lg md:text-xl font-bold badge badge-outline py-3 rounded uppercase mt-10 md:my-0"
+				class="text-lg md:text-xl font-bold badge badge-outline text-neutral/75 py-3 rounded uppercase mt-10 md:my-0"
 			>
 				User Stats
 			</div>
@@ -95,7 +95,9 @@
 				</div>
 
 				<div class="w-full flex flex-col gap-2">
-					<div class="font-bold text-lg md:text-xl badge badge-outline py-3 rounded uppercase">
+					<div
+						class="font-bold text-lg md:text-xl badge badge-outline text-neutral/75 py-3 rounded uppercase"
+					>
 						Badges
 					</div>
 					<Badges {badges} {userBadges} badgeSize={'w-16 h-16'} />

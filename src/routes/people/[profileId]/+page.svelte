@@ -91,7 +91,7 @@
 
 	<div class="mt-5 sm:my-10 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-neutral rounded p-3">
+			<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
 				<div class="flex items-center gap-2 w-full">
 					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->

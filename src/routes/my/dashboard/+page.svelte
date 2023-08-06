@@ -112,7 +112,9 @@
 </div>
 
 <div class="flex flex-col mx-4">
-	<div class="text-lg md:text-xl font-bold badge badge-outline py-3 rounded uppercase">
+	<div
+		class="text-lg md:text-xl font-bold badge badge-outline text-neutral/75 py-3 rounded uppercase"
+	>
 		Page Data
 	</div>
 
@@ -364,7 +366,10 @@
 
 <div class=" bg-base-100 px-4 my-5 md:my-10">
 	<!-- <input type="checkbox" checked="checked" /> -->
-	<div id="mypages" class=" text-xl font-bold badge badge-outline py-3 rounded uppercase">
+	<div
+		id="mypages"
+		class=" text-xl font-bold badge badge-outline text-neutral/75 py-3 rounded uppercase"
+	>
 		My Pages
 	</div>
 	<div class="my-2">
