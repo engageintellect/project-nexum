@@ -61,14 +61,14 @@
 		{#if $feedSelect}
 			<div class="flex justify-center items-center gap-2">
 				<div class="">
-					<strong>Displaying: </strong>Users you are
+					<strong>Displaying </strong>users you are
 					<span class="text-purple-500 font-bold">following</span>
 				</div>
 				<div><Icon src={UserGroup} class="w-7 h-7 text-purple-500" solid /></div>
 			</div>
 		{:else}
 			<div class="flex justify-center items-center gap-2">
-				<div class=""><strong>Displaying: </strong>all content across wiki</div>
+				<div class=""><strong>Displaying </strong>all content across wiki</div>
 				<div><Icon src={GlobeAmericas} class="w-7 h-7 text-purple-500" solid /></div>
 			</div>
 		{/if}
@@ -112,19 +112,26 @@
 			<div class="">
 				<label class="group cursor-pointer">
 					<div
-						class=" flex items-center gap-3 border border-neutral/50 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
+						class=" flex items-center gap-2 border border-neutral/50 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
 					>
-						<div class="flex gap-1 items-center uppercase">
-							<Icon src={Rss} class="w-5 h-5" />
-							<!-- <div class="">My</div> -->
-							<div class="">Feed</div>
-						</div>
-						<input
-							type="checkbox"
-							bind:checked={$feedSelect}
-							class="checkbox border group-hover:border-neutral transition-all duration-500"
-							on:click={handleFeedSelect}
-						/>
+						<!-- this hidden checkbox controls the state -->
+
+						<!-- <div class="">My</div> -->
+						<label class="swap swap-rotate">
+							<input
+								type="checkbox"
+								bind:checked={$feedSelect}
+								class="hidden checkbox border group-hover:border-neutral transition-all duration-500"
+								on:click={handleFeedSelect}
+							/>
+
+							<div class="swap-on">
+								<Icon src={UserGroup} class="w-7 h-7 " solid />
+							</div>
+							<div class="swap-off">
+								<Icon src={GlobeAmericas} class="w-7 h-7 " solid />
+							</div>
+						</label>
 					</div>
 				</label>
 			</div>

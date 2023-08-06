@@ -9,7 +9,6 @@
 		ExclamationTriangle
 	} from 'svelte-hero-icons';
 	import { Modal, MyPageItem, DashboardHeader } from '$lib/components';
-	import { fade } from 'svelte/transition';
 
 	import Stat from '$lib/components/Stat.svelte';
 	export let data;
@@ -71,19 +70,27 @@
 		}
 	};
 
-	const isPageVerified = (page) => {
-		if (page.verified) {
-			return true;
+	// const isPageVerified = (page) => {
+	// 	if (page.verified) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
+
+	function getFollowers() {
+		let followers = [];
+		for (let i = 0; i < data.users.length; i++) {
+			if (data.users[i].following.includes(data.user.id)) {
+				followers.push(data.users[i].name);
+			}
 		}
-		return false;
-	};
-
-	export let activeTab = 0;
-
-	function setActiveTab(tabIndex) {
-		activeTab = tabIndex;
+		return followers;
 	}
 </script>
+
+<!-- {#each getFollowers() as follower}
+	<div>{follower}</div>
+{/each} -->
 
 <div>
 	<DashboardHeader
