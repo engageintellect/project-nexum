@@ -40,7 +40,7 @@
 	$: modalOpen = false;
 </script>
 
-<div class="flex w-full rounded border border-neutral/50 shadow hover:shadow-lg group">
+<div class="flex w-full rounded border border-neutral/25 hover:shadow-lg group">
 	<div class="w-full flex items-center rounded">
 		<div class="w-full h-full avatar rounded">
 			<div class="object-cover rounded-l w-full">
@@ -73,14 +73,14 @@
 									<a href="/pages/{page.id}/edit" class="">
 										<Icon
 											src={PencilSquare}
-											class="w-5 h-5 text-base-100 hover:text-warning shadow"
+											class="w-5 h-5 md:w-6 md:h-6 text-base-100 hover:text-warning"
 											solid
 										/>
 									</a>
 									<Modal label={page.id} checked={modalOpen}>
 										<div slot="trigger" class="">
 											<button
-												class="w-5 h-5 hover:cursor-pointer text-base-100 hover:text-error shadow"
+												class="w-5 h-5 md:w-6 md:h-6 hover:cursor-pointer text-base-100 hover:text-error"
 												on:click={openModal}
 											>
 												<Icon src={Trash} solid />

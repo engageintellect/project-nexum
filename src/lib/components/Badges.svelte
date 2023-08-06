@@ -10,7 +10,7 @@
 	$: modalOpen = false;
 </script>
 
-<div class="">
+<div class="border rounded shadow">
 	<div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
 		<!-- Step 1: Add overflow-x-auto class -->
 		{#each badges as badge}
@@ -21,27 +21,33 @@
 						<Modal label={badge.name} checked={modalOpen}>
 							<div
 								slot="trigger"
-								class="cursor-pointer hover:scale-[102%] transition-all duration-200 hover:saturate-150"
+								class="cursor-pointer hover:scale-[105%] transition-all duration-200 hover:saturate-150"
 							>
 								<div class="">
-									<img
-										class={badgeSize}
-										src={badge?.thumbnail
-											? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
-											: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${badge.name}`}
-										alt="page thumbnail"
-									/>
+									{#if badge.thumbnail}
+										<!-- svelte-ignore a11y-missing-attribute -->
+										<img
+											alt={badge.name}
+											class={badgeSize}
+											src={badge?.thumbnail
+												? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
+												: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${badge.name}`}
+										/>
+									{:else}
+										loading...
+									{/if}
 								</div>
 							</div>
 							<div slot="heading">
 								<div class="">
 									<div class="w-full bg-purple-100 flex justify-center">
+										<!-- svelte-ignore a11y-missing-attribute -->
 										<img
+											alt={badge.name}
 											class="w-40 h-40"
 											src={badge?.thumbnail
 												? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
 												: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${badge.name}`}
-											alt="page thumbnail"
 										/>
 									</div>
 								</div>
