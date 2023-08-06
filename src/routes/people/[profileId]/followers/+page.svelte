@@ -3,11 +3,17 @@
 	import PersonCard from '$lib/components/PersonCard.svelte';
 	export let data;
 	let filter;
+
+	const userId = data.user.id;
+
+	const getFollowers = () => {
+		return data.users.filter((user) => user.following.includes(data.pageUser.id));
+	};
 </script>
 
 <div class="my-10 px-4">
 	<div class="text-center text-7xl font-bold tracking-tight text-base-content">
-		<div>Following</div>
+		<div>Followers</div>
 	</div>
 	<div class="text-center my-5">Find content by person, division, or job title.</div>
 
@@ -34,15 +40,13 @@
 	</div>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-		{#each data.users as user}
-			{#if data.user.following.includes(user.id)}
-				{#if !filter || user.name.toLowerCase().includes(filter.toLowerCase()) || user.job_title
-						.toLowerCase()
-						.includes(filter.toLowerCase()) || user.division
-						.toLowerCase()
-						.includes(filter.toLowerCase())}
-					<PersonCard {user} />
-				{/if}
+		{#each getFollowers() as user}
+			{#if !filter || user.name.toLowerCase().includes(filter.toLowerCase()) || user.job_title
+					.toLowerCase()
+					.includes(filter.toLowerCase()) || user.division
+					.toLowerCase()
+					.includes(filter.toLowerCase())}
+				<PersonCard {user} />
 			{/if}
 		{/each}
 	</div>

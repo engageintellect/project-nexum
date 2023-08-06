@@ -80,7 +80,7 @@
 					<div class="w-full">
 						<Stat
 							statTitle="Followers"
-							pageLink={`/people/${userId}/following`}
+							pageLink={`/people/${userId}/followers`}
 							statValue={followers || '0'}
 							statDescription="Total Followers."
 						>
@@ -91,7 +91,7 @@
 					<div class="w-full">
 						<Stat
 							statTitle="Following"
-							pageLink={`/people/${userId}`}
+							pageLink={`/people/${userId}/following`}
 							statValue={following || '0'}
 							statDescription="Total Following."
 						>
