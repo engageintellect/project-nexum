@@ -21,7 +21,7 @@
 						<Modal label={badge.name} checked={modalOpen}>
 							<div
 								slot="trigger"
-								class="cursor-pointer hover:scale-[105%] transition-all duration-200 hover:saturate-150"
+								class="cursor-pointer md:hover:scale-[105%] transition-all duration-200 hover:saturate-150"
 							>
 								<div class="">
 									{#if badge.thumbnail}
