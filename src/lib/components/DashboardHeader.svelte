@@ -65,8 +65,8 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="grid grid-cols-3 bg-red-200 h-full">
-					<div class="h-full">
+				<div class="flex bg-red-200">
+					<div class="w-full">
 						<Stat
 							statTitle="Pages"
 							pageLink={`/people/${userId}`}
@@ -77,7 +77,7 @@
 						</Stat>
 					</div>
 
-					<div class="h-full">
+					<div class="w-full">
 						<Stat
 							statTitle="Followers"
 							pageLink={`/people/following${userId}`}
@@ -88,7 +88,7 @@
 						</Stat>
 					</div>
 
-					<div class="h-full">
+					<div class="w-full">
 						<Stat
 							statTitle="Following"
 							pageLink={`/people/${userId}`}
