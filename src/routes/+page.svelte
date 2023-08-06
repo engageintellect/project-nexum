@@ -8,19 +8,19 @@
 	export let data;
 	let filter;
 
-	const getDivisions = () => {
-		const divisions = new Set();
+	// const getDivisions = () => {
+	// 	const divisions = new Set();
 
-		for (let i = 0; i < data.pages.length; i++) {
-			const pageDivisions = data.pages[i].division;
+	// 	for (let i = 0; i < data.pages.length; i++) {
+	// 		const pageDivisions = data.pages[i].division;
 
-			for (let j = 0; j < pageDivisions.length; j++) {
-				divisions.add(pageDivisions[j]);
-			}
-		}
+	// 		for (let j = 0; j < pageDivisions.length; j++) {
+	// 			divisions.add(pageDivisions[j]);
+	// 		}
+	// 	}
 
-		return Array.from(divisions);
-	};
+	// 	return Array.from(divisions);
+	// };
 
 	const handleFeedSelect = () => {
 		$feedSelect = !$feedSelect;
@@ -114,9 +114,6 @@
 					<div
 						class=" flex items-center gap-2 border border-neutral/50 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
 					>
-						<!-- this hidden checkbox controls the state -->
-
-						<!-- <div class="">My</div> -->
 						<label class="swap swap-rotate">
 							<input
 								type="checkbox"
@@ -140,12 +137,6 @@
 			<div
 				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4"
 			>
-				<!-- <label class="swap">
-					<input on:click={handleFeedSelect} type="checkbox" />
-					<div class="swap-on btn btn-success rounded w-full">All Pages</div>
-					<div class="swap-off btn btn-info rounded w-full">Following</div>
-				</label> -->
-
 				{#each data.tags as tag}
 					<button
 						class="border border-neutral/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
@@ -159,8 +150,6 @@
 	{/if}
 
 	{#if $feedSelect}
-		<!-- <div class="text-5xl font-bold px-4">My Feed:</div> -->
-
 		<div class="flex justify-center pt-4">
 			<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 				{#each data.pages as page}
@@ -178,7 +167,6 @@
 												.toLowerCase()
 												.includes(filter.toLowerCase()) ))}
 								{#if page.user === user.id}
-									<!-- <PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} /> -->
 									<MyPageItem
 										{page}
 										{user}
@@ -212,7 +200,6 @@
 											.toLowerCase()
 											.includes(filter.toLowerCase()) ))}
 							{#if page.user === user.id}
-								<!-- <PageCard {page} {user} isNew={isNew(page.created)} isOld={isOld(page.updated)} /> -->
 								<MyPageItem
 									{page}
 									{user}
