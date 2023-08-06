@@ -65,7 +65,7 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="grid grid-cols-3">
+				<div class="grid grid-cols-3 bg-red-200">
 					<Stat
 						statTitle="Pages"
 						pageLink={`/people/${userId}`}
