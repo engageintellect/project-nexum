@@ -65,33 +65,39 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="grid grid-cols-3 bg-red-200">
-					<Stat
-						statTitle="Pages"
-						pageLink={`/people/${userId}`}
-						statValue={pageCount || '0'}
-						statDescription="Total pages."
-					>
-						<Icon src={PencilSquare} class="w-5 h-5 sm:w-7 sm:h-7" solid />
-					</Stat>
+				<div class="grid grid-cols-3 bg-red-200 h-full">
+					<div class="h-full">
+						<Stat
+							statTitle="Pages"
+							pageLink={`/people/${userId}`}
+							statValue={pageCount || '0'}
+							statDescription="Total pages."
+						>
+							<Icon src={PencilSquare} class="w-5 h-5 sm:w-7 sm:h-7" solid />
+						</Stat>
+					</div>
 
-					<Stat
-						statTitle="Followers"
-						pageLink={`/people/following${userId}`}
-						statValue={followers || '0'}
-						statDescription="Total Followers."
-					>
-						<Icon src={UserGroup} class="w-5 h-5 sm:w-7 sm:h-7" solid />
-					</Stat>
+					<div class="h-full">
+						<Stat
+							statTitle="Followers"
+							pageLink={`/people/following${userId}`}
+							statValue={followers || '0'}
+							statDescription="Total Followers."
+						>
+							<Icon src={UserGroup} class="w-5 h-5 sm:w-7 sm:h-7" solid />
+						</Stat>
+					</div>
 
-					<Stat
-						statTitle="Following"
-						pageLink={`/people/${userId}`}
-						statValue={following || '0'}
-						statDescription="Total Following."
-					>
-						<Icon src={UserPlus} class="w-5 h-5 sm:w-7 sm:h-7" solid />
-					</Stat>
+					<div class="h-full">
+						<Stat
+							statTitle="Following"
+							pageLink={`/people/${userId}`}
+							statValue={following || '0'}
+							statDescription="Total Following."
+						>
+							<Icon src={UserPlus} class="w-5 h-5 sm:w-7 sm:h-7" solid />
+						</Stat>
+					</div>
 				</div>
 
 				<div class="w-full flex flex-col gap-2">
