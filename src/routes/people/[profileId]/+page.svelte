@@ -39,7 +39,7 @@
 		<div class="flex flex-col sm:flex-row gap-5 md:items-center justify-center">
 			<div>
 				<img
-					class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+					class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border border-neutral group-hover:saturate-150 transition-color duration-300"
 					src={data.pageUser?.avatar
 						? getImageURL(data.pageUser?.collectionId, data.pageUser?.id, data.pageUser?.avatar)
 						: `https://ui-avatars.com/api/?name=${data.pageUser?.name}`}
@@ -91,7 +91,7 @@
 
 	<div class="mt-5 sm:my-10 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-primary rounded p-3">
+			<div class=" flex w-full max-w-lg border border-neutral rounded p-3">
 				<div class="flex items-center gap-2 w-full">
 					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->

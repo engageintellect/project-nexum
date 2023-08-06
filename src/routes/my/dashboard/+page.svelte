@@ -1,13 +1,18 @@
 <script>
-	import { Stats } from '$lib/components';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, PencilSquare, UserPlus, UserGroup, Check, Trash } from 'svelte-hero-icons';
+	import {
+		Icon,
+		PencilSquare,
+		Heart,
+		HandThumbUp,
+		CheckBadge,
+		ExclamationTriangle
+	} from 'svelte-hero-icons';
 	import { Modal, MyPageItem, DashboardHeader } from '$lib/components';
 	import { fade } from 'svelte/transition';
-	export let data;
 
-	export let badges;
-	export let userBadges;
+	import Stat from '$lib/components/Stat.svelte';
+	export let data;
 
 	let staleCount = 0;
 	let verifiedCount = 0;
@@ -73,7 +78,6 @@
 		return false;
 	};
 
-	export let tabs;
 	export let activeTab = 0;
 
 	function setActiveTab(tabIndex) {
@@ -81,70 +85,10 @@
 	}
 </script>
 
-{#if badges}
-	<div class="mt-10">
-		<div class="w-full font-bold text-lg md:text-xl">
-			Badges <span class="badge badge-success rounded uppercase">beta</span>
-		</div>
-		<div class="flex my-2 overflow-x-auto overflow-y-hidden hide-scrollbar">
-			<!-- Step 1: Add overflow-x-auto class -->
-			{#each badges as badge}
-				{#if userBadges.includes(badge.id)}
-					<div class="flex-shrink-0">
-						<!-- Step 2: Add flex-shrink-0 class to prevent badges from shrinking -->
-						<div>
-							<Modal label={badge.name} checked={modalOpen}>
-								<div
-									slot="trigger"
-									class="cursor-pointer hover:scale-[102%] transition-all duration-200 hover:saturate-150"
-								>
-									<div class="">
-										<img
-											class="w-16 h-16"
-											src={badge?.thumbnail
-												? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
-												: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
-											alt="page thumbnail"
-										/>
-									</div>
-								</div>
-								<div slot="heading">
-									<div class="">
-										<div class="w-full bg-purple-100 flex justify-center">
-											<img
-												class="w-32 h-32 lg:w-40 lg:h-40 p-2"
-												src={badge?.thumbnail
-													? getImageURL(badge.collectionId, badge.id, badge.thumbnail, '0x0')
-													: `https://via.placeholder.com/400/4506CB/FFFFFF/?text=${page.name}`}
-												alt="page thumbnail"
-											/>
-										</div>
-									</div>
-
-									<div class="text-2xl my-5">{badge.name}</div>
-									<div class="text-base font-normal mt-2">
-										{badge.description}
-									</div>
-
-									<div class="flex gap-2 justify-center mt-10 my-5">
-										<div class="btn btn-info">About Badges</div>
-
-										<div class="btn btn-success">Claim Prize!</div>
-									</div>
-								</div>
-							</Modal>
-						</div>
-					</div>
-				{/if}
-			{/each}
-		</div>
-		<!-- <div class="text-sm text-primary/50">click here to learn more</div> -->
-	</div>
-{/if}
-
 <div>
 	<DashboardHeader
 		name={data.user.name}
+		userId={data.user.id}
 		title={data.user.job_title}
 		division={data.user.division}
 		avatar={data.user?.avatar
@@ -163,21 +107,53 @@
 <div class="flex flex-col mx-4">
 	<div class="text-lg md:text-xl font-bold">Page Data</div>
 
-	<div class="flex flex-col gap-2">
-		<Stats
-			verifiedPages={verifiedCount}
-			stalePages={staleCount}
-			likes={count.likes}
-			favorites={count.favorites}
-			avatar={data.user?.avatar
-				? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
-				: `https://ui-avatars.com/api/?name=${data.user?.name}`}
-		/>
+	<!-- LARGE BREAKPOINT -->
+	<!-- This should only display on large screens -->
+	<div class="hidden md:flex gap-2 h-full">
+		<div class="w-full">
+			<Stat
+				statTitle="Verified Pages"
+				statValue={verifiedCount}
+				statDescription="Pages have been verified."
+				><Icon src={CheckBadge} class="w-12 h-12 pr-2 text-success" solid /></Stat
+			>
+		</div>
+		<div class="w-full">
+			<Stat
+				statTitle="Stale Pages"
+				statValue={staleCount}
+				statDescription="30 days or more since update."
+				><Icon src={ExclamationTriangle} class="w-12 h-12 pr-2 text-warning" solid /></Stat
+			>
+		</div>
+
+		<div class="w-full">
+			<Stat
+				statTitle="Favorites"
+				statValue={count.favorites}
+				statDescription="Pages you have favorites."
+				><Icon src={Heart} class="w-12 h-12 pr-2 text-error" solid /></Stat
+			>
+		</div>
+
+		<div class="w-full">
+			<Stat statTitle="Likes" statValue={count.likes} statDescription="Pages you have liked."
+				><Icon src={HandThumbUp} class="w-12 h-12 pr-2 text-info" solid /></Stat
+			>
+		</div>
 	</div>
 
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+	<div class=" grid grid-cols-1 md:grid-cols-4 gap-2">
 		<div class="">
-			<div class="text-lg md:hidden mt-5">Verified Pages: {verifiedCount}</div>
+			<div class="md:hidden">
+				<Stat
+					statTitle="Verified Pages"
+					statValue={verifiedCount}
+					statDescription="Pages have been verified."
+					><Icon src={CheckBadge} class="w-12 h-12 pr-2 text-success" solid /></Stat
+				>
+			</div>
+
 			<div class=" flex flex-col gap-2 my-2">
 				{#each data.pages as page}
 					{#if page.user === data.user.id}
@@ -227,7 +203,15 @@
 		</div>
 
 		<div class="">
-			<div class="text-lg md:hidden mt-5">Stale Pages: {staleCount}</div>
+			<div class="md:hidden">
+				<Stat
+					statTitle="Stale Pages"
+					statValue={staleCount}
+					statDescription="Last updated over 30 days ago."
+					><Icon src={ExclamationTriangle} class="w-12 h-12 pr-2 text-warning" solid /></Stat
+				>
+			</div>
+
 			<div class=" flex flex-col gap-2 my-2">
 				{#each data.pages as page}
 					{#if page.user === data.user.id}
@@ -277,7 +261,15 @@
 		</div>
 
 		<div class="">
-			<div class="text-lg md:hidden mt-5">Favorites</div>
+			<div class="md:hidden">
+				<Stat
+					statTitle="Favorites"
+					statValue={count.favorites}
+					statDescription="Pages you have favorited."
+					><Icon src={Heart} class="w-12 h-12 pr-2 text-error" solid /></Stat
+				>
+			</div>
+
 			<div class=" flex flex-col gap-2 my-2">
 				{#each data.user.favorites as favorite}
 					{#each data.pages as page}
@@ -316,7 +308,12 @@
 		</div>
 
 		<div class="">
-			<div class="text-lg md:hidden mt-5">Likes</div>
+			<div class="md:hidden">
+				<Stat statTitle="Likes" statValue={count.likes} statDescription="Pages you have liked."
+					><Icon src={HandThumbUp} class="w-12 h-12 pr-2 text-info" solid /></Stat
+				>
+			</div>
+
 			<div class=" flex flex-col gap-2 my-2">
 				{#each data.user.likes as like}
 					{#each data.pages as page}
@@ -361,7 +358,7 @@
 	<div id="mypages" class=" text-xl font-bold">My Pages</div>
 	<div class="">
 		<div class="">
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 				{#each data.pages as page}
 					{#if page.user === data.user.id}
 						<MyPageItem {page} user={data.user} localUser={data.user} />

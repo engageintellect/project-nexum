@@ -76,7 +76,7 @@
 
 	<div class="my-5 flex justify-center px-4">
 		<div class="flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-primary rounded p-3">
+			<div class=" flex w-full max-w-lg border border-neutral rounded p-3">
 				<div class="flex items-center gap-2 w-full">
 					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->
@@ -112,7 +112,7 @@
 			<div class="">
 				<label class="group cursor-pointer">
 					<div
-						class=" flex items-center gap-3 border border-primary/50 group-hover:border-primary/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
+						class=" flex items-center gap-3 border border-neutral/50 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
 					>
 						<div class="flex gap-1 items-center uppercase">
 							<Icon src={Rss} class="w-5 h-5" />
@@ -122,14 +122,14 @@
 						<input
 							type="checkbox"
 							bind:checked={$feedSelect}
-							class="checkbox border group-hover:border-primary transition-all duration-500"
+							class="checkbox border group-hover:border-neutral transition-all duration-500"
 							on:click={handleFeedSelect}
 						/>
 					</div>
 				</label>
 			</div>
 
-			<div class="ml-5 border-r h-16 border-primary/50" />
+			<div class="ml-5 border-r h-16 border-neutral/50" />
 			<div
 				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4"
 			>
@@ -141,13 +141,13 @@
 
 				{#each data.tags as tag}
 					<button
-						class="border border-primary/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
+						class="border border-neutral/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
 						on:click={() => handleFilter(tag.name)}>{tag.name}</button
 					>
 				{/each}
 			</div>
 
-			<div class="border-l h-16 border-primary/50" />
+			<div class="border-l h-16 border-neutral/50" />
 		</div>
 	{/if}
 

@@ -1,0 +1,55 @@
+Date : 2023-08-05 21:16:56
+Directory : /mnt/c/Users/r3dux/Repositories/project-nexum
+Total : 14 files,  10 codes, 1 comments, 11 blanks, all 22 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Ignore   |          1 |         11 |          1 |          2 |         14 |
+| json     |          1 |          9 |          0 |          1 |         10 |
+| Svelte   |         12 |        -10 |          0 |          8 |         -2 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                     | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                        |         14 |         10 |          1 |         11 |         22 |
+| . (Files)                                                                                |          2 |         20 |          1 |          3 |         24 |
+| src                                                                                      |         12 |        -10 |          0 |          8 |         -2 |
+| src/lib                                                                                  |          5 |         35 |          0 |          2 |         37 |
+| src/lib/components                                                                       |          5 |         35 |          0 |          2 |         37 |
+| src/routes                                                                               |          7 |        -45 |          0 |          6 |        -39 |
+| src/routes (Files)                                                                       |          2 |         15 |          0 |          2 |         17 |
+| src/routes/about                                                                         |          1 |          1 |          0 |          1 |          2 |
+| src/routes/about/badges                                                                  |          1 |          1 |          0 |          1 |          2 |
+| src/routes/my                                                                            |          2 |        -47 |          0 |         -1 |        -48 |
+| src/routes/my/dashboard                                                                  |          1 |        -46 |          0 |         -1 |        -47 |
+| src/routes/my/pages                                                                      |          1 |         -1 |          0 |          0 |         -1 |
+| src/routes/pages                                                                         |          1 |          2 |          0 |          0 |          2 |
+| src/routes/pages/[pageId]                                                                |          1 |          2 |          0 |          0 |          2 |
+| src/routes/people                                                                        |          1 |        -16 |          0 |          4 |        -12 |
+| src/routes/people/[profileId]                                                            |          1 |        -16 |          0 |          4 |        -12 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                 | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /mnt/c/Users/r3dux/Repositories/project-nexum/.prettierignore                            | Ignore   |         11 |          1 |          2 |         14 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/.prettierrc                                | json     |          9 |          0 |          1 |         10 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Badges.svelte           | Svelte   |         60 |          0 |          7 |         67 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/DashboardHeader.svelte  | Svelte   |        -15 |          0 |         -1 |        -16 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/PageCardBadge.svelte    | Svelte   |          2 |          0 |          0 |          2 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Stat.svelte             | Svelte   |         35 |          0 |          2 |         37 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Stats.svelte            | Svelte   |        -47 |          0 |         -6 |        -53 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/+layout.svelte                  | Svelte   |          0 |          0 |          2 |          2 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/+page.svelte                    | Svelte   |         15 |          0 |          0 |         15 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/about/badges/+page.svelte       | Svelte   |          1 |          0 |          1 |          2 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/dashboard/+page.svelte       | Svelte   |        -46 |          0 |         -1 |        -47 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/pages/+page.svelte           | Svelte   |         -1 |          0 |          0 |         -1 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/pages/[pageId]/+page.svelte     | Svelte   |          2 |          0 |          0 |          2 |
+| /mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/people/[profileId]/+page.svelte | Svelte   |        -16 |          0 |          4 |        -12 |
+| Total                                                                                    |          |         10 |          1 |         11 |         22 |
++------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

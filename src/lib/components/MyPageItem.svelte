@@ -40,11 +40,11 @@
 	$: modalOpen = false;
 </script>
 
-<div class="flex w-full rounded border border-primary/50 shadow hover:shadow-lg group">
+<div class="flex w-full rounded border border-neutral/50 shadow hover:shadow-lg group">
 	<div class="w-full flex items-center rounded">
 		<div class="w-full h-full avatar rounded">
 			<div class="object-cover rounded-l w-full">
-				<div class="relative flex h-full border-r border-primary/50 w-full bg-black">
+				<div class="relative flex h-full border-r border-neutral/50 w-full bg-black">
 					{#if isNew}
 						<PageCardBadge msg={'NEW!'} {isNew} />
 					{/if}
@@ -68,7 +68,7 @@
 						{#if page.user === localUser.id}
 							<div class="h-full">
 								<div
-									class="w-full bg-primary gap-2 flex flex-col justify-between md:justify-start items-end p-1 h-full"
+									class="w-full bg-neutral gap-2 flex flex-col justify-between md:justify-start items-end p-1 h-full"
 								>
 									<a href="/pages/{page.id}/edit" class="">
 										<Icon
@@ -122,9 +122,9 @@
 				<div class="flex flex-col justify-between h-full">
 					<div>
 						<div class=" font-bold">{page.name}</div>
-						<div class=" text-sm text-primary/75">{page.tagline}</div>
+						<div class=" text-sm text-base-content/75">{page.tagline}</div>
 						{#if page.division != ''}
-							<div class="badge badge-sm badge-primary rounded py-3 mt-2">{page.division}</div>
+							<div class="badge badge-sm badge-neutral rounded py-3 mt-2">{page.division}</div>
 						{/if}
 					</div>
 
@@ -132,21 +132,21 @@
 						{#if user}
 							<div class="flex items-center gap-1">
 								<img
-									class="w-6 h-6 object-cover rounded-full border border-primary group-hover:saturate-150 transition-color duration-300"
+									class="w-6 h-6 object-cover rounded-full border border-neutral group-hover:saturate-150 transition-color duration-300"
 									src={user?.avatar
 										? getImageURL(user?.collectionId, user?.id, user?.avatar)
 										: `https://ui-avatars.com/api/?name=${user?.name}`}
 									alt="User avatar"
 								/>
 
-								<div class="text-sm text-primary/75">{user.name}</div>
+								<div class="text-sm text-base-content/75">{user.name}</div>
 							</div>
 						{/if}
 
 						<div class="font-bold text-xs">
 							<div class="flex gap-1">
 								<Icon src={ArrowPathRoundedSquare} class="w-4 h-4" />
-								<div class="font-medium text-primary/75">{formattedDateTime}</div>
+								<div class="font-medium text-base-content/75">{formattedDateTime}</div>
 							</div>
 						</div>
 					</div>

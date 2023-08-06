@@ -72,11 +72,11 @@
 			<img
 				src={homepage}
 				alt="hello"
-				class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+				class="max-3xl lg:max-w-6xl shadow-lg border border-neutral/50"
 			/>
 
 			<div
-				class="group-hover:opacity-100 opacity-0 transition-all duration-500 absolute -bottom-5 -right-5 shadow-lg h-64 w-full max-w-lg bg-base-100 border border-primary/50 rounded"
+				class="group-hover:opacity-100 opacity-0 transition-all duration-500 absolute -bottom-5 -right-5 shadow-lg h-64 w-full max-w-lg bg-base-100 border border-neutral/50 rounded"
 			>
 				<div class="text-2xl font-semibold">Built on search.</div>
 			</div>
@@ -97,7 +97,7 @@
 		<img
 			src={quantumComputing}
 			alt="hello"
-			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+			class="max-3xl lg:max-w-6xl shadow-lg border border-neutral/50"
 		/>
 	</div>
 
@@ -116,7 +116,7 @@
 		<img
 			src={homepage}
 			alt="hello"
-			class="max-3xl lg:max-w-6xl shadow-lg border border-primary/50"
+			class="max-3xl lg:max-w-6xl shadow-lg border border-neutral/50"
 		/>
 	</div>
 
@@ -208,7 +208,7 @@
 		</div>
 
 		<div class="flex justify-center">
-			<a href="/about" class="mockup-phone border-primary shadow-xl shadow-purple-500">
+			<a href="/about" class="mockup-phone border-neutral shadow-xl shadow-purple-500">
 				<div class="camera" />
 				<div class="display">
 					<div class="artboard artboard-demo phone-1">
@@ -320,7 +320,7 @@
 					<a
 						href="https://kit.svelte.dev/"
 						target="_blank"
-						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-primary/50 rounded flex items-center
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-neutral/50 rounded flex items-center
 						justify-center hover:fill-orange-500"
 					>
 						<Icon src={SiSvelte} size="72" />
@@ -330,7 +330,7 @@
 					<a
 						href="https://vercel.com"
 						target="_blank"
-						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-primary/50"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-neutral/50 rounded flex items-center justify-center hover:fill-neutral/50"
 					>
 						<Icon src={SiVercel} size="72" />
 						<div>Vercel</div>
@@ -339,7 +339,7 @@
 					<a
 						href="https://openai.com/"
 						target="_blank"
-						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-teal-500"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-neutral/50 rounded flex items-center justify-center hover:fill-teal-500"
 					>
 						<Icon src={SiOpenai} size="72" />
 						<div>OpenAI</div>
@@ -348,7 +348,7 @@
 					<a
 						href="https://tailwindcss.com/"
 						target="_blank"
-						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-primary/50 rounded flex items-center justify-center hover:fill-sky-600"
+						class="flex-col hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 lg:translate-y-5 shadow-lg border border-neutral/50 rounded flex items-center justify-center hover:fill-sky-600"
 					>
 						<Icon src={SiTailwindcss} size="72" />
 						<div>Tailwind CSS</div>
@@ -360,7 +360,7 @@
 	<div class="my-20">
 		<div class="flex items-center justify-center px-4">
 			<div
-				class="flex flex-col justify-center gap-2 max-w-3xl border border-primary/50 p-10 rounded shadow-lg w-full items-center"
+				class="flex flex-col justify-center gap-2 max-w-3xl border border-neutral/50 p-10 rounded shadow-lg w-full items-center"
 			>
 				<div class="max-w-lg">
 					<div class="text-4xl flex justify-center font-bold my-5">Contact</div>

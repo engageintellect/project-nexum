@@ -10,7 +10,7 @@
 	>
 		<div class="flex items-center gap-2">
 			<div class="avatar">
-				<div class="w-16 rounded-full shadow-md group-hover:shadow-lg border border-primary">
+				<div class="w-16 rounded-full shadow-md group-hover:shadow-lg border border-neutral">
 					<img
 						class="group-hover:scale-[105%] group-hover:saturate-150 transition-all duration-500"
 						src={user?.avatar

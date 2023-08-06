@@ -5,7 +5,7 @@ import TextArea from './TextArea.svelte';
 import PageCard from './PageCard.svelte';
 import Hero from './Hero.svelte';
 import WYSIWYG from './WYSIWYG.svelte';
-import Stats from './Stats.svelte';
+import Stat from './Stat.svelte';
 import ChatGPT from './ChatGPT.svelte';
 import Footer from './Footer.svelte';
 import PageCardBadge from './PageCardBadge.svelte';
@@ -20,7 +20,7 @@ export {
 	TextArea,
 	Hero,
 	WYSIWYG,
-	Stats,
+	Stat,
 	ChatGPT,
 	Footer,
 	PageCardBadge,

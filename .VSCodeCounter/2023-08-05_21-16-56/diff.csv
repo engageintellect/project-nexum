@@ -1,0 +1,16 @@
+"filename", "language", "json", "Ignore", "Svelte", "comment", "blank", "total"
+"/mnt/c/Users/r3dux/Repositories/project-nexum/.prettierignore", "Ignore", 0, 11, 0, 1, 2, 14
+"/mnt/c/Users/r3dux/Repositories/project-nexum/.prettierrc", "json", 9, 0, 0, 0, 1, 10
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Badges.svelte", "Svelte", 0, 0, 60, 0, 7, 67
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/DashboardHeader.svelte", "Svelte", 0, 0, -15, 0, -1, -16
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/PageCardBadge.svelte", "Svelte", 0, 0, 2, 0, 0, 2
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Stat.svelte", "Svelte", 0, 0, 35, 0, 2, 37
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/lib/components/Stats.svelte", "Svelte", 0, 0, -47, 0, -6, -53
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/+layout.svelte", "Svelte", 0, 0, 0, 0, 2, 2
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/+page.svelte", "Svelte", 0, 0, 15, 0, 0, 15
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/about/badges/+page.svelte", "Svelte", 0, 0, 1, 0, 1, 2
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/dashboard/+page.svelte", "Svelte", 0, 0, -46, 0, -1, -47
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/my/pages/+page.svelte", "Svelte", 0, 0, -1, 0, 0, -1
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/pages/[pageId]/+page.svelte", "Svelte", 0, 0, 2, 0, 0, 2
+"/mnt/c/Users/r3dux/Repositories/project-nexum/src/routes/people/[profileId]/+page.svelte", "Svelte", 0, 0, -16, 0, 4, -12
+"Total", "-", 9, 11, -10, 1, 11, 22

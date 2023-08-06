@@ -206,7 +206,7 @@
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}
 					{#each data.page.expand.tags as tag}
-						<div class="badge badge-outline badge-primary py-3">{tag.name}</div>
+						<div class="badge badge-outline py-3">{tag.name}</div>
 					{/each}
 				{/if}
 			</div>
