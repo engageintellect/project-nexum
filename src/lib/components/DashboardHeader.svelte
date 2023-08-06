@@ -65,7 +65,7 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="flex bg-red-200">
+				<div class="flex">
 					<div class="w-full">
 						<Stat
 							statTitle="Pages"

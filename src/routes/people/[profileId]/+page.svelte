@@ -36,7 +36,7 @@
 <div class="my-5 sm:my-10">
 	<!-- USER DATA -->
 	<div class="max-w-3xl mx-auto px-4">
-		<div class="flex flex-col sm:flex-row gap-5 md:items-center justify-center">
+		<div class="flex flex-col sm:flex-row gap-2 md:items-center justify-center">
 			<div>
 				<img
 					class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border border-neutral group-hover:saturate-150 transition-color duration-300"
