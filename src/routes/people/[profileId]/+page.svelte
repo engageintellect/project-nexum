@@ -3,12 +3,29 @@
 	import { enhance } from '$app/forms';
 	import PageCard from '$lib/components/PageCard.svelte';
 	import { getImageURL } from '$lib/utils';
-	import { Icon, MagnifyingGlass, XMark, PlusCircle, CheckCircle } from 'svelte-hero-icons';
+	import {
+		Icon,
+		MagnifyingGlass,
+		XMark,
+		InformationCircle,
+		PlusCircle,
+		CheckCircle
+	} from 'svelte-hero-icons';
 	import MyPageItem from '$lib/components/MyPageItem.svelte';
 	import Badges from '$lib/components/Badges.svelte';
 
 	export let data;
 	let filter = '';
+	let pageCount = 0;
+
+	const countUserPages = (pages) => {
+		for (let i = 0; i < pages.length; i++) {
+			if (pages[i].user === data.pageUser.id) {
+				pageCount++;
+			}
+		}
+		return pageCount;
+	};
 
 	// Create the writable store for userPageCount
 	export const userPageCount = writable(0);
@@ -89,65 +106,68 @@
 		</div>
 	</div>
 
-	<div class="mt-5 sm:my-10 flex justify-center px-4">
-		<div class="flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
-				<div class="flex items-center gap-2 w-full">
-					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
-					<!-- svelte-ignore a11y-autofocus -->
-					<input
-						type="text"
-						placeholder="Search Pages, People, Divisions, and Content"
-						class="w-full focus:outline-none bg-base-100"
-						bind:value={filter}
-						autofocus
-					/>
-				</div>
+	{#if countUserPages(data.pages) > 0}
+		<div class="mt-5 sm:my-10 flex justify-center px-4">
+			<div class="flex items-center justify-center w-full gap-2">
+				<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
+					<div class="flex items-center gap-2 w-full">
+						<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
+						<!-- svelte-ignore a11y-autofocus -->
+						<input
+							type="text"
+							placeholder="Search Pages, People, Divisions, and Content"
+							class="w-full focus:outline-none bg-base-100"
+							bind:value={filter}
+							autofocus
+						/>
+					</div>
 
-				{#if filter}
-					<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
-						<Icon src={XMark} class="w-5 h-5" />
-					</button>
-				{/if}
+					{#if filter}
+						<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
+							<Icon src={XMark} class="w-5 h-5" />
+						</button>
+					{/if}
+				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 
-	<div class="flex justify-center pt-4">
-		<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-			<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
-
-			{#each data.pages as page}
-				{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
-						.toLowerCase()
-						.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
-									.toLowerCase()
-									.includes(filter.toLowerCase()) )) || page.content
-						.toLowerCase()
-						.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
-									.toLowerCase()
-									.includes(filter.toLowerCase()) ))}
-					{#if page.user === data.pageUser.id}
-						<MyPageItem
-							{page}
-							user={data.pageUser}
-							localUser={data.user}
-							isNew={isNew(page.created)}
-							isOld={isOld(page.updated)}
-						/>
-
-						<!-- <PageCard
-							{page}
-							showUser={false}
-							user={pageUser}
-							isNew={isNew(page.created)}
-							isOld={isOld(page.updated)}
-						/> -->
-					{/if}
-				{/if}
-			{/each}
+	{#if !countUserPages(data.pages) > 0}
+		<div class="flex justify-center px-4 mt-5 sm:my-10">
+			<div class="alert alert-info max-w-lg">
+				<Icon src={InformationCircle} class="w-5 h-5" />
+				<span class=" capitalize">{data.pageUser.name} hasn't created any pages yet.</span>
+			</div>
 		</div>
-	</div>
+	{:else}
+		<div class="flex justify-center pt-4">
+			<div class="flex flex-col w-full px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<!-- TODO: I'm sure this could be cleaner, but I'm not sure how to do it. -->
+
+				{#each data.pages as page}
+					{#if !filter || page.name.toLowerCase().includes(filter.toLowerCase()) || page.tagline
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || (Array.isArray(page.division) && page.division.some( (division) => division
+										.toLowerCase()
+										.includes(filter.toLowerCase()) )) || page.content
+							.toLowerCase()
+							.includes(filter.toLowerCase()) || (page.expand.tags && page.expand.tags.some( (tag) => tag.name
+										.toLowerCase()
+										.includes(filter.toLowerCase()) ))}
+						{#if page.user === data.pageUser.id}
+							<MyPageItem
+								{page}
+								user={data.pageUser}
+								localUser={data.user}
+								isNew={isNew(page.created)}
+								isOld={isOld(page.updated)}
+							/>
+						{/if}
+					{/if}
+				{/each}
+			</div>
+		</div>
+	{/if}
 
 	<!-- USER PAGES -->
 </div>

@@ -81,7 +81,7 @@
 								<a href={`/`} class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={Home} class="w-5 h-5" />
+											<Icon src={Home} class="w-5 h-5" solid />
 										</div>
 										<div>Home</div>
 									</div>
@@ -92,7 +92,7 @@
 								<a href={`/about`} class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={InformationCircle} class="w-5 h-5" />
+											<Icon src={InformationCircle} class="w-5 h-5" solid />
 										</div>
 										<div>About</div>
 									</div>
@@ -103,7 +103,7 @@
 								<a href="/people" class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={Users} class="w-5 h-5" />
+											<Icon src={Users} class="w-5 h-5" solid />
 										</div>
 										<div>People</div>
 									</div>
@@ -118,7 +118,7 @@
 								<a href={`/people/${data.user.id}`} class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={UserCircle} class="w-5 h-5" />
+											<Icon src={UserCircle} class="w-5 h-5" solid />
 										</div>
 										<div>My Profile</div>
 									</div>
@@ -140,7 +140,7 @@
 								<a href="/my/dashboard" class="justify-between">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={RectangleGroup} class="w-5 h-5" />
+											<Icon src={RectangleGroup} class="w-5 h-5" solid />
 										</div>
 										<div>My Dashboard</div>
 									</div>
@@ -154,7 +154,7 @@
 								<a href="/ai" class="flex justify-between w-full">
 									<div class="flex gap-2">
 										<div>
-											<Icon src={ChatBubbleLeftRight} class="w-5 h-5" />
+											<Icon src={ChatBubbleLeftRight} class="w-5 h-5" solid />
 										</div>
 										<div>ET-GPT</div>
 									</div>
@@ -166,7 +166,7 @@
 								<a href={PUBLIC_SEARCH_URL} target="_blank" class="flex w-full justify-between">
 									<div class="flex gap-2">
 										<div>
-											<Icon src={MagnifyingGlassCircle} class="w-5 h-5" />
+											<Icon src={MagnifyingGlassCircle} class="w-5 h-5" solid />
 										</div>
 										<div>AI Search</div>
 									</div>
@@ -181,7 +181,7 @@
 								<a href="/my/settings">
 									<div class="flex gap-2 items-center">
 										<div>
-											<Icon src={Cog6Tooth} class="w-5 h-5" />
+											<Icon src={Cog6Tooth} class="w-5 h-5" solid />
 										</div>
 										<div>Settings</div>
 									</div>
@@ -192,7 +192,7 @@
 									<button type="submit" class="w-full text-start">
 										<div class="flex gap-2 items-center">
 											<div>
-												<Icon src={Power} class="w-5 h-5" />
+												<Icon src={Power} class="w-5 h-5" solid />
 											</div>
 											<div>Logout</div>
 										</div>

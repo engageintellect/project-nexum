@@ -1,15 +1,27 @@
 <script>
-	import { Icon, MagnifyingGlass, XMark } from 'svelte-hero-icons';
+	import { Icon, MagnifyingGlass, XMark, UserPlus } from 'svelte-hero-icons';
 	import PersonCard from '$lib/components/PersonCard.svelte';
 	export let data;
 	let filter;
+
+	const getFollowingCount = () => {
+		return data.user.following.length;
+	};
 </script>
 
-<div class="my-10 px-4">
-	<div class="text-center text-7xl font-bold tracking-tight text-base-content">
+<div class="px-4">
+	<div class="mt-10 text-center text-7xl font-bold tracking-tight text-base-content">
 		<div>Following</div>
 	</div>
-	<div class="text-center my-5">Find content by person, division, or job title.</div>
+	<div class="text-center my-5">
+		<div class="flex justify-center items-center gap-2">
+			<div class="">
+				<span class="font-bold">{getFollowingCount()}</span>
+				People followed by <span class="font-bold capitalize">{data.pageUser.name}</span>
+			</div>
+			<div><Icon src={UserPlus} class="w-7 h-7 text-success" solid /></div>
+		</div>
+	</div>
 
 	<div class="my-5">
 		<div class="flex justify-center w-full max-w-lg mx-auto border border-neutral/25 rounded p-3">
@@ -33,7 +45,7 @@
 		</div>
 	</div>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:my-10">
 		{#each data.users as user}
 			{#if data.user.following.includes(user.id)}
 				{#if !filter || user.name.toLowerCase().includes(filter.toLowerCase()) || user.job_title

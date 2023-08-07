@@ -21,22 +21,12 @@
 
 	$: modalOpen = false;
 
-	import {
-		Icon,
-		Trash,
-		Heart,
-		HandThumbUp,
-		UserGroup,
-		UserPlus,
-		PencilSquare
-	} from 'svelte-hero-icons';
-
-	import { fade } from 'svelte/transition';
+	import { Icon, UserGroup, UserPlus, PencilSquare } from 'svelte-hero-icons';
 	import Stat from './Stat.svelte';
 	import Badges from './Badges.svelte';
 </script>
 
-<div in:fade class=" mx-4 my-5 md:my-10">
+<div class=" mx-4 my-5 md:my-10">
 	<div class="flex flex-col lg:items-center lg:flex-row gap-5">
 		<div class="flex flex-col md:flex-row md:items-center w-full gap-2">
 			<img
@@ -65,7 +55,7 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="flex">
+				<div class="flex md:gap-2">
 					<div class="w-full">
 						<Stat
 							statTitle="Pages"

@@ -8,7 +8,7 @@
 	<div
 		class="border border-neutral/25 hover:border-neutral/50 rounded group-hover:shadow-md transition-all duration-50 group-active:scale-[99%] p-2 md:p-4 h-full"
 	>
-		<div class="flex items-center gap-2">
+		<div class="flex items-start gap-2">
 			<div class="avatar">
 				<div class="w-16 rounded-full shadow-md group-hover:shadow-lg border border-neutral">
 					<img
@@ -24,9 +24,9 @@
 				<div class="text-lg font-semibold capitalize">
 					{user.name}
 				</div>
-				<div class="text-md font-thin capitalize">{user.job_title}</div>
+				<div class="text-sm font-thin capitalize">{user.job_title}</div>
 				{#if user.division}
-					<div class="badge badge-sm badge-primary rounded mt-2 uppercase py-3">
+					<div class="badge badge-sm badge-primary font-semibold rounded mt-2 uppercase py-3">
 						{user.division}
 					</div>
 				{/if}
