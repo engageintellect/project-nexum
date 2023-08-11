@@ -28,9 +28,11 @@
 
 	onMount(async () => {
 		try {
-			const reqData = {
+			const pageLogData = {
 				page: data.page.id,
-				user: data.user.id
+				user: data.user.id,
+				username: data.user.name,
+				pagename: data.page.name
 			};
 
 			const response = await fetch('/api/pageLog', {
@@ -38,7 +40,7 @@
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(reqData)
+				body: JSON.stringify(pageLogData)
 			});
 
 			if (response.ok) {

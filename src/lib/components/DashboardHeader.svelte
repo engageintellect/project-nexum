@@ -59,6 +59,7 @@
 					<div class="w-full">
 						<Stat
 							statTitle="Pages"
+							userStat={true}
 							pageLink={`/people/${userId}`}
 							statValue={pageCount || '0'}
 							statDescription="Total pages."
@@ -70,6 +71,7 @@
 					<div class="w-full">
 						<Stat
 							statTitle="Followers"
+							userStat={true}
 							pageLink={`/people/${userId}/followers`}
 							statValue={followers || '0'}
 							statDescription="Total Followers."
@@ -81,6 +83,7 @@
 					<div class="w-full">
 						<Stat
 							statTitle="Following"
+							userStat={true}
 							pageLink={`/people/${userId}/following`}
 							statValue={following || '0'}
 							statDescription="Total Following."

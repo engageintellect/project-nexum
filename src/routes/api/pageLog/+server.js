@@ -6,9 +6,9 @@ const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 
 export async function POST({ request }) {
 	try {
-		const { user, page } = await request.json();
+		const { user, page, username, pagename } = await request.json();
 
-		await pb.collection('page_logs').create({ user, page });
+		await pb.collection('page_logs').create({ user, page, username, pagename });
 
 		return json({ message: 'Data logged successfully!' });
 	} catch (err) {
