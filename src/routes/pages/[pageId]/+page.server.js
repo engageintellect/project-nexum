@@ -1,5 +1,5 @@
 import { serializeNonPOJOs } from '$lib/utils';
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 
 export const load = ({ locals, params }) => {
 	const getPage = async (pageId) => {

@@ -88,10 +88,6 @@
 	}
 </script>
 
-<!-- {#each getFollowers() as follower}
-	<div>{follower}</div>
-{/each} -->
-
 <div>
 	<DashboardHeader
 		name={data.user.name}
@@ -113,7 +109,7 @@
 
 <div class="flex flex-col mx-4">
 	<div
-		class="text-lg md:text-xl font-bold badge badge-outline text-neutral/75 py-3 rounded uppercase"
+		class="text-lg md:text-xl font-bold badge badge-outline text-neutral/50 py-3 rounded uppercase"
 	>
 		Page Data
 	</div>
@@ -368,19 +364,31 @@
 	<!-- <input type="checkbox" checked="checked" /> -->
 	<div
 		id="mypages"
-		class=" text-xl font-bold badge badge-outline text-neutral/75 py-3 rounded uppercase"
+		class=" text-xl font-bold badge badge-outline text-neutral/50 py-3 rounded uppercase"
 	>
 		My Pages
 	</div>
+
 	<div class="my-2">
-		<div class="">
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-				{#each data.pages as page}
-					{#if page.user === data.user.id}
-						<MyPageItem {page} user={data.user} localUser={data.user} />
-					{/if}
-				{/each}
+		{#if data.pages.filter((page) => page.user === data.user.id).length > 0}
+			<div class="">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{#each data.pages as page}
+						{#if page.user === data.user.id}
+							<MyPageItem {page} user={data.user} localUser={data.user} />
+						{/if}
+					{/each}
+				</div>
 			</div>
-		</div>
+		{:else}
+			<div class="flex flex-col gap-2 my-7">
+				<div class="text-lg font-bold text-neutral/50">No pages found.</div>
+
+				<div class=" text-neutral/50">
+					<a href="/pages/new" class=" underline">Create</a>
+					a page to get started.
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>

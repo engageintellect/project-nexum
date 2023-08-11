@@ -1,5 +1,5 @@
 <script>
-	import { PUBLIC_HOME_URL } from '$env/static/public';
+	import { PUBLIC_HOME_URL, PUBLIC_POCKETBASE_URL } from '$env/static/public';
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
 	import { Modal } from '$lib/components';
@@ -23,6 +23,35 @@
 	import toast from 'svelte-french-toast';
 	let modalOpen;
 	let loading = false;
+
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		try {
+			const reqData = {
+				page: data.page.id,
+				user: data.user.id
+			};
+
+			const response = await fetch('/api/pageLog', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(reqData)
+			});
+
+			if (response.ok) {
+				const result = await response.json();
+				console.log(result);
+			} else {
+				const errorData = await response.json();
+				console.error('Failed to log data:', errorData.message);
+			}
+		} catch (error) {
+			console.error('Error occurred:', error);
+		}
+	});
 
 	const submitDeletePage = () => {
 		loading = true;
