@@ -1,7 +1,15 @@
 <script>
 	import { msgStore, feedSelect } from './../lib/store.js';
 	import { PageCard, Hero } from '$lib/components';
-	import { Icon, MagnifyingGlass, XMark, Rss, GlobeAmericas, UserGroup } from 'svelte-hero-icons';
+	import {
+		Icon,
+		MagnifyingGlass,
+		XMark,
+		Rss,
+		GlobeAmericas,
+		UserGroup,
+		DocumentText
+	} from 'svelte-hero-icons';
 	import { blur } from 'svelte/transition';
 	import MyPageItem from '../lib/components/MyPageItem.svelte';
 
@@ -49,6 +57,50 @@
 	const handleFilter = (value) => {
 		filter = value;
 	};
+
+	let filteredPageNames = [];
+
+	$: if (data && data.pages && filter) {
+		filteredPageNames = data.pages
+			.filter((page) => page.name.toLowerCase().includes(filter.toLowerCase()))
+			.map((page) => ({
+				name: page.name,
+				id: page.id
+			}));
+	} else {
+		filteredPageNames = [];
+	}
+
+	function goto(url) {
+		return function () {
+			window.location.href = url;
+		};
+	}
+
+	let focusedIndex = -1;
+
+	const handleKeyDown = (e) => {
+		switch (e.key) {
+			case 'ArrowDown':
+				// Move focus down in the list
+				if (focusedIndex < filteredPageNames.length - 1) {
+					focusedIndex += 1;
+				}
+				break;
+			case 'ArrowUp':
+				// Move focus up in the list
+				if (focusedIndex > 0) {
+					focusedIndex -= 1;
+				}
+				break;
+			case 'Enter':
+				// Trigger the click action for the currently focused item
+				if (filteredPageNames[focusedIndex]) {
+					goto(`/pages/${filteredPageNames[focusedIndex].id}`)();
+				}
+				break;
+		}
+	};
 </script>
 
 <div>
@@ -74,10 +126,10 @@
 		{/if}
 	</div>
 
-	<div class="my-5 flex justify-center px-4">
-		<div class="flex items-center justify-center w-full gap-2">
+	<div class=" my-5 flex justify-center px-4">
+		<div class=" flex items-center justify-center w-full gap-2">
 			<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
-				<div class="flex items-center gap-2 w-full">
+				<div class="relative flex items-center gap-2 w-full">
 					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->
 					<input
@@ -85,15 +137,40 @@
 						placeholder="Search Pages, People, Divisions, and Content"
 						class="w-full focus:outline-none bg-base-100"
 						bind:value={filter}
+						on:keydown={handleKeyDown}
 						autofocus
 					/>
-				</div>
+					{#if filter}
+						<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
+							<Icon src={XMark} class="w-5 h-5" />
+						</button>
+					{/if}
+					<!-- Dropdown for filtered page names -->
+					{#if filteredPageNames.length > 0}
+						<div
+							class="absolute -z-[-1] top-full p-2 mt-5 w-full bg-base-100 border border-neutral/50 rounded shadow-lg"
+						>
+							{#each filteredPageNames as page, index}
+								<div
+									class="p-2 hover:bg-neutral/25 cursor-pointer {focusedIndex === index
+										? 'bg-neutral/10'
+										: ''}"
+									on:click={goto(`/pages/${page.id}`)}
+								>
+									<div class="flex gap-2">
+										<div>
+											<Icon src={DocumentText} class=" text-primary w-5 h-5" solid />
+										</div>
 
-				{#if filter}
-					<button class="focus:outline-none md:hover:scale-110" on:click={() => (filter = '')}>
-						<Icon src={XMark} class="w-5 h-5" />
-					</button>
-				{/if}
+										<div>
+											{page.name}
+										</div>
+									</div>
+								</div>
+							{/each}
+						</div>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
