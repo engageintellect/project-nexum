@@ -18,8 +18,18 @@
 	} from 'svelte-hero-icons';
 	import { Footer } from '$lib/components';
 	import { PUBLIC_SEARCH_URL } from '$env/static/public';
+	import { onMount } from 'svelte';
 
 	export let data;
+
+	let isLoaded = false;
+
+	onMount(async () => {
+		// Simulating an asynchronous action. In real scenarios, this could be an API call or some resource loading.
+		await new Promise((resolve) => setTimeout(resolve));
+
+		isLoaded = true;
+	});
 </script>
 
 <Toaster />
@@ -207,7 +217,13 @@
 	</nav>
 	<div class="py-4">
 		<div class="mx-auto max-w-7xl sm:px-4 lg:px-8">
-			<slot />
+			{#if !isLoaded}
+				<div class="scale-150 flex justify-center items-center h-screen w-full">
+					<span class="loading loading-dots loading-lg" />
+				</div>
+			{:else}
+				<slot />
+			{/if}
 		</div>
 	</div>
 	<Footer />

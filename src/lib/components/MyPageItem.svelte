@@ -115,7 +115,10 @@
 				</div>
 				{#if page.verified}
 					<div class="">
-						<Icon src={Check} class="absolute bottom-2 left-2 w-6 h-6 bg-success rounded-full" />
+						<Icon
+							src={Check}
+							class="absolute bottom-2 left-2 w-6 h-6 bg-success group-hover:animate-pulse rounded"
+						/>
 					</div>
 				{/if}
 			</div>

@@ -16,20 +16,6 @@
 	export let data;
 	let filter;
 
-	// const getDivisions = () => {
-	// 	const divisions = new Set();
-
-	// 	for (let i = 0; i < data.pages.length; i++) {
-	// 		const pageDivisions = data.pages[i].division;
-
-	// 		for (let j = 0; j < pageDivisions.length; j++) {
-	// 			divisions.add(pageDivisions[j]);
-	// 		}
-	// 	}
-
-	// 	return Array.from(divisions);
-	// };
-
 	const handleFeedSelect = () => {
 		$feedSelect = !$feedSelect;
 	};
@@ -65,7 +51,10 @@
 			.filter((page) => page.name.toLowerCase().includes(filter.toLowerCase()))
 			.map((page) => ({
 				name: page.name,
-				id: page.id
+				user: page.user,
+				division: page.division,
+				id: page.id,
+				content: page.content
 			}));
 	} else {
 		filteredPageNames = [];
@@ -145,28 +134,43 @@
 							<Icon src={XMark} class="w-5 h-5" />
 						</button>
 					{/if}
+
 					<!-- Dropdown for filtered page names -->
 					{#if filteredPageNames.length > 0}
 						<div
-							class="absolute -z-[-1] top-full p-2 mt-5 w-full bg-base-100 border border-neutral/50 rounded shadow-lg"
+							class="absolute -z-[-1] top-full mt-5 w-full bg-base-100 border border-neutral rounded shadow-xl"
 						>
+							<div class="font-semibold capitalize bg-teal-500 text-base-100 p-2">
+								Pages that match your search...
+							</div>
 							{#each filteredPageNames as page, index}
-								<div
-									class="p-2 hover:bg-neutral/25 cursor-pointer {focusedIndex === index
-										? 'bg-neutral/10'
-										: ''}"
-									on:click={goto(`/pages/${page.id}`)}
-								>
-									<div class="flex gap-2">
-										<div>
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
+								<a href={`/pages/${page.id}`} class="">
+									<div
+										class="border border-primary/10 p-2 hover:bg-neutral/25 cursor-pointer {focusedIndex ===
+										index
+											? 'bg-neutral/10'
+											: ''}"
+									>
+										<div class="flex items-center">
+											<!-- <div>
 											<Icon src={DocumentText} class=" text-primary w-5 h-5" solid />
-										</div>
+										</div> -->
 
-										<div>
-											{page.name}
+											{#if page.division != ''}
+												<div
+													class="badge font-semibold badge-primary scale-[80%] rounded py-3 w-1/6"
+												>
+													{page.division}
+												</div>
+											{/if}
+
+											<div class="w-full">
+												{page.name}
+											</div>
 										</div>
 									</div>
-								</div>
+								</a>
 							{/each}
 						</div>
 					{/if}
@@ -174,15 +178,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- <div class="uppercase flex gap-2 justify-center">
-			{#each getDivisions() as division}
-				<button
-					class="border border-primary/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
-					on:click={() => handleFilter(division)}>{division}</button
-				>
-			{/each}
-		</div> -->
 
 	{#if data.tags}
 		<div class="flex items-center mx-4">
