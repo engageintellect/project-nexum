@@ -26,7 +26,7 @@
 
 	onMount(async () => {
 		// Simulating an asynchronous action. In real scenarios, this could be an API call or some resource loading.
-		await new Promise((resolve) => setTimeout(resolve));
+		// await new Promise((resolve) => setTimeout(resolve));
 
 		isLoaded = true;
 	});
@@ -84,7 +84,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<ul
 						tabindex="0"
-						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-50"
+						class="menu menu-compact dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-[999]"
 					>
 						<div class="my-2">
 							<li>

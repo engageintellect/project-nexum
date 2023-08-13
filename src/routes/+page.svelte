@@ -138,7 +138,7 @@
 					<!-- Dropdown for filtered page names -->
 					{#if filteredPageNames.length > 0}
 						<div
-							class="absolute -z-[-1] top-full mt-5 w-full bg-base-100 border border-neutral rounded shadow-xl"
+							class="absolute z-50 top-full mt-5 w-full bg-base-100 border border-neutral rounded shadow-xl"
 						>
 							<div class="font-semibold capitalize bg-teal-500 text-base-100 p-2">
 								Pages that match your search...
