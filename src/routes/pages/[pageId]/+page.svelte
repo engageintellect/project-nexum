@@ -120,7 +120,9 @@
 <!-- Spinner displayed while loading -->
 
 <div class="flex">
-	<div class="flex flex-col w-full mt-10 max-w-4xl mx-auto px-4">
+	<div
+		class="flex flex-col w-full md:mt-10 max-w-4xl mx-auto px-4 py-4 md:border border-primary/10 rounded md:shadow"
+	>
 		<div class="flex gap-2 items-center mb-2">
 			{#if data.page.verified}
 				<div class="badge badge-sm badge-success rounded-full py-3">
@@ -133,7 +135,8 @@
 				</div>
 			{/if}
 
-			{#if !data.page.division}
+			<!-- <div>hello</div> -->
+			{#if data.page.division != ''}
 				<div class="badge border-primary rounded py-3 uppercase">{data.page.division}</div>
 			{/if}
 		</div>

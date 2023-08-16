@@ -11,7 +11,7 @@
 		<div class="max-w-md">
 			<div class="mb-5 text-5xl lg:text-6xl font-bold">
 				<div>
-					Ne<span class="text-purple-500">x</span>um
+					Ne<span class="text-purple-500">x</span>um Wiki
 				</div>
 			</div>
 			<div class="mb-5 text-sm md:text-md lg:text-lg">
