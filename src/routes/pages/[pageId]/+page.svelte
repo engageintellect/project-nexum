@@ -195,7 +195,10 @@
 													<input type="hidden" name="follow" value="true" />
 													<button class="flex btn btn-sm btn-success capitalize rounded">
 														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
-														<div>Following</div>
+
+														<div class="flex gap-2 items-center">
+															<div>Following</div>
+														</div>
 													</button>
 												{:else}
 													<input type="hidden" name="follow" value="false" />
