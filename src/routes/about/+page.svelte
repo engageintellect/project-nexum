@@ -25,7 +25,7 @@
 		<div class="hero-content flex w-full flex-col items-center justify-between lg:flex-row-reverse">
 			<img
 				src="https://cdn.discordapp.com/attachments/1008571063732539392/1115921630120656957/engage_intellect_cyberpunk_graph_network_on_a_white_background_5b873da3-eb66-4c8a-b8dd-6dad314f3238.png"
-				class="object-cover max-w-0 lg:max-w-lg animate-pulse"
+				class="object-cover max-w-0 lg:max-w-lg"
 				alt="hero"
 			/>
 			<div class="max-w-lg">
@@ -43,7 +43,9 @@
 					>
 					<a href={$githubURL} class="btn btn-outline group rounded">
 						<div class="flex gap-1 items-center">
-							<div class="group-hover:fill-base-100 fill-purple-500 transition-color duration-200">
+							<div
+								class="group-hover:fill-purple-500 fill-purple-500 transition-color duration-200"
+							>
 								<Icon src={AiOutlineGithub} size="20" />
 							</div>
 							<div class="">GitHub</div>
@@ -316,7 +318,7 @@
 					</div>
 				</div>
 
-				<div class="my-10 flex flex-col md:flex-row gap-5 w-full items-center">
+				<div class="my-10 flex flex-col md:flex-row gap-2 sm:gap-5 w-full items-center">
 					<a
 						href="https://kit.svelte.dev/"
 						target="_blank"
@@ -352,6 +354,16 @@
 					>
 						<Icon src={SiTailwindcss} size="72" />
 						<div>Tailwind CSS</div>
+					</a>
+
+					<a
+						href="https://huggingface.co/"
+						target="_blank"
+						class="flex-col saturate-0 hover:saturate-100 hover:scale-[102%] tranistion-all duration-200 h-40 w-full lg:h-72 lg:w-72 shadow-lg border border-neutral/50 rounded flex items-center justify-center hover:fill-sky-600"
+					>
+						<!-- <Icon src={SiTailwindcss} size="72" /> -->
+						<div class="text-[64px]">🤗</div>
+						<div>Hugging Face</div>
 					</a>
 				</div>
 			</div>
