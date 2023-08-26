@@ -117,9 +117,9 @@
 
 	<div class=" my-5 flex justify-center px-4">
 		<div class=" flex items-center justify-center w-full gap-2">
-			<div class=" flex w-full max-w-lg border border-neutral/25 rounded p-3">
+			<div class=" flex w-full max-w-lg border border-neutral rounded p-3">
 				<div class="relative flex items-center gap-2 w-full">
-					<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
+					<Icon src={MagnifyingGlass} class=" text-neutral w-5 h-5" />
 					<!-- svelte-ignore a11y-autofocus -->
 					<input
 						type="text"
@@ -138,16 +138,16 @@
 					<!-- Dropdown for filtered page names -->
 					{#if filteredPageNames.length > 0}
 						<div
-							class="absolute z-50 top-full mt-5 w-full bg-base-100 border border-neutral rounded shadow-xl"
+							class="absolute z-50 top-full mt-5 w-full bg-base-100 border border-neutral/50 rounded shadow-xl"
 						>
-							<div class="font-semibold capitalize bg-teal-500 text-base-100 p-2">
+							<div class="font-semibold capitalize bg-info text-base-100 p-2">
 								Pages that match your search...
 							</div>
 							{#each filteredPageNames as page, index}
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<a href={`/pages/${page.id}`} class="">
 									<div
-										class="border border-primary/10 p-2 hover:bg-neutral/25 cursor-pointer {focusedIndex ===
+										class="border border-neutral p-2 hover:bg-neutral cursor-pointer {focusedIndex ===
 										index
 											? 'bg-neutral/10'
 											: ''}"
@@ -184,7 +184,7 @@
 			<div class="">
 				<label class="group cursor-pointer">
 					<div
-						class=" flex items-center gap-2 border border-neutral/25 group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
+						class=" flex items-center gap-2 border border-neutral group-hover:border-neutral/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
 					>
 						<label class="swap swap-rotate">
 							<input
@@ -205,19 +205,19 @@
 				</label>
 			</div>
 
-			<div class="ml-5 border-r h-16 border-neutral/50" />
+			<div class="ml-5 border-r h-16 border-neutral" />
 			<div
-				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4"
+				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4 w-full"
 			>
 				{#each data.tags as tag}
 					<button
-						class="border border-neutral/25 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
+						class="border border-neutral py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
 						on:click={() => handleFilter(tag.name)}>{tag.name}</button
 					>
 				{/each}
 			</div>
 
-			<div class="border-l h-16 border-neutral/50" />
+			<div class="border-l h-16 border-neutral" />
 		</div>
 	{/if}
 

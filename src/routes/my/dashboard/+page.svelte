@@ -108,9 +108,7 @@
 </div>
 
 <div class="flex flex-col mx-4">
-	<div
-		class="text-lg md:text-xl font-bold badge badge-outline text-neutral/50 py-3 rounded uppercase"
-	>
+	<div class="text-lg md:text-xl font-bold badge badge-neutral py-3 rounded uppercase">
 		Page Data
 	</div>
 
@@ -170,7 +168,7 @@
 							</div>
 
 							<a
-								class=" border bg-success/10 hover:shadow rounded transition-all duration-200"
+								class=" border border-success/50 bg-success/10 md:hover:bg-success/20 md:hover:shadow rounded transition-shadow duration-200"
 								href={`/pages/${page.id}`}
 							>
 								<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
@@ -195,7 +193,7 @@
 										</div>
 									</div>
 									<div
-										class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
+										class="md:hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
 									>
 										<a href={`/pages/${page.id}/edit`}>
 											<Icon src={PencilSquare} class="w-7 h-7 pr-2" solid />
@@ -228,7 +226,7 @@
 							</div>
 
 							<a
-								class=" border bg-warning/10 hover:shadow rounded transition-all duration-200"
+								class=" border border-warning/50 bg-warning/10 md:hover:bg-warning/20 md:hover:shadow rounded transition-shadow duration-200"
 								href={`/pages/${page.id}`}
 							>
 								<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
@@ -253,7 +251,7 @@
 										</div>
 									</div>
 									<div
-										class="hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
+										class="md:hover:scale-[102%] active:scale-[98%] transition-transform duration-200 flex items-center h-full"
 									>
 										<a href={`/pages/${page.id}/edit`}>
 											<Icon src={PencilSquare} class="w-7 h-7 pr-2" solid />
@@ -282,7 +280,7 @@
 					{#each data.pages as page}
 						{#if page.id === favorite}
 							<a
-								class=" border bg-error/10 hover:shadow rounded transition-all duration-200"
+								class=" border border-error/50 bg-error/10 md:hover:bg-error/20 md:hover:shadow rounded transition-shadow duration-200"
 								href={`/pages/${page.id}`}
 							>
 								<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">
@@ -326,7 +324,7 @@
 					{#each data.pages as page}
 						{#if page.id === like}
 							<a
-								class=" border bg-info/10 hover:shadow rounded transition-all duration-200"
+								class=" border border-info/50 bg-info/10 md:hover:bg-info/20 md:hover:shadow rounded transition-shadow duration-200"
 								href={`/pages/${page.id}`}
 							>
 								<div class="flex items-start h-16 overflow-hidden text-ellipsis rounded">

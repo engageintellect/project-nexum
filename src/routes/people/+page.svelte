@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="my-5">
-		<div class="flex justify-center w-full max-w-lg mx-auto border border-neutral/25 rounded p-3">
+		<div class="flex justify-center w-full max-w-lg mx-auto border border-neutral rounded p-3">
 			<div class="flex items-center gap-2 w-full">
 				<Icon src={MagnifyingGlass} class=" text-primary w-5 h-5" />
 				<!-- svelte-ignore a11y-autofocus -->

@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { PUBLIC_HOME_URL, PUBLIC_POCKETBASE_URL } from '$env/static/public';
 	import { enhance } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
@@ -25,6 +26,7 @@
 	let loading = false;
 
 	import { onMount } from 'svelte';
+	import { get } from 'svelte/store';
 
 	onMount(async () => {
 		try {
@@ -121,9 +123,10 @@
 
 <div class="flex">
 	<div
-		class="flex flex-col w-full md:mt-10 max-w-4xl mx-auto px-4 py-4 md:border border-primary/10 rounded md:shadow"
+		class="flex flex-col w-full md:mt-10 max-w-full mx-auto px-4 py-4 md:border border-neutral rounded md:shadow"
 	>
 		<div class="flex gap-2 items-center mb-2">
+			<!-- VERIFIED -->
 			{#if data.page.verified}
 				<div class="badge badge-sm badge-success rounded-full py-3">
 					<div class="flex gap-1 items-center justify-center">
@@ -135,9 +138,9 @@
 				</div>
 			{/if}
 
-			<!-- <div>hello</div> -->
+			<!-- DIVISION -->
 			{#if data.page.division != ''}
-				<div class="badge border-primary rounded py-3 uppercase">{data.page.division}</div>
+				<div class="badge border-neutral rounded py-3 uppercase">{data.page.division}</div>
 			{/if}
 		</div>
 
@@ -147,13 +150,35 @@
 				{data.page.name}<span />
 			</div>
 
-			<div class="text-2xl font-light mt-2">{data.page.tagline}</div>
+			<div class="text-xl font-light mt-2">{data.page.tagline}</div>
 		</div>
-		<div>
+		<!-- <div>
 			<div class="mt-1">
 				<a class="text-primary hover:underline" target="_blank" href={data.page.url}
 					>{data.page.url}</a
 				>
+			</div>
+		</div> -->
+
+		<!-- DATE -->
+		<div class="my-2 flex flex-col md:flex-row md:gap-5">
+			<div class="font-medium flex items-center gap-2">
+				<Icon src={ArrowPathRoundedSquare} class="w-4 h-4" />
+				<div class="font-thin text-sm md:text-md">
+					{formattedDateTime}.
+				</div>
+			</div>
+
+			<div class="text-sm md:text-md font-bold primary-content">
+				<div class="flex gap-2 items-center">
+					<div>
+						<Icon src={Clock} class=" w-4 h-4" />
+					</div>
+
+					<div>
+						{readTime.text}.
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -165,7 +190,7 @@
 						<div class="relative">
 							<a href={`/people/${creator.id}`}>
 								<img
-									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-primary hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
+									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-neutral hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
 									src={creator?.avatar
 										? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
 										: `https://ui-avatars.com/api/?name=${creator?.name}`}
@@ -180,7 +205,7 @@
 							</div>
 							<div class="text-sm font-medium secondary-content">{creator.job_title}</div>
 							{#if creator.division}
-								<div class="badge badge-sm badge-primary uppercase rounded py-3 mt-2">
+								<div class="badge badge-sm badge-neutral uppercase rounded py-3 mt-2">
 									{creator.division}
 								</div>
 							{/if}
@@ -193,7 +218,7 @@
 											<div>
 												{#if data.user.following.includes(creator.id)}
 													<input type="hidden" name="follow" value="true" />
-													<button class="flex btn btn-sm btn-success capitalize rounded">
+													<button class="flex btn btn-xs btn-success capitalize rounded">
 														<!-- <Icon src={CheckCircle} class="text-primary w-5 h-5" solid /> -->
 
 														<div class="flex gap-2 items-center">
@@ -203,7 +228,7 @@
 												{:else}
 													<input type="hidden" name="follow" value="false" />
 
-													<button class="flex btn btn-sm capitalize rounded">
+													<button class="flex btn btn-xs capitalize rounded">
 														<!-- <Icon src={PlusCircle} class="text-primary w-5 h-5" /> -->
 														<div>Follow</div>
 													</button>
@@ -216,31 +241,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="mb-5 flex flex-col md:flex-row md:gap-5">
-					<div class="font-medium flex items-center gap-2">
-						<Icon src={ArrowPathRoundedSquare} class="w-5 h-5" />
-						<div class="font-thin text-sm md:text-md">
-							{formattedDateTime}.
-						</div>
-					</div>
-
-					<div class="text-sm md:text-md font-bold primary-content">
-						<div class="flex gap-2">
-							<div>
-								<Icon src={Clock} class=" w-5 h-5" />
-							</div>
-
-							<div>
-								{readTime.text}.
-							</div>
-						</div>
-					</div>
-				</div>
 			{/if}
 		{/each}
 
 		<!-- PAGE METAGS -->
-		<div class="flex md:items-center flex-col gap-2 md:flex-row justify-between">
+		<div
+			class="flex md:items-center flex-col gap-2 md:flex-row justify-between sticky top-0 z-50 bg-base-100 py-2"
+		>
+			<!-- <div class="sticky bg-base-100 flex md:items-center flex-col gap-2 md:flex-row justify-between"> -->
 			<!-- TAGS -->
 			<div class="flex flex-wrap gap-2">
 				{#if data.page.expand.tags}
@@ -252,38 +260,48 @@
 
 			<!-- ACTION BUTTONS -->
 			<div class="flex gap-5">
-				<!-- LIKE -->
-				<form action="?/likePage" method="POST" use:enhance>
-					<button type="submit" class="hover:scale-105 active:scale-95 transition-all duration-200">
-						<input type="hidden" name="id" value={data.page.id} />
-						<div>
-							{#if data.user.likes.includes(data.page.id)}
-								<input type="hidden" name="like" value="true" />
-								<Icon src={HandThumbUp} class="text-info w-7 h-7" solid />
-							{:else}
-								<input type="hidden" name="like" value="false" />
-								<Icon src={HandThumbUp} class="text-primary w-7 h-7" />
-							{/if}
-						</div>
-					</button>
-				</form>
+				<div>
+					<!-- LIKE -->
+					<form action="?/likePage" method="POST" use:enhance>
+						<button
+							type="submit"
+							class="hover:scale-105 active:scale-95 transition-all duration-200 flex items-center"
+						>
+							<input type="hidden" name="id" value={data.page.id} />
+							<div>
+								{#if data.user.likes.includes(data.page.id)}
+									<input type="hidden" name="like" value="true" />
+									<Icon src={HandThumbUp} class="text-info w-7 h-7" solid />
+								{:else}
+									<input type="hidden" name="like" value="false" />
+									<Icon src={HandThumbUp} class="text-neutral w-7 h-7" />
+								{/if}
+							</div>
+						</button>
+					</form>
+				</div>
 				{getTotalLikes(data.users, data.page)}
 
 				<!-- FAVORITE -->
-				<form action="?/favoritePage" method="POST" use:enhance>
-					<button type="submit" class="hover:scale-105 active:scale-95 transition-all duration-200">
-						<input type="hidden" name="id" value={data.page.id} />
-						<div>
-							{#if data.user.favorites.includes(data.page.id)}
-								<input type="hidden" name="favorite" value="true" />
-								<Icon src={Heart} class="text-error w-7 h-7" solid />
-							{:else}
-								<input type="hidden" name="favorite" value="false" />
-								<Icon src={Heart} class="text-primary w-7 h-7" />
-							{/if}
-						</div>
-					</button>
-				</form>
+				<div>
+					<form action="?/favoritePage" method="POST" use:enhance>
+						<button
+							type="submit"
+							class="hover:scale-105 active:scale-95 transition-all duration-200 flex items-center"
+						>
+							<input type="hidden" name="id" value={data.page.id} />
+							<div>
+								{#if data.user.favorites.includes(data.page.id)}
+									<input type="hidden" name="favorite" value="true" />
+									<Icon src={Heart} class="text-error w-7 h-7" solid />
+								{:else}
+									<input type="hidden" name="favorite" value="false" />
+									<Icon src={Heart} class="text-neutral w-7 h-7" />
+								{/if}
+							</div>
+						</button>
+					</form>
+				</div>
 				{getTotalFavorites(data.users, data.page)}
 
 				<!-- SHARE -->
@@ -294,7 +312,7 @@
 					>
 						<Icon
 							src={Share}
-							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+							class="text-content-neutral w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
 						/>
 					</a>
 				</div>
@@ -304,7 +322,7 @@
 					<a href="/pages/{data.page.id}/edit">
 						<Icon
 							src={PencilSquare}
-							class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+							class="text-content-neutral w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
 						/>
 					</a>
 				{/if}
@@ -316,7 +334,7 @@
 							<span slot="trigger" class="">
 								<Icon
 									src={Trash}
-									class="text-primary w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
+									class="text-content-neutral w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
 								/>
 							</span>
 							<div slot="heading">
@@ -344,6 +362,7 @@
 			<div class="avatar">
 				<div class="w-full h-64 md:h-96 rounded shadow-lg">
 					<img
+						in:fade
 						class=""
 						src={data.page?.thumbnail
 							? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')
@@ -365,7 +384,7 @@
 	</div>
 
 	<!-- TOC -->
-	<div class="mt-10 hidden xl:flex">
-		<Toc title={'Page Contents'} autoHide={false} />
+	<div class="mt-10 hidden xl:flex justify-start">
+		<Toc title={'Page Contents'} autoHide={true} />
 	</div>
 </div>

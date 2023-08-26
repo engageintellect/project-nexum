@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import PageCardBadge from '$lib/components/PageCardBadge.svelte';
 	import { enhance } from '$app/forms';
 	import { Modal } from '$lib/components';
@@ -41,7 +42,8 @@
 </script>
 
 <div
-	class="flex w-full rounded border border-neutral/25 hover:border-neutral/50 transition-all duration-100 hover:shadow-lg group"
+	in:fade
+	class="flex w-full rounded border border-neutral hover:border-neutral/50 transition-all duration-100 hover:shadow-lg group"
 >
 	<div class="w-full flex gap-0 items-center rounded">
 		<div class="w-full h-full avatar rounded">

@@ -7,7 +7,7 @@
 </script>
 
 {#if userStat && pageLink}
-	<div class="border rounded shadow w-full h-full">
+	<div class="border border-neutral rounded shadow w-full h-full">
 		<a href={pageLink} class="w-full">
 			<div class="flex items-center justify-between h-full w-full p-4">
 				<div class="flex flex-col items-center md:items-start w-full">
@@ -22,7 +22,7 @@
 		</a>
 	</div>
 {:else}
-	<div class="border rounded shadow w-full h-full">
+	<div class="border border-neutral rounded shadow w-full h-full">
 		<div class="flex items-center justify-between h-full w-full p-4">
 			<div class="flex flex-col w-full">
 				<div class="text-sm md:text-md font-thin">{statTitle}</div>

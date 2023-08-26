@@ -32,7 +32,7 @@
 			<img
 				src={avatar}
 				alt="pic"
-				class="object-cover h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 rounded-full border border-primary/50 shadow"
+				class="object-cover h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 rounded-full border border-neutral shadow"
 			/>
 
 			<div class="w-full flex-col">
@@ -41,7 +41,7 @@
 				</div>
 				<div class="text-lg md:text-xl font-thin capitalize">{title}</div>
 				{#if division}
-					<div class="badge md:badge-lg badge-primary rounded mt-2 uppercase py-3">
+					<div class="badge md:badge-lg badge-neutral rounded mt-2 uppercase py-3">
 						{division}
 					</div>
 				{/if}
@@ -50,7 +50,7 @@
 
 		<div class="w-full flex justify-center flex-col gap-2">
 			<div
-				class="text-lg md:text-xl font-bold badge badge-outline text-neutral/50 py-3 rounded uppercase mt-10 md:my-0"
+				class="text-lg md:text-xl font-bold badge badge-neutral text-content-neutral/50 py-3 rounded uppercase mt-10 md:my-0"
 			>
 				User Stats
 			</div>
@@ -94,9 +94,7 @@
 				</div>
 
 				<div class="w-full flex flex-col gap-2">
-					<div
-						class="font-bold text-lg md:text-xl badge badge-outline text-neutral/50 py-3 rounded uppercase"
-					>
+					<div class="font-bold text-lg md:text-xl badge badge-neutral py-3 rounded uppercase">
 						Badges
 					</div>
 

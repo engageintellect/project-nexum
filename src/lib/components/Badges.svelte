@@ -10,7 +10,7 @@
 	$: modalOpen = false;
 </script>
 
-<div class="border rounded shadow">
+<div class="border border-neutral rounded shadow">
 	<div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
 		<!-- Step 1: Add overflow-x-auto class -->
 		{#each badges as badge}
@@ -58,9 +58,9 @@
 								</div>
 
 								<div class="flex gap-2 justify-center mt-10 my-5">
-									<div class="btn btn-info">About Badges</div>
+									<div class="btn btn-info rounded">About Badges</div>
 
-									<div class="btn btn-success">Claim Prize!</div>
+									<div class="btn btn-success rounded">Claim Prize!</div>
 								</div>
 							</div>
 						</Modal>
