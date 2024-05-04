@@ -92,7 +92,7 @@
 		{#if $feedSelect}
 			<div class="flex justify-center items-center gap-2">
 				<div class="">
-					<strong>Displaying </strong>users you are
+					<strong>Displaying </strong>content you are
 					<span class="text-purple-500 font-bold">following</span>
 				</div>
 				<div><Icon src={UserGroup} class="w-7 h-7 text-purple-500" solid /></div>
@@ -130,9 +130,7 @@
 						<div
 							class="absolute z-50 top-full mt-5 w-full bg-base-100 border border-neutral/10/50 rounded shadow-xl"
 						>
-							<div class="font-semibold capitalize bg-info text-base-100 p-2">
-								Pages that match your search...
-							</div>
+							<div class="p-2 capitalize">Pages that match your search...</div>
 							{#each filteredPageNames as page, index}
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<a href={`/pages/${page.id}`} class="">
@@ -200,9 +198,8 @@
 				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4 w-full"
 			>
 				{#each data.tags as tag}
-					<button
-						class="border border-neutral/10 py-1 px-2 uppercase my-2 hover:shadow transition-all duration-100 rounded"
-						on:click={() => handleFilter(tag.name)}>{tag.name}</button
+					<button class="btn btn-sm lowercase" on:click={() => handleFilter(tag.name)}
+						>{tag.name}</button
 					>
 				{/each}
 			</div>
