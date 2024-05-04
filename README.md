@@ -21,6 +21,16 @@ git clone <REPO>
 pnpm install
 ```
 
+# Environment Variables
+
+**Note:** You'll need to replace the values with your own environment variables.
+
+```bash
+# cp .env.example .env
+```
+
+
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
