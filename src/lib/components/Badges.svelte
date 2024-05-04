@@ -10,7 +10,7 @@
 	$: modalOpen = false;
 </script>
 
-<div class="border border-neutral rounded shadow">
+<div class="border border-neutral/10 rounded shadow">
 	<div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
 		<!-- Step 1: Add overflow-x-auto class -->
 		{#each badges as badge}

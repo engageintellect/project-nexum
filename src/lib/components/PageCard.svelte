@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class="card border border-neutral bg-base-100 rounded group active:scale-[99%] hover:shadow-md transition-all h-full"
+	class="card border border-neutral/10 bg-base-100 rounded group active:scale-[99%] hover:shadow-md transition-all h-full"
 >
 	{#if isNew}
 		<PageCardBadge msg={'NEW!'} {isNew} />
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 		{/if}
-		<div class="relative overflow-hidden border-neutral border-t border-b">
+		<div class="relative overflow-hidden border-neutral/10 border-t border-b">
 			<img
 				class="h-52 w-full object-cover scale-[100%] group-hover:scale-105 group-hover:saturate-150 transition-all duration-500"
 				src={page?.thumbnail

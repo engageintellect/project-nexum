@@ -26,7 +26,6 @@
 	let loading = false;
 
 	import { onMount } from 'svelte';
-	import { get } from 'svelte/store';
 
 	onMount(async () => {
 		try {
@@ -123,7 +122,7 @@
 
 <div class="flex">
 	<div
-		class="flex flex-col w-full md:mt-10 max-w-full mx-auto px-4 py-4 md:border border-neutral rounded md:shadow"
+		class="flex flex-col w-full max-w-full mx-auto px-4 py-4 md:border border-neutral/10 rounded md:shadow"
 	>
 		<div class="flex gap-2 items-center mb-2">
 			<!-- VERIFIED -->
@@ -140,7 +139,7 @@
 
 			<!-- DIVISION -->
 			{#if data.page.division != ''}
-				<div class="badge border-neutral rounded py-3 uppercase">{data.page.division}</div>
+				<div class="badge border-neutral/10 rounded py-3 uppercase">{data.page.division}</div>
 			{/if}
 		</div>
 
@@ -185,12 +184,12 @@
 		<!-- CREATOR -->
 		{#each data.users as creator}
 			{#if creator.id === data.page.user}
-				<div class="flex gap-2 my-10">
+				<div class="flex gap-2 my-5">
 					<div class="flex items-start gap-4">
 						<div class="relative">
 							<a href={`/people/${creator.id}`}>
 								<img
-									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-neutral hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
+									class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border border-neutral/10 hover:saturate-150 hover:scale-[102%] transition-all duration-50 active:scale-[98%]"
 									src={creator?.avatar
 										? getImageURL(creator?.collectionId, creator?.id, creator?.avatar)
 										: `https://ui-avatars.com/api/?name=${creator?.name}`}

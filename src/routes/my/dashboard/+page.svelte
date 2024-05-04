@@ -136,7 +136,7 @@
 			<Stat
 				statTitle="Favorites"
 				statValue={count.favorites}
-				statDescription="Pages you have favorites."
+				statDescription="Pages you have favorited."
 				><Icon src={Heart} class="w-12 h-12 pr-2 text-error" solid /></Stat
 			>
 		</div>
@@ -360,17 +360,14 @@
 
 <div class=" bg-base-100 px-4 my-5 md:my-10">
 	<!-- <input type="checkbox" checked="checked" /> -->
-	<div
-		id="mypages"
-		class=" text-xl font-bold badge badge-outline text-neutral/50 py-3 rounded uppercase"
-	>
+	<div id="mypages" class=" text-xl font-bold badge badge-primary py-3 rounded uppercase">
 		My Pages
 	</div>
 
 	<div class="my-2">
 		{#if data.pages.filter((page) => page.user === data.user.id).length > 0}
 			<div class="">
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 					{#each data.pages as page}
 						{#if page.user === data.user.id}
 							<MyPageItem {page} user={data.user} localUser={data.user} />

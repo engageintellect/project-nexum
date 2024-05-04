@@ -5,18 +5,13 @@
 	import { Modal } from '$lib/components';
 	import { getImageURL, getFormattedDateTime } from '$lib/utils';
 	import toast from 'svelte-french-toast';
-	import MyPageItem from '$lib/components/MyPageItem.svelte';
-
 	import { Icon, PencilSquare, Trash, Check, ArrowPathRoundedSquare } from 'svelte-hero-icons';
-
 	export let page;
 	export let user;
 	export let localUser;
-
-	const formattedDateTime = getFormattedDateTime(page.updated);
 	export let isNew = false;
 	export let isOld = false;
-
+	const formattedDateTime = getFormattedDateTime(page.updated);
 	let modalOpen;
 	let loading = false;
 
@@ -43,7 +38,7 @@
 
 <div
 	in:fade
-	class="flex w-full rounded border border-neutral hover:border-neutral/50 transition-all duration-100 hover:shadow-lg group"
+	class="flex w-full rounded border border-neutral/10 hover:border-neutral/10/50 transition-all duration-100 hover:shadow-lg group"
 >
 	<div class="w-full flex gap-0 items-center rounded">
 		<div class="w-full h-full avatar rounded">
@@ -129,8 +124,8 @@
 			<a href="/pages/{page.id}" class="">
 				<div class="flex flex-col justify-between h-full">
 					<div>
-						<div class=" font-bold">{page.name}</div>
-						<div class=" text-sm text-base-content/75">{page.tagline}</div>
+						<div class="text-xl font-bold line-clamp-2">{page.name}</div>
+						<div class=" text-sm text-base-content/50 line-clamp-2">{page.tagline}</div>
 						{#if page.division != ''}
 							<div class="badge badge-sm badge-neutral rounded py-3 mt-2">{page.division}</div>
 						{/if}
@@ -140,7 +135,7 @@
 						{#if user}
 							<div class="flex items-center gap-1">
 								<img
-									class="w-6 h-6 object-cover rounded-full border border-neutral group-hover:saturate-150 transition-color duration-300"
+									class="w-6 h-6 object-cover rounded-full border border-neutral/10 group-hover:saturate-150 transition-color duration-300"
 									src={user?.avatar
 										? getImageURL(user?.collectionId, user?.id, user?.avatar)
 										: `https://ui-avatars.com/api/?name=${user?.name}`}

@@ -1,4 +1,4 @@
-# Project Nexum
+# project-nexum
 
 ## Technologies
 - SvelteKit
@@ -17,6 +17,8 @@
 # create a new project in the current directory
 git clone <REPO>
 
+cd <REPO>
+
 # create a new project in my-app
 pnpm install
 ```
@@ -28,8 +30,6 @@ pnpm install
 ```bash
 # cp .env.example .env
 ```
-
-
 
 ## Developing
 

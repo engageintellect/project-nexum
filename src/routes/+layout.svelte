@@ -34,7 +34,7 @@
 
 <Toaster />
 <div class="min-h-full">
-	<nav class="navbar bg-base-100 border-b border-neutral max-w-7xl mx-auto">
+	<nav class="navbar bg-base-100 border-b border-neutral/10 max-w-5xl mx-auto">
 		<div class="flex-1">
 			<a href="/" class="btn btn-ghost normal-case text-xl">
 				<div>
@@ -72,7 +72,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<!-- svelte-ignore a11y-label-has-associated-control -->
 					<label tabindex="0" class="btn btn-ghost btn-circle avatar">
-						<div class="w-10 rounded-full border border-neutral">
+						<div class="w-10 rounded-full border border-neutral/10">
 							<img
 								src={data.user?.avatar
 									? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
@@ -84,7 +84,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<ul
 						tabindex="0"
-						class="menu menu-compact border border-neutral dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-[999]"
+						class="menu menu-compact border border-neutral/10 dropdown-content p-2 shadow-lg bg-base-100 rounded-box w-52 z-[999]"
 					>
 						<div class="my-2">
 							<li>
@@ -121,7 +121,7 @@
 							</li>
 						</div>
 
-						<hr class="border border-neutral/25" />
+						<hr class="border border-neutral/10/25" />
 
 						<div class="my-2">
 							<li>
@@ -158,7 +158,7 @@
 							</li>
 						</div>
 
-						<hr class="border border-neutral/25" />
+						<hr class="border border-neutral/10/25" />
 						<div class="my-2">
 							<li>
 								<a href="/ai" class="flex justify-between w-full">
@@ -186,7 +186,7 @@
 						</div>
 
 						<div class="my-2">
-							<hr class="border border-neutral/25" />
+							<hr class="border border-neutral/10/25" />
 							<li>
 								<a href="/my/settings">
 									<div class="flex gap-2 items-center">
@@ -216,7 +216,7 @@
 		</div>
 	</nav>
 	<div class="py-4">
-		<div class="mx-auto max-w-7xl">
+		<div class="mx-auto max-w-5xl">
 			{#if !isLoaded}
 				<div class="scale-150 flex justify-center items-center h-screen w-full">
 					<span class="loading loading-dots loading-lg" />

@@ -6,11 +6,11 @@
 
 <a class="group" href={`/people/${user.id}`}>
 	<div
-		class="border border-neutral hover:border-neutral/50 rounded group-hover:shadow-md transition-all duration-50 group-active:scale-[99%] p-2 md:p-4 h-full"
+		class="border border-neutral/10 hover:border-neutral/10/50 rounded group-hover:shadow-md transition-all duration-50 group-active:scale-[99%] p-2 md:p-4 h-full"
 	>
 		<div class="flex items-start gap-2">
 			<div class="avatar">
-				<div class="w-16 rounded-full shadow-md group-hover:shadow-lg border border-neutral">
+				<div class="w-16 rounded-full shadow-md group-hover:shadow-lg border border-neutral/10">
 					<img
 						class="group-hover:scale-[105%] group-hover:saturate-150 transition-all duration-500"
 						src={user?.avatar

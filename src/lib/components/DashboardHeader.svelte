@@ -1,6 +1,4 @@
 <script>
-	import { getImageURL } from '$lib/utils';
-	import Modal from '$lib/components/Modal.svelte';
 	export let name;
 	export let userId;
 	export let title;
@@ -8,8 +6,8 @@
 	export let avatar;
 
 	export let pageCount;
-	export let pageLikes;
-	export let pageFavorites;
+	// export let pageLikes;
+	// export let pageFavorites;
 
 	export let userBadges;
 	export let badges;
@@ -32,7 +30,7 @@
 			<img
 				src={avatar}
 				alt="pic"
-				class="object-cover h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 rounded-full border border-neutral shadow"
+				class="object-cover h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 rounded-full border border-neutral/10 shadow"
 			/>
 
 			<div class="w-full flex-col">
@@ -55,7 +53,7 @@
 				User Stats
 			</div>
 			<div class="flex flex-col gap-5">
-				<div class="flex md:gap-2">
+				<div class="flex gap-2">
 					<div class="w-full">
 						<Stat
 							statTitle="Pages"
