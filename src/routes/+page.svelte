@@ -2,32 +2,13 @@
 	import { feedSelect } from './../lib/store.js';
 	import { Icon, MagnifyingGlass, XMark, GlobeAmericas, UserGroup } from 'svelte-hero-icons';
 	import MyPageItem from '../lib/components/MyPageItem.svelte';
+	import { isOld, isNew } from '../lib/utils.js';
 
 	export let data;
 	let filter;
 
 	const handleFeedSelect = () => {
 		$feedSelect = !$feedSelect;
-	};
-
-	const isOld = (date) => {
-		const currentDate = new Date(); // Current date
-		const updatedDate = new Date(date); // Replace with page.updated value
-		const differenceInMilliseconds = currentDate - updatedDate;
-		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference > 30) {
-			return true;
-		}
-	};
-
-	const isNew = (date) => {
-		const currentDate = new Date(); // Current date
-		const createDate = new Date(date); // Replace with page.updated value
-		const differenceInMilliseconds = currentDate - createDate;
-		const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-		if (daysDifference < 1) {
-			return true;
-		}
 	};
 
 	const handleFilter = (value) => {
@@ -83,7 +64,7 @@
 </script>
 
 <div>
-	<div class="mt-10 text-center text-7xl font-bold tracking-tight text-base-content">
+	<div class="mt-10 text-center text-7xl lg:text-9xl font-bold tracking-tight text-base-content">
 		<div>
 			Ne<span class="text-purple-500">x</span>um
 		</div>
@@ -99,7 +80,7 @@
 			</div>
 		{:else}
 			<div class="flex justify-center items-center gap-2">
-				<div class=""><strong>Displaying </strong>all content across wiki</div>
+				<div class=""><strong>Displaying </strong>all content</div>
 				<div><Icon src={GlobeAmericas} class="w-7 h-7 text-purple-500" solid /></div>
 			</div>
 		{/if}
@@ -169,11 +150,9 @@
 
 	{#if data.tags}
 		<div class="flex items-center mx-4">
-			<div class="">
+			<div class="pl-2">
 				<label class="group cursor-pointer">
-					<div
-						class=" flex items-center gap-2 border border-neutral/10 group-hover:border-neutral/10/50 py-2.5 px-4 rounded group-hover:shadow-md transition-all duration-200"
-					>
+					<div class="btn">
 						<label class="swap swap-rotate">
 							<input
 								type="checkbox"
@@ -193,12 +172,12 @@
 				</label>
 			</div>
 
-			<div class="ml-5 border-r h-16 border-neutral/10" />
+			<div class="ml-4 border-r h-16 border-neutral/10" />
 			<div
-				class="flex overflow-x-auto md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4 w-full"
+				class="flex overflow-x-auto py-2 md:overflow-x-auto no-scrollbar md:justify-cener items-center gap-2 px-4 w-full"
 			>
 				{#each data.tags as tag}
-					<button class="btn btn-sm lowercase" on:click={() => handleFilter(tag.name)}
+					<button class="btn btn-sm lowercase shadow" on:click={() => handleFilter(tag.name)}
 						>{tag.name}</button
 					>
 				{/each}

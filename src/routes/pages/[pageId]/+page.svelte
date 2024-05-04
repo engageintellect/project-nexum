@@ -245,26 +245,26 @@
 
 		<!-- PAGE METAGS -->
 		<div
-			class="flex md:items-center flex-col gap-2 md:flex-row justify-between sticky top-0 z-50 bg-base-100 py-2"
+			class="flex md:items-center flex-col gap-2 md:flex-row justify-between sticky top-0 z-50 bg-base-100 p-2 -mx-2"
 		>
 			<!-- <div class="sticky bg-base-100 flex md:items-center flex-col gap-2 md:flex-row justify-between"> -->
 			<!-- TAGS -->
-			<div class="flex flex-wrap gap-2">
+			<div class="flex flex-wrap gap-1">
 				{#if data.page.expand.tags}
 					{#each data.page.expand.tags as tag}
-						<div class="badge badge-outline py-3">{tag.name}</div>
+						<div class="btn btn-sm text-sm lowercase shadow">{tag.name}</div>
 					{/each}
 				{/if}
 			</div>
 
 			<!-- ACTION BUTTONS -->
-			<div class="flex gap-5">
-				<div>
+			<div class="flex gap-5 items-center">
+				<div class="flex items-center gap-2">
 					<!-- LIKE -->
 					<form action="?/likePage" method="POST" use:enhance>
 						<button
 							type="submit"
-							class="hover:scale-105 active:scale-95 transition-all duration-200 flex items-center"
+							class="hover:scale-105 active:scale-95 transition-all duration-200 flex items-center tooltip"
 						>
 							<input type="hidden" name="id" value={data.page.id} />
 							<div>
@@ -278,11 +278,11 @@
 							</div>
 						</button>
 					</form>
+					{getTotalLikes(data.users, data.page)}
 				</div>
-				{getTotalLikes(data.users, data.page)}
 
 				<!-- FAVORITE -->
-				<div>
+				<div class="flex items-center gap-2">
 					<form action="?/favoritePage" method="POST" use:enhance>
 						<button
 							type="submit"
@@ -300,8 +300,8 @@
 							</div>
 						</button>
 					</form>
+					{getTotalFavorites(data.users, data.page)}
 				</div>
-				{getTotalFavorites(data.users, data.page)}
 
 				<!-- SHARE -->
 				<!-- TODO: CHANEGE TO SOMETHING LIKE SENDGRID TO MAKE LINK CLICKABLE IN EMAIL CLIENT -->
@@ -330,7 +330,7 @@
 				{#if data.page.user === data.user.id}
 					<div class="">
 						<Modal label={data.page.id} checked={modalOpen}>
-							<span slot="trigger" class="">
+							<span slot="trigger" class="cursor-pointer">
 								<Icon
 									src={Trash}
 									class="text-content-neutral w-7 h-7 hover:scale-105 active:scale-95 transition-all duration-200"
@@ -383,7 +383,7 @@
 	</div>
 
 	<!-- TOC -->
-	<div class="mt-10 hidden xl:flex justify-start">
+	<div class="mt-10 hidden md:flex justify-start">
 		<Toc title={'Page Contents'} autoHide={true} />
 	</div>
 </div>

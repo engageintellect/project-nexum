@@ -11,7 +11,6 @@
 		ChatBubbleLeftRight,
 		MagnifyingGlassCircle,
 		RectangleGroup,
-		RectangleStack,
 		UserCircle,
 		InformationCircle,
 		Home
@@ -27,7 +26,6 @@
 	onMount(async () => {
 		// Simulating an asynchronous action. In real scenarios, this could be an API call or some resource loading.
 		// await new Promise((resolve) => setTimeout(resolve));
-
 		isLoaded = true;
 	});
 </script>
@@ -36,7 +34,7 @@
 <div class="min-h-full">
 	<nav class="navbar bg-base-100 border-b border-neutral/10 max-w-5xl mx-auto">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost normal-case text-xl">
+			<a href="/" class="btn btn-ghost normal-case text-2xl">
 				<div>
 					Ne<span class="text-purple-500">x</span>um
 				</div>
@@ -45,8 +43,8 @@
 		<div class="flex-none">
 			{#if !data.user}
 				<div class="dropdown dropdown-end">
-					<a href="/login" class="btn btn-outline rounded">Login</a>
-					<a href="/register" class="btn btn-outline rounded">Register</a>
+					<a href="/login" class="btn rounded">Login</a>
+					<a href="/register" class="btn rounded">Register</a>
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">

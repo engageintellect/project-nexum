@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@iconify/svelte": "^4.0.1",
 		"@tinymce/tinymce-svelte": "^1.0.1",
 		"ai": "2.0.1",
 		"openai-edge": "^0.5.1",

@@ -37,7 +37,7 @@
 </script>
 
 <div
-	in:fade
+	in:fade={{ duration: 500 }}
 	class="flex w-full rounded border border-neutral/10 hover:border-neutral/10/50 transition-all duration-100 hover:shadow-lg group"
 >
 	<div class="w-full flex gap-0 items-center rounded">

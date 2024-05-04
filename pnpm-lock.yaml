@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@iconify/svelte':
+    specifier: ^4.0.1
+    version: 4.0.1(svelte@3.59.1)
   '@tinymce/tinymce-svelte':
     specifier: ^1.0.1
     version: 1.0.1
@@ -350,6 +353,19 @@ packages:
   /@humanwhocodes/object-schema@1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@iconify/svelte@4.0.1(svelte@3.59.1):
+    resolution: {integrity: sha512-rF6WUdYhoEaKT4D6qTsZFMD1g+NJZWOH2S+9zMTo5rWa8/NXPnB9uviuHOlGm3v+Cp/M1qTOOJsGdXXUTYHq+Q==}
+    peerDependencies:
+      svelte: '>4.0.0'
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 3.59.1
+    dev: false
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

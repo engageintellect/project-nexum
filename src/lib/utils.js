@@ -1,3 +1,5 @@
+
+
 const { randomBytes } = await import('node:crypto');
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
 
@@ -45,3 +47,25 @@ export function getFormattedDateTime(dateTimeString) {
 
 	return dateTime.toLocaleString('en-US', options);
 }
+
+
+export const isOld = (date) => {
+	const currentDate = new Date(); // Current date
+	const updatedDate = new Date(date); // Replace with page.updated value
+	const differenceInMilliseconds = currentDate - updatedDate;
+	const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+	if (daysDifference > 30) {
+		return true;
+	}
+};
+
+export const isNew = (date) => {
+	const currentDate = new Date(); // Current date
+	const createDate = new Date(date); // Replace with page.updated value
+	const differenceInMilliseconds = currentDate - createDate;
+	const daysDifference = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+	if (daysDifference < 1) {
+		return true;
+	}
+};
+
