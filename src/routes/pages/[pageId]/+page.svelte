@@ -383,7 +383,7 @@
 	</div>
 
 	<!-- TOC -->
-	<div class="mt-10 hidden md:flex justify-start">
+	<div class="hidden md:flex justify-start">
 		<Toc title={'Page Contents'} autoHide={true} />
 	</div>
 </div>
