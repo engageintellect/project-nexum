@@ -120,7 +120,7 @@
 
 <!-- Spinner displayed while loading -->
 
-<div class="flex">
+<div in:fade={{ duration: 500 }} class="flex">
 	<div
 		class="flex flex-col w-full max-w-full mx-auto px-4 py-4 md:border border-neutral/10 rounded md:shadow"
 	>
@@ -144,12 +144,12 @@
 		</div>
 
 		<!-- TITLE -->
-		<div>
+		<div class="py-2">
 			<div class="text-5xl font-bold">
 				{data.page.name}<span />
 			</div>
 
-			<div class="text-xl font-light mt-2">{data.page.tagline}</div>
+			<div class="text-xl font-light mt-0 text-primary/70">{data.page.tagline}</div>
 		</div>
 		<!-- <div>
 			<div class="mt-1">
@@ -160,7 +160,7 @@
 		</div> -->
 
 		<!-- DATE -->
-		<div class="my-2 flex flex-col md:flex-row md:gap-5">
+		<div class="mt-2 flex flex-col md:flex-row md:gap-5">
 			<div class="font-medium flex items-center gap-2">
 				<Icon src={ArrowPathRoundedSquare} class="w-4 h-4" />
 				<div class="font-thin text-sm md:text-md">
@@ -361,7 +361,7 @@
 			<div class="avatar">
 				<div class="w-full h-64 md:h-96 rounded shadow-lg">
 					<img
-						in:fade
+						in:fade={{ duration: 200 }}
 						class=""
 						src={data.page?.thumbnail
 							? getImageURL(data.page.collectionId, data.page.id, data.page.thumbnail, '0x0')

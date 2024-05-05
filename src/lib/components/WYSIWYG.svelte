@@ -13,7 +13,7 @@
 	let conf = {
 		skin: 'borderless',
 		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-		min_height: 720,
+		// min_height: 720,
 		selector: 'textarea',
 		placeholder: `Add your page's content here. Click save when finished.`,
 		toolbar_mode: 'sliding',
@@ -49,9 +49,9 @@
 </script>
 
 <div class="form-control w-full">
-	<label for={id} class="label font-medium pb-1">
-		<span class="label-text">{label}</span>
-	</label>
+	<!-- <label for={id} class="label font-medium pb-1"> -->
+	<!-- <span class="label-text">{label}</span> -->
+	<!-- </label> -->
 	<Editor {conf} class="textarea textarea-bordered resize-y h-full" bind:value />
 
 	<input

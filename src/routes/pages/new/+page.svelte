@@ -4,7 +4,7 @@
 	export let form;
 </script>
 
-<div class="flex flex-col w-full h-full px-4">
+<div class="flex flex-col w-full h-full px-4 max-w-screen-md mx-auto">
 	<div class="w-full mt-2">
 		<form
 			action="?/create"
@@ -13,16 +13,16 @@
 			enctype="multipart/form-data"
 			use:enhance
 		>
-			<div class="flex flex-col justify-center text-center mt-10">
+			<!-- <div class="flex flex-col justify-center text-center">
 				<div class="text-center text-3xl font-bold">Tell us more about this topic</div>
 				<div class="pt-2 text-lg">We'll need a name, tagline, link, and content</div>
-			</div>
+			</div> -->
 
 			<div class="w-full grid grid-cols-1 gap-x-5 md:grid-cols-2">
 				<div>
 					<Input
 						id="name"
-						label="Page Name*"
+						placeholder="Page Name*"
 						value={form?.data?.name}
 						errors={form?.errors?.name}
 					/>
@@ -31,25 +31,30 @@
 				<div>
 					<Input
 						id="tagline"
-						label="Page Tagline*"
+						placeholder="Page Tagline*"
 						value={form?.data?.tagline}
 						errors={form?.errors?.tagline}
 					/>
 				</div>
 
 				<div>
-					<Input id="url" label="Homepage URL" value={form?.data?.url} errors={form?.errors?.url} />
+					<Input
+						id="url"
+						placeholder="Homepage URL"
+						value={form?.data?.url}
+						errors={form?.errors?.url}
+					/>
 				</div>
 
 				<div class="w-full">
-					<label for="division" class="label font-medium pb-1">
-						<span class="label-text">Division</span>
-					</label>
+					<!-- <label for="division" class="label font-medium pb-1"> -->
+					<!-- <span class="label-text">Division</span> -->
+					<!-- </label> -->
 					<select
 						id="division"
 						name="division"
 						label="Division"
-						class="select select-bordered w-full"
+						class="select select-bordered w-full text-neutral/50"
 					>
 						<!-- TODO: Make this dynamic -->
 						<option disabled selected>Select Division</option>
@@ -75,8 +80,8 @@
 					errors={form?.errors?.content}
 				/>
 			</div>
-			<div class="w-full max-w-lg pt-3">
-				<button type="submit" class="btn btn-success rounded w-full max-w-lg">Create Page</button>
+			<div class="w-full pt-3">
+				<button type="submit" class="btn btn-success rounded w-full">Create Page</button>
 			</div>
 		</form>
 	</div>
